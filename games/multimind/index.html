@@ -10,7 +10,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="MultiMind Kids: Brain Games | Cezeri Games">
   <meta property="og:description" content="Çoklu zeka kuramıyla tasarlanan, reklamsız ve güvenli çocuk zeka oyunu.">
-  <meta property="og:image" content="../../assets/images/multimind/store/turkish_1024x500.png">
+  <meta property="og:image" content="../../assets/images/multimind/store/_TR/turkish_1024x500.png">
 
   <link rel="icon" type="image/png" href="../../assets/images/favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -33,15 +33,48 @@
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-        <a href="../../index.html" class="hover:text-cyan-300 transition-colors">&larr; Ana Sayfa</a>
-        <a href="#features" class="hover:text-cyan-300 transition-colors">Özellikler</a>
-        <a href="#intelligences" class="hover:text-cyan-300 transition-colors">Zeka Alanları</a>
-        <a href="#screenshots" class="hover:text-cyan-300 transition-colors">Ekran Görüntüleri</a>
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="../../index.html" class="hover:text-cyan-300 transition-colors">&larr; <span data-i18n="nav_games">Ana Sayfa</span></a>
+        <a href="#features" class="hover:text-cyan-300 transition-colors" data-i18n="nav_vision">Özellikler</a>
+        <a href="#intelligences" class="hover:text-cyan-300 transition-colors" data-i18n="stat_int">Zeka Alanları</a>
+        <a href="#screenshots" class="hover:text-cyan-300 transition-colors" data-i18n="nav_gallery">Ekran Görüntüleri</a>
         <a href="#faq" class="hover:text-cyan-300 transition-colors">Sıkça Sorulanlar</a>
       </nav>
 
+      <!-- Language Selector & Download Button -->
       <div class="flex items-center gap-3">
+        <!-- 6-Language Dropdown -->
+        <div class="relative">
+          <button id="lang-trigger" class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 border border-cyan-500/20 text-xs font-semibold transition-all">
+            <span class="lang-current-label flex items-center gap-1.5">
+              <span>🇹🇷</span> <span>TR</span>
+            </span>
+            <svg class="w-3.5 h-3.5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+
+          <!-- Dropdown Menu -->
+          <div id="lang-dropdown" class="hidden absolute right-0 mt-2 w-44 rounded-2xl bg-[#091A2A] border border-cyan-500/30 shadow-2xl py-2 z-50 backdrop-blur-xl">
+            <button class="lang-item w-full flex items-center gap-3 px-3.5 py-2 text-xs hover:bg-cyan-500/15 text-left transition-colors" data-lang="TR">
+              <span class="text-base">🇹🇷</span> <span>Türkçe (TR)</span>
+            </button>
+            <button class="lang-item w-full flex items-center gap-3 px-3.5 py-2 text-xs hover:bg-cyan-500/15 text-left transition-colors" data-lang="EN">
+              <span class="text-base">🇬🇧</span> <span>English (EN)</span>
+            </button>
+            <button class="lang-item w-full flex items-center gap-3 px-3.5 py-2 text-xs hover:bg-cyan-500/15 text-left transition-colors" data-lang="DE">
+              <span class="text-base">🇩🇪</span> <span>Deutsch (DE)</span>
+            </button>
+            <button class="lang-item w-full flex items-center gap-3 px-3.5 py-2 text-xs hover:bg-cyan-500/15 text-left transition-colors" data-lang="FR">
+              <span class="text-base">🇫🇷</span> <span>Français (FR)</span>
+            </button>
+            <button class="lang-item w-full flex items-center gap-3 px-3.5 py-2 text-xs hover:bg-cyan-500/15 text-left transition-colors" data-lang="ES">
+              <span class="text-base">🇪🇸</span> <span>Español (ES)</span>
+            </button>
+            <button class="lang-item w-full flex items-center gap-3 px-3.5 py-2 text-xs hover:bg-cyan-500/15 text-left transition-colors" data-lang="PR">
+              <span class="text-base">🇵🇹</span> <span>Português (PR)</span>
+            </button>
+          </div>
+        </div>
+
         <a href="#download" class="btn-glow px-4 py-2 rounded-xl text-xs sm:text-sm font-bold text-white flex items-center gap-2">
           <span>İndir / Oyna</span>
         </a>
@@ -57,13 +90,13 @@
         <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
           
           <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2.5">
-            <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-400/30">
+            <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-400/30" data-i18n="age_badge">
               3 - 8 YAŞ
             </span>
-            <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-400/30">
+            <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-400/30" data-i18n="stat_safe">
               %100 REKLAMSIZ & GÜVENLİ
             </span>
-            <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-sky-500/20 text-sky-300 border border-sky-400/30">
+            <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-sky-500/20 text-sky-300 border border-sky-400/30" data-i18n="banner_badge">
               6 DİLDE SESLENDİRME
             </span>
           </div>
@@ -73,7 +106,7 @@
             <span class="text-gradient">Brain Games</span>
           </h1>
 
-          <p class="text-lg text-slate-300 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+          <p class="text-lg text-slate-300 max-w-xl mx-auto lg:mx-0 leading-relaxed" data-i18n="hero_desc">
             Howard Gardner'ın Çoklu Zeka Modeli üzerine inşa edilen MultiMind Kids; terazilerden dişlilere, optik aynalardan algoritmik örüntülere kadar 30 farklı dokunsal ve fiziksel mekanikle çocukların zihin potansiyelini harekete geçirir.
           </p>
 
@@ -107,14 +140,14 @@
 
         </div>
 
-        <!-- Big Visual: Store Feature Banner (1024x500) -->
+        <!-- Big Visual: Store Feature Banner (Dynamic for 6 Languages) -->
         <div class="lg:col-span-5 flex justify-center">
           <div class="relative w-full max-w-lg">
             <div class="absolute -inset-3 bg-gradient-to-tr from-cyan-400 via-sky-500 to-teal-400 rounded-3xl blur-2xl opacity-40 animate-glow-pulse"></div>
             
             <div class="relative glass-card rounded-3xl p-5 border border-cyan-400/30 shadow-2xl space-y-4">
               <div class="rounded-2xl overflow-hidden border border-cyan-400/30 shadow-lg">
-                <img src="../../assets/images/multimind/store/turkish_1024x500.png" alt="MultiMind Resmi Mağaza Afişi" class="w-full h-auto object-cover">
+                <img id="store-hero-banner" src="../../assets/images/multimind/store/_TR/turkish_1024x500.png" alt="MultiMind Store Graphic" class="w-full h-auto object-cover">
               </div>
 
               <div class="grid grid-cols-2 gap-3 text-left text-xs bg-[#06121E]/90 p-4 rounded-2xl border border-cyan-500/20">
@@ -123,7 +156,7 @@
                   <span class="font-bold text-white">Eğitici & Zeka</span>
                 </div>
                 <div>
-                  <span class="text-slate-400 block">Yaş Grubu</span>
+                  <span class="text-slate-400 block" data-i18n="age_badge">Yaş Grubu</span>
                   <span class="font-bold text-white">3-8 Yaş (Tüm Çocuklar)</span>
                 </div>
                 <div>
@@ -144,15 +177,15 @@
   </section>
 
   <!-- ===================================================================
-       SCREENSHOTS GALLERY (ALL 5 REAL STORE SCREENSHOTS)
+       SCREENSHOTS GALLERY (DYNAMIC 6-LANGUAGE STORE CAPTURES)
        =================================================================== -->
   <section id="screenshots" class="py-24 border-t border-cyan-500/15">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <h2 class="text-xs uppercase tracking-widest font-bold text-cyan-400">OYUN İÇİ VİTRİN</h2>
-        <h3 class="text-3xl sm:text-4xl font-extrabold text-white">5 Yıldızlı Oyun İçi Deneyim</h3>
-        <p class="text-slate-300 text-base">
+        <h2 class="text-xs uppercase tracking-widest font-bold text-cyan-400" data-i18n="gallery_tag">OYUN İÇİ VİTRİN</h2>
+        <h3 class="text-3xl sm:text-4xl font-extrabold text-white" data-i18n="gallery_title">5 Yıldızlı Oyun İçi Deneyim</h3>
+        <p class="text-slate-300 text-base" data-i18n="gallery_desc">
           MultiMind Kids'in resmi mağaza ekran görüntüleri: Çocukların görsel algısını destekleyen pastel renkler, büyük dokunma alanları ve pedagojik mini oyunlar.
         </p>
       </div>
@@ -164,9 +197,9 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div class="glass-card rounded-3xl p-3 border border-cyan-400/30 overflow-hidden group">
             <div class="relative rounded-2xl overflow-hidden aspect-video">
-              <img src="../../assets/images/multimind/store/store1_TR.png" alt="MultiMind Ekran Görüntüsü 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <img id="store-screen-1" src="../../assets/images/multimind/store/_TR/store1_TR.png" alt="MultiMind Store Screenshot 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               <div class="absolute inset-0 bg-gradient-to-t from-[#050E17]/80 via-transparent to-transparent flex items-end p-5">
-                <span class="text-sm font-bold text-white bg-cyan-950/90 px-3.5 py-1.5 rounded-xl border border-cyan-400/40">
+                <span class="text-sm font-bold text-white bg-cyan-950/90 px-3.5 py-1.5 rounded-xl border border-cyan-400/40" data-i18n="gallery_caption_1">
                   Görsel & Bilişsel Gelişim
                 </span>
               </div>
@@ -175,9 +208,9 @@
 
           <div class="glass-card rounded-3xl p-3 border border-cyan-400/30 overflow-hidden group">
             <div class="relative rounded-2xl overflow-hidden aspect-video">
-              <img src="../../assets/images/multimind/store/store2_TR.png" alt="MultiMind Ekran Görüntüsü 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <img id="store-screen-2" src="../../assets/images/multimind/store/_TR/store2_TR.png" alt="MultiMind Store Screenshot 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               <div class="absolute inset-0 bg-gradient-to-t from-[#050E17]/80 via-transparent to-transparent flex items-end p-5">
-                <span class="text-sm font-bold text-white bg-cyan-950/90 px-3.5 py-1.5 rounded-xl border border-cyan-400/40">
+                <span class="text-sm font-bold text-white bg-cyan-950/90 px-3.5 py-1.5 rounded-xl border border-cyan-400/40" data-i18n="gallery_caption_2">
                   Dokunsal Sıralama & Koordinasyon
                 </span>
               </div>
@@ -189,9 +222,9 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="glass-card rounded-3xl p-3 border border-cyan-400/25 overflow-hidden group">
             <div class="relative rounded-2xl overflow-hidden aspect-video">
-              <img src="../../assets/images/multimind/store/store3_TR.jpg" alt="MultiMind Ekran Görüntüsü 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <img id="store-screen-3" src="../../assets/images/multimind/store/_TR/store3_TR.jpg" alt="MultiMind Store Screenshot 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               <div class="absolute inset-0 bg-gradient-to-t from-[#050E17]/80 via-transparent to-transparent flex items-end p-4">
-                <span class="text-xs font-bold text-white bg-cyan-950/90 px-3 py-1 rounded-lg border border-cyan-400/30">
+                <span class="text-xs font-bold text-white bg-cyan-950/90 px-3 py-1 rounded-lg border border-cyan-400/30" data-i18n="gallery_caption_3">
                   Mantık & Matematiksel Denge
                 </span>
               </div>
@@ -200,9 +233,9 @@
 
           <div class="glass-card rounded-3xl p-3 border border-cyan-400/25 overflow-hidden group">
             <div class="relative rounded-2xl overflow-hidden aspect-video">
-              <img src="../../assets/images/multimind/store/store4_TR.png" alt="MultiMind Ekran Görüntüsü 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <img id="store-screen-4" src="../../assets/images/multimind/store/_TR/store4_TR.png" alt="MultiMind Store Screenshot 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               <div class="absolute inset-0 bg-gradient-to-t from-[#050E17]/80 via-transparent to-transparent flex items-end p-4">
-                <span class="text-xs font-bold text-white bg-cyan-950/90 px-3 py-1 rounded-lg border border-cyan-400/30">
+                <span class="text-xs font-bold text-white bg-cyan-950/90 px-3 py-1 rounded-lg border border-cyan-400/30" data-i18n="gallery_caption_4">
                   Silüet & Mekansal Algı
                 </span>
               </div>
@@ -211,9 +244,9 @@
 
           <div class="glass-card rounded-3xl p-3 border border-cyan-400/25 overflow-hidden group">
             <div class="relative rounded-2xl overflow-hidden aspect-video">
-              <img src="../../assets/images/multimind/store/store5_TR.jpg" alt="MultiMind Ekran Görüntüsü 5" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <img id="store-screen-5" src="../../assets/images/multimind/store/_TR/store5_TR.jpg" alt="MultiMind Store Screenshot 5" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               <div class="absolute inset-0 bg-gradient-to-t from-[#050E17]/80 via-transparent to-transparent flex items-end p-4">
-                <span class="text-xs font-bold text-white bg-cyan-950/90 px-3 py-1 rounded-lg border border-cyan-400/30">
+                <span class="text-xs font-bold text-white bg-cyan-950/90 px-3 py-1 rounded-lg border border-cyan-400/30" data-i18n="gallery_caption_5">
                   Ritim & Odaklanma Egzersizleri
                 </span>
               </div>
@@ -356,6 +389,8 @@
     </div>
   </footer>
 
+  <!-- Scripts -->
+  <script src="../../assets/js/i18n.js"></script>
   <script src="../../assets/js/main.js"></script>
 </body>
 </html>
