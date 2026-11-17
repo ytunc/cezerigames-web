@@ -14,6 +14,11 @@
   <meta property="og:description" content="Geleceğin zihinleri için akıllı, güvenli ve pedagojik mobil oyunlar.">
   <meta property="og:image" content="./assets/images/logo.png">
 
+  <!-- Preconnect resource hints -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="./assets/images/favicon.png">
 
@@ -60,7 +65,7 @@
       
       <!-- Brand Logo (Original Studio Emblem + Typography) -->
       <a href="./index.html" class="flex items-center gap-3.5 group">
-        <img src="./assets/images/logo.png" alt="Cezeri Games Logo" class="h-12 w-12 object-contain drop-shadow-[0_0_14px_rgba(34,211,238,0.45)] group-hover:scale-105 group-hover:rotate-3 transition-transform duration-300">
+        <img src="./assets/images/logo.png" alt="Cezeri Games Logo" width="48" height="48" class="h-12 w-12 object-contain drop-shadow-[0_0_14px_rgba(34,211,238,0.45)] group-hover:scale-105 group-hover:rotate-3 transition-transform duration-300">
         <div class="flex flex-col">
           <span class="font-black text-xl tracking-wider text-white leading-tight font-['Outfit']">CEZERI <span class="text-gradient">GAMES</span></span>
           <span class="text-[9px] font-bold tracking-[0.25em] text-cyan-400/90 uppercase">Mobile Game Studio</span>
@@ -224,7 +229,7 @@
             <div class="relative glass-card rounded-3xl p-6 sm:p-7 tilt-card shadow-2xl border border-cyan-400/25">
               
               <div class="flex items-center gap-4 mb-5">
-                <img src="./assets/images/multimind/icon.jpg" alt="MultiMind Kids Game Icon" class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl shadow-lg ring-2 ring-cyan-400/50 object-cover">
+                <img src="./assets/images/multimind/icon.jpg" alt="MultiMind Kids Game Icon" width="80" height="80" class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl shadow-lg ring-2 ring-cyan-400/50 object-cover">
                 <div>
                   <div class="flex items-center gap-2">
                     <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30" data-i18n="flagship_badge">FLAGSHIP OYUN</span>
@@ -236,7 +241,7 @@
 
               <!-- DYNAMIC Official Feature Banner for Selected Language -->
               <div class="relative rounded-2xl overflow-hidden mb-5 border border-cyan-500/25 group shadow-lg">
-                <img id="store-hero-banner" src="./assets/images/multimind/store/_TR/turkish_1024x500.png" alt="MultiMind Feature Graphic" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                <img id="store-hero-banner" src="./assets/images/multimind/store/_TR/turkish_1024x500.png" alt="MultiMind Feature Graphic" width="1024" height="500" fetchpriority="high" decoding="async" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500">
                 <div class="absolute inset-0 bg-gradient-to-t from-[#050E17]/80 via-transparent to-transparent"></div>
                 <div class="absolute bottom-2.5 left-3 right-3 flex justify-between items-center">
                   <span class="text-xs font-bold text-white bg-[#050E17]/80 backdrop-blur-md px-3 py-1 rounded-lg border border-cyan-500/30" data-i18n="banner_badge">
@@ -303,14 +308,14 @@
         <div class="glass-card rounded-3xl p-6 flex flex-col justify-between group border border-cyan-500/35">
           <div>
             <div class="relative rounded-2xl overflow-hidden mb-6 aspect-video border border-cyan-500/20">
-              <img id="store-catalog-img" src="./assets/images/multimind/store/_TR/store1_TR.png" alt="MultiMind Kids" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <img id="store-catalog-img" src="./assets/images/multimind/store/_TR/store1_TR.png" alt="MultiMind Kids" width="1280" height="720" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               <div class="absolute top-3 left-3 bg-cyan-600/90 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-lg" data-i18n="game_status_live">
                 YAYINDA
               </div>
             </div>
             
             <div class="flex items-center gap-3 mb-3">
-              <img src="./assets/images/multimind/icon.jpg" alt="Icon" class="w-12 h-12 rounded-xl object-cover ring-1 ring-cyan-400/40">
+              <img src="./assets/images/multimind/icon.jpg" alt="Icon" width="48" height="48" loading="lazy" decoding="async" class="w-12 h-12 rounded-xl object-cover ring-1 ring-cyan-400/40">
               <div>
                 <h4 class="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors">MultiMind Kids: Brain Games</h4>
                 <p class="text-xs text-cyan-200/70" data-i18n="flagship_sub">Okul Öncesi & İlkokul Zeka Gelişimi</p>
@@ -417,7 +422,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div class="glass-card rounded-3xl p-3 border border-cyan-400/30 overflow-hidden group">
             <div class="relative rounded-2xl overflow-hidden aspect-video">
-              <img id="store-screen-1" src="./assets/images/multimind/store/_TR/store1_TR.png" alt="MultiMind Store Screenshot 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <img id="store-screen-1" src="./assets/images/multimind/store/_TR/store1_TR.png" alt="MultiMind Store Screenshot 1" width="1280" height="720" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               <div class="absolute inset-0 bg-gradient-to-t from-[#050E17]/80 via-transparent to-transparent flex items-end p-5">
                 <span class="text-sm font-bold text-white bg-cyan-950/90 px-3.5 py-1.5 rounded-xl border border-cyan-400/40" data-i18n="gallery_caption_1">
                   Görsel Zeka & Bilişsel Harita
@@ -428,7 +433,7 @@
 
           <div class="glass-card rounded-3xl p-3 border border-cyan-400/30 overflow-hidden group">
             <div class="relative rounded-2xl overflow-hidden aspect-video">
-              <img id="store-screen-2" src="./assets/images/multimind/store/_TR/store2_TR.png" alt="MultiMind Store Screenshot 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <img id="store-screen-2" src="./assets/images/multimind/store/_TR/store2_TR.png" alt="MultiMind Store Screenshot 2" width="1280" height="720" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               <div class="absolute inset-0 bg-gradient-to-t from-[#050E17]/80 via-transparent to-transparent flex items-end p-5">
                 <span class="text-sm font-bold text-white bg-cyan-950/90 px-3.5 py-1.5 rounded-xl border border-cyan-400/40" data-i18n="gallery_caption_2">
                   Dokunsal Sıralama & Motor Beceriler
@@ -442,7 +447,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="glass-card rounded-3xl p-3 border border-cyan-400/20 overflow-hidden group">
             <div class="relative rounded-2xl overflow-hidden aspect-video">
-              <img id="store-screen-3" src="./assets/images/multimind/store/_TR/store3_TR.jpg" alt="MultiMind Store Screenshot 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <img id="store-screen-3" src="./assets/images/multimind/store/_TR/store3_TR.jpg" alt="MultiMind Store Screenshot 3" width="1280" height="720" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               <div class="absolute inset-0 bg-gradient-to-t from-[#050E17]/80 via-transparent to-transparent flex items-end p-4">
                 <span class="text-xs font-bold text-white bg-cyan-950/90 px-3 py-1 rounded-lg border border-cyan-400/30" data-i18n="gallery_caption_3">
                   Mantık & Matematiksel Denge
@@ -453,7 +458,7 @@
 
           <div class="glass-card rounded-3xl p-3 border border-cyan-400/20 overflow-hidden group">
             <div class="relative rounded-2xl overflow-hidden aspect-video">
-              <img id="store-screen-4" src="./assets/images/multimind/store/_TR/store4_TR.png" alt="MultiMind Store Screenshot 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <img id="store-screen-4" src="./assets/images/multimind/store/_TR/store4_TR.png" alt="MultiMind Store Screenshot 4" width="1280" height="720" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               <div class="absolute inset-0 bg-gradient-to-t from-[#050E17]/80 via-transparent to-transparent flex items-end p-4">
                 <span class="text-xs font-bold text-white bg-cyan-950/90 px-3 py-1 rounded-lg border border-cyan-400/30" data-i18n="gallery_caption_4">
                   Şekil & Silüet Eşleştirme
@@ -464,7 +469,7 @@
 
           <div class="glass-card rounded-3xl p-3 border border-cyan-400/20 overflow-hidden group">
             <div class="relative rounded-2xl overflow-hidden aspect-video">
-              <img id="store-screen-5" src="./assets/images/multimind/store/_TR/store5_TR.jpg" alt="MultiMind Store Screenshot 5" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <img id="store-screen-5" src="./assets/images/multimind/store/_TR/store5_TR.jpg" alt="MultiMind Store Screenshot 5" width="1280" height="720" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               <div class="absolute inset-0 bg-gradient-to-t from-[#050E17]/80 via-transparent to-transparent flex items-end p-4">
                 <span class="text-xs font-bold text-white bg-cyan-950/90 px-3 py-1 rounded-lg border border-cyan-400/30" data-i18n="gallery_caption_5">
                   Odaklanma & Ritim Alıştırmaları
@@ -747,7 +752,7 @@
         
         <div class="md:col-span-2 space-y-4">
           <div class="flex items-center gap-3">
-            <img src="./assets/images/logo.png" alt="Cezeri Games" class="h-10 w-10 object-contain drop-shadow-[0_0_10px_rgba(34,211,238,0.4)]">
+            <img src="./assets/images/logo.png" alt="Cezeri Games" width="40" height="40" loading="lazy" decoding="async" class="h-10 w-10 object-contain drop-shadow-[0_0_10px_rgba(34,211,238,0.4)]">
             <span class="font-extrabold text-lg tracking-wider text-white">CEZERI <span class="text-cyan-400">GAMES</span></span>
           </div>
           <p class="text-xs text-slate-400 max-w-sm leading-relaxed" data-i18n="footer_desc">

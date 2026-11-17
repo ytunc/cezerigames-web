@@ -958,17 +958,35 @@ const I18N_DATA = {
 
 // Global Language Controller
 function getSavedLanguage() {
+  // 1. Explicit URL parameter: ?lang=EN
+  const urlParams = new URLSearchParams(window.location.search);
+  const langParam = urlParams.get('lang');
+  if (langParam && I18N_DATA[langParam.toUpperCase()]) {
+    return langParam.toUpperCase();
+  }
+
+  // 2. Previously chosen language in localStorage
   const saved = localStorage.getItem('cezeri_lang');
   if (saved && I18N_DATA[saved]) return saved;
   
-  // Auto-detect browser language
-  const navLang = (navigator.language || navigator.userLanguage || '').slice(0, 2).toUpperCase();
-  if (navLang === 'TR') return 'TR';
-  if (navLang === 'DE') return 'DE';
-  if (navLang === 'FR') return 'FR';
-  if (navLang === 'ES') return 'ES';
-  if (navLang === 'PT') return 'PR';
-  return 'TR'; // Default to TR
+  // 3. Automatic Device / Browser Language Detection (navigator.languages)
+  const candidateLangs = navigator.languages && navigator.languages.length 
+    ? navigator.languages 
+    : [navigator.language || navigator.userLanguage || ''];
+
+  for (const raw of candidateLangs) {
+    if (!raw) continue;
+    const code = raw.slice(0, 2).toLowerCase();
+    if (code === 'tr') return 'TR';
+    if (code === 'de') return 'DE';
+    if (code === 'fr') return 'FR';
+    if (code === 'es') return 'ES';
+    if (code === 'pt') return 'PR';
+    if (code === 'en') return 'EN';
+  }
+
+  // Default fallback for international visitors
+  return 'EN';
 }
 
 function setLanguage(langCode) {
