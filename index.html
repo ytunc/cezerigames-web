@@ -12,10 +12,10 @@
   <meta property="og:url" content="https://cezerigames.com/">
   <meta property="og:title" content="Cezeri Games | Mobil Oyun Stüdyosu">
   <meta property="og:description" content="Geleceğin zihinleri için akıllı, güvenli ve pedagojik mobil oyunlar.">
-  <meta property="og:image" content="https://cezerigames.com/assets/images/multimind/icon.jpg">
+  <meta property="og:image" content="./assets/images/multimind/icon.jpg">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -43,8 +43,8 @@
     }
   </script>
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <!-- Custom CSS (Relative Path) -->
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body class="bg-[#050E17] text-slate-100 antialiased selection:bg-cyan-500 selection:text-white">
 
@@ -59,26 +59,26 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
       <!-- Brand Logo -->
-      <a href="/" class="flex items-center gap-3 group">
-        <img src="/assets/images/logo.svg" alt="Cezeri Games Logo" class="h-10 w-auto group-hover:scale-105 transition-transform duration-300">
+      <a href="./index.html" class="flex items-center gap-3 group">
+        <img src="./assets/images/logo.svg" alt="Cezeri Games Logo" class="h-10 w-auto group-hover:scale-105 transition-transform duration-300">
       </a>
 
       <!-- Desktop Menu Links -->
       <nav class="hidden md:flex items-center gap-8 font-medium text-slate-300 text-sm tracking-wide">
         <a href="#games" class="hover:text-cyan-300 transition-colors">Oyunlarımız</a>
-        <a href="/games/multimind/" class="text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5 transition-colors font-semibold">
+        <a href="./games/multimind/index.html" class="text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5 transition-colors font-semibold">
           <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
           MultiMind Kids
         </a>
         <a href="#features" class="hover:text-cyan-300 transition-colors">Vizyonumuz</a>
-        <a href="/blog/" class="hover:text-cyan-300 transition-colors">Yazılar & Blog</a>
+        <a href="./blog/index.html" class="hover:text-cyan-300 transition-colors">Yazılar & Blog</a>
         <a href="#about" class="hover:text-cyan-300 transition-colors">Hakkımızda</a>
         <a href="#contact" class="hover:text-cyan-300 transition-colors">İletişim</a>
       </nav>
 
       <!-- Store / CTA Action Button -->
       <div class="hidden md:flex items-center gap-4">
-        <a href="/games/multimind/" class="btn-glow px-5 py-2.5 rounded-xl font-bold text-sm text-white flex items-center gap-2">
+        <a href="./games/multimind/index.html" class="btn-glow px-5 py-2.5 rounded-xl font-bold text-sm text-white flex items-center gap-2">
           <span>MultiMind'ı Keşfet</span>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </a>
@@ -96,12 +96,12 @@
     <!-- Mobile Drawer -->
     <div id="mobile-menu" class="hidden md:hidden flex-col px-6 pt-2 pb-6 space-y-4 bg-[#091A2A]/95 backdrop-blur-xl border-b border-cyan-500/20 text-base">
       <a href="#games" class="text-slate-300 hover:text-cyan-300 py-1">Oyunlarımız</a>
-      <a href="/games/multimind/" class="text-cyan-400 font-semibold py-1">MultiMind Kids: Brain Games</a>
+      <a href="./games/multimind/index.html" class="text-cyan-400 font-semibold py-1">MultiMind Kids: Brain Games</a>
       <a href="#features" class="text-slate-300 hover:text-cyan-300 py-1">Vizyonumuz</a>
-      <a href="/blog/" class="text-slate-300 hover:text-cyan-300 py-1">Yazılar & Blog</a>
+      <a href="./blog/index.html" class="text-slate-300 hover:text-cyan-300 py-1">Yazılar & Blog</a>
       <a href="#about" class="text-slate-300 hover:text-cyan-300 py-1">Hakkımızda</a>
       <a href="#contact" class="text-slate-300 hover:text-cyan-300 py-1">İletişim & Destek</a>
-      <a href="/games/multimind/" class="btn-glow text-center py-2.5 rounded-xl text-white font-bold mt-2">MultiMind'ı İncele</a>
+      <a href="./games/multimind/index.html" class="btn-glow text-center py-2.5 rounded-xl text-white font-bold mt-2">MultiMind'ı İncele</a>
     </div>
   </header>
 
@@ -130,7 +130,7 @@
           </p>
 
           <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-3">
-            <a href="/games/multimind/" class="btn-glow w-full sm:w-auto px-8 py-4 rounded-2xl font-bold text-white shadow-xl flex items-center justify-center gap-3 text-base">
+            <a href="./games/multimind/index.html" class="btn-glow w-full sm:w-auto px-8 py-4 rounded-2xl font-bold text-white shadow-xl flex items-center justify-center gap-3 text-base">
               <span>MultiMind Kids'i İncele</span>
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
             </a>
@@ -162,14 +162,14 @@
         <div class="lg:col-span-5 relative flex justify-center">
           <div class="relative w-full max-w-md">
             
-            <!-- Glowing back drop (Turquoise & Sky Blue) -->
+            <!-- Glowing backdrop -->
             <div class="absolute -inset-2 bg-gradient-to-r from-cyan-500 via-sky-400 to-teal-400 rounded-3xl blur-2xl opacity-40 animate-glow-pulse"></div>
             
             <!-- Main Hero Card -->
             <div class="relative glass-card rounded-3xl p-6 sm:p-8 tilt-card shadow-2xl border border-cyan-400/25">
               
               <div class="flex items-center gap-4 mb-6">
-                <img src="/assets/images/multimind/icon.jpg" alt="MultiMind Kids Game Icon" class="w-20 h-20 rounded-2xl shadow-lg ring-2 ring-cyan-400/50 object-cover">
+                <img src="./assets/images/multimind/icon.jpg" alt="MultiMind Kids Game Icon" class="w-20 h-20 rounded-2xl shadow-lg ring-2 ring-cyan-400/50 object-cover">
                 <div>
                   <div class="flex items-center gap-2">
                     <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">FLAGSHIP OYUN</span>
@@ -181,7 +181,7 @@
 
               <!-- Preview Gameplay Banner -->
               <div class="relative rounded-2xl overflow-hidden mb-5 border border-cyan-500/20 group">
-                <img src="/assets/images/multimind/bg_preview1.jpg" alt="MultiMind Gameplay" class="w-full h-44 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                <img src="./assets/images/multimind/bg_preview1.jpg" alt="MultiMind Gameplay" class="w-full h-44 object-cover transform group-hover:scale-105 transition-transform duration-500">
                 <div class="absolute inset-0 bg-gradient-to-t from-[#050E17] via-transparent to-transparent"></div>
                 <div class="absolute bottom-3 left-3 right-3 flex justify-between items-end">
                   <span class="text-xs font-medium bg-[#050E17]/80 backdrop-blur-md px-3 py-1 rounded-lg text-cyan-100 border border-cyan-500/20">
@@ -208,7 +208,7 @@
               </div>
 
               <!-- Store CTA -->
-              <a href="/games/multimind/" class="w-full py-3.5 rounded-xl btn-glow text-white font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-lg">
+              <a href="./games/multimind/index.html" class="w-full py-3.5 rounded-xl btn-glow text-white font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-lg">
                 <span>Oyunu Detaylı İncele</span>
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
               </a>
@@ -242,14 +242,14 @@
         <div class="glass-card rounded-3xl p-6 flex flex-col justify-between group border border-cyan-500/35">
           <div>
             <div class="relative rounded-2xl overflow-hidden mb-6 aspect-video">
-              <img src="/assets/images/multimind/bg_preview2.jpg" alt="MultiMind Kids" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <img src="./assets/images/multimind/bg_preview2.jpg" alt="MultiMind Kids" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               <div class="absolute top-3 left-3 bg-cyan-600/90 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-lg">
                 YAYINDA
               </div>
             </div>
             
             <div class="flex items-center gap-3 mb-3">
-              <img src="/assets/images/multimind/icon.jpg" alt="Icon" class="w-12 h-12 rounded-xl object-cover ring-1 ring-cyan-400/40">
+              <img src="./assets/images/multimind/icon.jpg" alt="Icon" class="w-12 h-12 rounded-xl object-cover ring-1 ring-cyan-400/40">
               <div>
                 <h4 class="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors">MultiMind Kids: Brain Games</h4>
                 <p class="text-xs text-cyan-200/70">Okul Öncesi & İlkokul Zeka Gelişimi</p>
@@ -263,7 +263,7 @@
 
           <div class="pt-4 border-t border-cyan-500/15 flex items-center justify-between">
             <span class="text-xs font-semibold text-slate-400">iOS & Android</span>
-            <a href="/games/multimind/" class="text-sm font-bold text-cyan-400 hover:text-cyan-300 inline-flex items-center gap-1">
+            <a href="./games/multimind/index.html" class="text-sm font-bold text-cyan-400 hover:text-cyan-300 inline-flex items-center gap-1">
               İncele & İndir &rarr;
             </a>
           </div>
@@ -395,7 +395,7 @@
           <h2 class="text-xs uppercase tracking-widest font-bold text-cyan-400 mb-2">BİLGİ & İÇERİK MERKEZİ</h2>
           <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Ebeveynler ve Geliştiriciler İçin Yazılar</h3>
         </div>
-        <a href="/blog/" class="btn-glow px-6 py-2.5 rounded-xl text-sm font-bold text-white inline-flex items-center gap-2 self-start md:self-auto">
+        <a href="./blog/index.html" class="btn-glow px-6 py-2.5 rounded-xl text-sm font-bold text-white inline-flex items-center gap-2 self-start md:self-auto">
           <span>Tüm Yazıları Gör</span>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </a>
@@ -412,7 +412,7 @@
             </div>
             
             <h4 class="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors mb-3">
-              <a href="/blog/coklu-zeka-kurami/">Çoklu Zeka Kuramı Nedir ve Oyunlarla Nasıl Desteklenir?</a>
+              <a href="./blog/coklu-zeka-kurami/index.html">Çoklu Zeka Kuramı Nedir ve Oyunlarla Nasıl Desteklenir?</a>
             </h4>
             
             <p class="text-slate-300 text-sm leading-relaxed mb-6">
@@ -422,7 +422,7 @@
 
           <div class="pt-4 border-t border-cyan-500/15 flex items-center justify-between text-xs text-slate-400">
             <span>Cezeri Games Araştırma Ekibi</span>
-            <a href="/blog/coklu-zeka-kurami/" class="text-cyan-400 font-bold group-hover:underline">Devamını Oku &rarr;</a>
+            <a href="./blog/coklu-zeka-kurami/index.html" class="text-cyan-400 font-bold group-hover:underline">Devamını Oku &rarr;</a>
           </div>
         </article>
 
@@ -435,7 +435,7 @@
             </div>
             
             <h4 class="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors mb-3">
-              <a href="/blog/">Bilinçli Ekran Süresi: Pasif İzleme ile Aktif Etkileşim Arasındaki Fark</a>
+              <a href="./blog/index.html">Bilinçli Ekran Süresi: Pasif İzleme ile Aktif Etkileşim Arasındaki Fark</a>
             </h4>
             
             <p class="text-slate-300 text-sm leading-relaxed mb-6">
@@ -445,7 +445,7 @@
 
           <div class="pt-4 border-t border-cyan-500/15 flex items-center justify-between text-xs text-slate-400">
             <span>Çocuk Gelişimi Notları</span>
-            <a href="/blog/" class="text-cyan-400 font-semibold group-hover:underline">Devamını Oku &rarr;</a>
+            <a href="./blog/index.html" class="text-cyan-400 font-semibold group-hover:underline">Devamını Oku &rarr;</a>
           </div>
         </article>
 
@@ -458,7 +458,7 @@
             </div>
             
             <h4 class="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors mb-3">
-              <a href="/blog/">İsmail El-Cezeri'nin Mekanik Dünyasından Dijital Oyunlara İlham</a>
+              <a href="./blog/index.html">İsmail El-Cezeri'nin Mekanik Dünyasından Dijital Oyunlara İlham</a>
             </h4>
             
             <p class="text-slate-300 text-sm leading-relaxed mb-6">
@@ -468,7 +468,7 @@
 
           <div class="pt-4 border-t border-cyan-500/15 flex items-center justify-between text-xs text-slate-400">
             <span>Stüdyo Hikayeleri</span>
-            <a href="/blog/" class="text-cyan-400 font-semibold group-hover:underline">Devamını Oku &rarr;</a>
+            <a href="./blog/index.html" class="text-cyan-400 font-semibold group-hover:underline">Devamını Oku &rarr;</a>
           </div>
         </article>
 
@@ -589,7 +589,7 @@
       <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
         
         <div class="md:col-span-2 space-y-4">
-          <img src="/assets/images/logo.svg" alt="Cezeri Games" class="h-9 w-auto">
+          <img src="./assets/images/logo.svg" alt="Cezeri Games" class="h-9 w-auto">
           <p class="text-xs text-slate-400 max-w-sm leading-relaxed">
             Cezeri Games, çocuklar için çoklu zeka odaklı eğitici ve eğlenceli oyunlar üreten bağımsız mobil oyun stüdyosudur.
           </p>
@@ -601,10 +601,10 @@
         <div>
           <h5 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Hızlı Menü</h5>
           <ul class="space-y-2 text-xs">
-            <li><a href="/" class="hover:text-cyan-300 transition-colors">Ana Sayfa</a></li>
+            <li><a href="./index.html" class="hover:text-cyan-300 transition-colors">Ana Sayfa</a></li>
             <li><a href="#games" class="hover:text-cyan-300 transition-colors">Oyunlarımız</a></li>
-            <li><a href="/games/multimind/" class="text-cyan-400 hover:text-cyan-300 font-semibold">MultiMind Kids</a></li>
-            <li><a href="/blog/" class="hover:text-cyan-300 transition-colors">Blog & Rehberler</a></li>
+            <li><a href="./games/multimind/index.html" class="text-cyan-400 hover:text-cyan-300 font-semibold">MultiMind Kids</a></li>
+            <li><a href="./blog/index.html" class="hover:text-cyan-300 transition-colors">Blog & Rehberler</a></li>
             <li><a href="#about" class="hover:text-cyan-300 transition-colors">Hakkımızda</a></li>
             <li><a href="#contact" class="hover:text-cyan-300 transition-colors">İletişim</a></li>
           </ul>
@@ -613,9 +613,9 @@
         <div>
           <h5 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Yasal & Mağazalar</h5>
           <ul class="space-y-2 text-xs">
-            <li><a href="/privacy-policy/" class="text-slate-300 hover:text-cyan-300 transition-colors">Gizlilik Politikası (Privacy Policy)</a></li>
-            <li><a href="/terms/" class="text-slate-300 hover:text-cyan-300 transition-colors">Kullanım Şartları (Terms of Service)</a></li>
-            <li><a href="/privacy-policy/#children" class="text-slate-300 hover:text-cyan-300 transition-colors">Çocuk Güvenliği & COPPA</a></li>
+            <li><a href="./privacy-policy/index.html" class="text-slate-300 hover:text-cyan-300 transition-colors">Gizlilik Politikası (Privacy Policy)</a></li>
+            <li><a href="./terms/index.html" class="text-slate-300 hover:text-cyan-300 transition-colors">Kullanım Şartları (Terms of Service)</a></li>
+            <li><a href="./privacy-policy/index.html#children" class="text-slate-300 hover:text-cyan-300 transition-colors">Çocuk Güvenliği & COPPA</a></li>
             <li><a href="mailto:support@cezerigames.com" class="text-slate-300 hover:text-cyan-300 transition-colors">Destek Talebi</a></li>
           </ul>
         </div>
@@ -625,6 +625,6 @@
   </footer>
 
   <!-- Main JS -->
-  <script src="/assets/js/main.js"></script>
+  <script src="./assets/js/main.js"></script>
 </body>
 </html>
