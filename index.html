@@ -12,10 +12,10 @@
   <meta property="og:url" content="https://cezerigames.com/">
   <meta property="og:title" content="Cezeri Games | Mobil Oyun Stüdyosu">
   <meta property="og:description" content="Geleceğin zihinleri için akıllı, güvenli ve pedagojik mobil oyunlar.">
-  <meta property="og:image" content="./assets/images/multimind/icon.jpg">
+  <meta property="og:image" content="./assets/images/logo.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg">
+  <link rel="icon" type="image/png" href="./assets/images/favicon.png">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -54,13 +54,17 @@
 
   <!-- ===================================================================
        1. NAVIGATION
-       =================================================================== -->
+       ================================================================== -->
   <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
-      <!-- Brand Logo -->
-      <a href="./index.html" class="flex items-center gap-3 group">
-        <img src="./assets/images/logo.svg" alt="Cezeri Games Logo" class="h-10 w-auto group-hover:scale-105 transition-transform duration-300">
+      <!-- Brand Logo (Original Studio Emblem + Typography) -->
+      <a href="./index.html" class="flex items-center gap-3.5 group">
+        <img src="./assets/images/logo.png" alt="Cezeri Games Logo" class="h-12 w-12 object-contain drop-shadow-[0_0_14px_rgba(34,211,238,0.45)] group-hover:scale-105 group-hover:rotate-3 transition-transform duration-300">
+        <div class="flex flex-col">
+          <span class="font-black text-xl tracking-wider text-white leading-tight font-['Outfit']">CEZERI <span class="text-gradient">GAMES</span></span>
+          <span class="text-[9px] font-bold tracking-[0.25em] text-cyan-400/90 uppercase">Mobile Game Studio</span>
+        </div>
       </a>
 
       <!-- Desktop Menu Links -->
@@ -589,7 +593,10 @@
       <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
         
         <div class="md:col-span-2 space-y-4">
-          <img src="./assets/images/logo.svg" alt="Cezeri Games" class="h-9 w-auto">
+          <div class="flex items-center gap-3">
+            <img src="./assets/images/logo.png" alt="Cezeri Games" class="h-10 w-10 object-contain drop-shadow-[0_0_10px_rgba(34,211,238,0.4)]">
+            <span class="font-extrabold text-lg tracking-wider text-white">CEZERI <span class="text-cyan-400">GAMES</span></span>
+          </div>
           <p class="text-xs text-slate-400 max-w-sm leading-relaxed">
             Cezeri Games, çocuklar için çoklu zeka odaklı eğitici ve eğlenceli oyunlar üreten bağımsız mobil oyun stüdyosudur.
           </p>
