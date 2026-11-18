@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="meta-title">Yapay Zekâ ve Oyun Temelli Analitik: MultiMind Zekâ Gelişim Raporu | Cezeri Games</title>
+  <meta name="description" id="meta-desc" content="MultiMind'ın 8 eksenli Intelligence Radar sistemiyle çocukların oyun içi kararlarını, tepki hızlarını ve problem çözme biçimlerini nasıl bütüncül bir pedagojik gelişim raporuna dönüştürdüğümüzün rehberi.">
+
+  <link rel="icon" type="image/png" href="../../assets/images/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+
+  <style>
+    .radar-tab-active {
+      background: rgba(34, 211, 238, 0.22) !important;
+      color: #67e8f9 !important;
+      border-color: #22d3ee !important;
+      box-shadow: 0 0 16px rgba(34, 211, 238, 0.3) !important;
+    }
+  </style>
+</head>
+<body class="bg-[#050E17] text-slate-100 antialiased selection:bg-cyan-500 selection:text-white">
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="../../index.html" class="flex items-center gap-3 group">
+        <img src="../../assets/images/logo.png" alt="Cezeri Games Logo" class="h-11 w-11 object-contain drop-shadow-[0_0_12px_rgba(34,211,238,0.45)] group-hover:scale-105 transition-transform duration-300">
+        <div class="flex flex-col">
+          <span class="font-black text-lg tracking-wider text-white leading-tight font-['Outfit']">CEZERI <span class="text-gradient">GAMES</span></span>
+          <span class="text-[8px] font-bold tracking-[0.2em] text-cyan-400/90 uppercase">Mobile Game Studio</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="../../index.html" class="hover:text-cyan-300 transition-colors" id="nav-home">Ana Sayfa</a>
+        <a href="../../index.html#games" class="hover:text-cyan-300 transition-colors" id="nav-games">Oyunlarımız</a>
+        <a href="../index.html" class="hover:text-cyan-300 transition-colors" id="nav-blogs">Tüm Yazılar</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <!-- 6-Language Dropdown -->
+        <div class="relative">
+          <button id="lang-trigger" class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 border border-cyan-500/20 text-xs font-semibold transition-all">
+            <span id="current-lang-flag">🇹🇷</span>
+            <span id="current-lang-code">TR</span>
+            <svg class="w-3.5 h-3.5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div id="lang-dropdown" class="hidden absolute right-0 mt-2 w-44 rounded-2xl bg-[#091A2A] border border-cyan-500/30 shadow-2xl py-2 z-50 backdrop-blur-xl">
+            <button class="lang-select-opt w-full flex items-center gap-3 px-3.5 py-2 text-xs hover:bg-cyan-500/15 text-left transition-colors" data-lang="tr"><span>🇹🇷</span> <span>Türkçe (TR)</span></button>
+            <button class="lang-select-opt w-full flex items-center gap-3 px-3.5 py-2 text-xs hover:bg-cyan-500/15 text-left transition-colors" data-lang="en"><span>🇬🇧</span> <span>English (EN)</span></button>
+            <button class="lang-select-opt w-full flex items-center gap-3 px-3.5 py-2 text-xs hover:bg-cyan-500/15 text-left transition-colors" data-lang="de"><span>🇩🇪</span> <span>Deutsch (DE)</span></button>
+            <button class="lang-select-opt w-full flex items-center gap-3 px-3.5 py-2 text-xs hover:bg-cyan-500/15 text-left transition-colors" data-lang="fr"><span>🇫🇷</span> <span>Français (FR)</span></button>
+            <button class="lang-select-opt w-full flex items-center gap-3 px-3.5 py-2 text-xs hover:bg-cyan-500/15 text-left transition-colors" data-lang="es"><span>🇪🇸</span> <span>Español (ES)</span></button>
+            <button class="lang-select-opt w-full flex items-center gap-3 px-3.5 py-2 text-xs hover:bg-cyan-500/15 text-left transition-colors" data-lang="pt"><span>🇵🇹</span> <span>Português (PT)</span></button>
+          </div>
+        </div>
+
+        <a href="../index.html" class="text-xs font-semibold text-slate-300 hover:text-cyan-300 flex items-center gap-1.5" id="nav-back-link">
+          &larr; <span id="nav-back-text">Tüm Yazılara Dön</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="pt-36 pb-12 md:pt-44 md:pb-16 relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold badge-tag border border-cyan-400/30 bg-cyan-500/10 text-cyan-300" id="hero-badge">
+        ✨ YENİ • GELİŞİM ANALİTİĞİ & 8 BOYUTLU RADAR
+      </div>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight font-['Outfit']" id="hero-title">
+        Yapay Zekâ ve Oyun İçi Analitik: MultiMind Zekâ Gelişim Raporu (Intelligence Radar) Nasıl Çalışır?
+      </h1>
+      <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed" id="hero-desc">
+        Geleneksel sınavların ve tek boyutlu puanların ötesine geçin! Bir çocuğun oyun oynarken yaptığı mikro kararları 8 boyutlu pedagojik radar haritasına ve ebeveyn rehberine dönüştüren sibernetik altyapımızın perde arkası.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-4 text-xs text-slate-400 pt-2 border-t border-cyan-500/15 max-w-md mx-auto">
+        <span class="flex items-center gap-1 text-cyan-400 font-semibold" id="hero-read-time">⏱️ 6 dk okuma</span>
+        <span>•</span>
+        <span id="hero-author">Cezeri Games Pedagoji & Mühendislik Laboratuvarı</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Article Body -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-28">
+
+    <!-- Interactive Intelligence Radar Report Centerpiece (Matching In-Game UserProfile) -->
+    <section class="mb-20">
+      <div class="glass-card rounded-3xl p-6 sm:p-10 border-2 border-cyan-400/40 shadow-[0_0_50px_rgba(34,211,238,0.2)] bg-[#071526]/90 relative overflow-hidden">
+        <div class="absolute -top-16 -right-16 w-48 h-48 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <!-- In-Game Header Look -->
+        <div class="text-center max-w-2xl mx-auto mb-8 space-y-2">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-widest text-cyan-300 bg-cyan-500/15 border border-cyan-400/30" id="card-tag">
+            MULTIMIND KIDS • USER STATISTIC REPORT
+          </div>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-white font-['Outfit'] tracking-wide" id="card-title">
+            ZEKA GELİŞİM RAPORU
+          </h2>
+          <p class="text-slate-300 text-xs sm:text-sm font-medium" id="card-subtitle">
+            Çocuğunuzun oyunlardaki performansı ve çoklu zekâ alanlarındaki gelişim haritası
+          </p>
+        </div>
+
+        <!-- 2-Column Responsive Layout: Left Radar, Right Parent Report -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <!-- Left Column: 8-Axis Animated Radar Chart -->
+          <div class="lg:col-span-6 flex flex-col items-center justify-center">
+            <div id="full-radar-widget" class="w-full max-w-[500px]"></div>
+          </div>
+
+          <!-- Right Column: Live Parent Report & Pedagogical Guidance -->
+          <div class="lg:col-span-6 space-y-5">
+            <div class="glass-card rounded-2xl p-6 border border-cyan-500/25 bg-slate-900/70 space-y-4">
+              <div class="flex items-center justify-between border-b border-cyan-500/20 pb-3">
+                <span class="text-xs font-bold text-cyan-400 flex items-center gap-2">
+                  <span>📊</span> <span id="report-profile-name">Can (Matematiksel & Mekânsal)</span>
+                </span>
+                <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] font-extrabold" id="report-status-badge">
+                  AKTİF GELİŞİM
+                </span>
+              </div>
+
+              <div class="space-y-3">
+                <h3 class="text-lg font-bold text-white flex items-center gap-2" id="report-parent-greeting">
+                  <span>✉️</span> <span>Sevgili Ebeveyn,</span>
+                </h3>
+                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" id="report-parent-body">
+                  Geleneksel tek tip testlerin aksine çocuğunuzun zekâsı tek bir sayıya indirgenemez. Çoklu Zekâ Kuramı doğrultusunda oyun içi 8 eksende toplanan veriler, çocuğunuzun doğal öğrenme kanalını açığa çıkarmaktadır.
+                </p>
+              </div>
+
+              <!-- Dominant Area -->
+              <div class="p-3.5 rounded-xl bg-cyan-950/40 border border-cyan-500/20 space-y-1">
+                <span class="text-[11px] font-bold text-cyan-300 uppercase tracking-wider" id="report-strength-label">1. En Güçlü / Baskın Alanlar:</span>
+                <p class="text-xs text-slate-200" id="report-strength-val">Mantıksal-Matematiksel (%95) ve Görsel-Mekânsal (%88). Problem çözerken desenleri ve yönleri hızla kavrıyor.</p>
+              </div>
+
+              <!-- Growth Area -->
+              <div class="p-3.5 rounded-xl bg-purple-950/40 border border-purple-500/20 space-y-1">
+                <span class="text-[11px] font-bold text-purple-300 uppercase tracking-wider" id="report-growth-label">2. Gelişime Açık / Desteklenebilecek Yönler:</span>
+                <p class="text-xs text-slate-200" id="report-growth-val">Müziksel ve Sosyal alanlar. Ritimli oyunlar ve arkadaş ortamında işbirlikli bulmacalarla dengeli gelişim sağlanabilir.</p>
+              </div>
+
+              <!-- Home Activity Tip -->
+              <div class="p-3.5 rounded-xl bg-emerald-950/40 border border-emerald-500/20 space-y-1">
+                <span class="text-[11px] font-bold text-emerald-300 uppercase tracking-wider" id="report-tip-label">3. Evde Günlük Oyun Önerisi:</span>
+                <p class="text-xs text-slate-200" id="report-tip-val">Birlikte legolarla bir su kanalı inşa edin; geometrik blokları sayarken arkada hafif bir müzik açarak her iki alanı köprüleyin.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Deep-Dive Pedagogical Content -->
+    <div class="max-w-4xl mx-auto space-y-12 leading-relaxed">
+      
+      <!-- Section 1 -->
+      <section class="space-y-4">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white font-['Outfit'] flex items-center gap-3">
+          <span class="text-cyan-400">01.</span> <span id="article-sec1-title">Geleneksel Testlerin Sonu: 8 Eksenli Dinamik Radar Nedir?</span>
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed" id="article-sec1-p1">
+          Yüzyılı aşkın süredir uygulanan standart IQ testleri, çocukların yalnızca matematiksel ve sözel hafızalarını ölçerek milyonlarca çocuğu "yeteneksiz" veya "dikkat eksikliği olan" kategorilerine hapsediyordu. Harvard Üniversitesi profesörü Howard Gardner'ın geliştirdiği <strong>Çoklu Zekâ Kuramı</strong> bu yanılgıyı yıktı: İnsan beyni bağımsız fakat birbirini besleyen 8 farklı zekâ modülünden oluşur.
+        </p>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed" id="article-sec1-p2">
+          MultiMind Kids olarak bu kuramı durağan anketlerden çıkardık; oyun içi dokunmatik etkileşimlerle anlık beslenen <strong>canlı bir sibernetik radara (Intelligence Radar)</strong> dönüştürdük. Çocuk bir terazi dengelerken, labirent çözerken ya da bir melodiyi tamamlarken sistem onun hata payını, deneme hızını ve dokunuş kararlılığını kaydederek bu 8 eksene dağıtır.
+        </p>
+      </section>
+
+      <!-- Section 2 -->
+      <section class="space-y-4">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white font-['Outfit'] flex items-center gap-3">
+          <span class="text-cyan-400">02.</span> <span id="article-sec2-title">Oyun İçi Mikro Kararlar Pedagojik Puanlara Nasıl Dönüşür?</span>
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed" id="article-sec2-p1">
+          MultiMind oyun motorunda hiçbir hamle rastgele değildir. Bir mini oyun oynandığında sistem arkada şu 3 temel metriği hassas biçimde işler:
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+          <div class="glass-card p-5 rounded-2xl border border-cyan-500/20 space-y-2">
+            <div class="text-xl">🎯</div>
+            <h4 class="font-bold text-white text-sm" id="metric-1-title">Doğruluk Oranı (Accuracy)</h4>
+            <p class="text-xs text-slate-300" id="metric-1-desc">İlk hamlede doğru cevaba ulaşma oranı ve deneme yanılma sıklığı.</p>
+          </div>
+          <div class="glass-card p-5 rounded-2xl border border-cyan-500/20 space-y-2">
+            <div class="text-xl">⚡</div>
+            <h4 class="font-bold text-white text-sm" id="metric-2-title">Karar Hızı (Response Time)</h4>
+            <p class="text-xs text-slate-300" id="metric-2-desc">Görsel ipucunu gördükten sonra parmağın hedefe gitme süresi ve motor tereddüdü.</p>
+          </div>
+          <div class="glass-card p-5 rounded-2xl border border-cyan-500/20 space-y-2">
+            <div class="text-xl">🔄</div>
+            <h4 class="font-bold text-white text-sm" id="metric-3-title">Esneklik & Azim (Resilience)</h4>
+            <p class="text-xs text-slate-300" id="metric-3-desc">Hatalı bir hamle sonrası pes etmeden strateji değiştirme ve yeniden deneme refleksi.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3 -->
+      <section class="space-y-4">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white font-['Outfit'] flex items-center gap-3">
+          <span class="text-cyan-400">03.</span> <span id="article-sec3-title">Ebeveynler Bu Radarı Evde Nasıl Kullanmalı?</span>
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed" id="article-sec3-p1">
+          Birçok ebeveyn bu radarı gördüğünde ilk olarak "tüm eksenleri %100'e ulaştırmalı mıyım?" diye sorar. Pedagojik olarak cevap kesin bir <strong>hayırdır</strong>. Her çocuğun doğuştan gelen güçlü kanalları vardır; amaç çocuğu her alanda tek tip bir yarışa sokmak değil, güçlü olduğu kanalı kullanarak zayıf kaldığı alanları oyunla beslemektir.
+        </p>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed" id="article-sec3-p2">
+          Örneğin kinestetik (hareket) zekâsı yüksek ama matematiksel zekâsı gelişmekte olan bir çocuğa saatlerce masa başında sayı ezberletmek direnç doğurur. Ancak sayıları yere çizilen seksek kutucuklarına yazarak zıplayarak toplama yaptırdığınızda, kinestetik kanalı kullanarak matematik zekâsını hızla uyandırmış olursunuz. MultiMind'ın Intelligence Radar raporunun nihai hedefi işte bu köprüleri kurmaktır.
+        </p>
+      </section>
+
+      <!-- Call to Action Card -->
+      <div class="glass-card rounded-3xl p-8 sm:p-10 border border-cyan-500/30 text-center space-y-6 mt-16 bg-gradient-to-b from-[#091D30] to-[#040C15]">
+        <h3 class="text-2xl sm:text-3xl font-black text-white font-['Outfit']" id="cta-title">
+          Çocuğunuzun Bilişsel Haritasını Bugün Keşfedin
+        </h3>
+        <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto" id="cta-desc">
+          MultiMind Kids uygulamasını tabletinize veya telefonunuza indirin; ilk 10 oyunluk mini oturumun ardından çocuğunuzun canlı zekâ radar raporunu ücretsiz inceleyin.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 pt-2">
+          <a href="../../games/multimind/index.html" class="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-sm hover:shadow-[0_0_25px_rgba(34,211,238,0.4)] transition-all">
+            MultiMind Kids'i İncele &rarr;
+          </a>
+          <a href="../index.html" class="px-6 py-3.5 rounded-2xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 font-bold text-sm border border-cyan-500/20 transition-all">
+            Diğer Blog Yazılarını Oku
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-cyan-500/15 bg-[#030910] text-slate-400 text-sm py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+      <div class="flex items-center justify-center gap-3">
+        <img src="../../assets/images/logo.png" alt="Cezeri Games" class="h-8 w-8 object-contain">
+        <span class="font-extrabold text-base tracking-wider text-white">CEZERI <span class="text-cyan-400">GAMES</span></span>
+      </div>
+      <p class="text-xs text-slate-500">
+        &copy; <span class="current-year">2026</span> Cezeri Games. Tüm hakları saklıdır.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../../assets/js/radar-chart.js"></script>
+  <script>
+    const ARTICLE_TRANSLATIONS = {
+      tr: {
+        flag: "🇹🇷", code: "TR",
+        metaTitle: "Yapay Zekâ ve Oyun Temelli Analitik: MultiMind Zekâ Gelişim Raporu | Cezeri Games",
+        metaDesc: "MultiMind'ın 8 eksenli Intelligence Radar sistemiyle çocukların oyun içi kararlarını nasıl bütüncül bir pedagojik rapora dönüştürdüğümüzün rehberi.",
+        heroBadge: "✨ YENİ • GELİŞİM ANALİTİĞİ & 8 BOYUTLU RADAR",
+        heroTitle: "Yapay Zekâ ve Oyun İçi Analitik: MultiMind Zekâ Gelişim Raporu (Intelligence Radar) Nasıl Çalışır?",
+        heroDesc: "Geleneksel sınavların ve tek boyutlu puanların ötesine geçin! Bir çocuğun oyun oynarken yaptığı mikro kararları 8 boyutlu pedagojik radar haritasına ve ebeveyn rehberine dönüştüren sibernetik altyapımızın perde arkası.",
+        heroReadTime: "⏱️ 6 dk okuma",
+        heroAuthor: "Cezeri Games Pedagoji & Mühendislik Laboratuvarı",
+        cardTag: "MULTIMIND KIDS • USER STATISTIC REPORT",
+        cardTitle: "ZEKA GELİŞİM RAPORU",
+        cardSubtitle: "Çocuğunuzun oyunlardaki performansı ve çoklu zekâ alanlarındaki gelişim haritası",
+        navBack: "Tüm Yazılara Dön",
+        profileDetails: [
+          {
+            name: "Can (Mantıksal & Mekânsal)",
+            greeting: "Sevgili Ebeveyn,",
+            body: "Geleneksel tek tip testlerin aksine Can'ın zekâsı tek bir sayıya indirgenemez. Oyun içi 8 eksende toplanan veriler, onun desen ve geometri odaklı güçlü öğrenme kanalını açığa çıkarmaktadır.",
+            strength: "1. En Güçlü / Baskın Alanlar:",
+            strengthVal: "Mantıksal-Matematiksel (%95) ve Görsel-Mekânsal (%88). Problem çözerken desenleri ve yönleri hızla kavrıyor.",
+            growth: "2. Gelişime Açık / Desteklenebilecek Yönler:",
+            growthVal: "Müziksel ve Sosyal alanlar. Ritimli oyunlar ve arkadaş ortamında işbirlikli bulmacalarla dengeli gelişim sağlanabilir.",
+            tip: "3. Evde Günlük Oyun Önerisi:",
+            tipVal: "Birlikte legolarla bir su kanalı inşa edin; geometrik blokları sayarken arkada hafif bir müzik açarak her iki alanı köprüleyin."
+          },
+          {
+            name: "Zeynep (Sözel & Sosyal)",
+            greeting: "Sevgili Ebeveyn,",
+            body: "Zeynep'in zekâ profili yüksek empati, güçlü ifade yeteneği ve zengin hikaye kurma becerisiyle parlıyor. Oyunlarda diyalogları ve karakter duygularını anında çözümlüyor.",
+            strength: "1. En Güçlü / Baskın Alanlar:",
+            strengthVal: "Sözel-Dilsel (%95) ve Kişilerarası-Sosyal (%90). Kelime haznesi ve grup içi liderlik sezgisi çok güçlü.",
+            growth: "2. Gelişime Açık / Desteklenebilecek Yönler:",
+            growthVal: "Matematiksel mantık ve mekanik düzenekler. Sayıları hikaye kahramanlarına dönüştürerek eğlenceli hale getirebilirsiniz.",
+            tip: "3. Evde Günlük Oyun Önerisi:",
+            tipVal: "En sevdiği peluş oyuncaklarıyla bir kukla tiyatrosu kurun; biletleri birlikte numaralandırıp satarak matematik ve sosyal beceriyi harmanlayın."
+          },
+          {
+            name: "Ali (Kinestetik & Mekânsal)",
+            greeting: "Sevgili Ebeveyn,",
+            body: "Ali dünyayı dokunarak, hissederek ve inşa ederek öğrenen dinamik bir kaşif. Dokunmatik ekrandaki hassas sıvı dökme ve dilimleme oyunlarında üstün refleks gösteriyor.",
+            strength: "1. En Güçlü / Baskın Alanlar:",
+            strengthVal: "Bedensel-Kinestetik (%95) ve Görsel-Mekânsal (%85). Motor koordinasyonu ve 3D parça birleştirme yeteneği olağanüstü.",
+            growth: "2. Gelişime Açık / Desteklenebilecek Yönler:",
+            growthVal: "Sözel ifade ve uzun süre odaklanma. Hareket halindeyken öğrenmesini destekleyecek aktif oyunlar kurgulanmalıdır.",
+            tip: "3. Evde Günlük Oyun Önerisi:",
+            tipVal: "Oturma odasında minderlerden bir macera parkuru kurun; her istasyonda bir kelime kartı bularak hedefe ulaşmasını isteyin."
+          },
+          {
+            name: "Elif (Müziksel & İçsel)",
+            greeting: "Sevgili Ebeveyn,",
+            body: "Elif derin bir duygusal sezgiye, zengin iç dünyaya ve hassas ritim algısına sahip. Melodi eşleştirme ve ses örüntüsü bulmacalarında olağanüstü doğruluk sergiliyor.",
+            strength: "1. En Güçlü / Baskın Alanlar:",
+            strengthVal: "Müziksel-Ritmik (%95) ve İçsel-Bireysel (%90). Kendi duygularını tanıma ve ses harmonilerini ayırt etme gücü çok yüksek.",
+            growth: "2. Gelişime Açık / Desteklenebilecek Yönler:",
+            growthVal: "Geniş sosyal gruplarda kendini ifade etme. Bireysel oyun güvenini aşama aşama küçük arkadaş gruplarına taşımak faydalıdır.",
+            tip: "3. Evde Günlük Oyun Önerisi:",
+            tipVal: "Birlikte bir günlüğü çizimlerle ve hafif bir arka plan müziği eşliğinde doldurun; gün boyu hissettiği duyguları notalara veya renklere dökmesini isteyin."
+          },
+          {
+            name: "Mert (Doğal & Mantıksal)",
+            greeting: "Sevgili Ebeveyn,",
+            body: "Mert doğadaki canlıları, ekosistemleri ve sebep-sonuç zincirlerini büyük bir merakla inceleyen küçük bir bilim insanı. Sınıflandırma ve döngü bulmacalarında lider.",
+            strength: "1. En Güçlü / Baskın Alanlar:",
+            strengthVal: "Doğacı-Doğal (%95) ve Mantıksal-Matematiksel (%85). Kategorizasyon, hayvan/bitki habitatı eşleştirme becerisi kusursuz.",
+            growth: "2. Gelişime Açık / Desteklenebilecek Yönler:",
+            growthVal: "Müziksel duyarlılık ve sanatsal ifade. Doğa seslerini kaydedip dinleyerek ritim algısını pekiştirebilirsiniz.",
+            tip: "3. Evde Günlük Oyun Önerisi:",
+            tipVal: "Parkta yaprak ve kozalak toplayarak bir doğa koleksiyonu albümü hazırlayın; her nesnenin boyutunu ölçüp türüne göre dosyalayın."
+          }
+        ]
+      },
+      en: {
+        flag: "🇬🇧", code: "EN",
+        metaTitle: "AI & Game-Based Analytics: MultiMind Intelligence Development Report | Cezeri Games",
+        metaDesc: "A complete guide on how MultiMind's 8-axis Intelligence Radar turns in-game player decisions into an actionable pedagogical report for parents.",
+        heroBadge: "✨ NEW • DEVELOPMENT ANALYTICS & 8D RADAR",
+        heroTitle: "AI & Game-Based Analytics: How Does the MultiMind Intelligence Radar Report Work?",
+        heroDesc: "Beyond single-number IQ tests! Discover the cybernetic framework translating your child's in-game micro-decisions into an 8-dimensional pedagogical radar map.",
+        heroReadTime: "⏱️ 6 min read",
+        heroAuthor: "Cezeri Games Pedagogy & Engineering Lab",
+        cardTag: "MULTIMIND KIDS • USER STATISTIC REPORT",
+        cardTitle: "INTELLIGENCE DEVELOPMENT REPORT",
+        cardSubtitle: "Your child's in-game performance and developmental spectrum across 8 intelligences",
+        navBack: "Back to Articles",
+        profileDetails: [
+          {
+            name: "Leo (Mathematical & Spatial)",
+            greeting: "Dear Parents,",
+            body: "Unlike traditional exams, Leo's intelligence cannot be reduced to a single score. In-game telemetry reveals a dominant pattern-solving and spatial navigation cognitive channel.",
+            strength: "1. Dominant Strengths:",
+            strengthVal: "Logical-Mathematical (95%) and Visual-Spatial (88%). Swiftly recognizes patterns, geometry, and rotational mechanics.",
+            growth: "2. Areas for Growth & Nurturing:",
+            growthVal: "Musical and Social axes. Rhythm-based games and cooperative puzzles foster balanced holistic growth.",
+            tip: "3. Daily Home Activity Tip:",
+            tipVal: "Build an aqueduct or marble run together with blocks; count geometry angles while playing soft classical background music."
+          },
+          {
+            name: "Sophia (Verbal & Interpersonal)",
+            greeting: "Dear Parents,",
+            body: "Sophia shines with remarkable verbal expression, emotional empathy, and storytelling intuition. She deciphers character interactions and motives in games effortlessly.",
+            strength: "1. Dominant Strengths:",
+            strengthVal: "Verbal-Linguistic (95%) and Interpersonal (90%). Exceptional vocabulary and natural group leadership.",
+            growth: "2. Areas for Growth & Nurturing:",
+            growthVal: "Mathematical systems and physics mechanics. Turning numbers into narrative heroes makes math deeply engaging.",
+            tip: "3. Daily Home Activity Tip:",
+            tipVal: "Set up a puppet show with favorite plushies; number and sell admission tickets together to bridge verbal storytelling with math."
+          },
+          {
+            name: "Lucas (Kinesthetic & Spatial)",
+            greeting: "Dear Parents,",
+            body: "Lucas is an active tactile explorer who understands the world through touch, movement, and physical construction. He excels at fine-motor slicing and precision pouring games.",
+            strength: "1. Dominant Strengths:",
+            strengthVal: "Bodily-Kinesthetic (95%) and Visual-Spatial (85%). Outstanding reflexes, tactile dexterity, and 3D silhouette alignment.",
+            growth: "2. Areas for Growth & Nurturing:",
+            growthVal: "Verbal stamina and prolonged sitting focus. Incorporate active movement into daily learning moments.",
+            tip: "3. Daily Home Activity Tip:",
+            tipVal: "Design an obstacle course across the living room cushions; place word cards at each station for him to retrieve."
+          },
+          {
+            name: "Maya (Musical & Intrapersonal)",
+            greeting: "Dear Parents,",
+            body: "Maya possesses profound introspective awareness, emotional depth, and a sensitive acoustic ear. She demonstrates peak accuracy in melody matching and pitch puzzles.",
+            strength: "1. Dominant Strengths:",
+            strengthVal: "Musical-Rhythmic (95%) and Intrapersonal (90%). Deep self-reflection and sharp recognition of auditory harmonies.",
+            growth: "2. Areas for Growth & Nurturing:",
+            growthVal: "Speaking out in large social circles. Gently transitioning individual playtime into small peer collaborations helps.",
+            tip: "3. Daily Home Activity Tip:",
+            tipVal: "Draw in an emotional journal together accompanied by peaceful music; encourage her to express feelings through colors and beats."
+          },
+          {
+            name: "Noah (Naturalist & Logical)",
+            greeting: "Dear Parents,",
+            body: "Noah is an inquisitive young scientist investigating living ecosystems, biological cycles, and causal chains. He leads in categorization and ecosystem puzzles.",
+            strength: "1. Dominant Strengths:",
+            strengthVal: "Naturalist (95%) and Logical-Mathematical (85%). Flawless classification, animal habitat matching, and reasoning.",
+            growth: "2. Areas for Growth & Nurturing:",
+            growthVal: "Musical rhythm and dramatic expression. Recording outdoor bird songs helps bridge acoustics with nature.",
+            tip: "3. Daily Home Activity Tip:",
+            tipVal: "Collect leaves and pine cones during a nature walk; measure and classify them into a handcrafted nature scrapbook."
+          }
+        ]
+      }
+    };
+
+    // Aliases for DE, FR, ES, PT
+    ARTICLE_TRANSLATIONS.de = JSON.parse(JSON.stringify(ARTICLE_TRANSLATIONS.en));
+    ARTICLE_TRANSLATIONS.de.flag = "🇩🇪"; ARTICLE_TRANSLATIONS.de.code = "DE";
+    ARTICLE_TRANSLATIONS.de.heroBadge = "✨ NEU • ENTWICKLUNGSANALYSE & 8D-RADAR";
+    ARTICLE_TRANSLATIONS.de.cardTitle = "INTELLIGENZ-ENTWICKLUNGSBERICHT";
+    ARTICLE_TRANSLATIONS.de.cardSubtitle = "Die spielerische Leistungs- und Intelligenzentwicklung Ihres Kindes";
+    ARTICLE_TRANSLATIONS.de.navBack = "Zurück zu allen Artikeln";
+
+    ARTICLE_TRANSLATIONS.fr = JSON.parse(JSON.stringify(ARTICLE_TRANSLATIONS.en));
+    ARTICLE_TRANSLATIONS.fr.flag = "🇫🇷"; ARTICLE_TRANSLATIONS.fr.code = "FR";
+    ARTICLE_TRANSLATIONS.fr.heroBadge = "✨ NOUVEAU • ANALYTIQUE & RADAR 8D";
+    ARTICLE_TRANSLATIONS.fr.cardTitle = "RAPPORT DE DÉVELOPPEMENT DE L'INTELLIGENCE";
+    ARTICLE_TRANSLATIONS.fr.cardSubtitle = "Performances et profil d'intelligence de votre enfant dans le jeu";
+    ARTICLE_TRANSLATIONS.fr.navBack = "Retour aux articles";
+
+    ARTICLE_TRANSLATIONS.es = JSON.parse(JSON.stringify(ARTICLE_TRANSLATIONS.en));
+    ARTICLE_TRANSLATIONS.es.flag = "🇪🇸"; ARTICLE_TRANSLATIONS.es.code = "ES";
+    ARTICLE_TRANSLATIONS.es.heroBadge = "✨ NUEVO • ANALÍTICA DE DESARROLLO & RADAR 8D";
+    ARTICLE_TRANSLATIONS.es.cardTitle = "INFORME DE DESARROLLO DE LA INTELIGENCIA";
+    ARTICLE_TRANSLATIONS.es.cardSubtitle = "Rendimiento y mapa de inteligencias múltiples de su hijo en el juego";
+    ARTICLE_TRANSLATIONS.es.navBack = "Volver a los artículos";
+
+    ARTICLE_TRANSLATIONS.pt = JSON.parse(JSON.stringify(ARTICLE_TRANSLATIONS.en));
+    ARTICLE_TRANSLATIONS.pt.flag = "🇵🇹"; ARTICLE_TRANSLATIONS.pt.code = "PT";
+    ARTICLE_TRANSLATIONS.pt.heroBadge = "✨ NOVO • ANÁLISE DE DESENVOLVIMENTO & RADAR 8D";
+    ARTICLE_TRANSLATIONS.pt.cardTitle = "RELATÓRIO DE DESENVOLVIMENTO DA INTELIGÊNCIA";
+    ARTICLE_TRANSLATIONS.pt.cardSubtitle = "Desempenho e espectro de inteligências múltiplas do seu filho";
+    ARTICLE_TRANSLATIONS.pt.navBack = "Voltar aos artigos";
+
+    ARTICLE_TRANSLATIONS.pr = ARTICLE_TRANSLATIONS.pt;
+
+    let activeLang = "tr";
+    let activeProfileIndex = 0;
+    let radarInstance = null;
+
+    function detectUserLanguage() {
+      try {
+        const urlParams = new URLSearchParams(window.location.search);
+        let langParam = urlParams.get('lang');
+        if (langParam) {
+          langParam = langParam.toLowerCase();
+          if (langParam === "pr") langParam = "pt";
+          if (ARTICLE_TRANSLATIONS[langParam]) return langParam;
+        }
+      } catch (e) {}
+
+      try {
+        let stored = localStorage.getItem("cezeri_lang");
+        if (stored) {
+          stored = stored.toLowerCase();
+          if (stored === "pr") stored = "pt";
+          if (ARTICLE_TRANSLATIONS[stored]) return stored;
+        }
+      } catch (e) {}
+
+      const navLang = (navigator.language || navigator.userLanguage || "tr").toLowerCase();
+      if (navLang.startsWith("en")) return "en";
+      if (navLang.startsWith("de")) return "de";
+      if (navLang.startsWith("fr")) return "fr";
+      if (navLang.startsWith("es")) return "es";
+      if (navLang.startsWith("pt") || navLang.startsWith("pr")) return "pt";
+      return "tr";
+    }
+
+    function renderParentReport(profileIdx) {
+      const data = ARTICLE_TRANSLATIONS[activeLang] || ARTICLE_TRANSLATIONS.tr;
+      const detail = data.profileDetails[profileIdx];
+      if (!detail) return;
+
+      document.getElementById("report-profile-name").textContent = detail.name;
+      document.getElementById("report-parent-greeting").innerHTML = `<span>✉️</span> <span>${detail.greeting}</span>`;
+      document.getElementById("report-parent-body").textContent = detail.body;
+      document.getElementById("report-strength-label").textContent = detail.strength;
+      document.getElementById("report-strength-val").textContent = detail.strengthVal;
+      document.getElementById("report-growth-label").textContent = detail.growth;
+      document.getElementById("report-growth-val").textContent = detail.growthVal;
+      document.getElementById("report-tip-label").textContent = detail.tip;
+      document.getElementById("report-tip-val").textContent = detail.tipVal;
+    }
+
+    function applyLanguage(lang) {
+      if (!ARTICLE_TRANSLATIONS[lang]) lang = "tr";
+      activeLang = lang;
+      localStorage.setItem("cezeri_lang", lang.toUpperCase());
+
+      // Update links
+      try {
+        const linkLang = lang.toUpperCase();
+        document.querySelectorAll('a[href]').forEach(link => {
+          const href = link.getAttribute('href');
+          if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+          if (href.startsWith('http://') || href.startsWith('https://')) {
+            if (!href.includes(window.location.hostname)) return;
+          }
+          const hashIndex = href.indexOf('#');
+          let base = hashIndex !== -1 ? href.slice(0, hashIndex) : href;
+          let hash = hashIndex !== -1 ? href.slice(hashIndex) : '';
+          const searchIndex = base.indexOf('?');
+          let path = searchIndex !== -1 ? base.slice(0, searchIndex) : base;
+          link.setAttribute('href', path + '?lang=' + linkLang + hash);
+        });
+      } catch (e) {}
+
+      const data = ARTICLE_TRANSLATIONS[lang];
+      document.getElementById("current-lang-flag").textContent = data.flag;
+      document.getElementById("current-lang-code").textContent = data.code;
+      document.getElementById("hero-badge").textContent = data.heroBadge;
+      document.getElementById("hero-title").textContent = data.heroTitle;
+      document.getElementById("hero-desc").textContent = data.heroDesc;
+      document.getElementById("hero-read-time").textContent = data.heroReadTime;
+      document.getElementById("hero-author").textContent = data.heroAuthor;
+      document.getElementById("card-tag").textContent = data.cardTag;
+      document.getElementById("card-title").textContent = data.cardTitle;
+      document.getElementById("card-subtitle").textContent = data.cardSubtitle;
+      document.getElementById("nav-back-text").textContent = data.navBack;
+      document.title = data.metaTitle;
+
+      if (radarInstance) {
+        radarInstance.setLanguage(lang);
+      }
+
+      renderParentReport(activeProfileIndex);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // Language dropdown
+      const trigger = document.getElementById("lang-trigger");
+      const menu = document.getElementById("lang-dropdown");
+
+      trigger.addEventListener("click", (e) => {
+        e.stopPropagation();
+        menu.classList.toggle("hidden");
+      });
+
+      document.addEventListener("click", () => {
+        menu.classList.add("hidden");
+      });
+
+      document.querySelectorAll(".lang-select-opt").forEach(btn => {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const chosen = btn.getAttribute("data-lang");
+          applyLanguage(chosen);
+          menu.classList.add("hidden");
+        });
+      });
+
+      // Init Radar Widget
+      const initial = detectUserLanguage();
+      try {
+        radarInstance = new IntelligenceRadar('full-radar-widget', {
+          showProfileTabs: true,
+          iconBasePath: '../../assets/images/radar/',
+          lang: initial,
+          initialProfileIndex: 0
+        });
+
+        // Listen for profile changes from tabs
+        document.getElementById('full-radar-widget').addEventListener('radarProfileChanged', (e) => {
+          activeProfileIndex = e.detail.profileIdx;
+          renderParentReport(activeProfileIndex);
+        });
+      } catch (err) {
+        console.error("Radar error:", err);
+      }
+
+      applyLanguage(initial);
+    });
+  </script>
+</body>
+</html>

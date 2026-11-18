@@ -174,6 +174,19 @@
         </div>
 
         <!-- Dynamic Profile Card -->
+        
+        <!-- 8-Axis Intelligence Radar Diagram Component -->
+        <div class="glass-card rounded-3xl p-4 sm:p-8 border border-cyan-500/30 flex flex-col items-center justify-center shadow-2xl relative overflow-hidden bg-[#071320]/80">
+          <div class="w-full flex items-center justify-between border-b border-cyan-500/20 pb-3 mb-4">
+            <span class="text-xs uppercase tracking-wider font-extrabold text-cyan-400 flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+              <span id="radar-diag-label">CANLI 8 BOYUTLU ZEKÂ RADARI (INTELLIGENCE RADAR)</span>
+            </span>
+            <span class="text-xs text-slate-400 font-medium hidden sm:inline" id="radar-diag-hint">Profil seçildiğinde dinamik şekil alır</span>
+          </div>
+          <div id="blog-profile-radar-container" class="w-full max-w-[560px] flex justify-center items-center"></div>
+        </div>
+
         <div class="glass-card rounded-3xl p-6 sm:p-8 border border-cyan-500/30 space-y-6 shadow-2xl relative overflow-hidden" id="profile-display-card">
           <!-- Injected via JavaScript -->
         </div>
@@ -945,6 +958,9 @@
 
     // Set Language
     function applyLanguage(lang) {
+      if (window.blogRadar) {
+        window.blogRadar.setLanguage(lang);
+      }
       if (!ARTICLE_I18N[lang]) lang = "tr";
       activeLang = lang;
       localStorage.setItem("cezeri_lang", lang.toUpperCase());
@@ -1040,6 +1056,9 @@
 
     // Render Profile Display
     function renderProfileDisplay(idx) {
+      if (window.blogRadar) {
+        window.blogRadar.selectProfile(idx, true);
+      }
       const data = ARTICLE_I18N[activeLang];
       const p = data.profiles[idx];
       const card = document.getElementById("profile-display-card");
@@ -1156,8 +1175,19 @@
 
       // Auto-detect language
       const initial = detectUserLanguage();
+      try {
+        window.blogRadar = new IntelligenceRadar('blog-profile-radar-container', {
+          showProfileTabs: false,
+          iconBasePath: '../../assets/images/radar/',
+          lang: initial,
+          initialProfileIndex: 0
+        });
+      } catch (e) {
+        console.error("Radar init error:", e);
+      }
       applyLanguage(initial);
     });
   </script>
+  <script src="../../assets/js/radar-chart.js"></script>
 </body>
 </html>

@@ -283,6 +283,77 @@
         </p>
       </div>
 
+      
+      <!-- MultiMind Kids Flagship Feature: Interactive Intelligence Radar Report -->
+      <div class="mb-16">
+        <div class="glass-card rounded-3xl p-6 sm:p-10 border-2 border-cyan-400/40 shadow-[0_0_50px_rgba(34,211,238,0.2)] bg-[#071526]/90 relative overflow-hidden">
+          <div class="absolute -top-16 -right-16 w-48 h-48 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="text-center max-w-2xl mx-auto mb-8 space-y-2">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-widest text-cyan-300 bg-cyan-500/15 border border-cyan-400/30" data-i18n="radar_feat_tag">
+              ✨ EN ÖNEMLİ ÖZELLİK • CANLI VELİ TAKİP PANELİ
+            </div>
+            <h3 class="text-2xl sm:text-3xl md:text-4xl font-black text-white font-['Outfit'] tracking-wide" data-i18n="radar_feat_title">
+              ZEKA GELİŞİM RAPORU (INTELLIGENCE RADAR)
+            </h3>
+            <p class="text-slate-300 text-xs sm:text-sm font-medium" data-i18n="radar_feat_subtitle">
+              Çocuğunuzun oyunlardaki hamlelerinden beslenen 8 eksenli canlı bilişsel gelişim haritası
+            </p>
+          </div>
+
+          <!-- Dual Column Layout: Left Radar, Right Live Parent Report -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <!-- Left: Animated Radar -->
+            <div class="lg:col-span-6 flex flex-col items-center justify-center">
+              <div id="game-feature-radar-widget" class="w-full max-w-[500px]"></div>
+            </div>
+
+            <!-- Right: Parent Feedback Report -->
+            <div class="lg:col-span-6 space-y-5">
+              <div class="glass-card rounded-2xl p-6 border border-cyan-500/25 bg-slate-900/70 space-y-4">
+                <div class="flex items-center justify-between border-b border-cyan-500/20 pb-3">
+                  <span class="text-xs font-bold text-cyan-400 flex items-center gap-2">
+                    <span>📊</span> <span id="game-report-name">Can (Matematiksel & Mekânsal)</span>
+                  </span>
+                  <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] font-extrabold">
+                    CANLI METRİK
+                  </span>
+                </div>
+
+                <div class="space-y-3">
+                  <h4 class="text-lg font-bold text-white flex items-center gap-2">
+                    <span>✉️</span> <span id="game-report-greeting">Sevgili Ebeveyn,</span>
+                  </h4>
+                  <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" id="game-report-body">
+                    Geleneksel sınavların aksine çocuğunuzun zekâsı tek bir nota indirgenemez. Oyun içi 8 eksende toplanan veriler, çocuğunuzun doğal öğrenme kanalını açığa çıkarmaktadır.
+                  </p>
+                </div>
+
+                <!-- Dominant Area -->
+                <div class="p-3.5 rounded-xl bg-cyan-950/40 border border-cyan-500/20 space-y-1">
+                  <span class="text-[11px] font-bold text-cyan-300 uppercase tracking-wider" id="game-report-strength-label">1. En Güçlü / Baskın Alanlar:</span>
+                  <p class="text-xs text-slate-200" id="game-report-strength-val">Mantıksal-Matematiksel (%95) ve Görsel-Mekânsal (%88). Problem çözerken desenleri ve yönleri hızla kavrıyor.</p>
+                </div>
+
+                <!-- Growth Area -->
+                <div class="p-3.5 rounded-xl bg-purple-950/40 border border-purple-500/20 space-y-1">
+                  <span class="text-[11px] font-bold text-purple-300 uppercase tracking-wider" id="game-report-growth-label">2. Gelişime Açık / Desteklenebilecek Yönler:</span>
+                  <p class="text-xs text-slate-200" id="game-report-growth-val">Müziksel ve Sosyal alanlar. Ritimli oyunlar ve arkadaş ortamında işbirlikli bulmacalarla dengeli gelişim sağlanabilir.</p>
+                </div>
+
+                <!-- Home Activity Tip -->
+                <div class="p-3.5 rounded-xl bg-emerald-950/40 border border-emerald-500/20 space-y-1">
+                  <span class="text-[11px] font-bold text-emerald-300 uppercase tracking-wider" id="game-report-tip-label">3. Evde Günlük Oyun Önerisi:</span>
+                  <p class="text-xs text-slate-200" id="game-report-tip-val">Birlikte legolarla bir su kanalı inşa edin; geometrik blokları sayarken arkada hafif bir müzik açarak her iki alanı köprüleyin.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         
         <div class="glass-card rounded-2xl p-6 space-y-3">
@@ -409,5 +480,102 @@
   <!-- Scripts -->
   <script src="../../assets/js/i18n.js"></script>
   <script src="../../assets/js/main.js"></script>
+  <script src="../../assets/js/radar-chart.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      let radarGameInst = null;
+      let activeIdx = 0;
+      const saved = localStorage.getItem("cezeri_lang") || "TR";
+
+      const detailsMap = {
+        0: {
+          name: "Can (Matematiksel & Mekânsal)",
+          greeting: "Sevgili Ebeveyn,",
+          body: "Geleneksel tek tip testlerin aksine Can'ın zekâsı tek bir sayıya indirgenemez. Oyun içi 8 eksende toplanan veriler, onun desen ve geometri odaklı güçlü öğrenme kanalını açığa çıkarmaktadır.",
+          strength: "1. En Güçlü / Baskın Alanlar:",
+          strengthVal: "Mantıksal-Matematiksel (%95) ve Görsel-Mekânsal (%88). Problem çözerken desenleri ve yönleri hızla kavrıyor.",
+          growth: "2. Gelişime Açık / Desteklenebilecek Yönler:",
+          growthVal: "Müziksel ve Sosyal alanlar. Ritimli oyunlar ve arkadaş ortamında işbirlikli bulmacalarla dengeli gelişim sağlanabilir.",
+          tip: "3. Evde Günlük Oyun Önerisi:",
+          tipVal: "Birlikte legolarla bir su kanalı inşa edin; geometrik blokları sayarken arkada hafif bir müzik açarak her iki alanı köprüleyin."
+        },
+        1: {
+          name: "Zeynep (Sözel & Sosyal)",
+          greeting: "Sevgili Ebeveyn,",
+          body: "Zeynep'in zekâ profili yüksek empati, güçlü ifade yeteneği ve zengin hikaye kurma becerisiyle parlıyor. Oyunlarda diyalogları ve karakter duygularını anında çözümlüyor.",
+          strength: "1. En Güçlü / Baskın Alanlar:",
+          strengthVal: "Sözel-Dilsel (%95) ve Kişilerarası-Sosyal (%90). Kelime haznesi ve grup içi liderlik sezgisi çok güçlü.",
+          growth: "2. Gelişime Açık / Desteklenebilecek Yönler:",
+          growthVal: "Matematiksel mantık ve mekanik düzenekler. Sayıları hikaye kahramanlarına dönüştürerek eğlenceli hale getirebilirsiniz.",
+          tip: "3. Evde Günlük Oyun Önerisi:",
+          tipVal: "En sevdiği peluş oyuncaklarıyla bir kukla tiyatrosu kurun; biletleri birlikte numaralandırıp satarak matematik ve sosyal beceriyi harmanlayın."
+        },
+        2: {
+          name: "Ali (Kinestetik & Mekânsal)",
+          greeting: "Sevgili Ebeveyn,",
+          body: "Ali dünyayı dokunarak, hissederek ve inşa ederek öğrenen dinamik bir kaşif. Dokunmatik ekrandaki hassas sıvı dökme ve dilimleme oyunlarında üstün refleks gösteriyor.",
+          strength: "1. En Güçlü / Baskın Alanlar:",
+          strengthVal: "Bedensel-Kinestetik (%95) ve Görsel-Mekânsal (%85). Motor koordinasyonu ve 3D parça birleştirme yeteneği olağanüstü.",
+          growth: "2. Gelişime Açık / Desteklenebilecek Yönler:",
+          growthVal: "Sözel ifade ve uzun süre odaklanma. Hareket halindeyken öğrenmesini destekleyecek aktif oyunlar kurgulanmalıdır.",
+          tip: "3. Evde Günlük Oyun Önerisi:",
+          tipVal: "Oturma odasında minderlerden bir macera parkuru kurun; her istasyonda bir kelime kartı bularak hedefe ulaşmasını isteyin."
+        },
+        3: {
+          name: "Elif (Müziksel & İçsel)",
+          greeting: "Sevgili Ebeveyn,",
+          body: "Elif derin bir duygusal sezgiye, zengin iç dünyaya ve hassas ritim algısına sahip. Melodi eşleştirme ve ses örüntüsü bulmacalarında olağanüstü doğruluk sergiliyor.",
+          strength: "1. En Güçlü / Baskın Alanlar:",
+          strengthVal: "Müziksel-Ritmik (%95) ve İçsel-Bireysel (%90). Kendi duygularını tanıma ve ses harmonilerini ayırt etme gücü çok yüksek.",
+          growth: "2. Gelişime Açık / Desteklenebilecek Yönler:",
+          growthVal: "Geniş sosyal gruplarda kendini ifade etme. Bireysel oyun güvenini aşama aşama küçük arkadaş gruplarına taşımak faydalıdır.",
+          tip: "3. Evde Günlük Oyun Önerisi:",
+          tipVal: "Birlikte bir günlüğü çizimlerle ve hafif bir arka plan müziği eşliğinde doldurun; hissettiği duyguları notalara veya renklere dökmesini isteyin."
+        },
+        4: {
+          name: "Mert (Doğal & Mantıksal)",
+          greeting: "Sevgili Ebeveyn,",
+          body: "Mert doğadaki canlıları, ekosistemleri ve sebep-sonuç zincirlerini büyük bir merakla inceleyen küçük bir bilim insanı. Sınıflandırma ve döngü bulmacalarında lider.",
+          strength: "1. En Güçlü / Baskın Alanlar:",
+          strengthVal: "Doğacı-Doğal (%95) ve Mantıksal-Matematiksel (%85). Kategorizasyon, hayvan/bitki habitatı eşleştirme becerisi kusursuz.",
+          growth: "2. Gelişime Açık / Desteklenebilecek Yönler:",
+          growthVal: "Müziksel duyarlılık ve sanatsal ifade. Doğa seslerini kaydedip dinleyerek ritim algısını pekiştirebilirsiniz.",
+          tip: "3. Evde Günlük Oyun Önerisi:",
+          tipVal: "Parkta yaprak ve kozalak toplayarak bir doğa koleksiyonu albümü hazırlayın; her nesnenin boyutunu ölçüp türüne göre dosyalayın."
+        }
+      };
+
+      function updateCard(idx) {
+        const d = detailsMap[idx];
+        if (!d) return;
+        document.getElementById("game-report-name").textContent = d.name;
+        document.getElementById("game-report-greeting").textContent = d.greeting;
+        document.getElementById("game-report-body").textContent = d.body;
+        document.getElementById("game-report-strength-label").textContent = d.strength;
+        document.getElementById("game-report-strength-val").textContent = d.strengthVal;
+        document.getElementById("game-report-growth-label").textContent = d.growth;
+        document.getElementById("game-report-growth-val").textContent = d.growthVal;
+        document.getElementById("game-report-tip-label").textContent = d.tip;
+        document.getElementById("game-report-tip-val").textContent = d.tipVal;
+      }
+
+      try {
+        radarGameInst = new IntelligenceRadar('game-feature-radar-widget', {
+          showProfileTabs: true,
+          iconBasePath: '../../assets/images/radar/',
+          lang: saved.toLowerCase(),
+          initialProfileIndex: 0
+        });
+
+        document.getElementById('game-feature-radar-widget').addEventListener('radarProfileChanged', (e) => {
+          updateCard(e.detail.profileIdx);
+        });
+      } catch (e) {
+        console.error("Game radar init error:", e);
+      }
+    });
+  </script>
+
 </body>
 </html>
