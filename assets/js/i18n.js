@@ -1107,6 +1107,24 @@ function setLanguage(langCode) {
       btn.classList.add('text-slate-300');
     }
   });
+
+  // 4. Update internal links to preserve language across navigation
+  try {
+    const activeUrlLang = (langCode === 'PR' ? 'PT' : langCode);
+    document.querySelectorAll('a[href]').forEach(link => {
+      const href = link.getAttribute('href');
+      if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+      if (href.startsWith('http://') || href.startsWith('https://')) {
+        if (!href.includes(window.location.hostname)) return;
+      }
+      const hashIndex = href.indexOf('#');
+      let base = hashIndex !== -1 ? href.slice(0, hashIndex) : href;
+      let hash = hashIndex !== -1 ? href.slice(hashIndex) : '';
+      const searchIndex = base.indexOf('?');
+      let path = searchIndex !== -1 ? base.slice(0, searchIndex) : base;
+      link.setAttribute('href', path + '?lang=' + activeUrlLang + hash);
+    });
+  } catch (e) {}
 }
 
 // Initialize on DOM Ready

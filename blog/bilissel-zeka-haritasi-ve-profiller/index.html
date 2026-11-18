@@ -907,17 +907,33 @@
     };
     ARTICLE_I18N.pr = ARTICLE_I18N.pt;
 
-    let let activeLang = "tr";
+    let activeLang = "tr";
     let activeProfileIndex = 0;
 
     // Detect browser language
     function detectUserLanguage() {
-      let stored = localStorage.getItem("cezeri_lang");
-      if (stored) {
-        stored = stored.toLowerCase();
-        if (stored === "pr") stored = "pt";
-        if (ARTICLE_I18N[stored]) return stored;
-      }
+      // 1. URL search param
+      try {
+        const urlParams = new URLSearchParams(window.location.search);
+        let langParam = urlParams.get('lang');
+        if (langParam) {
+          langParam = langParam.toLowerCase();
+          if (langParam === "pr") langParam = "pt";
+          if (ARTICLE_I18N[langParam]) return langParam;
+        }
+      } catch (e) {}
+
+      // 2. Previously chosen language in localStorage
+      try {
+        let stored = localStorage.getItem("cezeri_lang");
+        if (stored) {
+          stored = stored.toLowerCase();
+          if (stored === "pr") stored = "pt";
+          if (ARTICLE_I18N[stored]) return stored;
+        }
+      } catch (e) {}
+
+      // 3. Fallback: Browser language
       const navLang = (navigator.language || navigator.userLanguage || "tr").toLowerCase();
       if (navLang.startsWith("en")) return "en";
       if (navLang.startsWith("de")) return "de";
@@ -932,6 +948,23 @@
       if (!ARTICLE_I18N[lang]) lang = "tr";
       activeLang = lang;
       localStorage.setItem("cezeri_lang", lang.toUpperCase());
+      // Update navigation links to preserve chosen language
+      try {
+        const linkLang = lang.toUpperCase();
+        document.querySelectorAll('a[href]').forEach(link => {
+          const href = link.getAttribute('href');
+          if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+          if (href.startsWith('http://') || href.startsWith('https://')) {
+            if (!href.includes(window.location.hostname)) return;
+          }
+          const hashIndex = href.indexOf('#');
+          let base = hashIndex !== -1 ? href.slice(0, hashIndex) : href;
+          let hash = hashIndex !== -1 ? href.slice(hashIndex) : '';
+          const searchIndex = base.indexOf('?');
+          let path = searchIndex !== -1 ? base.slice(0, searchIndex) : base;
+          link.setAttribute('href', path + '?lang=' + linkLang + hash);
+        });
+      } catch (e) {}
 
       const data = ARTICLE_I18N[lang];
 
