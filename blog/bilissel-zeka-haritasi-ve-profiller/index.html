@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">8 Boyutlu Bilişsel Zeka Haritası & 5 Çocuk Arketipi | Cezeri Games</title>
+  <meta name="description" id="page-meta-desc" content="Howard Gardner Çoklu Zeka Kuramı ve MultiMind'ın yapay zeka analiz motoru ile çocuğunuzun 8 boyutlu zihin haritasını ve 5 farklı bilişsel arketipini keşfedin.">
+  
+  <link rel="icon" type="image/png" href="../../assets/images/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  </noscript>
+
+  <style>
+    .radar-dim-card {
+      background: rgba(10, 26, 42, 0.75);
+      border: 1px solid rgba(34, 211, 238, 0.16);
+      transition: all 0.25s ease;
+    }
+    .radar-dim-card:hover {
+      border-color: rgba(34, 211, 238, 0.6);
+      transform: translateY(-2px);
+    }
+    .profile-tab-active {
+      background: rgba(6, 182, 212, 0.18) !important;
+      border-color: #22D3EE !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 0 20px rgba(34, 211, 238, 0.25);
+    }
+  </style>
+</head>
+<body class="bg-[#050E17] text-slate-100 antialiased selection:bg-cyan-500 selection:text-white">
+
+  <!-- Ambient Glow Backgrounds -->
+  <div class="ambient-glow-1 top-10 left-1/4"></div>
+  <div class="ambient-glow-2 top-96 right-10"></div>
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="../../index.html" class="flex items-center gap-3 group">
+        <img src="../../assets/images/logo.png" alt="Cezeri Games Logo" class="h-10 w-10 object-contain drop-shadow-[0_0_12px_rgba(34,211,238,0.45)] group-hover:scale-105 transition-transform duration-300">
+        <div class="flex flex-col">
+          <span class="font-black text-lg tracking-wider text-white leading-tight font-['Outfit']">CEZERI <span class="text-gradient">GAMES</span></span>
+          <span class="text-[8px] font-bold tracking-[0.2em] text-cyan-400/90 uppercase">Mobile Game Studio</span>
+        </div>
+      </a>
+
+      <!-- 6 Language Switcher in Nav -->
+      <div class="flex items-center gap-3 sm:gap-6">
+        <div class="relative">
+          <button id="lang-btn-trigger" class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-100 border border-cyan-500/30 text-xs font-semibold shadow-lg transition-all">
+            <span id="current-lang-flag">🇹🇷</span>
+            <span id="current-lang-code">TR</span>
+            <svg class="w-3.5 h-3.5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          
+          <div id="lang-dropdown-menu" class="hidden absolute right-0 mt-2 w-48 rounded-2xl bg-[#081827] border border-cyan-500/40 shadow-2xl py-2 z-50 backdrop-blur-2xl">
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="tr"><span>🇹🇷</span> <span>Türkçe (TR)</span></button>
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="en"><span>🇬🇧</span> <span>English (EN)</span></button>
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="de"><span>🇩🇪</span> <span>Deutsch (DE)</span></button>
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="fr"><span>🇫🇷</span> <span>Français (FR)</span></button>
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="es"><span>🇪🇸</span> <span>Español (ES)</span></button>
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="pt"><span>🇵🇹</span> <span>Português (PT)</span></button>
+          </div>
+        </div>
+
+        <a href="../index.html" class="text-xs font-semibold text-slate-300 hover:text-cyan-300 flex items-center gap-1.5 transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+          <span class="hidden sm:inline" id="nav-back-text">Tüm Yazılar</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Container -->
+  <article class="pt-32 pb-24 md:pt-40 md:pb-28">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <!-- Article Header -->
+      <header class="space-y-6 pb-10 border-b border-cyan-500/20 text-center sm:text-left">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold badge-tag border border-cyan-500/30" id="art-badge">
+          MULTIMIND BİLİŞSEL GELİŞİM & ARTIK ZEKÂ
+        </div>
+        
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight font-['Outfit']" id="art-title">
+          Her Çocuk Bir Dehadır: MultiMind ile 8 Boyutlu Bilişsel Zeka Haritası ve 5 Öğrenme Arketipi
+        </h1>
+
+        <p class="text-lg text-slate-300 font-medium leading-relaxed" id="art-lead">
+          Geleneksel tek tip testlerin ötesine geçin. Harvard Çoklu Zeka Kuramı temelli MultiMind analiz motoru ile çocuğunuzun özgün öğrenme profilini ve zihin haritasını keşfedin.
+        </p>
+
+        <div class="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs text-slate-400 pt-2">
+          <span class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-cyan-500/20 text-cyan-300 flex items-center justify-center font-bold">🧠</span>
+            <span id="art-author">Cezeri Games Pedagoji & Nörogelişim Ekibi</span>
+          </span>
+          <span>•</span>
+          <span id="art-time">⏱️ 7 Dakika Okuma</span>
+          <span>•</span>
+          <span>Güncellenme: 2026</span>
+        </div>
+      </header>
+
+      <!-- Section 1: Demise of Single IQ -->
+      <section class="space-y-6 text-slate-300 text-base sm:text-lg leading-relaxed">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white font-['Outfit'] flex items-center gap-3" id="sec1-head">
+          <span class="text-cyan-400">01.</span> <span id="sec1-title">Tek Boyutlu IQ Ölçütlerinin Sonu</span>
+        </h2>
+        <p id="sec1-p1">
+          Yıllar boyunca eğitim sistemleri çocukların zihinsel potansiyelini yalnızca standartlaştırılmış tek bir sınavla veya kağıt üzerindeki tek boyutlu bir IQ skoruyla değerlendirmeye çalıştı. Oysa modern nöropedagoji bize çok açık bir gerçeği kanıtlıyor: <strong>Hiçbir çocuk diğerinin kopyası değildir ve zeka tek bir sayıya sığdırılamaz.</strong>
+        </p>
+        <p id="sec1-p2">
+          Harvard Üniversitesi’nin öncü psikoloğu <strong>Dr. Howard Gardner</strong>, Çoklu Zeka Kuramı (Multiple Intelligences Theory) ile her çocuğun 8 bağımsız bilişsel alandan oluşan eşsiz bir zihin kombinasyonuna sahip olduğunu ortaya koymuştur.
+        </p>
+
+        <!-- 8 Radar Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3.5 pt-4" id="radar-grid">
+          <!-- Dynamically injected -->
+        </div>
+      </section>
+
+      <!-- Section 2: AI Engine -->
+      <section class="space-y-6 text-slate-300 text-base sm:text-lg leading-relaxed">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white font-['Outfit'] flex items-center gap-3" id="sec2-head">
+          <span class="text-cyan-400">02.</span> <span id="sec2-title">MultiMind Bilişsel Analiz Motoru Nasıl Çalışır?</span>
+        </h2>
+        <p id="sec2-p1">
+          MultiMind, oyun sırasında çocuğa sadece "doğru mu yanlış mı" testi yapmaz. Yapay zeka motorumuz oyun mekanikleri üzerinden <strong>milisaniyelik davranışsal verileri</strong> işler:
+        </p>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+          <div class="glass-card rounded-2xl p-5 border border-cyan-500/20 space-y-2">
+            <div class="text-cyan-400 text-xl font-bold">⏱️ <span id="metric-1-title">Tepki Süresi ve Odaklanma</span></div>
+            <p class="text-sm text-slate-300" id="metric-1-desc">Çocuk soruya yanıt vermeden önce ne kadar derin düşünüyor ve hamlesini ne kadar planlıyor?</p>
+          </div>
+          <div class="glass-card rounded-2xl p-5 border border-cyan-500/20 space-y-2">
+            <div class="text-amber-400 text-xl font-bold">🛡️ <span id="metric-2-title">Hata Toleransı ve Öz-Denetim</span></div>
+            <p class="text-sm text-slate-300" id="metric-2-desc">Hata yaptığında hemen oyunu bırakıyor mu, yoksa sakinleşip yeni bir strateji mi geliştiriyor?</p>
+          </div>
+          <div class="glass-card rounded-2xl p-5 border border-cyan-500/20 space-y-2">
+            <div class="text-indigo-400 text-xl font-bold">🔄 <span id="metric-3-title">Zihinsel 3D Ön-Simülasyon</span></div>
+            <p class="text-sm text-slate-300" id="metric-3-desc">Parçaları ekrana dokunmadan önce zihninde önceden döndürüyor mu, yoksa rastgele mi deniyor?</p>
+          </div>
+          <div class="glass-card rounded-2xl p-5 border border-cyan-500/20 space-y-2">
+            <div class="text-emerald-400 text-xl font-bold">👐 <span id="metric-4-title">Çift El ve Motor Senkronizasyon</span></div>
+            <p class="text-sm text-slate-300" id="metric-4-desc">Dokunsal çift el mekaniklerinde sol ve sağ beyin yarıküreleri ne kadar dengeli eşgüdüm kuruyor?</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: 5 Archetypes Showcase -->
+      <section class="space-y-6 pt-4">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white font-['Outfit'] flex items-center gap-3" id="sec3-head">
+          <span class="text-cyan-400">03.</span> <span id="sec3-title">MultiMind'ın 5 Bilişsel Arketipi ile Tanışın</span>
+        </h2>
+        <p class="text-slate-300 text-base sm:text-lg" id="sec3-p1">
+          MultiMind Onboarding ekranımızda yer alan 5 farklı karakter profili; her çocuğun farklı bir zeka kombinasyonuna sahip olduğunu somutlaştırır. Çocuğunuzun düşünme stiline en yakın arketipi seçin:
+        </p>
+
+        <!-- Profile Tabs -->
+        <div class="flex flex-wrap gap-2.5 pt-2" id="profile-tabs-container">
+          <button class="profile-tab-btn px-5 py-3 rounded-2xl border border-cyan-500/25 bg-[#091B2C] text-sm font-bold text-slate-200 transition-all cursor-pointer profile-tab-active" data-idx="0" id="tab-btn-0">Can</button>
+          <button class="profile-tab-btn px-5 py-3 rounded-2xl border border-cyan-500/25 bg-[#091B2C] text-sm font-bold text-slate-200 transition-all cursor-pointer" data-idx="1" id="tab-btn-1">Zeynep</button>
+          <button class="profile-tab-btn px-5 py-3 rounded-2xl border border-cyan-500/25 bg-[#091B2C] text-sm font-bold text-slate-200 transition-all cursor-pointer" data-idx="2" id="tab-btn-2">Ali</button>
+          <button class="profile-tab-btn px-5 py-3 rounded-2xl border border-cyan-500/25 bg-[#091B2C] text-sm font-bold text-slate-200 transition-all cursor-pointer" data-idx="3" id="tab-btn-3">Elif</button>
+          <button class="profile-tab-btn px-5 py-3 rounded-2xl border border-cyan-500/25 bg-[#091B2C] text-sm font-bold text-slate-200 transition-all cursor-pointer" data-idx="4" id="tab-btn-4">Mert</button>
+        </div>
+
+        <!-- Dynamic Profile Card -->
+        <div class="glass-card rounded-3xl p-6 sm:p-8 border border-cyan-500/30 space-y-6 shadow-2xl relative overflow-hidden" id="profile-display-card">
+          <!-- Injected via JavaScript -->
+        </div>
+      </section>
+
+      <!-- Section 4: Comparison Table -->
+      <section class="space-y-6 pt-4">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white font-['Outfit'] flex items-center gap-3" id="sec4-head">
+          <span class="text-cyan-400">04.</span> <span id="sec4-title">5 Profilin Karşılaştırmalı Gelişim Matrisi</span>
+        </h2>
+        <div class="overflow-x-auto rounded-2xl border border-cyan-500/20 bg-[#071625]">
+          <table class="w-full text-left text-sm text-slate-300" id="matrix-table">
+            <!-- Injected via JavaScript -->
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 5: The Bridging Miracle -->
+      <section class="space-y-6 text-slate-300 text-base sm:text-lg leading-relaxed pt-4">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white font-['Outfit'] flex items-center gap-3" id="sec5-head">
+          <span class="text-cyan-400">05.</span> <span id="sec5-title">"Köprü Kurma" (Bridging) Mucizesi</span>
+        </h2>
+        <p id="sec5-p1">
+          Geleneksel eğitim bir alanda zorlanan çocuğa o alanda zorlayıcı tekrarlar yaptırır ve genellikle yetersizlik hissi ve kaygıya sebep olur. MultiMind’ın pedagojik köprüleme kuralı ise tam tersini savunur:
+        </p>
+        
+        <div class="glass-card rounded-2xl p-6 border-l-4 border-cyan-400 my-6 bg-cyan-950/20">
+          <p class="text-base sm:text-lg text-white font-semibold italic" id="sec5-quote">
+            "Çocuğun gelişime açık alanına asla doğrudan hücum etmeyin; o alana çocuğun en güçlü olduğu zeka kapısından girin!"
+          </p>
+        </div>
+
+        <p id="sec5-p2">
+          Görsel bir çocuğa matematiği mimari bloklarla, ritim aşığı bir çocuğa yabancı kelimeleri tekerlemelerle, doğa aşığı bir çocuğa ise simetriyi bal petekleriyle öğretin! MultiMind, 30 evrensel fiziksel oyun mekaniğiyle bu köprüyü her gün çocuğunuzun parmak uçlarına getirir.
+        </p>
+      </section>
+
+      <!-- CTA Box -->
+      <section class="glass-card rounded-3xl p-8 sm:p-12 border border-cyan-500/40 text-center space-y-6 relative overflow-hidden my-12 bg-gradient-to-b from-[#092238] to-[#05111D]">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold text-cyan-300 bg-cyan-500/10 border border-cyan-500/20">
+          MULTIMIND KIDS: BRAIN GAMES
+        </div>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white font-['Outfit']" id="cta-title">
+          Çocuğunuzun Zeka Haritasını Keşfetmeye Hazır Mısınız?
+        </h2>
+        <p class="text-slate-300 max-w-xl mx-auto text-sm sm:text-base leading-relaxed" id="cta-desc">
+          Hemen MultiMind Kids Brain Games'i indirin, Onboarding ekranında çocuğunuzun bilişsel radarını çıkarın ve ona özel bir gelişim yolculuğu başlatın.
+        </p>
+        <div class="pt-2 flex flex-wrap justify-center gap-4">
+          <a href="../../games/multimind/index.html" class="btn-glow inline-flex items-center gap-2.5 px-8 py-4 rounded-xl font-bold text-white text-base shadow-lg shadow-cyan-500/30">
+            <span id="cta-btn-text">MultiMind'ı Keşfedin</span>
+            <svg class="w-5 h-5 text-cyan-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </article>
+
+  <!-- Footer -->
+  <footer class="border-t border-cyan-500/15 bg-[#030910] text-slate-400 text-sm py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+      <div class="flex items-center justify-center gap-3">
+        <img src="../../assets/images/logo.png" alt="Cezeri Games" class="h-8 w-8 object-contain">
+        <span class="font-extrabold text-base tracking-wider text-white">CEZERI <span class="text-cyan-400">GAMES</span></span>
+      </div>
+      <p class="text-xs text-slate-500">
+        &copy; <span class="current-year">2026</span> Cezeri Games. Tüm hakları saklıdır.
+      </p>
+      <div class="flex justify-center gap-6 text-xs">
+        <a href="../../index.html" class="hover:text-cyan-300">Ana Sayfa</a>
+        <a href="../index.html" class="hover:text-cyan-300">Blog</a>
+        <a href="../../privacy-policy/index.html" class="hover:text-cyan-300">Gizlilik Politikası</a>
+        <a href="mailto:support@cezerigames.com" class="hover:text-cyan-300">Destek</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 6-Language Dynamic Script -->
+  <script>
+    const ARTICLE_I18N = {
+      tr: {
+        flag: "🇹🇷", code: "TR", backText: "Tüm Yazılar",
+        pageTitle: "8 Boyutlu Bilişsel Zeka Haritası & 5 Çocuk Arketipi | Cezeri Games",
+        metaDesc: "Howard Gardner Çoklu Zeka Kuramı ve MultiMind'ın analiz motoru ile çocuğunuzun 8 boyutlu zihin haritasını ve 5 çocuk profilini keşfedin.",
+        badge: "MULTIMIND BİLİŞSEL GELİŞİM & NÖROPEDAGOJİ",
+        title: "Her Çocuk Bir Dehadır: MultiMind ile 8 Boyutlu Bilişsel Zeka Haritası ve 5 Öğrenme Arketipi",
+        lead: "Geleneksel tek tip testlerin ötesine geçin. Harvard Çoklu Zeka Kuramı temelli MultiMind analiz motoru ile çocuğunuzun özgün öğrenme profilini ve zihin haritasını keşfedin.",
+        author: "Cezeri Games Pedagoji & Nörogelişim Ekibi",
+        readTime: "⏱️ 7 Dakika Okuma",
+        sec1Title: "Tek Boyutlu IQ Ölçütlerinin Sonu",
+        sec1P1: "Yıllar boyunca eğitim sistemleri çocukların zihinsel potansiyelini yalnızca standartlaştırılmış tek bir sınavla veya kağıt üzerindeki tek boyutlu bir IQ skoruyla değerlendirmeye çalıştı. Oysa modern nöropedagoji bize çok açık bir gerçeği kanıtlıyor: Hiçbir çocuk diğerinin kopyası değildir ve zeka tek bir sayıya sığdırılamaz.",
+        sec1P2: "Harvard Üniversitesi’nin öncü psikoloğu Dr. Howard Gardner, Çoklu Zeka Kuramı ile her çocuğun 8 bağımsız bilişsel alandan oluşan eşsiz bir zihin kombinasyonuna sahip olduğunu ortaya koymuştur.",
+        radarDims: [
+          { icon: "📐", name: "Mekânsal Zeka" },
+          { icon: "🏃", name: "Kinestetik Zeka" },
+          { icon: "🎵", name: "Müziksel Zeka" },
+          { icon: "📖", name: "Sözel Zeka" },
+          { icon: "🧘", name: "İçsel Zeka" },
+          { icon: "🤝", name: "Sosyal Zeka" },
+          { icon: "🔢", name: "Matematik Zeka" },
+          { icon: "🌿", name: "Doğal Zeka" }
+        ],
+        sec2Title: "MultiMind Bilişsel Analiz Motoru Nasıl Çalışır?",
+        sec2P1: "MultiMind, oyun sırasında çocuğa sadece 'doğru mu yanlış mı' testi yapmaz. Yapay zeka motorumuz oyun mekanikleri üzerinden milisaniyelik davranışsal verileri işler:",
+        metric1Title: "Tepki Süresi ve Odaklanma", metric1Desc: "Çocuk hamle yapmadan önce ne kadar derin düşünüyor ve planlıyor?",
+        metric2Title: "Hata Toleransı ve Öz-Denetim", metric2Desc: "Hata yaptığında pes mi ediyor, sakinleşip strateji mi yeniliyor?",
+        metric3Title: "Zihinsel 3D Ön-Simülasyon", metric3Desc: "Parçaları zihninde önceden döndürüp mü yerleştiriyor, rastgele mi deniyor?",
+        metric4Title: "Çift El Senkronizasyonu", metric4Desc: "Dokunsal mekaniklerde sağ ve sol beyin yarıküreleri nasıl eşgüdüm kuruyor?",
+        sec3Title: "MultiMind'ın 5 Bilişsel Arketipi ile Tanışın",
+        sec3P1: "MultiMind Onboarding ekranımızda yer alan 5 farklı karakter profili; her çocuğun farklı bir zeka kombinasyonuna sahip olduğunu somutlaştırır. Çocuğunuzun düşünme stiline en yakın arketipi seçin:",
+        sec4Title: "5 Profilin Karşılaştırmalı Gelişim Matrisi",
+        tableHeaders: ["Profil", "Karakter", "Baskın Zeka", "Destek Alanı", "MultiMind Mekaniği", "Evde Köprüleme Yöntemi"],
+        sec5Title: "'Köprü Kurma' (Bridging) Mucizesi",
+        sec5P1: "Geleneksel eğitim bir alanda zorlanan çocuğa o alanda zorlayıcı tekrarlar yaptırır ve genellikle yetersizlik hissi ve kaygıya sebep olur. MultiMind’ın pedagojik köprüleme kuralı ise tam tersini savunur:",
+        sec5Quote: "\"Çocuğun gelişime açık alanına asla doğrudan hücum etmeyin; o alana çocuğun en güçlü olduğu zeka kapısından girin!\"",
+        sec5P2: "Görsel bir çocuğa matematiği mimari bloklarla, ritim aşığı bir çocuğa yabancı kelimeleri tekerlemelerle, doğa aşığı bir çocuğa ise simetriyi bal petekleriyle öğretin! MultiMind, 30 evrensel fiziksel oyun mekaniğiyle bu köprüyü her gün çocuğunuzun parmak uçlarına getirir.",
+        ctaTitle: "Çocuğunuzun Zeka Haritasını Keşfetmeye Hazır Mısınız?",
+        ctaDesc: "Hemen MultiMind Kids Brain Games'i indirin, Onboarding ekranında çocuğunuzun bilişsel radarını çıkarın ve ona özel bir gelişim yolculuğu başlatın.",
+        ctaBtn: "MultiMind'ı Keşfedin",
+        profiles: [
+          {
+            name: "Can", label: "Can (Analitik Zihin)", tag: "Sol Beyin & Sayısal Strateji",
+            accent: "#38BDF8", title: "Matematik & Mantık Zekası (%96)",
+            scores: [ { k: "Matematik", v: "96%" }, { k: "Mekânsal", v: "84%" }, { k: "İçsel", v: "76%" }, { k: "Kinestetik", v: "62%" }, { k: "Müzik", v: "58%" } ],
+            desc: "Can sayısal örüntüleri, kod bloklarını, satrançtaki neden-sonuç kurgularını akranlarının çok ötesinde bir hızla kavrar. Yapbozları denerken rastgele değil, açı ve kenar kurallarına göre analiz ederek yerleştirir.",
+            growth: "Zihinsel enerjisi sol beyin işlevlerine odaklandığı için, ritim ve el-göz koordinasyonu gerektiren müziksel ve kinestetik oyunlarla desteklenmesi bütüncül zihin dengesini sağlar.",
+            bridgeTitle: "Can İçin Evde Köprü Kurma (Bridging) Tavsiyeleri:",
+            bridgeList: [
+              "<strong>Mutfakta Ölçü & Oran:</strong> Yemek pişirirken malzeme gramajlarını ve kesirleri Can'a hesaplatın.",
+              "<strong>Ritimle Sayı Örüntüleri:</strong> Masaya ritmik vurarak vuruş sayılarıyla çarpım tablosu ve sayı dizilimleri oluşturun.",
+              "<strong>Stratejik Zeka Oyunları:</strong> Satranç ve tangram bulmacalarıyla analitik düşünceyi görselleştirin."
+            ]
+          },
+          {
+            name: "Zeynep", label: "Zeynep (Duygusal Farkındalık)", tag: "Duygusal Zeka & Empati",
+            accent: "#FB923C", title: "İçsel & Sosyal Zeka (%95 / %90)",
+            scores: [ { k: "İçsel", v: "95%" }, { k: "Sosyal", v: "90%" }, { k: "Sözel", v: "88%" }, { k: "Doğal", v: "78%" }, { k: "Matematik", v: "64%" } ],
+            desc: "Zeynep arkadaşlarının duygularını yüz ifadelerinden hemen anlar. Hata yaptığında kendi duygusunu hızla sakinleştirebilir ve zengin kelime hazinesiyle düşüncelerini ifade eder.",
+            growth: "Derin empati gücünü yapılandırılmış mantık kuralları ve sıralama bulmacaları ile buluşturmak, duygularını yapılandırılmış problem çözme becerisine dönüştürür.",
+            bridgeTitle: "Zeynep İçin Evde Köprü Kurma (Bridging) Tavsiyeleri:",
+            bridgeList: [
+              "<strong>Duygu Hikâyeleri:</strong> Yaşadığı olayları bir masal kahramanının gözünden hikâyeleştirmesini isteyin.",
+              "<strong>Mantık Tabanlı Empati:</strong> 'Bu karakter neden üzgün? Onu mutlu etmek için 3 adımlı bir eylem planı yapalım' diyerek duyguyu çözüme bağlayın.",
+              "<strong>Aile İçi Karar Alma:</strong> Hafta sonu planı yapılırken fikirlerini ve sebeplerini açıklamasını sağlayın."
+            ]
+          },
+          {
+            name: "Ali", label: "Ali (Görsel Mimar)", tag: "3 Boyutlu Zihin & Mimari",
+            accent: "#818CF8", title: "Görsel & Uzamsal Zeka (%97)",
+            scores: [ { k: "Uzamsal", v: "97%" }, { k: "Kinestetik", v: "85%" }, { k: "Matematik", v: "82%" }, { k: "Doğal", v: "80%" }, { k: "Sözel", v: "66%" } ],
+            desc: "Ali şekilleri zihninde 3 boyutlu döndürebilen, karmaşık labirent rotalarını tek bakışta kestiren doğuştan bir mimari vizyona sahiptir. Derinlik ve perspektif algısı olağanüstüdür.",
+            growth: "Zihninde devasa görsel dünyalar kurar; ancak bu hayal gücünü sözel olarak anlatmakta bazen çekingen kalabilir. Sözel ve ritmik oyunlarla dil becerileri beslenmelidir.",
+            bridgeTitle: "Ali İçin Evde Köprü Kurma (Bridging) Tavsiyeleri:",
+            bridgeList: [
+              "<strong>Görseli Kelimelere Dökme:</strong> Legolarla yaptığı kuleleri ve çizimlerini bir macera öyküsü gibi adım adım anlattırın.",
+              "<strong>Hazine Haritaları:</strong> Odalara saklanan nesneler için yön tarifli kroki ve harita çizdirin.",
+              "<strong>Gölge ve Işık Deneyleri:</strong> Fenerle nesnelerin gölgelerinin nasıl değiştiğini inceleyerek perspektif algısını pekiştirin."
+            ]
+          },
+          {
+            name: "Elif", label: "Elif (Ritim ve Hareket)", tag: "İki El Senkronizasyonu & Melodi",
+            accent: "#2DD4BF", title: "Müziksel & Kinestetik Zeka (%95 / %92)",
+            scores: [ { k: "Müzik", v: "95%" }, { k: "Kinestetik", v: "92%" }, { k: "İçsel", v: "80%" }, { k: "Sosyal", v: "78%" }, { k: "Matematik", v: "65%" } ],
+            desc: "Elif bir melodiyi ilk duyuşta yakalar; çift el senkronizasyonu oyunlarında sol ve sağ elini kusursuz bir simetriyle yönetir. Oturarak değil hareket ederek öğrenmeyi sever.",
+            growth: "Müzik duyulabilir matematiktir! Ritimler ve vuruşlar aslında sayısal oranlardır. Elif’in bu ritim dehası, sayılarla köprülenerek matematiğe sevgiye dönüştürülebilir.",
+            bridgeTitle: "Elif İçin Evde Köprü Kurma (Bridging) Tavsiyeleri:",
+            bridgeList: [
+              "<strong>Ritimle Matematik:</strong> Çarpım tablosunu ritmik tekerlemeler ve el çırpmalar eşliğinde çalıştırın.",
+              "<strong>Beden Perküsyonu:</strong> Parmak şıklatma ve göğse hafif vurmayla poliritmik kalıplar üretin.",
+              "<strong>Müzik ve Duygu Eşleştirmesi:</strong> Enstrümantal müzik dinlerken müziğin hangi duyguyu temsil ettiğini konuşun."
+            ]
+          },
+          {
+            name: "Mert", label: "Mert (Doğa ve Keşif)", tag: "Canlılar & Ekolojik Sorgulama",
+            accent: "#4ADE80", title: "Doğal & Çevresel Zeka (%94)",
+            scores: [ { k: "Doğal", v: "94%" }, { k: "Sözel", v: "82%" }, { k: "Uzamsal", v: "78%" }, { k: "Matematik", v: "76%" }, { k: "Müzik", v: "65%" } ],
+            desc: "Mert park yürüyüşlerinde yaprak damarlarını, böcekleri ve canlı türlerini mikroskop gibi inceler. Sürekli 'Neden?' soruları sorarak ekolojik sistemleri anlamaya çalışır.",
+            growth: "Doğadaki matematiksel altın oran (kozalak spiralleri, bal peteği altıgenleri) ile buluşturularak gözlem yeteneği bilim insanı derinliğine yükseltilebilir.",
+            bridgeTitle: "Mert İçin Evde Köprü Kurma (Bridging) Tavsiyeleri:",
+            bridgeList: [
+              "<strong>Doğa Koleksiyonu Defteri:</strong> Yaprak, tohum ve taş toplayarak deftere tür ve dokularına göre yapıştırın.",
+              "<strong>Büyüteç Keşifleri:</strong> Büyüteçle bir yaprağın damarlarını inceleyip suyun nasıl taşındığı üzerine konuşun.",
+              "<strong>Neden-Sonuç Zinciri:</strong> 'Yağmur yağmazsa göldeki canlılara ne olur?' gibi ekolojik döngü sorularıyla sistem düşüncesini pekiştirin."
+            ]
+          }
+        ]
+      },
+
+      en: {
+        flag: "🇬🇧", code: "EN", backText: "All Articles",
+        pageTitle: "8-Axis Cognitive Radar & 5 Learner Archetypes | Cezeri Games",
+        metaDesc: "Discover your child's 8-dimensional cognitive blueprint and 5 learner archetypes powered by Harvard's Multiple Intelligences and MultiMind AI.",
+        badge: "MULTIMIND COGNITIVE DEVELOPMENT & NEUROPEDAGOGY",
+        title: "Every Child is a Genius: 8-Dimensional Cognitive Mapping with MultiMind and 5 Archetypes",
+        lead: "Transcend standardized single-score testing. Discover your child’s unique mental blueprint and tailored development path powered by Harvard Multiple Intelligences.",
+        author: "Cezeri Games Pedagogy & Neurodevelopment Lab",
+        readTime: "⏱️ 7 Min Read",
+        sec1Title: "The Demise of One-Dimensional IQ Metrics",
+        sec1P1: "For generations, education evaluated children through a single standardized exam or static IQ score. Yet developmental neuroscience confirms: No child is a carbon copy of another, and intellect cannot be reduced to a single digit.",
+        sec1P2: "Harvard pioneer Dr. Howard Gardner proved with Multiple Intelligences Theory that each child possesses an autonomous combination of 8 distinct cognitive faculties.",
+        radarDims: [
+          { icon: "📐", name: "Visual / Spatial" },
+          { icon: "🏃", name: "Kinesthetic" },
+          { icon: "🎵", name: "Musical / Rhythm" },
+          { icon: "📖", name: "Verbal / Linguistic" },
+          { icon: "🧘", name: "Intrapersonal" },
+          { icon: "🤝", name: "Interpersonal" },
+          { icon: "🔢", name: "Logical / Math" },
+          { icon: "🌿", name: "Naturalist" }
+        ],
+        sec2Title: "How MultiMind's AI Cognitive Engine Works",
+        sec2P1: "MultiMind never merely grades 'right or wrong'. Our cognitive AI tracks microsecond behavioral dynamics during play:",
+        metric1Title: "Response Latency & Planning", metric1Desc: "How deliberately does the child plan before acting?",
+        metric2Title: "Error Resilience & Self-Regulation", metric2Desc: "When an obstacle hits, do they abandon or swiftly refine strategy?",
+        metric3Title: "Mental 3D Pre-Simulation", metric3Desc: "Do they mentally rotate shapes prior to placement or use trial-and-error?",
+        metric4Title: "Bimanual Motor Sync", metric4Desc: "How seamlessly do both brain hemispheres collaborate during tactile tasks?",
+        sec3Title: "Meet MultiMind's 5 Cognitive Archetypes",
+        sec3P1: "The 5 character profiles in our Onboarding screen embody diverse cognitive blends. Choose the archetype that mirrors your child’s intuitive thinking:",
+        sec4Title: "Comparative Growth Matrix of the 5 Archetypes",
+        tableHeaders: ["Profile", "Archetype", "Dominant Strengths", "Growth Focus", "MultiMind Mechanic", "At-Home Bridging Strategy"],
+        sec5Title: "The Pedagogical Power of 'Bridging'",
+        sec5P1: "When a child struggles, conventional methods force tedious repetition, triggering anxiety. MultiMind's bridging philosophy insists:",
+        sec5Quote: "\"Never attack a child's weakness head-on; enter that domain through the doorway of their greatest cognitive strength!\"",
+        sec5P2: "Teach math to a visual child through architecture; teach vocabulary to a rhythm lover through chants; teach biology through ecological stories!",
+        ctaTitle: "Ready to Map Your Child's Cognitive Blueprint?",
+        ctaDesc: "Download MultiMind Kids Brain Games, generate your child's 8-axis cognitive radar during onboarding, and unlock tailored holistic learning.",
+        ctaBtn: "Explore MultiMind Kids",
+        profiles: [
+          {
+            name: "Leo", label: "Leo (Analytical Mind)", tag: "Left Brain & Strategic Logic",
+            accent: "#38BDF8", title: "Math & Logic Intelligence (96%)",
+            scores: [ { k: "Math", v: "96%" }, { k: "Spatial", v: "84%" }, { k: "Inner", v: "76%" }, { k: "Kinesthetic", v: "62%" }, { k: "Musical", v: "58%" } ],
+            desc: "Leo excels at numerical sequences, cause-and-effect reasoning, and rule-based problem solving. He analyzes puzzle angles with strategic precision rather than guessing.",
+            growth: "Because mental energy is heavily left-hemisphere dominant, pairing his analytical genius with musical rhythm and motor coordination builds holistic balance.",
+            bridgeTitle: "Parental Bridging Guide for Leo:",
+            bridgeList: [
+              "<strong>Kitchen Fractions & Ratios:</strong> Involve Leo in calculating ingredient grams and fractions while baking.",
+              "<strong>Rhythmic Counting:</strong> Tap table beats to explore multiplication sequences and numerical cadence.",
+              "<strong>Strategic Mind Games:</strong> Engage in chess, tangrams, and navigation maps to anchor logic in visual-tactile play."
+            ]
+          },
+          {
+            name: "Sophia", label: "Sophia (Emotional Awareness)", tag: "Emotional EQ & Empathetic Leadership",
+            accent: "#FB923C", title: "Intrapersonal & Social (95% / 90%)",
+            scores: [ { k: "Inner", v: "95%" }, { k: "Social", v: "90%" }, { k: "Verbal", v: "88%" }, { k: "Natural", v: "78%" }, { k: "Math", v: "64%" } ],
+            desc: "Sophia reads emotional atmospheres and facial nuances effortlessly. She regulates her own feelings after mistakes and expresses thoughts with rich linguistic clarity.",
+            growth: "Pairing her intuitive empathy with structured algorithmic puzzles empowers her to turn emotional insight into structured decision-making.",
+            bridgeTitle: "Parental Bridging Guide for Sophia:",
+            bridgeList: [
+              "<strong>Emotion Storytelling:</strong> Ask her to narrate daily challenges from the perspective of storybook characters.",
+              "<strong>Logic-Driven Empathy:</strong> 'Why is this character upset? Let's design a 3-step action plan to help them' pairs emotion with logic.",
+              "<strong>Family Decision-Making:</strong> Involve her in weekend planning, asking for reasoned justifications for each choice."
+            ]
+          },
+          {
+            name: "Lucas", label: "Lucas (Visual Architect)", tag: "3D Mental Geometry & Perspective",
+            accent: "#818CF8", title: "Visual-Spatial Intelligence (97%)",
+            scores: [ { k: "Spatial", v: "97%" }, { k: "Kinesthetic", v: "85%" }, { k: "Math", v: "82%" }, { k: "Natural", v: "80%" }, { k: "Verbal", v: "66%" } ],
+            desc: "Lucas mentally rotates 3D objects, effortlessly forecasts maze pathways, and exhibits exceptional architectural intuition and depth perception.",
+            growth: "While he forms elaborate visual concepts, articulating them verbally takes practice. Nurturing verbal storytelling expands his visual genius into communication.",
+            bridgeTitle: "Parental Bridging Guide for Lucas:",
+            bridgeList: [
+              "<strong>Narrating Visual Builds:</strong> Ask him to describe his Lego structures and sketches as step-by-step adventure tales.",
+              "<strong>Treasure Map Navigation:</strong> Draw indoor maps with directional clues (two steps north, look under the shelf).",
+              "<strong>Shadow & Perspective Play:</strong> Use flashlights to explore how shadows transform based on distance and angles."
+            ]
+          },
+          {
+            name: "Maya", label: "Maya (Rhythm & Motion)", tag: "Bilateral Sync & Pitch Precision",
+            accent: "#2DD4BF", title: "Musical & Kinesthetic (95% / 92%)",
+            scores: [ { k: "Musical", v: "95%" }, { k: "Kinesthetic", v: "92%" }, { k: "Inner", v: "80%" }, { k: "Social", v: "78%" }, { k: "Math", v: "65%" } ],
+            desc: "Maya memorizes melodies instantly and orchestrates dual-touch tasks with balanced coordination. She learns best when in motion and rhythm.",
+            growth: "Music is audible mathematics! Rhythms and meters are numerical ratios. Bridging her rhythmic intuition with numbers creates natural STEM enthusiasm.",
+            bridgeTitle: "Parental Bridging Guide for Maya:",
+            bridgeList: [
+              "<strong>Rhythmic Math:</strong> Memorize multiplication sequences through clapping patterns, chants, and rhythmic cadence.",
+              "<strong>Body Percussion:</strong> Create polyrhythms using snaps, claps, and stomps to sharpen bilateral motor sync.",
+              "<strong>Melody & Emotion Pairing:</strong> Listen to classical pieces and discuss what emotions or colors the instruments evoke."
+            ]
+          },
+          {
+            name: "Noah", label: "Noah (Nature Explorer)", tag: "Biological Curiosity & Taxonomy",
+            accent: "#4ADE80", title: "Naturalist Intelligence (94%)",
+            scores: [ { k: "Natural", v: "94%" }, { k: "Verbal", v: "82%" }, { k: "Spatial", v: "78%" }, { k: "Math", v: "76%" }, { k: "Musical", v: "65%" } ],
+            desc: "Noah examines nature with microscopic curiosity. He notices species traits, life cycles, and ecosystem connections, continuously asking 'Why?' and 'How?'.",
+            growth: "Connecting his love for flora and fauna with natural geometric symmetries (Fibonacci spirals, honeycomb hexagons) elevates curiosity to scientific inquiry.",
+            bridgeTitle: "Parental Bridging Guide for Noah:",
+            bridgeList: [
+              "<strong>Nature Field Scrapbook:</strong> Collect leaves, seeds, and pebbles, categorizing them by texture and species in an observation journal.",
+              "<strong>Magnifying Lens Experiments:</strong> Inspect leaf veins closely to discuss how water and nutrients circulate.",
+              "<strong>Ecological Cause & Effect:</strong> Pose causal questions like 'What happens to the pond animals if it doesn't rain?' to sharpen systemic thinking."
+            ]
+          }
+        ]
+      },
+
+      de: {
+        flag: "🇩🇪", code: "DE", backText: "Alle Artikel",
+        pageTitle: "8-Dimensionale Kognitionskarte & 5 Kinderprofile | Cezeri Games",
+        metaDesc: "Entdecken Sie MultiMinds 8-Achsen Kognitionsradar und 5 kindliche Lernarchetypen nach Howard Gardners Theorie der multiplen Intelligenzen.",
+        badge: "MULTIMIND KOGNITIVE ENTWICKLUNG & NEUROPÄDAGOGIK",
+        title: "Jedes Kind ist ein Genie: 8-Dimensionale Intelligenzkarte mit MultiMind und 5 Profile",
+        lead: "Verlassen Sie eindimensionale Standardtests. Entdecken Sie das individuelle Lernprofil Ihres Kindes mit der Harvard-Theorie der multiplen Intelligenzen.",
+        author: "Cezeri Games Pädagogik & Kognitionsforschung",
+        readTime: "⏱️ 7 Min. Lesezeit",
+        sec1Title: "Das Ende eindimensionaler IQ-Messungen",
+        sec1P1: "Seit Generationen wurde kindliche Begabung auf eine einzige Zahl reduziert. Die moderne Hirnforschung beweist: Kein Kind gleicht dem anderen, und menschliche Intelligenz lässt sich nicht in einem starren Wert zusammenfassen.",
+        sec1P2: "Der Harvard-Pionier Dr. Howard Gardner belegte mit seiner Theorie der multiplen Intelligenzen, dass jeder Mensch über 8 autonome Begabungsachsen verfügt.",
+        radarDims: [
+          { icon: "📐", name: "Räumlich" },
+          { icon: "🏃", name: "Kinästhetisch" },
+          { icon: "🎵", name: "Musikalisch" },
+          { icon: "📖", name: "Sprachlich" },
+          { icon: "🧘", name: "Intrapersonell" },
+          { icon: "🤝", name: "Interpersonell" },
+          { icon: "🔢", name: "Mathematisch" },
+          { icon: "🌿", name: "Naturalistisch" }
+        ],
+        sec2Title: "Wie die KI-Kognitions-Engine von MultiMind arbeitet",
+        sec2P1: "MultiMind bewertet weit mehr als bloß 'richtig oder falsch'. Unsere Engine erfasst millisekundengenaue Verhaltensdaten:",
+        metric1Title: "Reaktionszeit & Planung", metric1Desc: "Wie bedacht plant das Kind seine Züge im Voraus?",
+        metric2Title: "Fehlertoleranz & Impulskontrolle", metric2Desc: "Bricht das Kind bei Fehlern ab oder passt es seine Strategie gelassen an?",
+        metric3Title: "Mentale 3D-Vorwegnahme", metric3Desc: "Rotiert es Formen gedanklich vor der Platzierung oder probiert es willkürlich?",
+        metric4Title: "Bimanuale Synchronisation", metric4Desc: "Wie harmonisch interagieren linke und rechte Hirnhälfte bei beidhändigen Aktionen?",
+        sec3Title: "Lernen Sie MultiMinds 5 Kognitionsarchetypen kennen",
+        sec3P1: "Die 5 Profile in unserem Onboarding veranschaulichen die Vielfalt des Denkens. Wählen Sie den Archetyp, der Ihrem Kind am nächsten ist:",
+        sec4Title: "Vergleichende Entwicklungsmatrix der 5 Profile",
+        tableHeaders: ["Profil", "Charakter", "Stärken", "Förderbereich", "MultiMind-Mechanik", "Überbrückungsmethode (Bridging)"],
+        sec5Title: "Das Wunder der 'Überbrückung' (Bridging)",
+        sec5P1: "Klassischer Unterricht zwingt Kinder bei Schwächen zu ermüdenden Wiederholungen. MultiMinds Bridging-Prinzip besagt:",
+        sec5Quote: "\"Greifen Sie Schwächen nicht frontal an – betreten Sie den Raum durch die stärkste Begabungstür des Kindes!\"",
+        sec5P2: "Vermitteln Sie einem visuellen Kind Mathe über Architektur, einem rhythmischen Kind Vokabeln über Reime und Naturfreunden Symmetrie über Bienenwaben!",
+        ctaTitle: "Bereit, das kognitive Profil Ihres Kindes zu entdecken?",
+        ctaDesc: "Laden Sie MultiMind Kids Brain Games herunter und entfalten Sie die Begabungen Ihres Kindes mit wissenschaftlicher Klarheit.",
+        ctaBtn: "MultiMind Kids entdecken",
+        profiles: [
+          {
+            name: "Felix", label: "Felix (Analytischer Denker)", tag: "Linke Hirnhälfte & Strukturierte Logik",
+            accent: "#38BDF8", title: "Logisch-Mathematische Intelligenz (96%)",
+            scores: [ { k: "Mathe", v: "96%" }, { k: "Räumlich", v: "84%" }, { k: "Intrapersonell", v: "76%" }, { k: "Kinästhetisch", v: "62%" }, { k: "Musik", v: "58%" } ],
+            desc: "Felix erkennt Zahlenmuster und Ursache-Wirkungs-Ketten blitzschnell. Puzzlestücke platziert er nach Winkeln und System anstatt durch Raten.",
+            growth: "Weil seine Energie in der linken Hirnhälfte konzentriert ist, stärkt die Verknüpfung mit Rhythmus und Bewegung eine ganzheitliche mentale Balance.",
+            bridgeTitle: "Eltern-Leitfaden für Felix:",
+            bridgeList: [
+              "<strong>Küchenmathematik & Proportionen:</strong> Lassen Sie Felix beim Backen Gewichte und Brüche berechnen.",
+              "<strong>Rhythmische Zahlenmuster:</strong> Klopfen Sie Rhythmen auf den Tisch, um das Einmaleins taktvoll zu verinnerlichen.",
+              "<strong>Strategische Denkspiele:</strong> Schach und Tangrams verankern seine Logik in greifbaren Welten."
+            ]
+          },
+          {
+            name: "Mia", label: "Mia (Emotionale Achtsamkeit)", tag: "Hohe emotionale Intelligenz & Empathie",
+            accent: "#FB923C", title: "Intra- & Interpersonelle Intelligenz (95% / 90%)",
+            scores: [ { k: "Intrapersonell", v: "95%" }, { k: "Sozial", v: "90%" }, { k: "Sprachlich", v: "88%" }, { k: "Natur", v: "78%" }, { k: "Mathe", v: "64%" } ],
+            desc: "Mia spürt Gefühle und Stimmungen im Raum sofort. Nach Rückschlägen beruhigt sie sich selbstständig und drückt Empfindungen wortgewandt aus.",
+            growth: "Verbindet man ihre Empathie mit logischen Lösungsstrukturen, verwandelt sich Intuition in souveräne Entscheidungskraft.",
+            bridgeTitle: "Eltern-Leitfaden für Mia:",
+            bridgeList: [
+              "<strong>Gefühlsgeschichten:</strong> Ermutigen Sie sie, Alltagserlebnisse aus der Sicht von Märchenfiguren zu erzählen.",
+              "<strong>Logikbasierte Empathie:</strong> 'Warum ist dieser Charakter traurig? Lasst uns einen 3-Schritte-Plan entwickeln' verbindet Herz mit Logik.",
+              "<strong>Familienrat:</strong> Beziehen Sie sie in Planungen ein und fragen Sie nach den Begründungen ihrer Vorschläge."
+            ]
+          },
+          {
+            name: "Lukas", label: "Lukas (Visueller Architekt)", tag: "3D-Vorstellungsvermögen & Tiefe",
+            accent: "#818CF8", title: "Visuell-Räumliche Intelligenz (97%)",
+            scores: [ { k: "Räumlich", v: "97%" }, { k: "Kinästhetisch", v: "85%" }, { k: "Mathe", v: "82%" }, { k: "Natur", v: "80%" }, { k: "Sprachlich", v: "66%" } ],
+            desc: "Lukas dreht 3D-Körper im Kopf, sieht Labyrinth-Wege im Voraus und besitzt ein verblüffendes räumliches Augenmaß.",
+            growth: "Er baut gedanklich gewaltige Welten; diese sprachlich zu schildern fällt ihm manchmal schwer. Sprachspiele machen sein Talent kommunikativ.",
+            bridgeTitle: "Eltern-Leitfaden für Lukas:",
+            bridgeList: [
+              "<strong>Bauwerke erzählen:</strong> Lassen Sie ihn seine Lego-Bauten als spannende Abenteuergeschichten Schritt für Schritt erklären.",
+              "<strong>Schatzkarten zeichnen:</strong> Versteckte Objekte im Haus mit Richtungsangaben kartieren.",
+              "<strong>Schattenexperimente:</strong> Mit Taschenlampen erforschen, wie sich Schatten je nach Distanz und Winkel verwandeln."
+            ]
+          },
+          {
+            name: "Emilia", label: "Emilia (Rhythmus & Bewegung)", tag: "Beidhändige Koordination & Taktgefühl",
+            accent: "#2DD4BF", title: "Musikalisch & Kinästhetisch (95% / 92%)",
+            scores: [ { k: "Musik", v: "95%" }, { k: "Kinästhetisch", v: "92%" }, { k: "Intrapersonell", v: "80%" }, { k: "Sozial", v: "78%" }, { k: "Mathe", v: "65%" } ],
+            desc: "Emilia lernt im Rhythmus und durch Bewegung. Bei beidhändigen Aufgaben steuert sie links und rechts absolut synchron.",
+            growth: "Musik ist hörbare Mathematik! Takte und Noten sind Brüche und Zahlenverhältnisse. Rhythmus öffnet ihr spielerisch die Tür zur Mathematik.",
+            bridgeTitle: "Eltern-Leitfaden für Emilia:",
+            bridgeList: [
+              "<strong>Rhythmische Mathe:</strong> Das Einmaleins mit Klatschen, Stampfen und Reimen lernen.",
+              "<strong>Body Percussion:</strong> Mit Schnipsen, Klopfen und Stampfen gemeinsame Rhythmen erfinden.",
+              "<strong>Klangfarben & Gefühle:</strong> Klassische Musikstücke anhören und besprechen, welche Emotionen die Instrumente wecken."
+            ]
+          },
+          {
+            name: "Jonas", label: "Jonas (Naturforscher)", tag: "Biologische Neugier & Ökosysteme",
+            accent: "#4ADE80", title: "Naturalistische Intelligenz (94%)",
+            scores: [ { k: "Natur", v: "94%" }, { k: "Sprachlich", v: "82%" }, { k: "Räumlich", v: "78%" }, { k: "Mathe", v: "76%" }, { k: "Musik", v: "65%" } ],
+            desc: "Jonas beobachtet die Umwelt mit Forscherblick. Er erkennt Tierarten, Lebenszyklen und Pflanzendetails und fragt unermüdlich 'Warum?'.",
+            growth: "Verknüpft man seine Liebe zur Natur mit den Symmetrien der Natur (Fibonacci-Muster in Tannenzapfen), wird aus Entdeckerdrang mathematische Tiefe.",
+            bridgeTitle: "Eltern-Leitfaden für Jonas:",
+            bridgeList: [
+              "<strong>Natur-Sammelbuch:</strong> Blätter, Steine und Samen sammeln und nach Strukturen in ein Forscherbuch kleben.",
+              "<strong>Lupen-Expeditionen:</strong> Blattadern untersuchen und über den Wassertransport in Pflanzen sprechen.",
+              "<strong>Ökologische Zusammenhänge:</strong> Fragen stellen wie: 'Was passiert mit den Tieren im Teich, wenn es monatelang nicht regnet?'"
+            ]
+          }
+        ]
+      },
+
+      fr: {
+        flag: "🇫🇷", code: "FR", backText: "Tous les Articles",
+        pageTitle: "Radar Cognitif 8D & 5 Profils d'Apprentissage | Cezeri Games",
+        metaDesc: "Découvrez le radar cognitif 8 axes et les 5 archétypes d'enfants basés sur la théorie des intelligences multiples d'Howard Gardner.",
+        badge: "DÉVELOPPEMENT COGNITIF & NEUROPÉDAGOGIE MULTIMIND",
+        title: "Chaque Enfant est un Génie : Cartographie Cognitive 8D avec MultiMind et 5 Profils",
+        lead: "Dépassez les tests standardisés à score unique. Explorez le profil d'apprentissage unique de votre enfant grâce aux intelligences multiples d'Harvard.",
+        author: "Laboratoire Pédagogique Cezeri Games",
+        readTime: "⏱️ 7 Min de Lecture",
+        sec1Title: "La Fin des Évaluations de QI Unidimensionnelles",
+        sec1P1: "Pendant des décennies, l'école a évalué le potentiel des enfants via un chiffre unique. Pourtant, les neurosciences modernes prouvent qu'aucun enfant n'est la copie d'un autre et que l'intelligence ne se réduit pas à un score.",
+        sec1P2: "Le Dr Howard Gardner d'Harvard a démontré que chaque enfant possède une combinaison unique parmi 8 dimensions cognitives distinctes.",
+        radarDims: [
+          { icon: "📐", name: "Visuelle / Spatiale" },
+          { icon: "🏃", name: "Kinesthésique" },
+          { icon: "🎵", name: "Musicale" },
+          { icon: "📖", name: "Linguistique" },
+          { icon: "🧘", name: "Intrapersonnelle" },
+          { icon: "🤝", name: "Interpersonnelle" },
+          { icon: "🔢", name: "Mathématique" },
+          { icon: "🌿", name: "Naturaliste" }
+        ],
+        sec2Title: "Comment Fonctionne le Moteur d'Analyse MultiMind",
+        sec2P1: "MultiMind ne se contente pas de juger 'vrai ou faux'. Notre IA analyse des données comportementales précises à la milliseconde près :",
+        metric1Title: "Temps de Réaction & Anticipation", metric1Desc: "L'enfant prend-il le temps de planifier avant d'agir ?",
+        metric2Title: "Résilience Face à l'Erreur", metric2Desc: "Face à un obstacle, abandonne-t-il ou ajuste-t-il calmement sa stratégie ?",
+        metric3Title: "Simulation Mentale 3D", metric3Desc: "Effectue-t-il des rotations mentales des formes ou procède-t-il au hasard ?",
+        metric4Title: "Synchronisation Bimanuelle", metric4Desc: "Comment les deux hémisphères cérébraux collaborent-ils lors d'actions tactiles ?",
+        sec3Title: "Découvrez les 5 Archétypes Cognitifs MultiMind",
+        sec3P1: "Les 5 profils de notre écran d'Onboarding illustrent la diversité de l'esprit humain. Identifiez l'archétype le plus proche de votre enfant :",
+        sec4Title: "Matrice Comparative des 5 Profils",
+        tableHeaders: ["Profil", "Personnage", "Forces Clés", "Axe de Soutien", "Mécanique MultiMind", "Stratégie de Passerelle (Bridging)"],
+        sec5Title: "Le Pouvoir Pédagogique des 'Passerelles' (Bridging)",
+        sec5P1: "Lorsqu'un enfant rencontre une difficulté, la méthode classique impose des exercices répétitifs générateurs de stress. MultiMind préconise l'inverse :",
+        sec5Quote: "\"N'attaquez jamais une faiblesse de front ; entrez-y par la porte de la plus grande force de l'enfant !\"",
+        sec5P2: "Enseignez les maths à un enfant visuel avec des blocs d'architecture, le vocabulaire à un mélomane avec des comptines, et la symétrie à un naturaliste avec les ruches !",
+        ctaTitle: "Prêt à Révéler la Carte Cognitive de Votre Enfant ?",
+        ctaDesc: "Téléchargez MultiMind Kids Brain Games dès aujourd'hui et lancez un parcours d'apprentissage personnalisé et scientifiquement guidé.",
+        ctaBtn: "Découvrir MultiMind Kids",
+        profiles: [
+          {
+            name: "Louis", label: "Louis (Esprit Analytique)", tag: "Hémisphère Gauche & Rigueur Logique",
+            accent: "#38BDF8", title: "Logico-Mathématique (96%)",
+            scores: [ { k: "Maths", v: "96%" }, { k: "Spatial", v: "84%" }, { k: "Intrapersonnel", v: "76%" }, { k: "Kinesthésique", v: "62%" }, { k: "Musical", v: "58%" } ],
+            desc: "Louis décrypte les suites de nombres et les liens de cause à effet avec brio. Il assemble les puzzles avec méthode et angles précis plutôt qu'en devinant.",
+            growth: "Son énergie étant très concentrée dans l'hémisphère gauche, stimuler le rythme et la motricité favorise une harmonie cérébrale globale.",
+            bridgeTitle: "Guide Parental de Passerelle pour Louis :",
+            bridgeList: [
+              "<strong>Maths en Cuisine :</strong> Faites calculer à Louis les proportions d'ingrédients et les fractions de tasses.",
+              "<strong>Comptage Rythmique :</strong> Tapez des mesures sur la table pour explorer les tables de multiplication en cadence.",
+              "<strong>Jeux de Stratégie :</strong> Les échecs et le tangram ancrent son raisonnement dans le jeu visuel et tactile."
+            ]
+          },
+          {
+            name: "Camille", label: "Camille (Conscience Émotionnelle)", tag: "Haute Intelligence Émotionnelle & Empathie",
+            accent: "#FB923C", title: "Intra- & Interpersonnelle (95% / 90%)",
+            scores: [ { k: "Intrapersonnel", v: "95%" }, { k: "Social", v: "90%" }, { k: "Verbal", v: "88%" }, { k: "Nature", v: "78%" }, { k: "Maths", v: "64%" } ],
+            desc: "Camille perçoit immédiatement les émotions de son entourage. Elle sait réguler sa déception après un échec et verbalise ses sentiments avec finesse.",
+            growth: "Relier son empathie intuitive à des étapes de résolution logique l'aide à structurer ses prises de décision avec assurance.",
+            bridgeTitle: "Guide Parental de Passerelle pour Camille :",
+            bridgeList: [
+              "<strong>Récits d'Émotions :</strong> Invitez-la à raconter les événements du jour à travers les yeux de personnages imaginaires.",
+              "<strong>Empathie Logique :</strong> 'Pourquoi ce personnage est-il triste ? Faisons un plan en 3 étapes pour l'aider' associe cœur et méthode.",
+              "<strong>Conseil de Famille :</strong> Impliquez-la dans les choix familiaux en lui demandant d'argumenter ses propositions."
+            ]
+          },
+          {
+            name: "Théo", label: "Théo (Architecte Visuel)", tag: "Géométrie 3D Mentale & Perspective",
+            accent: "#818CF8", title: "Visuo-Spatiale (97%)",
+            scores: [ { k: "Spatial", v: "97%" }, { k: "Kinesthésique", v: "85%" }, { k: "Maths", v: "82%" }, { k: "Nature", v: "80%" }, { k: "Verbal", v: "66%" } ],
+            desc: "Théo fait pivoter mentalement les volumes 3D, anticipe les labyrinthes d'un coup d'œil et démontre un sens inné de la perspective.",
+            growth: "Il conçoit des univers visuels remarquables ; verbaliser ces idées requiert de l'entraînement. Les récits oraux libèrent son plein potentiel.",
+            bridgeTitle: "Guide Parental de Passerelle pour Théo :",
+            bridgeList: [
+              "<strong>Raconter ses Créations :</strong> Demandez-lui d'expliquer ses constructions Lego comme une véritable histoire d'aventure.",
+              "<strong>Chasses au Trésor :</strong> Cartographiez les pièces de la maison avec des indications précises.",
+              "<strong>Ombres & Lumières :</strong> Expérimentez à la lampe torche pour observer la métamorphose des ombres."
+            ]
+          },
+          {
+            name: "Léa", label: "Léa (Rythme et Mouvement)", tag: "Coordination Bimanuelle & Oreille Musicale",
+            accent: "#2DD4BF", title: "Musicale & Kinesthésique (95% / 92%)",
+            scores: [ { k: "Musical", v: "95%" }, { k: "Kinesthésique", v: "92%" }, { k: "Intrapersonnel", v: "80%" }, { k: "Social", v: "78%" }, { k: "Maths", v: "65%" } ],
+            desc: "Léa retient un air dès la première écoute et contrôle ses deux mains avec une symétrie parfaite. Elle retient l'information en bougeant.",
+            growth: "La musique est une mathématique audible ! Les mesures et tempos sont des rapports de nombres. Le rythme lui ouvre naturellement l'accès aux sciences.",
+            bridgeTitle: "Guide Parental de Passerelle pour Léa :",
+            bridgeList: [
+              "<strong>Maths Rythmées :</strong> Apprenez les tables de multiplication par des battements de mains et comptines.",
+              "<strong>Percussions Corporelles :</strong> Créez des polyrythmies avec claquements de doigts pour synchroniser les deux hémisphères.",
+              "<strong>Mélodie & Émotions :</strong> Écoutez de la musique classique et échangez sur les émotions suscitées."
+            ]
+          },
+          {
+            name: "Gabriel", label: "Gabriel (Explorateur de la Nature)", tag: "Curiosité Biologique & Écosystèmes",
+            accent: "#4ADE80", title: "Naturaliste (94%)",
+            scores: [ { k: "Nature", v: "94%" }, { k: "Verbal", v: "82%" }, { k: "Spatial", v: "78%" }, { k: "Maths", v: "76%" }, { k: "Musical", v: "65%" } ],
+            desc: "Gabriel observe la nature avec une précision microscopique. Il identifie les espèces, les cycles de vie et interroge sans cesse le 'Pourquoi ?'.",
+            growth: "Relier sa passion biologique aux symétries mathématiques transforme sa curiosité en rigueur scientifique.",
+            bridgeTitle: "Guide Parental de Passerelle pour Gabriel :",
+            bridgeList: [
+              "<strong>Herbier & Carnet de Nature :</strong> Collectez feuilles et écorces pour les classifier selon leurs textures.",
+              "<strong>Expéditions à la Loupe :</strong> Observez les nervures d'une feuille pour comprendre la circulation de la sève.",
+              "<strong>Causes & Effets Écologiques :</strong> Posez des questions systémiques : 'Que devient la mare s'il ne pleut pas ?'"
+            ]
+          }
+        ]
+      },
+
+      es: {
+        flag: "🇪🇸", code: "ES", backText: "Todos los Artículos",
+        pageTitle: "Radar Cognitivo 8D y 5 Arquetipos Infantiles | Cezeri Games",
+        metaDesc: "Descubra el radar cognitivo de 8 dimensiones y los 5 arquetipos de niños basados en la teoría de las inteligencias múltiples de Howard Gardner.",
+        badge: "DESARROLLO COGNITIVO Y NEUROPEDAGOGÍA MULTIMIND",
+        title: "Cada Niño es un Genio: Mapa de Inteligencia en 8D con MultiMind y 5 Arquetipos",
+        lead: "Vaya más allá de los exámenes de cociente único. Descubra el mapa mental y la combinación cognitiva irrepetible de su hijo con Harvard.",
+        author: "Equipo de Neuropedagogía Cezeri Games",
+        readTime: "⏱️ 7 Min de Lectura",
+        sec1Title: "El Fin de las Mediciones de CI Unidimensionales",
+        sec1P1: "Durante décadas la educación midió el potencial infantil con una única nota numérica. Sin embargo, la neurociencia confirma: Ningún niño es réplica de otro y el talento jamás cabe en una sola cifra.",
+        sec1P2: "El Dr. Howard Gardner de Harvard demostró que cada ser humano posee 8 ejes cognitivos autónomos que forman un perfil intelectual único.",
+        radarDims: [
+          { icon: "📐", name: "Visual / Espacial" },
+          { icon: "🏃", name: "Kinestésica" },
+          { icon: "🎵", name: "Musical / Rítmica" },
+          { icon: "📖", name: "Lingüística" },
+          { icon: "🧘", name: "Intrapersonal" },
+          { icon: "🤝", name: "Interpersonal" },
+          { icon: "🔢", name: "Matemática" },
+          { icon: "🌿", name: "Naturalista" }
+        ],
+        sec2Title: "Cómo Funciona el Motor de Inteligencia Cognitiva MultiMind",
+        sec2P1: "MultiMind no califica únicamente aciertos o fallos. Nuestra IA procesa datos de comportamiento con precisión de milisegundos:",
+        metric1Title: "Tiempo de Respuesta y Planificación", metric1Desc: "¿Cuánto reflexiona el niño antes de ejecutar una acción?",
+        metric2Title: "Tolerancia al Error y Autorregulación", metric2Desc: "Ante un tropiezo, ¿se rinde o reajusta su estrategia con calma?",
+        metric3Title: "Simulación Mental 3D Previa", metric3Desc: "¿Rota mentalmente las piezas en 3D antes de ubicarlas o recurre al azar?",
+        metric4Title: "Sincronización Bimanual", metric4Desc: "¿Cómo cooperan los dos hemisferios cerebrales en desafíos táctiles simultáneos?",
+        sec3Title: "Conozca los 5 Arquetipos Cognitivos de MultiMind",
+        sec3P1: "Los 5 perfiles de nuestra pantalla de Onboarding encarnan la riqueza de la mente humana. Elija el arquetipo más cercano al modo de pensar de su hijo:",
+        sec4Title: "Matriz Comparativa de los 5 Perfiles",
+        tableHeaders: ["Perfil", "Personaje", "Fortalezas", "Área a Apoyar", "Mecánica MultiMind", "Estrategia Puente (Bridging)"],
+        sec5Title: "El Poder Pedagógico de los 'Puentes' (Bridging)",
+        sec5P1: "Cuando un niño tropieza en un área, el método tradicional impone repeticiones forzadas que generan ansiedad. MultiMind propone lo contrario:",
+        sec5Quote: "\"¡Nunca ataque una dificultad de frente; entre a ese terreno a través de la mayor fortaleza del niño!\"",
+        sec5P2: "¡Enseñe matemáticas al niño visual con bloques arquitectónicos; enseñe vocabulario al musical con rimas; y enseñe simetría al naturalista con panales!",
+        ctaTitle: "¿Listo para Descubrir el Mapa de Su Hijo?",
+        ctaDesc: "Descargue MultiMind Kids Brain Games hoy mismo y trace el radar cognitivo de su hijo con orientación pedagógica de vanguardia.",
+        ctaBtn: "Descubrir MultiMind Kids",
+        profiles: [
+          {
+            name: "Mateo", label: "Mateo (Mente Analítica)", tag: "Hemisferio Izquierdo y Estrategia Numérica",
+            accent: "#38BDF8", title: "Lógico-Matemática (96%)",
+            scores: [ { k: "Mates", v: "96%" }, { k: "Espacial", v: "84%" }, { k: "Intrapersonal", v: "76%" }, { k: "Kinestésico", v: "62%" }, { k: "Musical", v: "58%" } ],
+            desc: "Mateo resuelve secuencias numéricas y deducciones de causa-efecto con enorme rapidez. Encaja piezas analizando ángulos y proporciones.",
+            growth: "Al concentrar gran energía en el hemisferio izquierdo, conectar su lógica con ritmo y motricidad refuerza su armonía integral.",
+            bridgeTitle: "Guía Parental de Puente para Mateo:",
+            bridgeList: [
+              "<strong>Cocina y Fracciones:</strong> Invite a Mateo a calcular gramos e ingredientes fraccionados al hornear.",
+              "<strong>Conteo con Ritmo:</strong> Golpee la mesa rítmicamente para practicar tablas de multiplicar en compás.",
+              "<strong>Juegos de Tablero:</strong> El ajedrez y el tangram materializan su lógica en desafíos tangibles."
+            ]
+          },
+          {
+            name: "Sofía", label: "Sofía (Conciencia Emocional)", tag: "Alta Inteligencia Emocional y Empatía",
+            accent: "#FB923C", title: "Intra e Interpersonal (95% / 90%)",
+            scores: [ { k: "Intrapersonal", v: "95%" }, { k: "Social", v: "90%" }, { k: "Verbal", v: "88%" }, { k: "Natural", v: "78%" }, { k: "Mates", v: "64%" } ],
+            desc: "Sofía capta al instante las emociones ajenas. Tras cometer un error regula su frustración y expresa sus ideas con gran soltura verbal.",
+            growth: "Vincular su empatía con pasos lógicos y secuenciales transforma su intuición en una poderosa herramienta de toma de decisiones.",
+            bridgeTitle: "Guía Parental de Puente para Sofía:",
+            bridgeList: [
+              "<strong>Relatos con Sentimiento:</strong> Pídale contar situaciones cotidianas a través de personajes de cuento.",
+              "<strong>Empatía Basada en Lógica:</strong> '¿Por qué está triste este personaje? Diseñemos un plan de 3 pasos para ayudarle' une emoción y método.",
+              "<strong>Decisiones Familiares:</strong> Involúcrela en planes de fin de semana pidiéndole argumentar sus preferencias."
+            ]
+          },
+          {
+            name: "Lucas", label: "Lucas (Arquitecto Visual)", tag: "Visión 3D y Perspectiva Geométrica",
+            accent: "#818CF8", title: "Visual-Espacial (97%)",
+            scores: [ { k: "Espacial", v: "97%" }, { k: "Kinestésico", v: "85%" }, { k: "Mates", v: "82%" }, { k: "Natural", v: "80%" }, { k: "Verbal", v: "66%" } ],
+            desc: "Lucas rota volúmenes 3D mentalmente y anticipa rutas de laberintos sin vacilar. Tiene una intuición arquitectónica innata.",
+            growth: "Construye fascinantes ideas en su cabeza; expresarlas con palabras requiere práctica. Estimular su narración oral desata su potencial.",
+            bridgeTitle: "Guía Parental de Puente para Lucas:",
+            bridgeList: [
+              "<strong>Narrar Construcciones:</strong> Anímele a contar sus creaciones de bloques como una emocionante expedición.",
+              "<strong>Mapas del Tesoro:</strong> Dibuje croquis caseros con pistas de orientación.",
+              "<strong>Luz y Sombra:</strong> Use linternas para ver cómo cambia la forma de las sombras según el ángulo."
+            ]
+          },
+          {
+            name: "Valentina", label: "Valentina (Ritmo y Movimiento)", tag: "Sincronía Bimanual y Oído Fino",
+            accent: "#2DD4BF", title: "Musical y Kinestésica (95% / 92%)",
+            scores: [ { k: "Musical", v: "95%" }, { k: "Kinestésico", v: "92%" }, { k: "Intrapersonal", v: "80%" }, { k: "Social", v: "78%" }, { k: "Mates", v: "65%" } ],
+            desc: "Valentina reproduce melodías con facilidad y maneja sus dos manos con coordinación bimanual impecable. Aprende moviéndose y cantando.",
+            growth: "¡La música es matemática sonora! Compases y notas son proporciones exactas. El ritmo es el puente ideal para enamorarse de los números.",
+            bridgeTitle: "Guía Parental de Puente para Valentina:",
+            bridgeList: [
+              "<strong>Matemáticas con Compás:</strong> Memorice tablas de multiplicar con palmadas y rimas sonoras.",
+              "<strong>Percusión Corporal:</strong> Combine chasquidos, palmadas y pisadas para coordinar ambos hemisferios.",
+              "<strong>Emociones y Melodías:</strong> Escuchen piezas instrumentales y dialoguen sobre qué emoción despierta cada instrumento."
+            ]
+          },
+          {
+            name: "Hugo", label: "Hugo (Explorador Natural)", tag: "Curiosidad Científica y Taxonomía",
+            accent: "#4ADE80", title: "Naturalista (94%)",
+            scores: [ { k: "Natural", v: "94%" }, { k: "Verbal", v: "82%" }, { k: "Espacial", v: "78%" }, { k: "Mates", v: "76%" }, { k: "Musical", v: "65%" } ],
+            desc: "Hugo examina su entorno con ojo de investigador. Clasifica plantas, insectos y fenómenos naturales preguntando incesantemente '¿Por qué?'.",
+            growth: "Vincular su afán biológico con las matemáticas de la naturaleza eleva su curiosidad a ciencia.",
+            bridgeTitle: "Guía Parental de Puente para Hugo:",
+            bridgeList: [
+              "<strong>Álbum de Campo:</strong> Recoja hojas, semillas y piedras clasificándolas por texturas en un cuaderno.",
+              "<strong>Exploración con Lupa:</strong> Analice las nervaduras de una hoja y converse sobre cómo fluyen los nutrientes.",
+              "<strong>Causa y Efecto Ecológico:</strong> Plantee preguntas de sistema: '¿Qué ocurriría en la charca si deja de llover?'"
+            ]
+          }
+        ]
+      },
+
+      pt: {
+        flag: "🇵🇹", code: "PT", backText: "Todos os Artigos",
+        pageTitle: "Radar Cognitivo 8D & 5 Perfis de Aprendizagem | Cezeri Games",
+        metaDesc: "Descubra o radar cognitivo de 8 eixos e os 5 arquétipos de crianças baseados na teoria das inteligências múltiplas de Howard Gardner.",
+        badge: "DESENVOLVIMENTO COGNITIVO & NEUROPEDAGOGIA MULTIMIND",
+        title: "Toda Criança é um Gênio: Mapeamento em 8D com o MultiMind e 5 Perfis",
+        lead: "Vá além de testes padronizados com nota única. Descubra a combinação mental exclusiva do seu filho com a teoria das inteligências múltiplas de Harvard.",
+        author: "Laboratório Pedagógico Cezeri Games",
+        readTime: "⏱️ 7 Min de Leitura",
+        sec1Title: "O Fim das Avaliações de QI Unidimensionais",
+        sec1P1: "Por muito tempo a educação mediu a capacidade infantil através de uma única pontuação. No entanto, a neurociência moderna comprova: nenhuma criança é cópia de outra e a inteligência jamais cabe em um único número.",
+        sec1P2: "O Dr. Howard Gardner de Harvard provou que cada ser humano possui 8 eixos cognitivos autônomos que formam uma identidade intelectual singular.",
+        radarDims: [
+          { icon: "📐", name: "Espacial" },
+          { icon: "🏃", name: "Cinestésica" },
+          { icon: "🎵", name: "Musical" },
+          { icon: "📖", name: "Linguística" },
+          { icon: "🧘", name: "Intrapessoal" },
+          { icon: "🤝", name: "Interpessoal" },
+          { icon: "🔢", name: "Matemática" },
+          { icon: "🌿", name: "Naturalista" }
+        ],
+        sec2Title: "Como Opera o Motor de Análise Cognitiva MultiMind",
+        sec2P1: "O MultiMind não se limita a avaliar acertos ou erros. Nossa inteligência artificial analisa métricas comportamentais a cada milissegundo:",
+        metric1Title: "Tempo de Resposta & Decisão", metric1Desc: "Quanto a criança reflete antes de iniciar o movimento?",
+        metric2Title: "Resiliência ao Erro & Autocontrole", metric2Desc: "Diante de uma falha, desiste ou reorganiza a estratégia com serenidade?",
+        metric3Title: "Simulação Mental 3D Prévia", metric3Desc: "Rotaciona as formas mentalmente antes do encaixe ou apela para a tentativa e erro?",
+        metric4Title: "Sincronização Bimanual", metric4Desc: "Como os dois hemisférios cerebrais colaboram em tarefas táteis simultâneas?",
+        sec3Title: "Conheça os 5 Arquétipos Cognitivos do MultiMind",
+        sec3P1: "Os 5 perfis presentes em nosso Onboarding materializam a diversidade do pensamento infantil. Escolha o arquétipo mais próximo do seu filho:",
+        sec4Title: "Matriz Comparativa dos 5 Perfis",
+        tableHeaders: ["Perfil", "Personagem", "Pontos Fortes", "Área de Apoio", "Mecânica MultiMind", "Estratégia de Pontes (Bridging)"],
+        sec5Title: "O Poder Transformador das 'Pontes' (Bridging)",
+        sec5P1: "Quando a criança tem dificuldade em algo, o método tradicional impõe repetições estressantes. O princípio de pontes do MultiMind defende o oposto:",
+        sec5Quote: "\"Nunca ataque uma dificuldade de frente; entre nessa área através da porta da maior força da criança!\"",
+        sec5P2: "Ensine matemática a uma criança visual com blocos de montar; ensine vocabulário a uma criança rítmica com versos; ensine simetria com colmeias!",
+        ctaTitle: "Pronto para Descobrir o Mapa do Seu Filho?",
+        ctaDesc: "Baixe o MultiMind Kids Brain Games hoje mesmo e gere o radar cognitivo do seu filho com acompanhamento pedagógico científico.",
+        ctaBtn: "Explorar MultiMind Kids",
+        profiles: [
+          {
+            name: "Theo", label: "Theo (Mente Analítica)", tag: "Hemisfério Esquerdo & Raciocínio Estratégico",
+            accent: "#38BDF8", title: "Lógico-Matemática (96%)",
+            scores: [ { k: "Matemática", v: "96%" }, { k: "Espacial", v: "84%" }, { k: "Intrapessoal", v: "76%" }, { k: "Cinestésico", v: "62%" }, { k: "Musical", v: "58%" } ],
+            desc: "Theo desvenda sequências numéricas e nexos de causa e efeito com rapidez admirável. Encaixa peças analisando ângulos e simetrias.",
+            growth: "Como despende muita energia nas funções do hemisfério esquerdo, aliar sua inteligência ao ritmo e à coordenação corporal garante equilíbrio.",
+            bridgeTitle: "Guia Parental de Pontes para Theo:",
+            bridgeList: [
+              "<strong>Matemática na Cozinha:</strong> Deixe Theo calcular gramas de ingredientes e frações enquanto preparam bolos.",
+              "<strong>Contagem com Ritmo:</strong> Bata na mesa compassadamente para memorizar tabuadas de forma ritmada.",
+              "<strong>Jogos de Tabuleiro:</strong> Xadrez e tangram materializam seu raciocínio abstrato em desafios táteis."
+            ]
+          },
+          {
+            name: "Beatriz", label: "Beatriz (Consciência Emocional)", tag: "Inteligência Emocional & Empatia",
+            accent: "#FB923C", title: "Intra e Interpessoal (95% / 90%)",
+            scores: [ { k: "Intrapessoal", v: "95%" }, { k: "Social", v: "90%" }, { k: "Verbal", v: "88%" }, { k: "Natural", v: "78%" }, { k: "Matemática", v: "64%" } ],
+            desc: "Beatriz percebe o clima e os sentimentos das pessoas com olhar atento. Diante de erros, acalma-se com facilidade e dialoga com clareza.",
+            growth: "Unir sua empatia intuitiva a processos estruturados de tomada de decisão potencializa sua capacidade de liderança.",
+            bridgeTitle: "Guia Parental de Pontes para Beatriz:",
+            bridgeList: [
+              "<strong>Histórias de Emoções:</strong> Peça que ela narre os acontecimentos do dia através dos olhos de personagens de fábulas.",
+              "<strong>Empatia com Lógica:</strong> 'Por que este personagem está triste? Vamos criar um plano de 3 passos para ajudá-lo' combina coração e método.",
+              "<strong>Decisões em Família:</strong> Inclua-a nas escolhas da casa pedindo justificativas lógicas para suas ideias."
+            ]
+          },
+          {
+            name: "Lucas", label: "Lucas (Arquiteto Visual)", tag: "Geometria 3D Mental & Perspectiva",
+            accent: "#818CF8", title: "Visual-Espacial (97%)",
+            scores: [ { k: "Espacial", v: "97%" }, { k: "Cinestésico", v: "85%" }, { k: "Matemática", v: "82%" }, { k: "Natural", v: "80%" }, { k: "Verbal", v: "66%" } ],
+            desc: "Lucas gira objetos tridimensionais no pensamento e antecipa trajetos de labirintos num relance. Possui intuição arquitetônica apurada.",
+            growth: "Gera ideias visuais grandiosas na mente; traduzi-las em palavras requer prática. Praticar a oratória e contação de histórias amplia seu brilho.",
+            bridgeTitle: "Guia Parental de Pontes para Lucas:",
+            bridgeList: [
+              "<strong>Contar Construções:</strong> Incentive-o a narrar suas criações com blocos como se fossem capítulos de uma grande aventura.",
+              "<strong>Caça ao Tesouro:</strong> Desenhe mapas da casa com coordenadas de busca.",
+              "<strong>Sombras e Ângulos:</strong> Brinque com lanternas para descobrir como as sombras aumentam com a distância."
+            ]
+          },
+          {
+            name: "Alice", label: "Alice (Ritmo e Movimento)", tag: "Coordenação Bimanual & Percepção Auditiva",
+            accent: "#2DD4BF", title: "Musical e Cinestésica (95% / 92%)",
+            scores: [ { k: "Musical", v: "95%" }, { k: "Cinestésico", v: "92%" }, { k: "Intrapessoal", v: "80%" }, { k: "Social", v: "78%" }, { k: "Matemática", v: "65%" } ],
+            desc: "Alice capta melodias de ouvido no primeiro instante e controla as duas mãos com sincronismo admirável. Aprende em constante movimento.",
+            growth: "A música é matemática audível! Compassos e notas são razões de números. O ritmo abre um caminho prazeroso para as ciências exatas.",
+            bridgeTitle: "Guia Parental de Pontes para Alice:",
+            bridgeList: [
+              "<strong>Matemática com Ritmo:</strong> Treine tabuadas com palmas sincronizadas e cantigas rimadas.",
+              "<strong>Percussão Corporal:</strong> Crie polirritmias com estalos, palmas e batidas de pés para estimular os dois lados do cérebro.",
+              "<strong>Sentimentos na Música:</strong> Ouça clássicos instrumentais e conversem sobre as cores e sensações que os sons despertam."
+            ]
+          },
+          {
+            name: "Davi", label: "Davi (Explorador da Natureza)", tag: "Curiosidade Biológica & Ecologia",
+            accent: "#4ADE80", title: "Naturalista (94%)",
+            scores: [ { k: "Natural", v: "94%" }, { k: "Verbal", v: "82%" }, { k: "Espacial", v: "78%" }, { k: "Matemática", v: "76%" }, { k: "Musical", v: "65%" } ],
+            desc: "Davi examina folhas, insetos e pedras como um jovem pesquisador. Identifica ciclos biológicos e pergunta 'Por quê?' com entusiasmo.",
+            growth: "Ligar seu fascínio pelas criaturas aos padrões matemáticos da natureza lapida sua curiosidade científica.",
+            bridgeTitle: "Guia Parental de Pontes para Davi:",
+            bridgeList: [
+              "<strong>Caderno de Botânica:</strong> Cole folhas e sementes classificando-as por formato em um diário de campo.",
+              "<strong>Lupa Exploratória:</strong> Examine os vasos condutores de uma folha e explique como a seiva corre pela planta.",
+              "<strong>Causa e Efeito Ecológico:</strong> Proponha questionamentos: 'O que aconteceria aos animais do lago se parasse de chover?'"
+            ]
+          }
+        ]
+      }
+    };
+
+    let activeLang = "tr";
+    let activeProfileIndex = 0;
+
+    // Detect browser language
+    function detectUserLanguage() {
+      const stored = localStorage.getItem("cezeri_lang");
+      if (stored && ARTICLE_I18N[stored.toLowerCase()]) return stored.toLowerCase();
+
+      const navLang = (navigator.language || navigator.userLanguage || "tr").toLowerCase();
+      if (navLang.startsWith("en")) return "en";
+      if (navLang.startsWith("de")) return "de";
+      if (navLang.startsWith("fr")) return "fr";
+      if (navLang.startsWith("es")) return "es";
+      if (navLang.startsWith("pt")) return "pt";
+      return "tr";
+    }
+
+    // Set Language
+    function applyLanguage(lang) {
+      if (!ARTICLE_I18N[lang]) lang = "tr";
+      activeLang = lang;
+      localStorage.setItem("cezeri_lang", lang.toUpperCase());
+
+      const data = ARTICLE_I18N[lang];
+
+      // Update Nav
+      document.getElementById("current-lang-flag").textContent = data.flag;
+      document.getElementById("current-lang-code").textContent = data.code;
+      document.getElementById("nav-back-text").textContent = data.backText;
+
+      // Meta & Header
+      document.getElementById("page-title").textContent = data.pageTitle;
+      document.getElementById("page-meta-desc").setAttribute("content", data.metaDesc);
+      document.getElementById("art-badge").textContent = data.badge;
+      document.getElementById("art-title").textContent = data.title;
+      document.getElementById("art-lead").textContent = data.lead;
+      document.getElementById("art-author").textContent = data.author;
+      document.getElementById("art-time").textContent = data.readTime;
+
+      // Section 1
+      document.getElementById("sec1-title").textContent = data.sec1Title;
+      document.getElementById("sec1-p1").textContent = data.sec1P1;
+      document.getElementById("sec1-p2").textContent = data.sec1P2;
+
+      // Radar Grid
+      const radarGrid = document.getElementById("radar-grid");
+      radarGrid.innerHTML = data.radarDims.map(d => `
+        <div class="radar-dim-card rounded-2xl p-4 text-center">
+          <div class="text-2xl mb-1">${d.icon}</div>
+          <div class="font-bold text-xs sm:text-sm text-slate-200">${d.name}</div>
+        </div>
+      `).join("");
+
+      // Section 2
+      document.getElementById("sec2-title").textContent = data.sec2Title;
+      document.getElementById("sec2-p1").textContent = data.sec2P1;
+      document.getElementById("metric-1-title").textContent = data.metric1Title;
+      document.getElementById("metric-1-desc").textContent = data.metric1Desc;
+      document.getElementById("metric-2-title").textContent = data.metric2Title;
+      document.getElementById("metric-2-desc").textContent = data.metric2Desc;
+      document.getElementById("metric-3-title").textContent = data.metric3Title;
+      document.getElementById("metric-3-desc").textContent = data.metric3Desc;
+      document.getElementById("metric-4-title").textContent = data.metric4Title;
+      document.getElementById("metric-4-desc").textContent = data.metric4Desc;
+
+      // Section 3
+      document.getElementById("sec3-title").textContent = data.sec3Title;
+      document.getElementById("sec3-p1").textContent = data.sec3P1;
+
+      // Tab Buttons text
+      for (let i = 0; i < 5; i++) {
+        const btn = document.getElementById(`tab-btn-${i}`);
+        if (btn && data.profiles[i]) {
+          btn.textContent = data.profiles[i].name;
+        }
+      }
+
+      // Render Active Profile Card
+      renderProfileDisplay(activeProfileIndex);
+
+      // Section 4 Table
+      renderTableData(data);
+
+      // Section 5
+      document.getElementById("sec5-title").textContent = data.sec5Title;
+      document.getElementById("sec5-p1").textContent = data.sec5P1;
+      document.getElementById("sec5-quote").textContent = data.sec5Quote;
+      document.getElementById("sec5-p2").textContent = data.sec5P2;
+
+      // CTA
+      document.getElementById("cta-title").textContent = data.ctaTitle;
+      document.getElementById("cta-desc").textContent = data.ctaDesc;
+      document.getElementById("cta-btn-text").textContent = data.ctaBtn;
+    }
+
+    // Render Profile Display
+    function renderProfileDisplay(idx) {
+      const data = ARTICLE_I18N[activeLang];
+      const p = data.profiles[idx];
+      const card = document.getElementById("profile-display-card");
+
+      const chipsHtml = p.scores.map(s => `
+        <span class="px-3 py-1.5 rounded-xl bg-slate-800/80 border border-cyan-500/20 text-xs font-semibold text-slate-200">
+          ${s.k}: <strong style="color: ${p.accent};">${s.v}</strong>
+        </span>
+      `).join("");
+
+      const tipsHtml = p.bridgeList.map(item => `
+        <li class="flex items-start gap-2 text-sm text-slate-300">
+          <span class="text-cyan-400 font-bold">✦</span>
+          <span>${item}</span>
+        </li>
+      `).join("");
+
+      card.innerHTML = `
+        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-cyan-500/20 pb-5">
+          <div>
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2 text-slate-900" style="background: ${p.accent};">${p.tag}</span>
+            <h3 class="text-2xl sm:text-3xl font-black text-white font-['Outfit']">${p.label}</h3>
+            <p class="text-base font-semibold text-cyan-300 mt-1">${p.title}</p>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            ${chipsHtml}
+          </div>
+        </div>
+
+        <p class="text-slate-200 text-base leading-relaxed">${p.desc}</p>
+        <p class="text-sm text-slate-400 italic bg-slate-900/60 p-4 rounded-xl border border-cyan-500/10">💡 ${p.growth}</p>
+
+        <div class="glass-card rounded-2xl p-6 border border-emerald-500/25 bg-emerald-950/15 space-y-3">
+          <h4 class="font-bold text-emerald-300 text-base flex items-center gap-2">
+            <span>🌱</span> <span>${p.bridgeTitle}</span>
+          </h4>
+          <ul class="space-y-2.5">
+            ${tipsHtml}
+          </ul>
+        </div>
+      `;
+
+      // Update active tabs
+      document.querySelectorAll(".profile-tab-btn").forEach((btn, i) => {
+        if (i === idx) {
+          btn.classList.add("profile-tab-active");
+        } else {
+          btn.classList.remove("profile-tab-active");
+        }
+      });
+    }
+
+    // Render Table
+    function renderTableData(data) {
+      const table = document.getElementById("matrix-table");
+      const headers = `<thead><tr class="border-b border-cyan-500/30 bg-[#0B2136]">` +
+        data.tableHeaders.map(h => `<th class="py-3 px-4 font-bold text-xs uppercase text-cyan-300">${h}</th>`).join("") +
+        `</tr></thead>`;
+
+      const mechanics = [
+        "Denge Terazisi / Balance Tilt",
+        "Duygu Dedektifi / Emotion Mirror",
+        "Tangram & Dönen Labirent",
+        "Çift El Senkronizasyonu",
+        "Mikroskop Slider & Sınıflandırma"
+      ];
+
+      const rows = data.profiles.map((p, i) => `
+        <tr class="border-b border-cyan-500/15 hover:bg-cyan-500/5 transition-colors">
+          <td class="py-3.5 px-4 font-bold" style="color: ${p.accent};">${p.name}</td>
+          <td class="py-3.5 px-4 text-xs font-semibold text-slate-300">${p.tag}</td>
+          <td class="py-3.5 px-4 text-xs">${p.scores[0].k} (${p.scores[0].v})</td>
+          <td class="py-3.5 px-4 text-xs">${p.scores[p.scores.length - 1].k} (${p.scores[p.scores.length - 1].v})</td>
+          <td class="py-3.5 px-4 text-xs text-cyan-300 font-mono">${mechanics[i]}</td>
+          <td class="py-3.5 px-4 text-xs text-slate-400">${p.bridgeList[0].split(":")[0].replace(/<[^>]*>/g, '')}</td>
+        </tr>
+      `).join("");
+
+      table.innerHTML = headers + `<tbody>${rows}</tbody>`;
+    }
+
+    // Events
+    document.addEventListener("DOMContentLoaded", () => {
+      // Trigger dropdown
+      const trigger = document.getElementById("lang-btn-trigger");
+      const menu = document.getElementById("lang-dropdown-menu");
+
+      trigger.addEventListener("click", (e) => {
+        e.stopPropagation();
+        menu.classList.toggle("hidden");
+      });
+
+      document.addEventListener("click", () => {
+        menu.classList.add("hidden");
+      });
+
+      // Language Select
+      document.querySelectorAll(".lang-select-opt").forEach(btn => {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const chosen = btn.getAttribute("data-lang");
+          applyLanguage(chosen);
+          menu.classList.add("hidden");
+        });
+      });
+
+      // Profile Tabs
+      document.querySelectorAll(".profile-tab-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          activeProfileIndex = parseInt(btn.getAttribute("data-idx"), 10);
+          renderProfileDisplay(activeProfileIndex);
+        });
+      });
+
+      // Auto-detect language
+      const initial = detectUserLanguage();
+      applyLanguage(initial);
+    });
+  </script>
+</body>
+</html>
