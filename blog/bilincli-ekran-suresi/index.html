@@ -169,6 +169,8 @@
 
   <script>
     const SCREEN_DATA = {
+  // Data
+
       tr: {
         flag: "🇹🇷", code: "TR", backText: "Tüm Yazılar",
         pageTitle: "Bilinçli Ekran Süresi: Pasif Video Tüketimi mi, Aktif Problem Çözme mi? | Cezeri Games",
@@ -337,18 +339,23 @@
         ctaBtn: "Conhecer o MultiMind"
       }
     };
+    SCREEN_DATA.pr = SCREEN_DATA.pt;
 
-    let currentL = "tr";
+    let let currentL = "tr";
 
     function detectUserL() {
-      const stored = localStorage.getItem("cezeri_lang");
-      if (stored && SCREEN_DATA[stored.toLowerCase()]) return stored.toLowerCase();
+      let stored = localStorage.getItem("cezeri_lang");
+      if (stored) {
+        stored = stored.toLowerCase();
+        if (stored === "pr") stored = "pt";
+        if (SCREEN_DATA[stored]) return stored;
+      }
       const navLang = (navigator.language || navigator.userLanguage || "tr").toLowerCase();
       if (navLang.startsWith("en")) return "en";
       if (navLang.startsWith("de")) return "de";
       if (navLang.startsWith("fr")) return "fr";
       if (navLang.startsWith("es")) return "es";
-      if (navLang.startsWith("pt")) return "pt";
+      if (navLang.startsWith("pt") || navLang.startsWith("pr")) return "pt";
       return "tr";
     }
 

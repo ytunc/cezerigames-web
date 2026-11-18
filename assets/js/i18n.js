@@ -1004,18 +1004,27 @@ const I18N_DATA = {
   }
 };
 
+// Support both 'PT' and 'PR' across all systems seamlessly
+I18N_DATA.PT = I18N_DATA.PR;
+
 // Global Language Controller
 function getSavedLanguage() {
   // 1. Explicit URL parameter: ?lang=EN
   const urlParams = new URLSearchParams(window.location.search);
-  const langParam = urlParams.get('lang');
-  if (langParam && I18N_DATA[langParam.toUpperCase()]) {
-    return langParam.toUpperCase();
+  let langParam = urlParams.get('lang');
+  if (langParam) {
+    langParam = langParam.toUpperCase();
+    if (langParam === 'PT') langParam = 'PR';
+    if (I18N_DATA[langParam]) return langParam;
   }
 
   // 2. Previously chosen language in localStorage
-  const saved = localStorage.getItem('cezeri_lang');
-  if (saved && I18N_DATA[saved]) return saved;
+  let saved = localStorage.getItem('cezeri_lang');
+  if (saved) {
+    saved = saved.toUpperCase();
+    if (saved === 'PT') saved = 'PR';
+    if (I18N_DATA[saved]) return saved;
+  }
   
   // 3. Automatic Device / Browser Language Detection (navigator.languages)
   const candidateLangs = navigator.languages && navigator.languages.length 
@@ -1038,9 +1047,13 @@ function getSavedLanguage() {
 }
 
 function setLanguage(langCode) {
+  if (!langCode) return;
+  langCode = langCode.toUpperCase();
+  if (langCode === 'PT') langCode = 'PR';
   if (!I18N_DATA[langCode]) return;
+
   localStorage.setItem('cezeri_lang', langCode);
-  document.documentElement.lang = langCode.toLowerCase();
+  document.documentElement.lang = (langCode === 'PR' ? 'pt' : langCode.toLowerCase());
   const data = I18N_DATA[langCode];
 
   // 1. Update text elements having data-i18n
@@ -1082,8 +1095,11 @@ function setLanguage(langCode) {
   });
 
   document.querySelectorAll('.lang-item').forEach(btn => {
-    const btnLang = btn.getAttribute('data-lang');
-    if (btnLang === langCode) {
+    let btnLang = btn.getAttribute('data-lang');
+    if (btnLang) btnLang = btnLang.toUpperCase();
+    if (btnLang === 'PT') btnLang = 'PR';
+    const activeCode = (langCode === 'PT' ? 'PR' : langCode);
+    if (btnLang === activeCode) {
       btn.classList.add('bg-cyan-500/20', 'text-cyan-300', 'font-bold');
       btn.classList.remove('text-slate-300');
     } else {

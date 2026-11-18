@@ -156,6 +156,8 @@
 
   <script>
     const CEZERI_DATA = {
+  // Data
+
       tr: {
         flag: "🇹🇷", code: "TR", backText: "Tüm Yazılar",
         pageTitle: "İsmail El-Cezeri'nin Mekanik Dehasından İlham Alan Oyun Döngüleri | Cezeri Games",
@@ -324,18 +326,23 @@
         ctaBtn: "Explorar o MultiMind"
       }
     };
+    CEZERI_DATA.pr = CEZERI_DATA.pt;
 
-    let currentLng = "tr";
+    let let currentLng = "tr";
 
     function detectUserLng() {
-      const stored = localStorage.getItem("cezeri_lang");
-      if (stored && CEZERI_DATA[stored.toLowerCase()]) return stored.toLowerCase();
+      let stored = localStorage.getItem("cezeri_lang");
+      if (stored) {
+        stored = stored.toLowerCase();
+        if (stored === "pr") stored = "pt";
+        if (CEZERI_DATA[stored]) return stored;
+      }
       const navLang = (navigator.language || navigator.userLanguage || "tr").toLowerCase();
       if (navLang.startsWith("en")) return "en";
       if (navLang.startsWith("de")) return "de";
       if (navLang.startsWith("fr")) return "fr";
       if (navLang.startsWith("es")) return "es";
-      if (navLang.startsWith("pt")) return "pt";
+      if (navLang.startsWith("pt") || navLang.startsWith("pr")) return "pt";
       return "tr";
     }
 

@@ -160,6 +160,8 @@
 
   <script>
     const ARTICLE_DATA = {
+  // Data
+
       tr: {
         flag: "🇹🇷", code: "TR", backText: "Tüm Yazılar",
         pageTitle: "Çoklu Zeka Kuramı Nedir ve Oyun Temelli Eğitimde Nasıl Kullanılır? | Cezeri Games",
@@ -346,18 +348,23 @@
         ctaBtn: "Explorar MultiMind Kids"
       }
     };
+    ARTICLE_DATA.pr = ARTICLE_DATA.pt;
 
-    let curLang = "tr";
+    let let curLang = "tr";
 
     function detectUserLang() {
-      const stored = localStorage.getItem("cezeri_lang");
-      if (stored && ARTICLE_DATA[stored.toLowerCase()]) return stored.toLowerCase();
+      let stored = localStorage.getItem("cezeri_lang");
+      if (stored) {
+        stored = stored.toLowerCase();
+        if (stored === "pr") stored = "pt";
+        if (ARTICLE_DATA[stored]) return stored;
+      }
       const navLang = (navigator.language || navigator.userLanguage || "tr").toLowerCase();
       if (navLang.startsWith("en")) return "en";
       if (navLang.startsWith("de")) return "de";
       if (navLang.startsWith("fr")) return "fr";
       if (navLang.startsWith("es")) return "es";
-      if (navLang.startsWith("pt")) return "pt";
+      if (navLang.startsWith("pt") || navLang.startsWith("pr")) return "pt";
       return "tr";
     }
 

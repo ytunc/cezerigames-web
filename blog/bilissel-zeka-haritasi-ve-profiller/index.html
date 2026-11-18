@@ -255,6 +255,8 @@
   <!-- 6-Language Dynamic Script -->
   <script>
     const ARTICLE_I18N = {
+  // Data
+
       tr: {
         flag: "🇹🇷", code: "TR", backText: "Tüm Yazılar",
         pageTitle: "8 Boyutlu Bilişsel Zeka Haritası & 5 Çocuk Arketipi | Cezeri Games",
@@ -903,21 +905,25 @@
         ]
       }
     };
+    ARTICLE_I18N.pr = ARTICLE_I18N.pt;
 
-    let activeLang = "tr";
+    let let activeLang = "tr";
     let activeProfileIndex = 0;
 
     // Detect browser language
     function detectUserLanguage() {
-      const stored = localStorage.getItem("cezeri_lang");
-      if (stored && ARTICLE_I18N[stored.toLowerCase()]) return stored.toLowerCase();
-
+      let stored = localStorage.getItem("cezeri_lang");
+      if (stored) {
+        stored = stored.toLowerCase();
+        if (stored === "pr") stored = "pt";
+        if (ARTICLE_I18N[stored]) return stored;
+      }
       const navLang = (navigator.language || navigator.userLanguage || "tr").toLowerCase();
       if (navLang.startsWith("en")) return "en";
       if (navLang.startsWith("de")) return "de";
       if (navLang.startsWith("fr")) return "fr";
       if (navLang.startsWith("es")) return "es";
-      if (navLang.startsWith("pt")) return "pt";
+      if (navLang.startsWith("pt") || navLang.startsWith("pr")) return "pt";
       return "tr";
     }
 
