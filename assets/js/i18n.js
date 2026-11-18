@@ -6,8 +6,8 @@ const I18N_DATA = {
     name: 'Türkçe',
     code: 'TR',
     storeFolder: '_TR',
-    banner: \'turkish_1024x500.webp\',
-    s1: \'store1_TR.webp\', s2: \'store2_TR.webp\', s3: \'store3_TR.webp\', s4: \'store4_TR.webp\', s5: \'store5_TR.webp\',
+    banner: 'turkish_1024x500.webp',
+    s1: 'store1_TR.webp', s2: 'store2_TR.webp', s3: 'store3_TR.webp', s4: 'store4_TR.webp', s5: 'store5_TR.webp',
     nav_games: 'Oyunlarımız',
     nav_multimind: 'MultiMind Kids',
     nav_gallery: 'Galeri',
@@ -173,8 +173,8 @@ const I18N_DATA = {
     name: 'English',
     code: 'EN',
     storeFolder: '_EN',
-    banner: \'english_store_graphic_1024x500.webp\',
-    s1: \'store1_EN.webp\', s2: \'store2_EN.webp\', s3: \'store3_EN.webp\', s4: \'store4_EN.webp\', s5: \'store5_EN.webp\',
+    banner: 'english_store_graphic_1024x500.webp',
+    s1: 'store1_EN.webp', s2: 'store2_EN.webp', s3: 'store3_EN.webp', s4: 'store4_EN.webp', s5: 'store5_EN.webp',
     nav_games: 'Our Games',
     nav_multimind: 'MultiMind Kids',
     nav_gallery: 'Gallery',
@@ -340,8 +340,8 @@ const I18N_DATA = {
     name: 'Deutsch',
     code: 'DE',
     storeFolder: '_DE',
-    banner: \'multimind_kids_german_1024x500.webp\',
-    s1: \'store1_DE.webp\', s2: \'store2_DE.webp\', s3: \'store3_DE.webp\', s4: \'store4_DE.webp\', s5: \'store5_DE.webp\',
+    banner: 'multimind_kids_german_1024x500.webp',
+    s1: 'store1_DE.webp', s2: 'store2_DE.webp', s3: 'store3_DE.webp', s4: 'store4_DE.webp', s5: 'store5_DE.webp',
     nav_games: 'Unsere Spiele',
     nav_multimind: 'MultiMind Kids',
     nav_gallery: 'Galerie',
@@ -507,8 +507,8 @@ const I18N_DATA = {
     name: 'Français',
     code: 'FR',
     storeFolder: '_FR',
-    banner: \'multimind_kids_french_1024x500.webp\',
-    s1: \'store1_FR.webp\', s2: \'store2_FR.webp\', s3: \'store3_FR.webp\', s4: \'store4_FR.webp\', s5: \'store5_FR.webp\',
+    banner: 'multimind_kids_french_1024x500.webp',
+    s1: 'store1_FR.webp', s2: 'store2_FR.webp', s3: 'store3_FR.webp', s4: 'store4_FR.webp', s5: 'store5_FR.webp',
     nav_games: 'Nos Jeux',
     nav_multimind: 'MultiMind Kids',
     nav_gallery: 'Galerie',
@@ -674,8 +674,8 @@ const I18N_DATA = {
     name: 'Español',
     code: 'ES',
     storeFolder: '_ES',
-    banner: \'spanish_store_graphic_1024x500.webp\',
-    s1: \'store1_ES.webp\', s2: \'store2_ES.webp\', s3: \'store3_ES.webp\', s4: \'store4_ES.webp\', s5: \'store5_ES.webp\',
+    banner: 'spanish_store_graphic_1024x500.webp',
+    s1: 'store1_ES.webp', s2: 'store2_ES.webp', s3: 'store3_ES.webp', s4: 'store4_ES.webp', s5: 'store5_ES.webp',
     nav_games: 'Nuestros Juegos',
     nav_multimind: 'MultiMind Kids',
     nav_gallery: 'Galería',
@@ -841,8 +841,8 @@ const I18N_DATA = {
     name: 'Português',
     code: 'PR',
     storeFolder: '_PR',
-    banner: \'portuguese_1024x500.webp\',
-    s1: \'store1_PR.webp\', s2: \'store2_PR.webp\', s3: \'store3_PR.webp\', s4: \'store4_PR.webp\', s5: \'store5_PR.webp\',
+    banner: 'portuguese_1024x500.webp',
+    s1: 'store1_PR.webp', s2: 'store2_PR.webp', s3: 'store3_PR.webp', s4: 'store4_PR.webp', s5: 'store5_PR.webp',
     nav_games: 'Nossos Jogos',
     nav_multimind: 'MultiMind Kids',
     nav_gallery: 'Galeria',
@@ -1115,11 +1115,12 @@ document.addEventListener('DOMContentLoaded', () => {
   if (langTrigger && langDropdown) {
     langTrigger.addEventListener('click', (e) => {
       e.stopPropagation();
+      e.preventDefault();
       langDropdown.classList.toggle('hidden');
     });
 
-    document.addEventListener('click', () => {
-      if (!langDropdown.classList.contains('hidden')) {
+    document.addEventListener('click', (e) => {
+      if (!langDropdown.contains(e.target) && !langTrigger.contains(e.target)) {
         langDropdown.classList.add('hidden');
       }
     });
