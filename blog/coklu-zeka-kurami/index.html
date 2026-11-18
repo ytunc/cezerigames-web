@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Çoklu Zeka Kuramı Nedir ve Oyun Temelli Eğitimde Nasıl Kullanılır? | Cezeri Games</title>
-  <meta name="description" content="Howard Gardner'ın Çoklu Zeka Kuramı'nın temel prensipleri ve mobil oyun mekanikleriyle çocukların bilişsel gelişimini destekleme yöntemleri.">
+  <title id="page-title">Çoklu Zeka Kuramı Nedir ve Oyun Temelli Eğitimde Nasıl Kullanılır? | Cezeri Games</title>
+  <meta name="description" id="page-meta-desc" content="Howard Gardner'ın Çoklu Zeka Kuramı'nın temel prensipleri ve mobil oyun mekanikleriyle çocukların bilişsel gelişimini destekleme yöntemleri.">
   
   <link rel="icon" type="image/png" href="../../assets/images/favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -18,6 +18,9 @@
 </head>
 <body class="bg-[#050E17] text-slate-100 antialiased selection:bg-cyan-500 selection:text-white">
 
+  <!-- Ambient Glow -->
+  <div class="ambient-glow-1 top-10 left-1/4"></div>
+
   <!-- Header -->
   <header class="fixed top-0 left-0 right-0 z-50 glass-nav">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
@@ -29,9 +32,28 @@
         </div>
       </a>
 
-      <div class="flex items-center gap-4 text-sm">
-        <a href="../index.html" class="text-slate-400 hover:text-cyan-300 flex items-center gap-1 font-medium">
-          &larr; Tüm Yazılar
+      <!-- 6-Language Switcher & Back link -->
+      <div class="flex items-center gap-3 sm:gap-6">
+        <div class="relative">
+          <button id="lang-btn-trigger" class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-100 border border-cyan-500/30 text-xs font-semibold shadow-lg transition-all">
+            <span id="current-lang-flag">🇹🇷</span>
+            <span id="current-lang-code">TR</span>
+            <svg class="w-3.5 h-3.5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          
+          <div id="lang-dropdown-menu" class="hidden absolute right-0 mt-2 w-48 rounded-2xl bg-[#081827] border border-cyan-500/40 shadow-2xl py-2 z-50 backdrop-blur-2xl">
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="tr"><span>🇹🇷</span> <span>Türkçe (TR)</span></button>
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="en"><span>🇬🇧</span> <span>English (EN)</span></button>
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="de"><span>🇩🇪</span> <span>Deutsch (DE)</span></button>
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="fr"><span>🇫🇷</span> <span>Français (FR)</span></button>
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="es"><span>🇪🇸</span> <span>Español (ES)</span></button>
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="pt"><span>🇵🇹</span> <span>Português (PT)</span></button>
+          </div>
+        </div>
+
+        <a href="../index.html" class="text-xs font-semibold text-slate-300 hover:text-cyan-300 flex items-center gap-1.5 transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+          <span class="hidden sm:inline" id="nav-back-text">Tüm Yazılar</span>
         </a>
       </div>
     </div>
@@ -43,21 +65,21 @@
       
       <!-- Article Header -->
       <header class="space-y-6 pb-10 border-b border-cyan-500/15 text-center sm:text-left">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold badge-tag">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold badge-tag border border-cyan-500/30" id="art-tag">
           PEDAGOJİ & EĞİTİCİ OYUN TASARIMI
         </div>
         
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight font-['Outfit']" id="art-title">
           Çoklu Zeka Kuramı Nedir ve Oyun Temelli Eğitimde Nasıl Kullanılır?
         </h1>
 
         <div class="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs text-slate-400">
           <span class="flex items-center gap-1.5">
             <span class="w-6 h-6 rounded-full bg-cyan-500/20 text-cyan-300 flex items-center justify-center font-bold">C</span>
-            Cezeri Games Araştırma Ekibi
+            <span id="art-author">Cezeri Games Araştırma Ekibi</span>
           </span>
           <span>•</span>
-          <span>5 Dakika Okuma</span>
+          <span id="art-time">⏱️ 5 Dakika Okuma</span>
           <span>•</span>
           <span>Güncellenme: 2026</span>
         </div>
@@ -66,53 +88,48 @@
       <!-- Article Body -->
       <div class="prose prose-invert prose-cyan max-w-none pt-10 text-slate-300 space-y-6 text-base sm:text-lg leading-relaxed">
         
-        <p class="text-xl text-slate-200 font-medium leading-relaxed">
+        <p class="text-xl text-slate-200 font-medium leading-relaxed" id="art-intro">
           Geleneksel eğitim yaklaşımları uzun yıllar boyunca zekayı tek bir sayıya (IQ) ve yalnızca mantıksal ya da dilsel becerilere indirgedi. Ancak Harvard Üniversitesi psikoloğu <strong>Howard Gardner</strong>, 1983 yılında ortaya koyduğu <em>Çoklu Zeka Kuramı (Multiple Intelligences Theory)</em> ile bu kalıbı kökünden yıktı.
         </p>
 
-        <h2 class="text-2xl font-bold text-white pt-4">Zeka Tek Değil, Çok Boyutludur</h2>
-        <p>
+        <h2 class="text-2xl font-bold text-white pt-4 font-['Outfit']" id="sec1-h2">Zeka Tek Değil, Çok Boyutludur</h2>
+        <p id="sec1-p">
           Gardner'a göre her insan, farklı oranlarda gelişmiş en az 8 farklı zeka boyutuna sahiptir. Kimi çocuklar ritimleri duyarak ve bedensel olarak hareket ederek öğrenirken, kimileri görsel şekiller ve uzamsal ilişkiler üzerinden dünyayı anlamlandırır.
         </p>
 
         <!-- Callout Box -->
         <div class="glass-card rounded-2xl p-6 border-l-4 border-cyan-400 my-8">
-          <h4 class="font-bold text-white text-base mb-1">Howard Gardner'ın Temel İlkesi:</h4>
-          <p class="text-sm text-slate-300 italic mb-0">
+          <h4 class="font-bold text-white text-base mb-1" id="quote-header">Howard Gardner'ın Temel İlkesi:</h4>
+          <p class="text-sm text-slate-300 italic mb-0" id="quote-text">
             "Önemli olan bir çocuğun ne kadar akıllı olduğu değil; çocuğun nasıl ve hangi yollarla akıllı olduğudur."
           </p>
         </div>
 
-        <h2 class="text-2xl font-bold text-white pt-4">Çocuk Oyunlarında 8 Zeka Alanının Rolü</h2>
-        <p>
+        <h2 class="text-2xl font-bold text-white pt-4 font-['Outfit']" id="sec2-h2">Çocuk Oyunlarında 8 Zeka Alanının Rolü</h2>
+        <p id="sec2-p">
           Mobil oyunlar, doğru tasarlandığında çocukların bu 8 zeka alanını aynı anda veya aşamalı olarak harekete geçirebilen en etkili laboratuvarlardan biridir:
         </p>
 
-        <ul class="space-y-4 pl-4 list-disc marker:text-cyan-400">
-          <li><strong>Mantıksal-Matematiksel Zeka:</strong> Neden-sonuç zincirleri, terazi dengeleme, örüntü eşleştirme ve algoritmik adım bulmacaları.</li>
-          <li><strong>Görsel-Mekânsal Zeka:</strong> Nesneleri 3 boyutlu döndürme, gizli silüetleri tanıma ve labirent güzergahları planlama.</li>
-          <li><strong>Bedensel-Kinestetik Zeka:</strong> Ekranda sadece tek bir düğmeye tıklamak yerine; hassas kaydırma, kesme, denge sağlama ve çift elle koordinasyon kurma.</li>
-          <li><strong>Doğacı Zeka:</strong> Canlıların yaşam döngüleri (tohumdan fidana, tırtıldan kelebeğe), mevsimler ve doğal ekosistem bilinci.</li>
-          <li><strong>Müzikal-Ritmik Zeka:</strong> Ritimleri yakalama, tonları ayırt etme ve melodik hafıza egzersizleri.</li>
-          <li><strong>Sosyal ve İçsel Zeka:</strong> Duyguları tanıma, empati kurma, sakinleşme ve nefes yönetimi.</li>
+        <ul class="space-y-4 pl-4 list-disc marker:text-cyan-400" id="intel-list">
+          <!-- Dynamically injected -->
         </ul>
 
-        <h2 class="text-2xl font-bold text-white pt-4">Cezeri Games ve MultiMind Yaklaşımı</h2>
-        <p>
+        <h2 class="text-2xl font-bold text-white pt-4 font-['Outfit']" id="sec3-h2">Cezeri Games ve MultiMind Yaklaşımı</h2>
+        <p id="sec3-p1">
           <strong>MultiMind Kids: Brain Games</strong> oyunumuzda ezberci ve monoton "kart göster + 3 şıktan birini seçtir" kalıbını tamamen terk ettik. Bunun yerine <strong>30 Evrensel Oyun Mekaniği</strong> kütüphanesi oluşturduk.
         </p>
-        <p>
+        <p id="sec3-p2">
           Çocuk bir bölümde çift kefeli bir teraziyi dengelerken, diğer bölümde optik aynalarla ışığı hedefe ulaştırır, bir sonrakinde ise renkleri hassas tüplerde ayrıştırır. Bu sayede çocuk hem problem çözme zevkini tadar hem de çok boyutlu zihin gelişimini pekiştirir.
         </p>
 
         <!-- Final CTA Card -->
         <div class="glass-card rounded-3xl p-8 border border-cyan-500/30 text-center space-y-4 my-12">
-          <h3 class="text-xl font-bold text-white">MultiMind Kids'i Keşfedin</h3>
-          <p class="text-sm text-slate-300 max-w-lg mx-auto">
+          <h3 class="text-xl font-bold text-white font-['Outfit']" id="cta-title">MultiMind Kids'i Keşfedin</h3>
+          <p class="text-sm text-slate-300 max-w-lg mx-auto" id="cta-desc">
             Çocuğunuzun çoklu zeka gelişimini destekleyen 30 farklı mekanik ve pedagojik altyapıyı hemen deneyimleyin.
           </p>
           <a href="../../games/multimind/index.html" class="btn-glow inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-white text-sm">
-            <span>MultiMind Sayfasına Git</span>
+            <span id="cta-btn">MultiMind Sayfasına Git</span>
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </a>
         </div>
@@ -134,12 +151,279 @@
       </p>
       <div class="flex justify-center gap-6 text-xs">
         <a href="../../index.html" class="hover:text-cyan-300">Ana Sayfa</a>
+        <a href="../index.html" class="hover:text-cyan-300">Blog</a>
         <a href="../../privacy-policy/index.html" class="hover:text-cyan-300">Gizlilik Politikası</a>
         <a href="mailto:support@cezerigames.com" class="hover:text-cyan-300">Destek</a>
       </div>
     </div>
   </footer>
 
-  <script src="../../assets/js/main.js"></script>
+  <script>
+    const ARTICLE_DATA = {
+      tr: {
+        flag: "🇹🇷", code: "TR", backText: "Tüm Yazılar",
+        pageTitle: "Çoklu Zeka Kuramı Nedir ve Oyun Temelli Eğitimde Nasıl Kullanılır? | Cezeri Games",
+        metaDesc: "Howard Gardner'ın Çoklu Zeka Kuramı'nın temel prensipleri ve mobil oyun mekanikleriyle çocukların bilişsel gelişimini destekleme yöntemleri.",
+        tag: "PEDAGOJİ & EĞİTİCİ OYUN TASARIMI",
+        title: "Çoklu Zeka Kuramı Nedir ve Oyun Temelli Eğitimde Nasıl Kullanılır?",
+        author: "Cezeri Games Araştırma Ekibi",
+        time: "⏱️ 5 Dakika Okuma",
+        intro: "Geleneksel eğitim yaklaşımları uzun yıllar boyunca zekayı tek bir sayıya (IQ) ve yalnızca mantıksal ya da dilsel becerilere indirgedi. Ancak Harvard Üniversitesi psikoloğu <strong>Howard Gardner</strong>, 1983 yılında ortaya koyduğu <em>Çoklu Zeka Kuramı (Multiple Intelligences Theory)</em> ile bu kalıbı kökünden yıktı.",
+        sec1H2: "Zeka Tek Değil, Çok Boyutludur",
+        sec1P: "Gardner'a göre her insan, farklı oranlarda gelişmiş en az 8 farklı zeka boyutuna sahiptir. Kimi çocuklar ritimleri duyarak ve bedensel olarak hareket ederek öğrenirken, kimileri görsel şekiller ve uzamsal ilişkiler üzerinden dünyayı anlamlandırır.",
+        quoteH: "Howard Gardner'ın Temel İlkesi:",
+        quoteT: "\"Önemli olan bir çocuğun ne kadar akıllı olduğu değil; çocuğun nasıl ve hangi yollarla akıllı olduğudur.\"",
+        sec2H2: "Çocuk Oyunlarında 8 Zeka Alanının Rolü",
+        sec2P: "Mobil oyunlar, doğru tasarlandığında çocukların bu 8 zeka alanını aynı anda veya aşamalı olarak harekete geçirebilen en etkili laboratuvarlardan biridir:",
+        intels: [
+          "<strong>Mantıksal-Matematiksel Zeka:</strong> Neden-sonuç zincirleri, terazi dengeleme, örüntü eşleştirme ve algoritmik adım bulmacaları.",
+          "<strong>Görsel-Mekânsal Zeka:</strong> Nesneleri 3 boyutlu döndürme, gizli silüetleri tanıma ve labirent güzergahları planlama.",
+          "<strong>Bedensel-Kinestetik Zeka:</strong> Ekranda sadece tek bir düğmeye tıklamak yerine; hassas kaydırma, kesme, denge sağlama ve çift elle koordinasyon kurma.",
+          "<strong>Doğacı Zeka:</strong> Canlıların yaşam döngüleri (tohumdan fidana, tırtıldan kelebeğe), mevsimler ve doğal ekosistem bilinci.",
+          "<strong>Müzikal-Ritmik Zeka:</strong> Ritimleri yakalama, tonları ayırt etme ve melodik hafıza egzersizleri.",
+          "<strong>Sosyal ve İçsel Zeka:</strong> Duyguları tanıma, empati kurma, sakinleşme ve nefes yönetimi."
+        ],
+        sec3H2: "Cezeri Games ve MultiMind Yaklaşımı",
+        sec3P1: "<strong>MultiMind Kids: Brain Games</strong> oyunumuzda ezberci ve monoton 'kart göster + 3 şıktan birini seçtir' kalıbını tamamen terk ettik. Bunun yerine <strong>30 Evrensel Oyun Mekaniği</strong> kütüphanesi oluşturduk.",
+        sec3P2: "Çocuk bir bölümde çift kefeli bir teraziyi dengelerken, diğer bölümde optik aynalarla ışığı hedefe ulaştırır, bir sonrakinde ise renkleri hassas tüplerde ayrıştırır. Bu sayede çocuk hem problem çözme zevkini tadar hem de çok boyutlu zihin gelişimini pekiştirir.",
+        ctaTitle: "MultiMind Kids'i Keşfedin",
+        ctaDesc: "Çocuğunuzun çoklu zeka gelişimini destekleyen 30 farklı mekanik ve pedagojik altyapıyı hemen deneyimleyin.",
+        ctaBtn: "MultiMind Sayfasına Git"
+      },
+
+      en: {
+        flag: "🇬🇧", code: "EN", backText: "All Articles",
+        pageTitle: "What is Multiple Intelligences Theory and How is it Applied in Game-Based Learning? | Cezeri Games",
+        metaDesc: "Discover Howard Gardner's Multiple Intelligences Theory and how tactile mobile game mechanics foster holistic cognitive development in children.",
+        tag: "PEDAGOGY & EDUCATIONAL GAME DESIGN",
+        title: "What is Multiple Intelligences Theory and How is it Applied in Game-Based Learning?",
+        author: "Cezeri Games Research Team",
+        time: "⏱️ 5 Min Read",
+        intro: "Traditional education historically compressed intelligence into a single IQ figure, prioritizing only linguistic or mathematical aptitude. In 1983, Harvard psychologist <strong>Howard Gardner</strong> redefined human cognition through his landmark <em>Theory of Multiple Intelligences</em>.",
+        sec1H2: "Intelligence is Multi-Dimensional, Not Monolithic",
+        sec1P: "According to Gardner, every human mind possesses at least 8 autonomous intelligence faculties. Some children learn through rhythm and kinetic movement; others navigate reality through 3D mental geometry and spatial architecture.",
+        quoteH: "Howard Gardner's Core Axiom:",
+        quoteT: "\"It's not about how smart you are, it's about how you are smart.\"",
+        sec2H2: "The Role of 8 Intelligences in Children's Games",
+        sec2P: "When engineered thoughtfully, mobile games act as interactive laboratories engaging these 8 intelligence dimensions dynamically:",
+        intels: [
+          "<strong>Logical-Mathematical:</strong> Causal reasoning, balance scale stabilization, pattern deduction, and step algorithms.",
+          "<strong>Visual-Spatial:</strong> 3D mental shape rotation, silhouette matching, and maze navigation planning.",
+          "<strong>Bodily-Kinesthetic:</strong> Beyond button tapping; fine motor gestures, finger slicing, precision pouring, and bimanual synchronization.",
+          "<strong>Naturalist:</strong> Life cycles (seed to bloom, caterpillar to butterfly), environmental ecosystems, and species taxonomy.",
+          "<strong>Musical-Rhythmic:</strong> Beat tracking, auditory interval differentiation, and melodic memory sequences.",
+          "<strong>Social & Intrapersonal:</strong> Emotion detective, empathy building, impulse self-regulation, and focused breathing."
+        ],
+        sec3H2: "Cezeri Games & The MultiMind Approach",
+        sec3P1: "In <strong>MultiMind Kids: Brain Games</strong>, we completely abandoned the repetitive 'flash card + multiple choice buttons' template. Instead, we forged our <strong>30 Universal Gameplay Archetypes</strong> library.",
+        sec3P2: "In one challenge, a child tilts a physical balance scale; in the next, they arrange mirrors to guide laser beams, or pour liquids across test tubes. This ensures joyous discovery and holistic cognitive growth.",
+        ctaTitle: "Experience MultiMind Kids",
+        ctaDesc: "Discover 30 interactive archetypes and a neuro-pedagogical foundation designed to empower your child's innate potential.",
+        ctaBtn: "Explore MultiMind"
+      },
+
+      de: {
+        flag: "🇩🇪", code: "DE", backText: "Alle Artikel",
+        pageTitle: "Was ist die Theorie der Multiplen Intelligenzen und wie bereichert sie Lernspiele? | Cezeri Games",
+        metaDesc: "Howard Gardners Theorie der multiplen Intelligenzen und wie interaktive Spielmechaniken kindliche Kognition ganzheitlich fördern.",
+        tag: "PÄDAGOGIK & LERNSPIELDESIGN",
+        title: "Was ist die Theorie der Multiplen Intelligenzen und wie bereichert sie Lernspiele?",
+        author: "Cezeri Games Forschungsteam",
+        time: "⏱️ 5 Min. Lesezeit",
+        intro: "Lange Zeit reduzierte das Bildungssystem Begabung auf einen einzigen IQ-Wert. Harvard-Psychologe <strong>Howard Gardner</strong> revolutionierte dieses Bild 1983 mit seiner <em>Theorie der Multiplen Intelligenzen</em>.",
+        sec1H2: "Intelligenz ist mehrdimensional",
+        sec1P: "Laut Gardner besitzt jeder Mensch mindestens 8 autonome Begabungsachsen. Manche Kinder erfassen Zusammenhänge durch Bewegung und Rhythmus, andere über räumliche Beziehungen und geometrische Formen.",
+        quoteH: "Howard Gardners Leitsatz:",
+        quoteT: "\"Entscheidend ist nicht, wie klug ein Kind ist – sondern auf welche Art und Weise es klug ist.\"",
+        sec2H2: "Die 8 Intelligenzen in kindgerechten Spielen",
+        sec2P: "Sorgfältig gestaltete Mobilspiele wirken wie interaktive Kognitionslabore für alle 8 Intelligenzdimensionen:",
+        intels: [
+          "<strong>Logisch-Mathematisch:</strong> Ursache-Wirkungsketten, Waagbalken-Balancen, Zahlenmuster und Logikfolgen.",
+          "<strong>Visuell-Räumlich:</strong> Mentale 3D-Formendrehung, Silhouettenerkennung und Labyrinthplanung.",
+          "<strong>Körperlich-Kinästhetisch:</strong> Feinmotorische Wisch-, Schneide- und Gießbewegungen sowie beidhändige Koordination.",
+          "<strong>Naturalistisch:</strong> Lebenszyklen der Natur (vom Samen zur Blüte), Tierwelten und Umweltbewusstsein.",
+          "<strong>Musikalisch-Rhythmisch:</strong> Takterfassung, Tonhöhenunterscheidung und Melodiegedächtnis.",
+          "<strong>Sozial & Intrapersonell:</strong> Gefühle benennen, Empathie schulen, Frustrationstoleranz und Achtsamkeit."
+        ],
+        sec3H2: "Der Cezeri Games & MultiMind Ansatz",
+        sec3P1: "In <strong>MultiMind Kids</strong> haben wir das monotone 'Karte zeigen + 3 Buttons' verbannt und stattdessen <strong>30 universelle Spielarchetypen</strong> geschaffen.",
+        sec3P2: "Ein Kind balanciert eine mechanische Waage aus, lenkt Laserstrahlen mit optischen Prismen oder trennt Farben in Laborröhrchen. So wächst Freude am Denken.",
+        ctaTitle: "MultiMind Kids entdecken",
+        ctaDesc: "Erleben Sie 30 haptische Archetypen, die kindliche Begabungen facettenreich entfalten.",
+        ctaBtn: "Zu MultiMind Kids"
+      },
+
+      fr: {
+        flag: "🇫🇷", code: "FR", backText: "Tous les Articles",
+        pageTitle: "Qu'est-ce que la Théorie des Intelligences Multiples dans les Jeux Éducatifs ? | Cezeri Games",
+        metaDesc: "Les principes d'Howard Gardner et l'impact des mécaniques de jeu interactives sur l'éveil cognitif des enfants.",
+        tag: "PÉDAGOGIE & CONCEPTION LUDIQUE",
+        title: "Qu'est-ce que la Théorie des Intelligences Multiples dans les Jeux Éducatifs ?",
+        author: "Équipe de Recherche Cezeri Games",
+        time: "⏱️ 5 Min de Lecture",
+        intro: "L'enseignement traditionnel a longtemps réduit l'esprit humain à un chiffre de QI standardisé. En 1983, le psychologue d'Harvard <strong>Howard Gardner</strong> a transformé cette vision avec sa <em>Théorie des Intelligences Multiples</em>.",
+        sec1H2: "L'Intelligence est Plurielle et Nuancée",
+        sec1P: "Selon Gardner, chaque individu développe une harmonie unique parmi 8 formes d'intelligence distinctes. Certains enfants apprennent par le rythme corporel, d'autres par la géométrie spatiale.",
+        quoteH: "Le Principe Fondateur d'Howard Gardner :",
+        quoteT: "\"L'important n'est pas de savoir à quel point un enfant est intelligent, mais comment et de quelle manière il l'est.\"",
+        sec2H2: "Le Rôle des 8 Intelligences dans le Jeu",
+        sec2P: "Bien pensés, les jeux mobiles deviennent de véritables ateliers stimulant ces 8 canaux d'apprentissage :",
+        intels: [
+          "<strong>Logico-Mathématique :</strong> Raisonnement déductif, équilibre de balances, suites logiques et algorithmes.",
+          "<strong>Visuo-Spatiale :</strong> Rotation mentale 3D, silhouettes masquées et trajectoires de labyrinthes.",
+          "<strong>Corporelle-Kinesthésique :</strong> Motricité fine, précision du geste, découpe tactile et coordination bimanuelle.",
+          "<strong>Naturaliste :</strong> Cycles de vie (de la graine à l'arbre), habitats fauniques et conscience écologique.",
+          "<strong>Musicale-Rythmique :</strong> Capture du tempo, perception des hauteurs de son et mémoire auditive.",
+          "<strong>Sociale et Intrapersonnelle :</strong> Identification des émotions, empathie, respiration et autorégulation."
+        ],
+        sec3H2: "L'Approche Cezeri Games & MultiMind",
+        sec3P1: "Dans <strong>MultiMind Kids</strong>, nous avons rejeté le modèle passif 'carte + boutons à choix multiples' au profit d'une bibliothèque de <strong>30 Archétypes de Jeu Universels</strong>.",
+        sec3P2: "L'enfant équilibre des balances, oriente des lasers avec des prismes ou sépare des fluides colorés. Une exploration sensorielle et intellectuelle globale.",
+        ctaTitle: "Découvrez MultiMind Kids",
+        ctaDesc: "Offrez à votre enfant un univers de 30 mécaniques tactiles conçues pour célébrer toutes les formes d'intelligence.",
+        ctaBtn: "Découvrir le Jeu"
+      },
+
+      es: {
+        flag: "🇪🇸", code: "ES", backText: "Todos los Artículos",
+        pageTitle: "¿Qué es la Teoría de las Inteligencias Múltiples y Cómo se Aplica en Juegos? | Cezeri Games",
+        metaDesc: "Principios de Howard Gardner y cómo el diseño de mecánicas táctiles fomenta el desarrollo cognitivo integral en niños.",
+        tag: "PEDAGOGÍA Y DISEÑO EDUCATIVO",
+        title: "¿Qué es la Teoría de las Inteligencias Múltiples y Cómo se Aplica en Juegos?",
+        author: "Equipo de Investigación Cezeri Games",
+        time: "⏱️ 5 Min de Lectura",
+        intro: "Durante décadas se redujo la inteligencia infantil a un cociente único (CI). En 1983, el psicólogo de Harvard <strong>Howard Gardner</strong> derribó este paradigma con su <em>Teoría de las Inteligencias Múltiples</em>.",
+        sec1H2: "La Inteligencia es Múltiple y Diversa",
+        sec1P: "Para Gardner, cada niño posee una combinación única de al menos 8 dimensiones intelectuales. Algunos aprenden a través del movimiento corporal; otros construyen el mundo mediante perspectiva espacial.",
+        quoteH: "Máxima de Howard Gardner:",
+        quoteT: "\"Lo importante no es qué tan inteligente es un niño, sino de qué manera y por qué vías es inteligente.\"",
+        sec2H2: "El Papel de las 8 Inteligencias en los Juegos",
+        sec2P: "Diseñados con rigor pedagógico, los juegos móviles son laboratorios dinámicos que activan estas 8 inteligencias:",
+        intels: [
+          "<strong>Lógico-Matemática:</strong> Deducción de causas, balanzas de equilibrio, patrones y secuencias lógicas.",
+          "<strong>Visual-Espacial:</strong> Rotación mental de figuras 3D, siluetas ocultas y orientación en laberintos.",
+          "<strong>Corporal-Kinestésica:</strong> Destreza motriz fina, deslizamiento preciso, corte táctil y sincronía de ambas manos.",
+          "<strong>Naturalista:</strong> Ciclos biológicos (semilla a fruto), hábitats animales y respeto ecológico.",
+          "<strong>Musical-Rítmica:</strong> Compás rítmico, discriminación de tonos y memoria melódica.",
+          "<strong>Social e Intrapersonal:</strong> Detección de emociones, empatía, calma y autorregulación de impulsos."
+        ],
+        sec3H2: "La Propuesta Cezeri Games y MultiMind",
+        sec3P1: "En <strong>MultiMind Kids</strong> rompimos la plantilla monótona de 'mostrar tarjeta + 3 opciones'. Creamos en su lugar <strong>30 Arquetipos Universales de Juego</strong> táctil.",
+        sec3P2: "En una fase el niño calibra una balanza, en otra alinea espejos ópticos y en la siguiente vierte líquidos de colores. Aprendizaje genuino y activo.",
+        ctaTitle: "Descubra MultiMind Kids",
+        ctaDesc: "Explore 30 mecánicas pedagógicas que potencian el talento natural de su hijo de forma divertida.",
+        ctaBtn: "Ver MultiMind Kids"
+      },
+
+      pt: {
+        flag: "🇵🇹", code: "PT", backText: "Todos os Artigos",
+        pageTitle: "O que é a Teoria das Inteligências Múltiplas e como os Jogos a Potenciam? | Cezeri Games",
+        metaDesc: "A teoria de Howard Gardner e como mecânicas lúdicas estimulam o desenvolvimento cerebral e cognitivo infantil.",
+        tag: "PEDAGOGIA & DESIGN DE JOGOS",
+        title: "O que é a Teoria das Inteligências Múltiplas e como os Jogos a Potenciam?",
+        author: "Equipa de Investigação Cezeri Games",
+        time: "⏱️ 5 Min de Leitura",
+        intro: "A educação clássica mediu durante décadas a inteligência através de um único número de QI. Em 1983, o psicólogo de Harvard <strong>Howard Gardner</strong> transformou esse entendimento com a <em>Teoria das Inteligências Múltiplas</em>.",
+        sec1H2: "A Inteligência é Multifacetada",
+        sec1P: "Para Gardner, cada ser humano desenvolve combinações únicas em 8 dimensões intelectuais. Umas crianças aprendem através da música e do movimento; outras compreendem o mundo pela geometria tridimensional.",
+        quoteH: "O Princípio de Howard Gardner:",
+        quoteT: "\"O essencial não é o quão inteligente uma criança é, mas de que forma ela é inteligente.\"",
+        sec2H2: "O Papel das 8 Inteligências nos Jogos Infantis",
+        sec2P: "Quando concebidos com critério, os videojogos móveis tornam-se laboratórios vivos que ativam estas 8 capacidades:",
+        intels: [
+          "<strong>Lógico-Matemática:</strong> Relações de causa-efeito, balanças de pratos, sequências e desafios algorítmicos.",
+          "<strong>Visual-Espacial:</strong> Rotação mental de formas 3D, encaixe de silhuetas e planeamento em labirintos.",
+          "<strong>Corporal-Cinestésica:</strong> Motricidade fina, corte preciso, equilíbrio tátil e sincronismo com as duas mãos.",
+          "<strong>Naturalista:</strong> Ciclos de vida da natureza (semente a broto), ecossistemas e fauna.",
+          "<strong>Musical-Rítmica:</strong> Acompanhamento de tempos, afinação auditiva e memória melódica.",
+          "<strong>Social e Intrapessoal:</strong> Reconhecimento de expressões, empatia, foco na respiração e autorregulação."
+        ],
+        sec3H2: "A Abordagem Cezeri Games & MultiMind",
+        sec3P1: "No <strong>MultiMind Kids</strong>, eliminámos o modelo repetitivo 'cartão + 3 opções'. Desenvolvemos uma biblioteca com <strong>30 Arquétipos Universais de Jogabilidade</strong>.",
+        sec3P2: "A criança equilibra uma balança mecânica, orienta feixes de luz com prismas ou transfere líquidos graduados. Uma experiência ativa e estimulante.",
+        ctaTitle: "Conheça o MultiMind Kids",
+        ctaDesc: "Experimente 30 mecânicas interativas que respeitam e desenvolvem o perfil único do seu filho.",
+        ctaBtn: "Explorar MultiMind Kids"
+      }
+    };
+
+    let curLang = "tr";
+
+    function detectUserLang() {
+      const stored = localStorage.getItem("cezeri_lang");
+      if (stored && ARTICLE_DATA[stored.toLowerCase()]) return stored.toLowerCase();
+      const navLang = (navigator.language || navigator.userLanguage || "tr").toLowerCase();
+      if (navLang.startsWith("en")) return "en";
+      if (navLang.startsWith("de")) return "de";
+      if (navLang.startsWith("fr")) return "fr";
+      if (navLang.startsWith("es")) return "es";
+      if (navLang.startsWith("pt")) return "pt";
+      return "tr";
+    }
+
+    function applyLang(lang) {
+      if (!ARTICLE_DATA[lang]) lang = "tr";
+      curLang = lang;
+      localStorage.setItem("cezeri_lang", lang.toUpperCase());
+
+      const d = ARTICLE_DATA[lang];
+
+      document.getElementById("current-lang-flag").textContent = d.flag;
+      document.getElementById("current-lang-code").textContent = d.code;
+      document.getElementById("nav-back-text").textContent = d.backText;
+
+      document.getElementById("page-title").textContent = d.pageTitle;
+      document.getElementById("page-meta-desc").setAttribute("content", d.metaDesc);
+      document.getElementById("art-tag").textContent = d.tag;
+      document.getElementById("art-title").textContent = d.title;
+      document.getElementById("art-author").textContent = d.author;
+      document.getElementById("art-time").textContent = d.time;
+      document.getElementById("art-intro").innerHTML = d.intro;
+
+      document.getElementById("sec1-h2").textContent = d.sec1H2;
+      document.getElementById("sec1-p").textContent = d.sec1P;
+      document.getElementById("quote-header").textContent = d.quoteH;
+      document.getElementById("quote-text").textContent = d.quoteT;
+
+      document.getElementById("sec2-h2").textContent = d.sec2H2;
+      document.getElementById("sec2-p").textContent = d.sec2P;
+
+      const listContainer = document.getElementById("intel-list");
+      listContainer.innerHTML = d.intels.map(item => `<li>${item}</li>`).join("");
+
+      document.getElementById("sec3-h2").textContent = d.sec3H2;
+      document.getElementById("sec3-p1").innerHTML = d.sec3P1;
+      document.getElementById("sec3-p2").innerHTML = d.sec3P2;
+
+      document.getElementById("cta-title").textContent = d.ctaTitle;
+      document.getElementById("cta-desc").textContent = d.ctaDesc;
+      document.getElementById("cta-btn").textContent = d.ctaBtn;
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const trigger = document.getElementById("lang-btn-trigger");
+      const menu = document.getElementById("lang-dropdown-menu");
+
+      trigger.addEventListener("click", (e) => {
+        e.stopPropagation();
+        menu.classList.toggle("hidden");
+      });
+
+      document.addEventListener("click", () => {
+        menu.classList.add("hidden");
+      });
+
+      document.querySelectorAll(".lang-select-opt").forEach(btn => {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const chosen = btn.getAttribute("data-lang");
+          applyLang(chosen);
+          menu.classList.add("hidden");
+        });
+      });
+
+      applyLang(detectUserLang());
+    });
+  </script>
 </body>
 </html>

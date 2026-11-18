@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Bilinçli Ekran Süresi: Pasif Video Tüketimi mi, Aktif Problem Çözme mi? | Cezeri Games</title>
+  <meta name="description" id="page-meta-desc" content="Çocukların dijital ekran kullanımını yasaklamak yerine, analitik düşünmeyi besleyen aktif problem çözme deneyimlerine dönüştürme ebeveyn kılavuzu.">
+  
+  <link rel="icon" type="image/png" href="../../assets/images/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  </noscript>
+</head>
+<body class="bg-[#050E17] text-slate-100 antialiased selection:bg-cyan-500 selection:text-white">
+
+  <!-- Ambient Glow -->
+  <div class="ambient-glow-1 top-10 left-1/4"></div>
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="../../index.html" class="flex items-center gap-3 group">
+        <img src="../../assets/images/logo.png" alt="Cezeri Games Logo" class="h-10 w-10 object-contain drop-shadow-[0_0_12px_rgba(34,211,238,0.45)] group-hover:scale-105 transition-transform duration-300">
+        <div class="flex flex-col">
+          <span class="font-black text-lg tracking-wider text-white leading-tight font-['Outfit']">CEZERI <span class="text-gradient">GAMES</span></span>
+          <span class="text-[8px] font-bold tracking-[0.2em] text-cyan-400/90 uppercase">Mobile Game Studio</span>
+        </div>
+      </a>
+
+      <!-- 6-Language Switcher & Back link -->
+      <div class="flex items-center gap-3 sm:gap-6">
+        <div class="relative">
+          <button id="lang-btn-trigger" class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-100 border border-cyan-500/30 text-xs font-semibold shadow-lg transition-all">
+            <span id="current-lang-flag">🇹🇷</span>
+            <span id="current-lang-code">TR</span>
+            <svg class="w-3.5 h-3.5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          
+          <div id="lang-dropdown-menu" class="hidden absolute right-0 mt-2 w-48 rounded-2xl bg-[#081827] border border-cyan-500/40 shadow-2xl py-2 z-50 backdrop-blur-2xl">
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="tr"><span>🇹🇷</span> <span>Türkçe (TR)</span></button>
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="en"><span>🇬🇧</span> <span>English (EN)</span></button>
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="de"><span>🇩🇪</span> <span>Deutsch (DE)</span></button>
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="fr"><span>🇫🇷</span> <span>Français (FR)</span></button>
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="es"><span>🇪🇸</span> <span>Español (ES)</span></button>
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="pt"><span>🇵🇹</span> <span>Português (PT)</span></button>
+          </div>
+        </div>
+
+        <a href="../index.html" class="text-xs font-semibold text-slate-300 hover:text-cyan-300 flex items-center gap-1.5 transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+          <span class="hidden sm:inline" id="nav-back-text">Tüm Yazılar</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Container -->
+  <article class="pt-36 pb-28">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Article Header -->
+      <header class="space-y-6 pb-10 border-b border-cyan-500/15 text-center sm:text-left">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold badge-tag border border-emerald-500/30 text-emerald-300 bg-emerald-500/10" id="art-tag">
+          EKRAN & EBEVEYNLİK
+        </div>
+        
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight font-['Outfit']" id="art-title">
+          Bilinçli Ekran Süresi: Pasif Video Tüketimi mi, Aktif Problem Çözme mi?
+        </h1>
+
+        <div class="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs text-slate-400">
+          <span class="flex items-center gap-1.5">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-300 flex items-center justify-center font-bold">🌱</span>
+            <span id="art-author">Çocuk Gelişimi & Ebeveyn Rehberliği</span>
+          </span>
+          <span>•</span>
+          <span id="art-time">⏱️ 4 Dakika Okuma</span>
+          <span>•</span>
+          <span>Güncellenme: 2026</span>
+        </div>
+      </header>
+
+      <!-- Article Body -->
+      <div class="prose prose-invert prose-cyan max-w-none pt-10 text-slate-300 space-y-6 text-base sm:text-lg leading-relaxed">
+        
+        <p class="text-xl text-slate-200 font-medium leading-relaxed" id="art-intro">
+          Dijital çağda ebeveynlerin en büyük kaygılarından biri ekran süresidir. Ancak gelişim psikolojisi bize gösteriyor ki sorun yalnızca ekranın "süresi" değil, o sürenin <strong>"nasıl"</strong> değerlendirildiğidir.
+        </p>
+
+        <h2 class="text-2xl font-bold text-white pt-4 font-['Outfit']" id="sec1-h2">Pasif Hipnoz vs. Aktif Bilişsel Etkileşim</h2>
+        <p id="sec1-p1">
+          Bir çocuğun saatlerce algoritma güdümlü kısa videolar (Reels, TikTok, YouTube Shorts) izlemesi ile; bir bulmacada neden-sonuç ilişkisi kurup nesneleri parmaklarıyla yerleştirmesi beyinde tamamen zıt nöral yolları uyarır.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
+          <div class="glass-card rounded-2xl p-5 border border-rose-500/30 bg-rose-950/15 space-y-2">
+            <h4 class="font-bold text-rose-300 text-base flex items-center gap-2">
+              <span>⚠️</span> <span id="col1-title">Pasif Video Tüketimi</span>
+            </h4>
+            <ul class="text-sm text-slate-300 space-y-1.5" id="col1-list">
+              <li>• Tek yönlü veri akışı, sıfır karar alma</li>
+              <li>• Hızlı dopamin döngüsü ve dikkat dağınıklığı</li>
+              <li>• Sabırsızlık ve dürtü kontrolünde azalma</li>
+            </ul>
+          </div>
+
+          <div class="glass-card rounded-2xl p-5 border border-emerald-500/30 bg-emerald-950/15 space-y-2">
+            <h4 class="font-bold text-emerald-300 text-base flex items-center gap-2">
+              <span>🌟</span> <span id="col2-title">Aktif Problem Çözme</span>
+            </h4>
+            <ul class="text-sm text-slate-300 space-y-1.5" id="col2-list">
+              <li>• Dokunsal etkileşim ve çift el koordinasyonu</li>
+              <li>• Hata yapma ve strateji yenileme refleksi</li>
+              <li>• Sabır, derin odak ve içsel tatmin hissi</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-white pt-4 font-['Outfit']" id="sec2-h2">Ebeveynler İçin 3 Altın Kural</h2>
+        <ul class="space-y-4 pl-4 list-disc marker:text-emerald-400" id="rules-list">
+          <!-- Dynamically injected -->
+        </ul>
+
+        <h2 class="text-2xl font-bold text-white pt-4 font-['Outfit']" id="sec3-h2">MultiMind'ın Güvenli ve Pedagojik Alanı</h2>
+        <p id="sec3-p">
+          MultiMind Kids, çocukları ekrana bağımlı kılacak sonsuz döngüler yerine <strong>10 hamlelik odaklanmış oturum kurgusu</strong>, sıfır üçüncü taraf reklam ve COPPA uyumlu aile güvenliği sunar. Çocuğunuz ekran karşısındayken pasif bir izleyici değil; düşünen, tartan ve üreten bir zihin mimarı olur.
+        </p>
+
+        <!-- Final CTA Card -->
+        <div class="glass-card rounded-3xl p-8 border border-emerald-500/30 text-center space-y-4 my-12 bg-emerald-950/20">
+          <h3 class="text-xl font-bold text-white font-['Outfit']" id="cta-title">Akıllı Ekran Deneyimini Başlatın</h3>
+          <p class="text-sm text-slate-300 max-w-lg mx-auto" id="cta-desc">
+            Çocuğunuzun ekran vaktini bir zihinsel güçlendirme seansına dönüştürün.
+          </p>
+          <a href="../../games/multimind/index.html" class="btn-glow inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-white text-sm">
+            <span id="cta-btn">MultiMind'ı Keşfedin</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </article>
+
+  <!-- Footer -->
+  <footer class="border-t border-cyan-500/15 bg-[#030910] text-slate-400 text-sm py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+      <div class="flex items-center justify-center gap-3">
+        <img src="../../assets/images/logo.png" alt="Cezeri Games" class="h-8 w-8 object-contain">
+        <span class="font-extrabold text-base tracking-wider text-white">CEZERI <span class="text-cyan-400">GAMES</span></span>
+      </div>
+      <p class="text-xs text-slate-500">
+        &copy; <span class="current-year">2026</span> Cezeri Games. Tüm hakları saklıdır.
+      </p>
+      <div class="flex justify-center gap-6 text-xs">
+        <a href="../../index.html" class="hover:text-cyan-300">Ana Sayfa</a>
+        <a href="../index.html" class="hover:text-cyan-300">Blog</a>
+        <a href="../../privacy-policy/index.html" class="hover:text-cyan-300">Gizlilik Politikası</a>
+        <a href="mailto:support@cezerigames.com" class="hover:text-cyan-300">Destek</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const SCREEN_DATA = {
+      tr: {
+        flag: "🇹🇷", code: "TR", backText: "Tüm Yazılar",
+        pageTitle: "Bilinçli Ekran Süresi: Pasif Video Tüketimi mi, Aktif Problem Çözme mi? | Cezeri Games",
+        metaDesc: "Çocukların dijital cihazlarla geçirdiği zamanı yasaklamak yerine, analitik düşünmeyi besleyen interaktif deneyimlere dönüştürme kılavuzu.",
+        tag: "EKRAN & EBEVEYNLİK",
+        title: "Bilinçli Ekran Süresi: Pasif Video Tüketimi mi, Aktif Problem Çözme mi?",
+        author: "Çocuk Gelişimi & Ebeveyn Rehberliği",
+        time: "⏱️ 4 Dakika Okuma",
+        intro: "Dijital çağda ebeveynlerin en büyük kaygılarından biri ekran süresidir. Ancak gelişim psikolojisi bize gösteriyor ki sorun yalnızca ekranın 'süresi' değil, o sürenin <strong>'nasıl'</strong> değerlendirildiğidir.",
+        sec1H2: "Pasif Hipnoz vs. Aktif Bilişsel Etkileşim",
+        sec1P1: "Bir çocuğun saatlerce algoritma güdümlü kısa videolar (Reels, TikTok, YouTube Shorts) izlemesi ile; bir bulmacada neden-sonuç ilişkisi kurup nesneleri parmaklarıyla yerleştirmesi beyinde tamamen zıt nöral yolları uyarır.",
+        col1Title: "Pasif Video Tüketimi",
+        col1List: [ "• Tek yönlü veri akışı, sıfır karar alma", "• Hızlı dopamin döngüsü ve dikkat dağınıklığı", "• Sabırsızlık ve dürtü kontrolünde azalma" ],
+        col2Title: "Aktif Problem Çözme",
+        col2List: [ "• Dokunsal etkileşim ve çift el koordinasyonu", "• Hata yapma ve strateji yenileme refleksi", "• Sabır, derin odak ve içsel tatmin hissi" ],
+        sec2H2: "Ebeveynler İçin 3 Altın Kural",
+        rules: [
+          "<strong>1. İçerik Kalitesi Süreden Önemlidir:</strong> Ekran başında geçen 20 dakikalık bir akıl oyunu, 2 saatlik pasif çizgi film izlemekten kat kat daha öğreticidir.",
+          "<strong>2. Reklamsız ve Güvenli Alanlar Seçin:</strong> Çocukların dikkatini bölen pop-up reklamlar dürtü kontrolünü zayıflatır.",
+          "<strong>3. Birlikte Deneyimleyin (Co-Play):</strong> Oyun sonrasında 'Bu bölümü çözerken nasıl bir strateji kurdun?' diyerek çocuğunuzla konuşun."
+        ],
+        sec3H2: "MultiMind'ın Güvenli ve Pedagojik Alanı",
+        sec3P: "MultiMind Kids, çocukları ekrana bağımlı kılacak sonsuz döngüler yerine <strong>10 hamlelik odaklanmış oturum kurgusu</strong>, sıfır üçüncü taraf reklam ve COPPA uyumlu aile güvenliği sunar. Çocuğunuz ekran karşısındayken pasif bir izleyici değil; düşünen, tartan ve üreten bir zihin mimarı olur.",
+        ctaTitle: "Akıllı Ekran Deneyimini Başlatın",
+        ctaDesc: "Çocuğunuzun ekran vaktini bir zihinsel güçlendirme seansına dönüştürün.",
+        ctaBtn: "MultiMind'ı Keşfedin"
+      },
+
+      en: {
+        flag: "🇬🇧", code: "EN", backText: "All Articles",
+        pageTitle: "Conscious Screen Time: Passive Video Consumption vs. Active Problem Solving | Cezeri Games",
+        metaDesc: "A parent guide to transforming children's screen habits from passive video scrolling into active cognitive problem-solving adventures.",
+        tag: "SCREEN HABITS & PARENTING",
+        title: "Conscious Screen Time: Passive Video Consumption vs. Active Problem Solving",
+        author: "Child Development & Family Advisory",
+        time: "⏱️ 4 Min Read",
+        intro: "In our digital landscape, screen time tops parents' concerns. Yet developmental psychology reveals that the true impact lies not merely in screen minutes, but in <strong>how</strong> those minutes engage young minds.",
+        sec1H2: "Passive Hypnosis vs. Active Cognitive Engagement",
+        sec1P1: "Endless algorithmic short-video scrolling activates radically different neural pathways compared to manipulating a physics puzzle with tactile intuition.",
+        col1Title: "Passive Video Consumption",
+        col1List: [ "• One-way consumption with zero active decisions", "• Rapid dopamine hits reducing attention spans", "• Reduced impulse control and frustration tolerance" ],
+        col2Title: "Active Problem Solving",
+        col2List: [ "• Tactile fine-motor manipulation and dual-hand sync", "• Error resilience and real-time strategy adjustment", "• Genuine pride, patience, and focused persistence" ],
+        sec2H2: "3 Golden Rules for Conscious Families",
+        rules: [
+          "<strong>1. Quality Trumps Duration:</strong> 20 minutes of strategic problem-solving is vastly superior to 2 hours of passive scrolling.",
+          "<strong>2. Choose 100% Ad-Free Safe Havens:</strong> Intrusive commercials shatter focus and trigger impulse anxiety.",
+          "<strong>3. Practice Co-Play Engagement:</strong> Ask your child: 'How did you balance that scale?' to stimulate reflective thinking."
+        ],
+        sec3H2: "MultiMind's Purpose-Built Safe Sanctuary",
+        sec3P: "MultiMind Kids avoids addictive infinite loops by employing a structured <strong>10-attempt pedagogical session</strong>, zero third-party ads, and full COPPA safety. Your child becomes a creator and thinker, not a passive consumer.",
+        ctaTitle: "Ignite Smart Screen Habits",
+        ctaDesc: "Transform your child's screen time into a joyful cognitive workout session.",
+        ctaBtn: "Explore MultiMind"
+      },
+
+      de: {
+        flag: "🇩🇪", code: "DE", backText: "Alle Artikel",
+        pageTitle: "Bewusste Bildschirmzeit: Passiver Videokonsum vs. Aktives Problemlösen | Cezeri Games",
+        metaDesc: "Ein Elternleitfaden: Verwandeln Sie digitale Bildschirmzeit von passivem Konsum in aktive, kindgerechte Denkförderung.",
+        tag: "MEDIENKOMPETENZ & ELTERN",
+        title: "Bewusste Bildschirmzeit: Passiver Videokonsum vs. Aktives Problemlösen",
+        author: "Familienberatung Cezeri Games",
+        time: "⏱️ 4 Min. Lesezeit",
+        intro: "Im digitalen Zeitalter ist Bildschirmzeit eine der größten Sorgen von Eltern. Die Kognitionsforschung zeigt: Nicht die Dauer allein entscheidet, sondern <strong>wie</strong> der Bildschirm genutzt wird.",
+        sec1H2: "Passive Berieselung vs. Geistige Aktivität",
+        sec1P1: "Stundenlanger Konsum von Kurzvideos löst im Gehirn völlig andere Prozesse aus als das aktive Lösen eines interaktiven Denkspiels.",
+        col1Title: "Passiver Videokonsum",
+        col1List: [ "• Einseitiger Datenstrom ohne eigene Entscheidungen", "• Schnelle Dopaminreize schwächen die Ausdauer", "• Geringe Frustrationstoleranz" ],
+        col2Title: "Aktives Problemlösen",
+        col2List: [ "• Taktile Haptik und beidhändige Koordination", "• Aus Fehlern lernen und Strategien anpassen", "• Geduld, tiefe Konzentration und echter Stolz" ],
+        sec2H2: "3 Goldene Regeln für Familien",
+        rules: [
+          "<strong>1. Inhaltsqualität schlägt reine Zeitdauer:</strong> 20 Minuten Denkspiel sind wertvoller als Stunden passiver Videos.",
+          "<strong>2. Werbefreie Schutzräume wählen:</strong> Aufdringliche Werbung stört die Impulskontrolle von Kindern.",
+          "<strong>3. Gemeinsam reflektieren (Co-Play):</strong> Sprechen Sie mit Ihrem Kind über seine Lösungswege."
+        ],
+        sec3H2: "Der sichere Lernraum von MultiMind",
+        sec3P: "MultiMind Kids verzichtet auf endlose Dopaminschleifen. Mit einer <strong>10-Züge-Struktur</strong>, null Drittwerbung und COPPA-Konformität fördern wir kleine Denker statt passive Zuseher.",
+        ctaTitle: "Smarte Medienzeit starten",
+        ctaDesc: "Verwandeln Sie Bildschirmzeit in ein wertvolles kognitives Erlebnis.",
+        ctaBtn: "MultiMind entdecken"
+      },
+
+      fr: {
+        flag: "🇫🇷", code: "FR", backText: "Tous les Articles",
+        pageTitle: "Temps d'Écran Conscient : Vidéos Passives ou Résolution Active ? | Cezeri Games",
+        metaDesc: "Guide parental pour transformer le temps d'écran en une aventure cognitive d'apprentissage actif et d'esprit critique.",
+        tag: "ÉCRANS & PARENTALITÉ",
+        title: "Temps d'Écran Conscient : Vidéos Passives ou Résolution Active ?",
+        author: "Pédagogie & Développement de l'Enfant",
+        time: "⏱️ 4 Min de Lecture",
+        intro: "Le temps d'écran préoccupe tous les parents. Pourtant, la psychologie démontre que l'essentiel ne réside pas dans les minutes, mais dans la <strong>nature de l'interaction</strong>.",
+        sec1H2: "Consommation Passive vs. Engagement Cognitif",
+        sec1P1: "Le défilement continu de courtes vidéos passives active des réseaux neuronaux opposés à ceux sollicités par la manipulation d'un puzzle tactile.",
+        col1Title: "Vidéos Passives",
+        col1List: [ "• Flux unilatéral sans prise de décision", "• Dopamine immédiate réduisant l'attention", "• Moindre tolérance à la frustration" ],
+        col2Title: "Résolution Active",
+        col2List: [ "• Motricité fine et coordination bimanuelle", "• Capacité à surmonter l'erreur avec calme", "• Concentration profonde et satisfaction réelle" ],
+        sec2H2: "3 Règles d'Or pour les Parents",
+        rules: [
+          "<strong>1. La Qualité Prévaut sur la Durée :</strong> 20 minutes d'énigmes stimulantes surpassent 2 heures de vidéos passives.",
+          "<strong>2. Privilégiez le 100% Sans Publicité :</strong> Les publicités intrusives nuisent à l'autorégulation de l'enfant.",
+          "<strong>3. Dialoguez Après le Jeu :</strong> Demandez-lui : 'Comment as-tu trouvé la solution ?' pour développer la métacognition."
+        ],
+        sec3H2: "L'Espace Sécurisé MultiMind",
+        sec3P: "MultiMind Kids bannit les boucles addictives grâce à des sessions cadrées de <strong>10 tentatives</strong>, zéro publicité externe et une conformité COPPA totale.",
+        ctaTitle: "Adoptez un Écran Intelligent",
+        ctaDesc: "Faites du temps d'écran un tremplin pour l'éveil intellectuel de votre enfant.",
+        ctaBtn: "Découvrir MultiMind"
+      },
+
+      es: {
+        flag: "🇪🇸", code: "ES", backText: "Todos los Artículos",
+        pageTitle: "Tiempo de Pantalla Consciente: ¿Consumo Pasivo o Resolución Activa? | Cezeri Games",
+        metaDesc: "Guía para familias: cómo convertir el tiempo frente a la pantalla en una experiencia activa de razonamiento y aprendizaje.",
+        tag: "PANTALLAS Y CRIANZA",
+        title: "Tiempo de Pantalla Consciente: ¿Consumo Pasivo o Resolución Activa?",
+        author: "Asesoría de Desarrollo Infantil",
+        time: "⏱️ 4 Min de Lectura",
+        intro: "El tiempo frente a dispositivos inquieta a los padres. Sin embargo, la ciencia demuestra que lo crucial no es solo el reloj, sino <strong>la calidad del estímulo</strong>.",
+        sec1H2: "Pasividad Hipnótica vs. Estimulación Cognitiva",
+        sec1P1: "Ver horas de vídeos cortos automáticos activa circuitos cerebrales totalmente distintos a resolver un enigma táctil con lógica propia.",
+        col1Title: "Consumo Pasivo de Vídeos",
+        col1List: [ "• Recepción pasiva sin toma de decisiones", "• Dopamina rápida que acorta la concentración", "• Impaciencia e irritabilidad" ],
+        col2Title: "Resolución Activa de Retos",
+        col2List: [ "• Coordinación bimanual y motricidad fina", "• Resiliencia ante el error y adaptación", "• Paciencia, enfoque y satisfacción genuina" ],
+        sec2H2: "3 Pautas Clave para Familias",
+        rules: [
+          "<strong>1. La Calidad del Contenido Manda :</strong> 20 minutos de lógica activa aportan infinitamente más que horas de vídeos.",
+          "<strong>2. Entornos 100% Libres de Anuncios :</strong> La publicidad invasiva rompe el autocontrol de los niños.",
+          "<strong>3. Conexión Familiar (Co-Play) :</strong> Converse con su hijo sobre cómo ideó su solución."
+        ],
+        sec3H2: "El Refugio Educativo MultiMind",
+        sec3P: "MultiMind Kids destierra las mecánicas adictivas mediante sesiones estructuradas de <strong>10 jugadas</strong>, sin anuncios de terceros y con certificación COPPA.",
+        ctaTitle: "Active Pantallas Inteligentes",
+        ctaDesc: "Convierta los dispositivos en aliados del desarrollo mental de sus hijos.",
+        ctaBtn: "Ver MultiMind Kids"
+      },
+
+      pt: {
+        flag: "🇵🇹", code: "PT", backText: "Todos os Artigos",
+        pageTitle: "Tempo de Ecrã Consciente: Vídeos Passivos vs. Resolução Ativa | Cezeri Games",
+        metaDesc: "Guia para famílias: transforme o tempo digital dos seus filhos em momentos enriquecedores de pensamento crítico e foco.",
+        tag: "TECNOLOGIA & FAMÍLIA",
+        title: "Tempo de Ecrã Consciente: Vídeos Passivos vs. Resolução Ativa",
+        author: "Gabinete Pedagógico Cezeri Games",
+        time: "⏱️ 4 Min de Leitura",
+        intro: "O tempo de ecrã é um desafio diário para as famílias. No entanto, a neurociência comprova que o impacto real depende de <strong>como a criança interage</strong>.",
+        sec1H2: "Passividade vs. Desafio Mental Ativo",
+        sec1P1: "Rolar indefinidamente vídeos curtos em redes estimula o cérebro de forma oposta à superação de um desafio tátil e matemático.",
+        col1Title: "Vídeos Passivos",
+        col1List: [ "• Consumo passivo sem tomadas de decisão", "• Dopamina fácil que fragmenta a atenção", "• Menor tolerância à frustração" ],
+        col2Title: "Resolução Ativa",
+        col2List: [ "• Coordenação bimanual e destreza motora", "• Capacidade de aprender com as falhas", "• Foco duradouro e autoconfiança" ],
+        sec2H2: "3 Princípios Essenciais para Pais",
+        rules: [
+          "<strong>1. Qualidade Acima de Minutos :</strong> 20 minutos de desafios inteligentes superam horas de desenhos animados passivos.",
+          "<strong>2. Ambientes 100% Livres de Publicidade :</strong> Anúncios invasivos prejudicam a atenção da criança.",
+          "<strong>3. Partilha Familiar :</strong> Dialogue: 'Como conseguiste resolver este labirinto?' para exercitar a fala."
+        ],
+        sec3H2: "A Proposta Segura do MultiMind",
+        sec3P: "O MultiMind Kids oferece sessões estruturadas em <strong>10 tentativas pedagógicas</strong>, sem anúncios de terceiros e com respeito integral à privacidade COPPA.",
+        ctaTitle: "Experimente um Ecrã Construtivo",
+        ctaDesc: "Transforme o tempo de ecrã dos seus filhos numa jornada estimulante de inteligência.",
+        ctaBtn: "Conhecer o MultiMind"
+      }
+    };
+
+    let currentL = "tr";
+
+    function detectUserL() {
+      const stored = localStorage.getItem("cezeri_lang");
+      if (stored && SCREEN_DATA[stored.toLowerCase()]) return stored.toLowerCase();
+      const navLang = (navigator.language || navigator.userLanguage || "tr").toLowerCase();
+      if (navLang.startsWith("en")) return "en";
+      if (navLang.startsWith("de")) return "de";
+      if (navLang.startsWith("fr")) return "fr";
+      if (navLang.startsWith("es")) return "es";
+      if (navLang.startsWith("pt")) return "pt";
+      return "tr";
+    }
+
+    function applyL(lang) {
+      if (!SCREEN_DATA[lang]) lang = "tr";
+      currentL = lang;
+      localStorage.setItem("cezeri_lang", lang.toUpperCase());
+
+      const d = SCREEN_DATA[lang];
+
+      document.getElementById("current-lang-flag").textContent = d.flag;
+      document.getElementById("current-lang-code").textContent = d.code;
+      document.getElementById("nav-back-text").textContent = d.backText;
+
+      document.getElementById("page-title").textContent = d.pageTitle;
+      document.getElementById("page-meta-desc").setAttribute("content", d.metaDesc);
+      document.getElementById("art-tag").textContent = d.tag;
+      document.getElementById("art-title").textContent = d.title;
+      document.getElementById("art-author").textContent = d.author;
+      document.getElementById("art-time").textContent = d.time;
+      document.getElementById("art-intro").innerHTML = d.intro;
+
+      document.getElementById("sec1-h2").textContent = d.sec1H2;
+      document.getElementById("sec1-p1").textContent = d.sec1P1;
+      document.getElementById("col1-title").textContent = d.col1Title;
+      document.getElementById("col1-list").innerHTML = d.col1List.map(i => `<li>${i}</li>`).join("");
+      document.getElementById("col2-title").textContent = d.col2Title;
+      document.getElementById("col2-list").innerHTML = d.col2List.map(i => `<li>${i}</li>`).join("");
+
+      document.getElementById("sec2-h2").textContent = d.sec2H2;
+      document.getElementById("rules-list").innerHTML = d.rules.map(r => `<li>${r}</li>`).join("");
+
+      document.getElementById("sec3-h2").textContent = d.sec3H2;
+      document.getElementById("sec3-p").innerHTML = d.sec3P;
+
+      document.getElementById("cta-title").textContent = d.ctaTitle;
+      document.getElementById("cta-desc").textContent = d.ctaDesc;
+      document.getElementById("cta-btn").textContent = d.ctaBtn;
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const trigger = document.getElementById("lang-btn-trigger");
+      const menu = document.getElementById("lang-dropdown-menu");
+
+      trigger.addEventListener("click", (e) => {
+        e.stopPropagation();
+        menu.classList.toggle("hidden");
+      });
+
+      document.addEventListener("click", () => {
+        menu.classList.add("hidden");
+      });
+
+      document.querySelectorAll(".lang-select-opt").forEach(btn => {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const chosen = btn.getAttribute("data-lang");
+          applyL(chosen);
+          menu.classList.add("hidden");
+        });
+      });
+
+      applyL(detectUserL());
+    });
+  </script>
+</body>
+</html>
