@@ -174,7 +174,12 @@ const I18N_DATA = {
     feat_radar_desc: 'Çocuğunuz oyun oynarken yaptığı hamleler, karar hızları ve denemeleri anlık olarak Howard Gardner\'ın 8 Çoklu Zekâ eksenine işlenir. Uygulama içindeki UserProfile paneliyle çocuğunuzun güçlü ve desteğe ihtiyaç duyan yönlerini canlı olarak takip edin.',
     feat_radar_btn_explore: 'Radarın Nasıl Çalıştığını Keşfedin',
     feat_radar_btn_game: 'Canlı Demoyu İncele',
-    btn_google_play_direct: 'Google Play\'de Keşfet'
+    btn_google_play_direct: 'Google Play\'de Keşfet',
+    nav_trailer: 'Tanıtım Videosu',
+    trailer_tag: 'RESMİ TANITIM VİDEOSU',
+    trailer_title: 'MultiMind Kids\'i Hareket Halinde İzleyin',
+    trailer_desc: 'Çoklu zeka kuramına dayalı dokunsal mini oyunlarımızı, renkli dünyamızı ve çocuk dostu oynanışı tanıtım videomuzda keşfedin.',
+    trailer_watch_youtube: 'YouTube\'da İzle'
 
   },
 
@@ -351,7 +356,12 @@ const I18N_DATA = {
     feat_radar_desc: 'As your child plays, micro-decisions, reaction times, and problem-solving attempts are calculated in real time across Howard Gardner\'s 8 Multiple Intelligence axes. Track your child\'s strengths and growth opportunities live via the in-game UserProfile panel.',
     feat_radar_btn_explore: 'Discover How the Radar Works',
     feat_radar_btn_game: 'Explore Live Demo',
-    btn_google_play_direct: 'Get on Google Play'
+    btn_google_play_direct: 'Get on Google Play',
+    nav_trailer: 'Trailer',
+    trailer_tag: 'OFFICIAL TRAILER',
+    trailer_title: 'Watch MultiMind Kids in Action',
+    trailer_desc: 'Discover our tactile multiple-intelligences mini-games, vibrant world, and child-friendly gameplay in our official trailer.',
+    trailer_watch_youtube: 'Watch on YouTube'
 
   },
 
@@ -528,7 +538,12 @@ const I18N_DATA = {
     feat_radar_desc: 'Während Ihr Kind spielt, fließen Reaktionszeiten und Lösungsversuche in Echtzeit in Howard Gardners 8 Intelligenzachsen ein. Verfolgen Sie Stärken und Förderbereiche transparent im In-Game-Profil.',
     feat_radar_btn_explore: 'Funktionsweise des Radars entdecken',
     feat_radar_btn_game: 'Live-Demo ansehen',
-    btn_google_play_direct: 'Auf Google Play laden'
+    btn_google_play_direct: 'Auf Google Play laden',
+    nav_trailer: 'Trailer',
+    trailer_tag: 'OFFIZIELLER TRAILER',
+    trailer_title: 'MultiMind Kids in Aktion erleben',
+    trailer_desc: 'Entdecken Sie unsere taktilen Minispiele, farbenfrohe Welten und kindgerechtes Gameplay in unserem offiziellen Trailer.',
+    trailer_watch_youtube: 'Auf YouTube ansehen'
 
   },
 
@@ -705,7 +720,12 @@ const I18N_DATA = {
     feat_radar_desc: 'Pendant le jeu, les micro-décisions et temps de réaction de votre enfant alimentent en temps réel les 8 axes d\'intelligences multiples d\'Howard Gardner. Suivez ses forces et axes d\'éveil via le profil en jeu.',
     feat_radar_btn_explore: 'Découvrir le fonctionnement du radar',
     feat_radar_btn_game: 'Voir la démo en direct',
-    btn_google_play_direct: 'Télécharger sur Google Play'
+    btn_google_play_direct: 'Télécharger sur Google Play',
+    nav_trailer: 'Bande-annonce',
+    trailer_tag: 'BANDE-ANNONCE OFFICIELLE',
+    trailer_title: 'Découvrez MultiMind Kids en vidéo',
+    trailer_desc: 'Découvrez nos mini-jeux tactiles basés sur les intelligences multiples, notre univers coloré et un gameplay adapté aux enfants.',
+    trailer_watch_youtube: 'Regarder sur YouTube'
 
   },
 
@@ -882,7 +902,12 @@ const I18N_DATA = {
     feat_radar_desc: 'Mientras su hijo juega, sus microdecisiones y tiempos de reacción se integran en tiempo real en los 8 ejes de inteligencias múltiples de Howard Gardner. Siga sus fortalezas y áreas de crecimiento en el panel del juego.',
     feat_radar_btn_explore: 'Descubra cómo funciona el radar',
     feat_radar_btn_game: 'Ver demo en vivo',
-    btn_google_play_direct: 'Descargar en Google Play'
+    btn_google_play_direct: 'Descargar en Google Play',
+    nav_trailer: 'Tráiler',
+    trailer_tag: 'TRÁILER OFICIAL',
+    trailer_title: 'Mira MultiMind Kids en acción',
+    trailer_desc: 'Descubre nuestros minijuegos táctiles de inteligencias múltiples, nuestro mundo colorido y una jugabilidad pensada para niños.',
+    trailer_watch_youtube: 'Ver en YouTube'
 
   },
 
@@ -1059,7 +1084,12 @@ const I18N_DATA = {
     feat_radar_desc: 'Enquanto seu filho joga, suas microdecisões e velocidade de resposta alimentam em tempo real os 8 eixos de inteligências múltiplas de Howard Gardner. Acompanhe pontos fortes e de apoio diretamente no jogo.',
     feat_radar_btn_explore: 'Descubra como o radar funciona',
     feat_radar_btn_game: 'Ver demonstração',
-    btn_google_play_direct: 'Obter no Google Play'
+    btn_google_play_direct: 'Obter no Google Play',
+    nav_trailer: 'Trailer',
+    trailer_tag: 'TRAILER OFICIAL',
+    trailer_title: 'Veja o MultiMind Kids em ação',
+    trailer_desc: 'Descubra nossos minijogos táteis de inteligências múltiplas, nosso mundo colorido e uma jogabilidade pensada para crianças.',
+    trailer_watch_youtube: 'Assistir no YouTube'
 
   }
 };
