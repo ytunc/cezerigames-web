@@ -3,293 +3,220 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cezeri Games | Geleceğin Zihinleri İçin Akıllı Mobil Oyunlar</title>
-  <meta name="description" content="Cezeri Games, çocuklar ve tüm yaştan oyuncular için çoklu zeka kuramına dayalı, pedagojik, güvenli ve yaratıcı mobil oyunlar geliştiren bağımsız bir oyun stüdyosudur.">
+  <title>Cezeri Games | Çocuklar İçin Dokunsal ve Çoklu Zekâ Oyunları</title>
+  <meta name="description" content="Cezeri Games, çocuklar ve tüm yaştan oyuncular için çoklu zekâ kuramına dayalı, pedagojik, güvenli ve yaratıcı mobil oyunlar geliştiren bağımsız bir oyun stüdyosudur.">
   <meta name="keywords" content="Cezeri Games, MultiMind Kids, eğitici oyunlar, çocuk zeka oyunları, mobil oyun stüdyosu, çoklu zeka">
-  
+
   <!-- Open Graph / Meta -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://cezerigames.com/">
   <meta property="og:title" content="Cezeri Games | Mobil Oyun Stüdyosu">
-  <meta property="og:description" content="Geleceğin zihinleri için akıllı, güvenli ve pedagojik mobil oyunlar.">
+  <meta property="og:description" content="Çoklu zekâ kuramı ve dokunsal mekaniklerle tasarlanan, reklamsız mobil oyunlar.">
   <meta property="og:image" content="./assets/images/logo.png">
 
-  <!-- Preconnect resource hints -->
+  <!-- Preconnect -->
   <link rel="preconnect" href="https://cdn.tailwindcss.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Google Fonts Non-blocking -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
-  <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
-  </noscript>
+  <!-- Fonts: Bricolage Grotesque (Display), Plus Jakarta Sans (Body), JetBrains Mono (Figures/Indices) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="./assets/images/favicon.png">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              50: '#ECFEFF',
-              100: '#CFFAFE',
-              300: '#67E8F9',
-              400: '#22D3EE',
-              500: '#06B6D4',
-              600: '#0891B2',
-              700: '#0E7490',
-              900: '#164E63',
-            },
-            oceanDark: '#050E17',
-            oceanCard: '#091A2A',
-          }
-        }
-      }
-    }
-  </script>
 
-  <!-- Custom CSS (Relative Path) -->
+  <!-- Studio Design System -->
   <link rel="stylesheet" href="./assets/css/style.css">
+  <script>(function(){try{var s=localStorage.getItem("cezeri_theme");var h=new Date().getHours();document.documentElement.setAttribute("data-theme",(s==="dark"||s==="light")?s:((h>=19||h<7)?"dark":"light"));}catch(e){}})();</script>
 </head>
-<body class="bg-[#050E17] text-slate-100 antialiased selection:bg-cyan-500 selection:text-white">
-
-  <!-- Top Ambient Lights (Turquoise & Ocean Blue) -->
-  <div class="ambient-glow-1 top-0 left-1/4 -translate-x-1/2"></div>
-  <div class="ambient-glow-2 top-20 right-10"></div>
+<body class="bg-[#F4F8FB] text-[#0F1B26] antialiased selection:bg-[#E0F4F8] selection:text-[#0E7490]">
 
   <!-- ===================================================================
-       1. NAVIGATION WITH 6-LANGUAGE SWITCHER
+       1. NAVIGATION
        =================================================================== -->
-  <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      
-      <!-- Brand Logo (Original Studio Emblem + Typography) -->
-      <a href="./index.html" class="flex items-center gap-3.5 group">
-        <img src="./assets/images/logo.png" alt="Cezeri Games Logo" width="48" height="48" class="h-12 w-12 object-contain drop-shadow-[0_0_14px_rgba(34,211,238,0.45)] group-hover:scale-105 group-hover:rotate-3 transition-transform duration-300">
-        <div class="flex flex-col">
-          <span class="font-black text-xl tracking-wider text-white leading-tight font-['Outfit']">CEZERI <span class="text-gradient">GAMES</span></span>
-          <span class="text-[9px] font-bold tracking-[0.25em] text-cyan-400/90 uppercase">Mobile Game Studio</span>
-        </div>
+  <header class="fixed top-0 left-0 right-0 z-50 site-header">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
+
+      <!-- Brand Logo -->
+      <a href="./index.html" class="flex items-center gap-3">
+        <img src="./assets/images/logo.png" alt="Cezeri Games" width="36" height="36" class="h-9 w-9 object-contain">
+        <span class="text-base font-semibold tracking-tight text-[#0F1B26] font-['Bricolage_Grotesque']">Cezeri Games</span>
       </a>
 
       <!-- Desktop Menu Links -->
-      <nav class="hidden lg:flex items-center gap-7 font-medium text-slate-300 text-sm tracking-wide">
-        <a href="#games" class="hover:text-cyan-300 transition-colors" data-i18n="nav_games">Oyunlarımız</a>
-        <a href="./games/multimind/index.html" class="text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5 transition-colors font-semibold">
-          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-          MultiMind Kids
-        </a>
-        <a href="#gallery" class="hover:text-cyan-300 transition-colors" data-i18n="nav_gallery">Galeri</a>
-        <a href="#features" class="hover:text-cyan-300 transition-colors" data-i18n="nav_vision">Vizyonumuz</a>
-        <a href="./blog/index.html" class="hover:text-cyan-300 transition-colors" data-i18n="nav_blog">Yazılar & Blog</a>
-        <a href="#about" class="hover:text-cyan-300 transition-colors" data-i18n="nav_about">Hakkımızda</a>
-        <a href="#contact" class="hover:text-cyan-300 transition-colors" data-i18n="nav_contact">İletişim</a>
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-[#45586B]">
+        <a href="#games" class="hover:text-[#0F1B26] transition-colors duration-150" data-i18n="nav_games">Oyunlarımız</a>
+        <a href="./games/multimind/index.html" class="text-[#0E7490] hover:text-[#0A5C73] transition-colors duration-150">MultiMind Kids</a>
+        <a href="#gallery" class="hover:text-[#0F1B26] transition-colors duration-150" data-i18n="nav_gallery">Galeri</a>
+        <a href="#features" class="hover:text-[#0F1B26] transition-colors duration-150" data-i18n="nav_vision">Vizyonumuz</a>
+        <a href="./blog/index.html" class="hover:text-[#0F1B26] transition-colors duration-150" data-i18n="nav_blog">Yazılar</a>
+        <a href="#about" class="hover:text-[#0F1B26] transition-colors duration-150" data-i18n="nav_about">Hakkımızda</a>
+        <a href="#contact" class="hover:text-[#0F1B26] transition-colors duration-150" data-i18n="nav_contact">İletişim</a>
       </nav>
 
-      <!-- Right Actions: Language Switcher + Store CTA -->
-      <div class="hidden sm:flex items-center gap-4">
-        
-        <!-- 6-Language Dropdown -->
+      <!-- Right Actions: Language Switcher + Primary Action -->
+      <div class="hidden sm:flex items-center gap-3">
         <div class="relative">
-          <button id="lang-trigger" class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 border border-cyan-500/20 text-xs font-semibold transition-all">
-            <span class="lang-current-label flex items-center gap-1.5">
-              <span>🇹🇷</span> <span>TR</span>
-            </span>
-            <svg class="w-3.5 h-3.5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          <button id="lang-trigger" type="button" class="flex items-center gap-2 h-9 px-3 rounded-lg bg-white hover:bg-[#EAF2F7] text-[#45586B] border border-[#0F1B26]/10 text-xs font-medium transition-colors duration-150">
+            <svg class="w-4 h-4 text-[#64788B]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3.6 9h16.8M3.6 15h16.8M12 3a13.5 13.5 0 0 1 0 18M12 3a13.5 13.5 0 0 0 0 18"/></svg>
+            <span class="lang-current-label font-mono-num text-xs font-medium text-[#0F1B26]">TR</span>
+            <svg class="w-3.5 h-3.5 text-[#64788B]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
           </button>
 
-          <!-- Dropdown Menu -->
-          <div id="lang-dropdown" class="hidden absolute right-0 mt-2 w-44 rounded-2xl bg-[#091A2A] border border-cyan-500/30 shadow-2xl py-2 z-50 backdrop-blur-xl">
-            <div class="text-[10px] font-bold text-cyan-400 uppercase tracking-wider px-3.5 py-1">6 Dil Desteği</div>
-            <button class="lang-item w-full flex items-center gap-3 px-3.5 py-2 text-xs hover:bg-cyan-500/15 text-left transition-colors" data-lang="TR">
-              <span class="text-base">🇹🇷</span> <span>Türkçe (TR)</span>
+          <div id="lang-dropdown" class="hidden absolute right-0 mt-2 w-44 rounded-xl bg-white border border-[#0F1B26]/10 shadow-[0_8px_24px_rgba(15,27,38,0.08)] py-1.5 z-50">
+            <button type="button" class="lang-item w-full flex items-center justify-between px-3.5 py-2 text-xs text-[#45586B] hover:bg-[#F4F8FB] text-left transition-colors duration-150" data-lang="TR">
+              <span>Türkçe</span><span class="font-mono-num text-[11px] opacity-70">TR</span>
             </button>
-            <button class="lang-item w-full flex items-center gap-3 px-3.5 py-2 text-xs hover:bg-cyan-500/15 text-left transition-colors" data-lang="EN">
-              <span class="text-base">🇬🇧</span> <span>English (EN)</span>
+            <button type="button" class="lang-item w-full flex items-center justify-between px-3.5 py-2 text-xs text-[#45586B] hover:bg-[#F4F8FB] text-left transition-colors duration-150" data-lang="EN">
+              <span>English</span><span class="font-mono-num text-[11px] opacity-70">EN</span>
             </button>
-            <button class="lang-item w-full flex items-center gap-3 px-3.5 py-2 text-xs hover:bg-cyan-500/15 text-left transition-colors" data-lang="DE">
-              <span class="text-base">🇩🇪</span> <span>Deutsch (DE)</span>
+            <button type="button" class="lang-item w-full flex items-center justify-between px-3.5 py-2 text-xs text-[#45586B] hover:bg-[#F4F8FB] text-left transition-colors duration-150" data-lang="DE">
+              <span>Deutsch</span><span class="font-mono-num text-[11px] opacity-70">DE</span>
             </button>
-            <button class="lang-item w-full flex items-center gap-3 px-3.5 py-2 text-xs hover:bg-cyan-500/15 text-left transition-colors" data-lang="FR">
-              <span class="text-base">🇫🇷</span> <span>Français (FR)</span>
+            <button type="button" class="lang-item w-full flex items-center justify-between px-3.5 py-2 text-xs text-[#45586B] hover:bg-[#F4F8FB] text-left transition-colors duration-150" data-lang="FR">
+              <span>Français</span><span class="font-mono-num text-[11px] opacity-70">FR</span>
             </button>
-            <button class="lang-item w-full flex items-center gap-3 px-3.5 py-2 text-xs hover:bg-cyan-500/15 text-left transition-colors" data-lang="ES">
-              <span class="text-base">🇪🇸</span> <span>Español (ES)</span>
+            <button type="button" class="lang-item w-full flex items-center justify-between px-3.5 py-2 text-xs text-[#45586B] hover:bg-[#F4F8FB] text-left transition-colors duration-150" data-lang="ES">
+              <span>Español</span><span class="font-mono-num text-[11px] opacity-70">ES</span>
             </button>
-            <button class="lang-item w-full flex items-center gap-3 px-3.5 py-2 text-xs hover:bg-cyan-500/15 text-left transition-colors" data-lang="PR">
-              <span class="text-base">🇵🇹</span> <span>Português (PR)</span>
+            <button type="button" class="lang-item w-full flex items-center justify-between px-3.5 py-2 text-xs text-[#45586B] hover:bg-[#F4F8FB] text-left transition-colors duration-150" data-lang="PR">
+              <span>Português</span><span class="font-mono-num text-[11px] opacity-70">PT</span>
             </button>
           </div>
         </div>
 
-        <a href="./games/multimind/index.html" class="btn-glow px-4 py-2 rounded-xl font-bold text-xs sm:text-sm text-white flex items-center gap-1.5">
+        <a href="./games/multimind/index.html" class="btn-primary h-9 px-4 rounded-lg text-xs font-medium inline-flex items-center gap-1.5">
           <span data-i18n="nav_cta">MultiMind'ı Keşfet</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6"/></svg>
         </a>
-
       </div>
 
       <!-- Mobile Hamburger Button -->
-      <button id="mobile-menu-btn" class="lg:hidden text-slate-300 hover:text-cyan-300 focus:outline-none p-2 rounded-lg" aria-label="Menüyü Aç">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      <button id="mobile-menu-btn" type="button" class="lg:hidden text-[#45586B] hover:text-[#0F1B26] p-2 rounded-lg transition-colors duration-150" aria-label="Menüyü Aç" aria-expanded="false">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
       </button>
-
     </div>
 
     <!-- Mobile Drawer -->
-    <div id="mobile-menu" class="hidden lg:hidden flex-col px-6 pt-2 pb-6 space-y-4 bg-[#091A2A]/95 backdrop-blur-xl border-b border-cyan-500/20 text-base">
-      
-      <!-- Mobile Language Bar -->
-      <div class="flex items-center justify-between pb-3 border-b border-cyan-500/20">
-        <span class="text-xs text-cyan-300 font-bold uppercase">Dil / Language:</span>
-        <div class="flex items-center gap-2">
-          <button class="lang-item px-2 py-1 rounded bg-slate-800 text-xs" data-lang="TR">🇹🇷 TR</button>
-          <button class="lang-item px-2 py-1 rounded bg-slate-800 text-xs" data-lang="EN">🇬🇧 EN</button>
-          <button class="lang-item px-2 py-1 rounded bg-slate-800 text-xs" data-lang="DE">🇩🇪 DE</button>
-          <button class="lang-item px-2 py-1 rounded bg-slate-800 text-xs" data-lang="FR">🇫🇷 FR</button>
-          <button class="lang-item px-2 py-1 rounded bg-slate-800 text-xs" data-lang="ES">🇪🇸 ES</button>
-          <button class="lang-item px-2 py-1 rounded bg-slate-800 text-xs" data-lang="PR">🇵🇹 PR</button>
+    <div id="mobile-menu" class="hidden lg:hidden flex-col px-6 pt-3 pb-6 gap-3 bg-white border-b border-[#0F1B26]/10 text-sm">
+      <div class="flex items-center justify-between pb-3 border-b border-[#0F1B26]/10">
+        <span class="text-xs text-[#64788B] font-medium">Dil</span>
+        <div class="flex items-center gap-1.5">
+          <button type="button" class="lang-item px-2 py-1 rounded-md border border-[#0F1B26]/10 text-xs font-mono-num" data-lang="TR">TR</button>
+          <button type="button" class="lang-item px-2 py-1 rounded-md border border-[#0F1B26]/10 text-xs font-mono-num" data-lang="EN">EN</button>
+          <button type="button" class="lang-item px-2 py-1 rounded-md border border-[#0F1B26]/10 text-xs font-mono-num" data-lang="DE">DE</button>
+          <button type="button" class="lang-item px-2 py-1 rounded-md border border-[#0F1B26]/10 text-xs font-mono-num" data-lang="FR">FR</button>
+          <button type="button" class="lang-item px-2 py-1 rounded-md border border-[#0F1B26]/10 text-xs font-mono-num" data-lang="ES">ES</button>
+          <button type="button" class="lang-item px-2 py-1 rounded-md border border-[#0F1B26]/10 text-xs font-mono-num" data-lang="PR">PT</button>
         </div>
       </div>
 
-      <a href="#games" class="text-slate-300 hover:text-cyan-300 py-1" data-i18n="nav_games">Oyunlarımız</a>
-      <a href="./games/multimind/index.html" class="text-cyan-400 font-semibold py-1">MultiMind Kids: Brain Games</a>
-      <a href="#gallery" class="text-slate-300 hover:text-cyan-300 py-1" data-i18n="nav_gallery">Oyun Galerisi</a>
-      <a href="#features" class="text-slate-300 hover:text-cyan-300 py-1" data-i18n="nav_vision">Vizyonumuz</a>
-      <a href="./blog/index.html" class="text-slate-300 hover:text-cyan-300 py-1" data-i18n="nav_blog">Yazılar & Blog</a>
-      <a href="#about" class="text-slate-300 hover:text-cyan-300 py-1" data-i18n="nav_about">Hakkımızda</a>
-      <a href="#contact" class="text-slate-300 hover:text-cyan-300 py-1" data-i18n="nav_contact">İletişim & Destek</a>
-      <a href="./games/multimind/index.html" class="btn-glow text-center py-2.5 rounded-xl text-white font-bold mt-2" data-i18n="nav_cta">MultiMind'ı İncele</a>
+      <a href="#games" class="text-[#45586B] hover:text-[#0F1B26] py-1" data-i18n="nav_games">Oyunlarımız</a>
+      <a href="./games/multimind/index.html" class="text-[#0E7490] font-medium py-1">MultiMind Kids</a>
+      <a href="#gallery" class="text-[#45586B] hover:text-[#0F1B26] py-1" data-i18n="nav_gallery">Galeri</a>
+      <a href="#features" class="text-[#45586B] hover:text-[#0F1B26] py-1" data-i18n="nav_vision">Vizyonumuz</a>
+      <a href="./blog/index.html" class="text-[#45586B] hover:text-[#0F1B26] py-1" data-i18n="nav_blog">Yazılar</a>
+      <a href="#about" class="text-[#45586B] hover:text-[#0F1B26] py-1" data-i18n="nav_about">Hakkımızda</a>
+      <a href="#contact" class="text-[#45586B] hover:text-[#0F1B26] py-1" data-i18n="nav_contact">İletişim</a>
+      <a href="./games/multimind/index.html" class="btn-primary text-center py-2.5 rounded-lg font-medium mt-2" data-i18n="nav_cta">MultiMind'ı Keşfet</a>
     </div>
   </header>
 
-  <!-- Main Landmark -->
   <main id="main-content">
 
   <!-- ===================================================================
-       2. HERO SECTION
+       2. HERO SECTION (Asymmetric Split, Product-First Showcase)
        =================================================================== -->
-  <section class="relative pt-36 pb-20 md:pt-48 md:pb-32 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
+  <section class="pt-28 pb-20 lg:pt-36 lg:pb-24">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center enter-fade">
+
         <!-- Left Hero Copy -->
-        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-          
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold badge-tag">
-            <span class="w-2 h-2 rounded-full bg-cyan-300 animate-ping"></span>
-            <span data-i18n="hero_badge">YENİ NESİL ÇOCUK & ZEKA OYUNLARI</span>
+        <div class="lg:col-span-6 space-y-6">
+          <div class="section-kicker">
+            <span data-i18n="age_badge">3 – 8 yaş</span>
+            <span class="text-[#64788B]">·</span>
+            <span data-i18n="stat_safe">Reklamsız ve güvenli</span>
           </div>
 
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15]" data-i18n="hero_title">
-            Geleceğin Zihinleri İçin <br class="hidden sm:inline">
-            <span class="text-gradient">Akıllı ve Eğlenceli</span> Mobil Oyunlar
+          <h1 class="text-4xl sm:text-5xl lg:text-[56px] font-medium tracking-[-0.025em] leading-[1.08] text-[#0F1B26]" data-i18n="hero_title">
+            Geleceğin zihinleri için <span class="text-[#0E7490]">dokunsal ve pedagojik</span> mobil oyunlar
           </h1>
 
-          <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed" data-i18n="hero_desc">
-            Cezeri Games; çoklu zeka kuramını, yenilikçi dokunsal mekanikleri ve çocuk dostu pedagojik tasarımı buluşturuyor. Oyun oynarken merak eden, keşfeden ve problem çözen bir nesil yetiştiriyoruz.
+          <p class="text-base sm:text-lg text-[#45586B] max-w-xl leading-relaxed" data-i18n="hero_desc">
+            Cezeri Games; çoklu zekâ kuramını, fiziksel oyun mekaniklerini ve çocuk dostu pedagojik tasarımı buluşturur. Oyun oynarken merak eden, keşfeden ve problem çözen bir nesil için üretir.
           </p>
 
-          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-3">
-            <a href="./games/multimind/index.html" class="btn-glow w-full sm:w-auto px-8 py-4 rounded-2xl font-bold text-white shadow-xl flex items-center justify-center gap-3 text-base">
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+            <a href="./games/multimind/index.html" class="btn-primary h-12 px-6 rounded-lg font-medium text-sm inline-flex items-center justify-center gap-2">
               <span data-i18n="hero_btn_explore">MultiMind Kids'i İncele</span>
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6"/></svg>
             </a>
-            
-            <a href="#games" class="w-full sm:w-auto px-7 py-4 rounded-2xl font-semibold text-slate-200 hover:text-white glass-card hover:bg-slate-800/80 transition-all flex items-center justify-center gap-2 text-base">
+            <a href="#games" class="btn-secondary h-12 px-6 rounded-lg font-medium text-sm inline-flex items-center justify-center">
               <span data-i18n="hero_btn_all_games">Tüm Oyunlarımız</span>
             </a>
           </div>
 
-          <!-- Quick Stats / Highlights -->
-          <div class="grid grid-cols-3 gap-4 pt-6 border-t border-cyan-500/15 max-w-lg mx-auto lg:mx-0">
+          <!-- Quiet Tabular Stats Strip -->
+          <div class="grid grid-cols-3 gap-6 pt-6 border-t border-[#0F1B26]/10 max-w-lg">
             <div>
-              <div class="text-2xl sm:text-3xl font-extrabold text-white">8+</div>
-              <div class="text-xs text-slate-400" data-i18n="stat_int">Zeka Alanı</div>
+              <div class="text-2xl sm:text-[28px] font-medium font-mono-num text-[#0F1B26] leading-none">8</div>
+              <div class="text-xs text-[#64788B] mt-2" data-i18n="stat_int">Zekâ alanı</div>
             </div>
             <div>
-              <div class="text-2xl sm:text-3xl font-extrabold text-cyan-400">30+</div>
-              <div class="text-xs text-slate-400" data-i18n="stat_mech">Fiziksel Mekanik</div>
+              <div class="text-2xl sm:text-[28px] font-medium font-mono-num text-[#0F1B26] leading-none">30</div>
+              <div class="text-xs text-[#64788B] mt-2" data-i18n="stat_mech">Fiziksel mekanik</div>
             </div>
             <div>
-              <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400">%100</div>
-              <div class="text-xs text-slate-400" data-i18n="stat_safe">Güvenli & Reklamsız</div>
+              <div class="text-2xl sm:text-[28px] font-medium font-mono-num text-[#0E7490] leading-none">%100</div>
+              <div class="text-xs text-[#64788B] mt-2" data-i18n="stat_safe">Reklamsız</div>
             </div>
           </div>
-
         </div>
 
-        <!-- Right Hero Visual Showcase (MultiMind Floating Card with Multi-Language Feature Banner) -->
-        <div class="lg:col-span-5 relative flex justify-center">
-          <div class="relative w-full max-w-md">
-            
-            <!-- Glowing backdrop -->
-            <div class="absolute -inset-2 bg-gradient-to-r from-cyan-500 via-sky-400 to-teal-400 rounded-3xl blur-2xl opacity-40 animate-glow-pulse"></div>
-            
-            <!-- Main Hero Card -->
-            <div class="relative glass-card rounded-3xl p-6 sm:p-7 tilt-card shadow-2xl border border-cyan-400/25">
-              
-              <div class="flex items-center gap-4 mb-5">
-                <img src="./assets/images/multimind/icon.jpg" alt="MultiMind Kids Game Icon" width="80" height="80" class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl shadow-lg ring-2 ring-cyan-400/50 object-cover">
+        <!-- Right Hero Showcase: Moment #1 (MultiMind Kids Product Frame) -->
+        <div class="lg:col-span-6">
+          <div class="surface-card rounded-2xl p-4 sm:p-5">
+            <!-- Game Header Bar -->
+            <div class="flex items-center justify-between gap-4 pb-4 mb-4 border-b border-[#0F1B26]/10">
+              <div class="flex items-center gap-3">
+                <img src="./assets/images/multimind/icon.jpg" alt="MultiMind Kids" width="48" height="48" class="w-12 h-12 rounded-xl object-cover border border-[#0F1B26]/10">
                 <div>
-                  <div class="flex items-center gap-2">
-                    <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30" data-i18n="flagship_badge">FLAGSHIP OYUN</span>
-                  </div>
-                  <h2 class="text-xl sm:text-2xl font-black text-white mt-1">MultiMind Kids</h2>
-                  <p class="text-xs text-cyan-200/80 font-medium" data-i18n="flagship_sub">Brain Games for Smart Kids</p>
+                  <h2 class="text-base font-semibold text-[#0F1B26] leading-snug">MultiMind Kids</h2>
+                  <p class="text-xs text-[#64788B]" data-i18n="flagship_sub">Brain Games for Smart Kids</p>
                 </div>
               </div>
-
-              <!-- DYNAMIC Official Feature Banner for Selected Language -->
-              <div class="relative rounded-2xl overflow-hidden mb-5 border border-cyan-500/25 group shadow-lg">
-                <img id="store-hero-banner" src="./assets/images/multimind/store/_TR/turkish_1024x500.webp" alt="MultiMind Feature Graphic" width="1024" height="500" fetchpriority="high" decoding="async" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500">
-                <div class="absolute inset-0 bg-gradient-to-t from-[#050E17]/80 via-transparent to-transparent"></div>
-                <div class="absolute bottom-2.5 left-3 right-3 flex justify-between items-center">
-                  <span class="text-xs font-bold text-white bg-[#050E17]/80 backdrop-blur-md px-3 py-1 rounded-lg border border-cyan-500/30" data-i18n="banner_badge">
-                    🇹🇷 6 Dilde Seslendirilmiş
-                  </span>
-                  <span class="text-xs font-bold text-amber-300 bg-amber-950/80 px-2.5 py-1 rounded-lg border border-amber-500/30" data-i18n="age_badge">3 - 8 Yaş</span>
-                </div>
-              </div>
-
-              <!-- Key bullets -->
-              <div class="space-y-2 text-xs sm:text-sm text-slate-300 mb-6">
-                <div class="flex items-center gap-2">
-                  <svg class="w-4 h-4 text-cyan-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                  <span data-i18n="feat_1">Howard Gardner Çoklu Zeka Modeli</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <svg class="w-4 h-4 text-cyan-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                  <span data-i18n="feat_2">30 Evrensel Fiziksel & Dokunsal Oyun Arketipi</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <svg class="w-4 h-4 text-cyan-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                  <span data-i18n="feat_3">Ebeveyn Kontrollü %100 Güvenli & Reklamsız Alan</span>
-                </div>
-              </div>
-
-              <!-- Store CTA -->
-              <div class="flex flex-col sm:flex-row gap-3">
-                <a href="./games/multimind/index.html" class="flex-1 py-3.5 rounded-xl btn-glow text-white font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-lg">
-                  <span data-i18n="btn_review_game">Oyunu Detaylı İncele</span>
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                </a>
-                <a href="https://play.google.com/store/apps/details?id=com.CezeriGames.MultiMindKidsBrainGames" target="_blank" rel="noopener" class="px-4 py-3.5 rounded-xl glass-card hover:bg-emerald-950/40 text-emerald-300 font-bold text-sm flex items-center justify-center gap-2 border border-emerald-500/30 transition-all group">
-                  <svg class="w-5 h-5 text-emerald-400 fill-current group-hover:scale-110 transition-transform" viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a1.984 1.984 0 0 1-.61-.955V2.769c.12-.37.33-.706.609-.955zm11.235 11.238l2.25 2.25-10.74 6.202 8.49-8.452zm0-2.104l-8.49-8.452 10.74 6.202-2.25 2.25zm1.488 1.052l3.41-1.971a1.996 1.996 0 0 0 0-3.456l-3.41-1.971-1.848 1.848 1.848 1.85z"/></svg>
-                  <span data-i18n="play_store_btn">Google Play</span>
-                </a>
-              </div>
-
+              <span class="quiet-tag" data-i18n="banner_badge">6 dilde seslendirme</span>
             </div>
 
+            <!-- Official Feature Graphic -->
+            <div class="rounded-xl overflow-hidden border border-[#0F1B26]/10 bg-[#EBF3F8]">
+              <img id="store-hero-banner" src="./assets/images/multimind/store/_TR/turkish_1024x500.webp" alt="MultiMind Kids oyun içi görünümü" width="1024" height="500" fetchpriority="high" decoding="async" class="w-full aspect-[2/1] object-cover block">
+            </div>
+
+            <!-- Concise Feature List + Store Row -->
+            <div class="pt-4 mt-4 border-t border-[#0F1B26]/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="space-y-1.5 text-xs text-[#45586B]">
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-[#0E7490] shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  <span data-i18n="feat_1">Howard Gardner Çoklu Zekâ Modeli</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-[#0E7490] shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  <span data-i18n="feat_3">COPPA uyumlu, reklamsız ebeveyn alanı</span>
+                </div>
+              </div>
+
+              <a href="https://play.google.com/store/apps/details?id=com.CezeriGames.MultiMindKidsBrainGames" target="_blank" rel="noopener" class="btn-secondary h-10 px-4 rounded-lg text-xs font-medium inline-flex items-center justify-center gap-2 shrink-0">
+                <svg class="w-4 h-4 text-[#15803D] fill-current" viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a1.984 1.984 0 0 1-.61-.955V2.769c.12-.37.33-.706.609-.955zm11.235 11.238l2.25 2.25-10.74 6.202 8.49-8.452zm0-2.104l-8.49-8.452 10.74 6.202-2.25 2.25zm1.488 1.052l3.41-1.971a1.996 1.996 0 0 0 0-3.456l-3.41-1.971-1.848 1.848 1.848 1.85z"/></svg>
+                <span data-i18n="play_store_btn">Google Play</span>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -300,457 +227,411 @@
   <!-- ===================================================================
        3. FEATURED GAMES CATALOG
        =================================================================== -->
-  <section id="games" class="py-24 relative border-t border-cyan-500/10 bg-[#071421]/60">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <h2 class="text-xs uppercase tracking-widest font-bold text-cyan-400" data-i18n="games_tag">OYUN PORTFÖYÜMÜZ</h2>
-        <h3 class="text-3xl sm:text-4xl font-extrabold text-white" data-i18n="games_title">Çocukların Gelişimine İlham Veren Oyunlar</h3>
-        <p class="text-slate-300 text-base" data-i18n="games_desc">
-          Her bir oyunumuz, ezberci kalıplardan uzak; motor becerileri, analitik düşünmeyi ve özgüveni besleyen etkileşimli deneyimlerle tasarlanır.
+  <section id="games" class="py-20 lg:py-24 border-t border-[#0F1B26]/10 surface-band">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+      <div class="max-w-2xl mb-12 space-y-3">
+        <div class="section-kicker">
+          <span class="draft-index">01</span>
+          <span data-i18n="games_tag">Oyun portföyümüz</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-medium tracking-[-0.02em] text-[#0F1B26]" data-i18n="games_title">Çocukların gelişimine ilham veren oyunlar</h2>
+        <p class="text-sm sm:text-base text-[#45586B] leading-relaxed" data-i18n="games_desc">
+          Her bir oyunumuz ezberci kalıplardan uzak; motor becerileri, analitik düşünmeyi ve özgüveni besleyen etkileşimli deneyimlerle tasarlanır.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        
-        <!-- Game 1: MultiMind Kids (Active Flagship) -->
-        <div class="glass-card rounded-3xl p-6 flex flex-col justify-between group border border-cyan-500/35">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Game 1: MultiMind Kids -->
+        <article class="surface-card surface-card-interactive rounded-2xl p-5 flex flex-col justify-between">
           <div>
-            <div class="relative rounded-2xl overflow-hidden mb-6 aspect-video border border-cyan-500/20">
-              <img id="store-catalog-img" src="./assets/images/multimind/store/_TR/store1_TR.webp" alt="MultiMind Kids" width="1280" height="720" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              <div class="absolute top-3 left-3 bg-cyan-600/90 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-lg" data-i18n="game_status_live">
-                YAYINDA
-              </div>
+            <div class="relative rounded-xl overflow-hidden mb-5 aspect-video border border-[#0F1B26]/10 bg-[#F4F8FB]">
+              <img id="store-catalog-img" src="./assets/images/multimind/store/_TR/store1_TR.webp" alt="MultiMind Kids" width="1280" height="720" loading="lazy" decoding="async" class="w-full h-full object-cover">
             </div>
-            
+
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="quiet-tag" data-i18n="game_status_live">Yayında</span>
+              <span class="text-xs font-mono-num text-[#64788B]">iOS · Android</span>
+            </div>
+
             <div class="flex items-center gap-3 mb-3">
-              <img src="./assets/images/multimind/icon.jpg" alt="Icon" width="48" height="48" loading="lazy" decoding="async" class="w-12 h-12 rounded-xl object-cover ring-1 ring-cyan-400/40">
+              <img src="./assets/images/multimind/icon.jpg" alt="MultiMind Kids İkon" width="40" height="40" loading="lazy" decoding="async" class="w-10 h-10 rounded-lg object-cover border border-[#0F1B26]/10">
               <div>
-                <h4 class="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors">MultiMind Kids: Brain Games</h4>
-                <p class="text-xs text-cyan-200/70" data-i18n="flagship_sub">Okul Öncesi & İlkokul Zeka Gelişimi</p>
+                <h3 class="text-lg font-medium text-[#0F1B26] leading-snug">MultiMind Kids: Brain Games</h3>
+                <p class="text-xs text-[#64788B]" data-i18n="flagship_sub">Okul Öncesi ve İlkokul Zekâ Gelişimi</p>
               </div>
             </div>
 
-            <p class="text-slate-300 text-sm mb-6 leading-relaxed" data-i18n="feat_2">
-              30 evrensel oyun arketipiyle matematiksel, mekânsal, doğacı ve kinestetik zekayı destekleyen devasa mini oyun kütüphanesi.
+            <p class="text-sm text-[#45586B] mb-6 leading-relaxed" data-i18n="feat_2">
+              30 evrensel oyun arketipiyle matematiksel, mekânsal, doğacı ve kinestetik zekâyı destekleyen mini oyun kütüphanesi.
             </p>
           </div>
 
-          <div class="pt-4 border-t border-cyan-500/15 flex items-center justify-between">
-            <a href="https://play.google.com/store/apps/details?id=com.CezeriGames.MultiMindKidsBrainGames" target="_blank" rel="noopener" class="text-xs font-bold text-emerald-400 hover:text-emerald-300 inline-flex items-center gap-1.5 transition-colors">
-              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a1.984 1.984 0 0 1-.61-.955V2.769c.12-.37.33-.706.609-.955zm11.235 11.238l2.25 2.25-10.74 6.202 8.49-8.452zm0-2.104l-8.49-8.452 10.74 6.202-2.25 2.25zm1.488 1.052l3.41-1.971a1.996 1.996 0 0 0 0-3.456l-3.41-1.971-1.848 1.848 1.848 1.85z"/></svg>
+          <div class="pt-4 border-t border-[#0F1B26]/10 flex items-center justify-between text-xs">
+            <a href="https://play.google.com/store/apps/details?id=com.CezeriGames.MultiMindKidsBrainGames" target="_blank" rel="noopener" class="font-medium text-[#15803D] hover:underline inline-flex items-center gap-1.5">
               <span>Google Play</span>
             </a>
-            <a href="./games/multimind/index.html" class="text-sm font-bold text-cyan-400 hover:text-cyan-300 inline-flex items-center gap-1">
-              <span data-i18n="btn_review_game">İncele & İndir</span> &rarr;
+            <a href="./games/multimind/index.html" class="font-medium text-[#0E7490] hover:text-[#0A5C73] inline-flex items-center gap-1">
+              <span data-i18n="btn_review_game">Oyunu İncele</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6"/></svg>
             </a>
           </div>
-        </div>
+        </article>
 
-        <!-- Game 2: Upcoming Project 1 (Teaser) -->
-        <div class="glass-card rounded-3xl p-6 flex flex-col justify-between border border-cyan-500/20">
+        <!-- Game 2: Cezeri Automata Lab -->
+        <article class="surface-card rounded-2xl p-5 flex flex-col justify-between">
           <div>
-            <div class="relative rounded-2xl overflow-hidden mb-6 aspect-video bg-gradient-to-br from-[#06121E] to-[#0A263D] flex items-center justify-center border border-cyan-500/10">
-              <div class="text-center p-6">
-                <div class="w-14 h-14 mx-auto mb-3 rounded-2xl bg-cyan-500/10 border border-cyan-500/25 flex items-center justify-center text-cyan-400">
-                  <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
-                </div>
-                <span class="text-xs font-semibold uppercase tracking-wider text-slate-300" data-i18n="game_2_status">GELİŞTİRİLİYOR</span>
-              </div>
-            </div>
-            
-            <div class="mb-3">
-              <h4 class="text-xl font-bold text-white" data-i18n="game_2_title">Cezeri Automata Lab</h4>
-              <p class="text-xs text-slate-300" data-i18n="game_2_genre">Fizik & Mekanik Bulmaca</p>
+            <div class="rounded-xl mb-5 aspect-video bg-[#F4F8FB] border border-[#0F1B26]/10 flex flex-col items-center justify-center gap-2 text-[#64788B]">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.26.604.852.997 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+              <span class="text-xs font-mono-num" data-i18n="game_2_status">Geliştiriliyor</span>
             </div>
 
-            <p class="text-slate-300 text-sm mb-6 leading-relaxed" data-i18n="game_2_desc">
-              İsmail el-Cezeri'nin su saatleri, dişlileri ve mekanik düzeneklerinden esinlenen eğlenceli fizik bulmaca oyunu.
+            <div class="mb-3">
+              <h3 class="text-lg font-medium text-[#0F1B26]" data-i18n="game_2_title">Cezeri Automata Lab</h3>
+              <p class="text-xs text-[#64788B] mt-0.5" data-i18n="game_2_genre">Fizik ve Mekanik Bulmaca</p>
+            </div>
+
+            <p class="text-sm text-[#45586B] mb-6 leading-relaxed" data-i18n="game_2_desc">
+              İsmail el-Cezeri'nin su saatleri, dişlileri ve mekanik düzeneklerinden esinlenen fizik bulmaca oyunu.
             </p>
           </div>
 
-          <div class="pt-4 border-t border-cyan-500/15 flex items-center justify-between">
-            <span class="text-xs font-semibold text-slate-300" data-i18n="soon_badge">Pek Yakında</span>
-            <span class="text-xs font-medium text-slate-300">2027</span>
+          <div class="pt-4 border-t border-[#0F1B26]/10 flex items-center justify-between text-xs text-[#64788B]">
+            <span data-i18n="soon_badge">Pek yakında</span>
+            <span class="font-mono-num">2027</span>
           </div>
-        </div>
+        </article>
 
-        <!-- Game 3: Upcoming Project 2 (Teaser) -->
-        <div class="glass-card rounded-3xl p-6 flex flex-col justify-between border border-cyan-500/20">
+        <!-- Game 3: Pixel Logic Explorer -->
+        <article class="surface-card rounded-2xl p-5 flex flex-col justify-between">
           <div>
-            <div class="relative rounded-2xl overflow-hidden mb-6 aspect-video bg-gradient-to-br from-[#06121E] to-[#0A263D] flex items-center justify-center border border-cyan-500/10">
-              <div class="text-center p-6">
-                <div class="w-14 h-14 mx-auto mb-3 rounded-2xl bg-cyan-500/10 border border-cyan-500/25 flex items-center justify-center text-cyan-400">
-                  <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-                </div>
-                <span class="text-xs font-semibold uppercase tracking-wider text-slate-300" data-i18n="game_3_status">KONSEPT AŞAMASINDA</span>
-              </div>
-            </div>
-            
-            <div class="mb-3">
-              <h4 class="text-xl font-bold text-white" data-i18n="game_3_title">Pixel Logic Explorer</h4>
-              <p class="text-xs text-slate-300" data-i18n="game_3_genre">Kodlama & Mantık Yürütme</p>
+            <div class="rounded-xl mb-5 aspect-video bg-[#F4F8FB] border border-[#0F1B26]/10 flex flex-col items-center justify-center gap-2 text-[#64788B]">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><path stroke-linecap="round" stroke-linejoin="round" d="M14 17h6m-3-3v6"/></svg>
+              <span class="text-xs font-mono-num" data-i18n="game_3_status">Konsept aşamasında</span>
             </div>
 
-            <p class="text-slate-300 text-sm mb-6 leading-relaxed" data-i18n="game_3_desc">
-              Erken yaşta algoritmik düşünme, koşullu yapılar ve örüntü tanıma becerilerini geliştiren yaratıcı piksel macera.
+            <div class="mb-3">
+              <h3 class="text-lg font-medium text-[#0F1B26]" data-i18n="game_3_title">Pixel Logic Explorer</h3>
+              <p class="text-xs text-[#64788B] mt-0.5" data-i18n="game_3_genre">Kodlama ve Mantık Yürütme</p>
+            </div>
+
+            <p class="text-sm text-[#45586B] mb-6 leading-relaxed" data-i18n="game_3_desc">
+              Erken yaşta algoritmik düşünme, koşullu yapılar ve örüntü tanıma becerilerini geliştiren piksel macera.
             </p>
           </div>
 
-          <div class="pt-4 border-t border-cyan-500/15 flex items-center justify-between">
-            <span class="text-xs font-semibold text-slate-300" data-i18n="soon_badge">Pek Yakında</span>
-            <span class="text-xs font-medium text-slate-300">2027</span>
+          <div class="pt-4 border-t border-[#0F1B26]/10 flex items-center justify-between text-xs text-[#64788B]">
+            <span data-i18n="soon_badge">Pek yakında</span>
+            <span class="font-mono-num">2027</span>
           </div>
-        </div>
+        </article>
 
       </div>
-
     </div>
   </section>
 
   <!-- ===================================================================
-       3.5 STORE SCREENSHOTS & GAMEPLAY GALLERY (DYNAMIC 6-LANGUAGE GRAPHICS)
+       4. STORE SCREENSHOTS & GAMEPLAY GALLERY
        =================================================================== -->
-  <section id="gallery" class="py-24 relative border-t border-cyan-500/15">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold badge-tag">
-          <span data-i18n="gallery_tag">RESMİ MAĞAZA GÖRSELLERİ</span>
+  <section id="gallery" class="py-20 lg:py-24 border-t border-[#0F1B26]/10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div class="max-w-2xl space-y-3">
+          <div class="section-kicker">
+            <span class="draft-index">02</span>
+            <span data-i18n="gallery_tag">Mağaza görselleri</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-medium tracking-[-0.02em] text-[#0F1B26]" data-i18n="gallery_title">MultiMind Kids oyun içi dünyası</h2>
+          <p class="text-sm sm:text-base text-[#45586B] leading-relaxed" data-i18n="gallery_desc">
+            Çocukların görsel algısını destekleyen pastel yüzeyler, büyük dokunma alanları ve pedagojik mini oyunlar.
+          </p>
         </div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white" data-i18n="gallery_title">MultiMind Kids Oyun İçi Dünyası</h2>
-        <p class="text-slate-300 text-base" data-i18n="gallery_desc">
-          Gerçek oyun içi mağaza ekran görüntüleri: Çocukların görsel algısını destekleyen pastel renkler, büyük dokunma alanları ve pedagojik mini oyunlar.
-        </p>
+
+        <a href="./games/multimind/index.html" class="btn-secondary h-10 px-4 rounded-lg text-xs font-medium inline-flex items-center gap-1.5 self-start md:self-auto shrink-0">
+          <span data-i18n="gallery_btn_all">Tüm detayları gör</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6"/></svg>
+        </a>
       </div>
 
       <!-- Featured Official YouTube Trailer -->
-      <div class="max-w-4xl mx-auto mb-10">
-        <div class="relative">
-          <div class="absolute -inset-2 bg-gradient-to-r from-cyan-500/25 via-sky-500/15 to-teal-400/25 rounded-3xl blur-2xl opacity-60 pointer-events-none"></div>
-          <div class="relative glass-card rounded-3xl p-3 sm:p-4 border border-cyan-400/35 shadow-2xl">
-            <div class="relative rounded-2xl overflow-hidden aspect-video bg-[#040B12]">
-              <iframe
-                class="w-full h-full"
-                src="https://www.youtube-nocookie.com/embed/sxFmCh-nK4M?rel=0"
-                title="MultiMind Kids: Brain Games — Official Trailer"
-                loading="lazy"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen>
-              </iframe>
-            </div>
-          </div>
+      <div class="surface-card rounded-2xl p-3 mb-6">
+        <div class="rounded-xl overflow-hidden aspect-video bg-[#0F1B26]">
+          <iframe
+            class="w-full h-full"
+            src="https://www.youtube-nocookie.com/embed/sxFmCh-nK4M?rel=0"
+            title="MultiMind Kids: Brain Games — Official Trailer"
+            loading="lazy"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
         </div>
       </div>
 
-      <!-- Screenshot Grid: Top 2 Big, Bottom 3 Grid (All with Dynamic IDs) -->
+      <!-- Screenshots Grid: 2 Featured + 3 Supporting -->
       <div class="space-y-6">
-        
-        <!-- Row 1: Top 2 Featured Large Screenshots -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="glass-card rounded-3xl p-3 border border-cyan-400/30 overflow-hidden group">
-            <div class="relative rounded-2xl overflow-hidden aspect-video">
-              <img id="store-screen-1" src="./assets/images/multimind/store/_TR/store1_TR.webp" alt="MultiMind Store Screenshot 1" width="1280" height="720" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#050E17]/80 via-transparent to-transparent flex items-end p-5">
-                <span class="text-sm font-bold text-white bg-cyan-950/90 px-3.5 py-1.5 rounded-xl border border-cyan-400/40" data-i18n="gallery_caption_1">
-                  Görsel Zeka & Bilişsel Harita
-                </span>
-              </div>
+          <figure class="surface-card rounded-2xl p-3">
+            <div class="rounded-xl overflow-hidden aspect-video border border-[#0F1B26]/10 bg-[#EBF3F8]">
+              <img id="store-screen-1" src="./assets/images/multimind/store/_TR/store1_TR.webp" alt="Görsel Zekâ ve Bilişsel Harita" width="1280" height="720" loading="lazy" decoding="async" class="w-full h-full object-cover">
             </div>
-          </div>
+            <figcaption class="pt-3 px-1 text-xs font-medium text-[#45586B]" data-i18n="gallery_caption_1">Görsel Zekâ ve Bilişsel Harita</figcaption>
+          </figure>
 
-          <div class="glass-card rounded-3xl p-3 border border-cyan-400/30 overflow-hidden group">
-            <div class="relative rounded-2xl overflow-hidden aspect-video">
-              <img id="store-screen-2" src="./assets/images/multimind/store/_TR/store2_TR.webp" alt="MultiMind Store Screenshot 2" width="1280" height="720" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#050E17]/80 via-transparent to-transparent flex items-end p-5">
-                <span class="text-sm font-bold text-white bg-cyan-950/90 px-3.5 py-1.5 rounded-xl border border-cyan-400/40" data-i18n="gallery_caption_2">
-                  Dokunsal Sıralama & Motor Beceriler
-                </span>
-              </div>
+          <figure class="surface-card rounded-2xl p-3">
+            <div class="rounded-xl overflow-hidden aspect-video border border-[#0F1B26]/10 bg-[#EBF3F8]">
+              <img id="store-screen-2" src="./assets/images/multimind/store/_TR/store2_TR.webp" alt="Dokunsal Sıralama ve Motor Beceriler" width="1280" height="720" loading="lazy" decoding="async" class="w-full h-full object-cover">
             </div>
-          </div>
+            <figcaption class="pt-3 px-1 text-xs font-medium text-[#45586B]" data-i18n="gallery_caption_2">Dokunsal Sıralama ve Motor Beceriler</figcaption>
+          </figure>
         </div>
 
-        <!-- Row 2: 3 Supporting Screenshots -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="glass-card rounded-3xl p-3 border border-cyan-400/20 overflow-hidden group">
-            <div class="relative rounded-2xl overflow-hidden aspect-video">
-              <img id="store-screen-3" src="./assets/images/multimind/store/_TR/store3_TR.webp" alt="MultiMind Store Screenshot 3" width="1280" height="720" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#050E17]/80 via-transparent to-transparent flex items-end p-4">
-                <span class="text-xs font-bold text-white bg-cyan-950/90 px-3 py-1 rounded-lg border border-cyan-400/30" data-i18n="gallery_caption_3">
-                  Mantık & Matematiksel Denge
-                </span>
-              </div>
+          <figure class="surface-card rounded-2xl p-3">
+            <div class="rounded-xl overflow-hidden aspect-video border border-[#0F1B26]/10 bg-[#EBF3F8]">
+              <img id="store-screen-3" src="./assets/images/multimind/store/_TR/store3_TR.webp" alt="Mantık ve Matematiksel Denge" width="1280" height="720" loading="lazy" decoding="async" class="w-full h-full object-cover">
             </div>
-          </div>
+            <figcaption class="pt-3 px-1 text-xs font-medium text-[#45586B]" data-i18n="gallery_caption_3">Mantık ve Matematiksel Denge</figcaption>
+          </figure>
 
-          <div class="glass-card rounded-3xl p-3 border border-cyan-400/20 overflow-hidden group">
-            <div class="relative rounded-2xl overflow-hidden aspect-video">
-              <img id="store-screen-4" src="./assets/images/multimind/store/_TR/store4_TR.webp" alt="MultiMind Store Screenshot 4" width="1280" height="720" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#050E17]/80 via-transparent to-transparent flex items-end p-4">
-                <span class="text-xs font-bold text-white bg-cyan-950/90 px-3 py-1 rounded-lg border border-cyan-400/30" data-i18n="gallery_caption_4">
-                  Şekil & Silüet Eşleştirme
-                </span>
-              </div>
+          <figure class="surface-card rounded-2xl p-3">
+            <div class="rounded-xl overflow-hidden aspect-video border border-[#0F1B26]/10 bg-[#EBF3F8]">
+              <img id="store-screen-4" src="./assets/images/multimind/store/_TR/store4_TR.webp" alt="Şekil ve Silüet Eşleştirme" width="1280" height="720" loading="lazy" decoding="async" class="w-full h-full object-cover">
             </div>
-          </div>
+            <figcaption class="pt-3 px-1 text-xs font-medium text-[#45586B]" data-i18n="gallery_caption_4">Şekil ve Silüet Eşleştirme</figcaption>
+          </figure>
 
-          <div class="glass-card rounded-3xl p-3 border border-cyan-400/20 overflow-hidden group">
-            <div class="relative rounded-2xl overflow-hidden aspect-video">
-              <img id="store-screen-5" src="./assets/images/multimind/store/_TR/store5_TR.webp" alt="MultiMind Store Screenshot 5" width="1280" height="720" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#050E17]/80 via-transparent to-transparent flex items-end p-4">
-                <span class="text-xs font-bold text-white bg-cyan-950/90 px-3 py-1 rounded-lg border border-cyan-400/30" data-i18n="gallery_caption_5">
-                  Odaklanma & Ritim Alıştırmaları
-                </span>
-              </div>
+          <figure class="surface-card rounded-2xl p-3">
+            <div class="rounded-xl overflow-hidden aspect-video border border-[#0F1B26]/10 bg-[#EBF3F8]">
+              <img id="store-screen-5" src="./assets/images/multimind/store/_TR/store5_TR.webp" alt="Odaklanma ve Ritim Alıştırmaları" width="1280" height="720" loading="lazy" decoding="async" class="w-full h-full object-cover">
             </div>
-          </div>
+            <figcaption class="pt-3 px-1 text-xs font-medium text-[#45586B]" data-i18n="gallery_caption_5">Odaklanma ve Ritim Alıştırmaları</figcaption>
+          </figure>
         </div>
-
-      </div>
-
-      <!-- Action Button to Dedicated Game Page -->
-      <div class="text-center pt-10">
-        <a href="./games/multimind/index.html" class="btn-glow inline-flex items-center gap-2.5 px-8 py-3.5 rounded-2xl font-bold text-white text-sm shadow-xl">
-          <span data-i18n="gallery_btn_all">MultiMind Kids'in Tüm Detaylarını Gör</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-        </a>
       </div>
 
     </div>
   </section>
 
   <!-- ===================================================================
-       4. CORE PILLARS / PEDAGOGY
+       5. CORE PILLARS & LIVE 8-AXIS INTELLIGENCE RADAR (Moment #2)
        =================================================================== -->
-  <section id="features" class="py-24 relative bg-[#071421]/40 border-t border-cyan-500/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <h2 class="text-xs uppercase tracking-widest font-bold text-cyan-400" data-i18n="why_tag">NEDEN CEZERI GAMES?</h2>
-        <h3 class="text-3xl sm:text-4xl font-extrabold text-white" data-i18n="why_title">Oyun Temelli Öğrenmede Yeni Bir Standart</h3>
-        <p class="text-slate-300 text-base" data-i18n="why_desc">
-          Mobil oyunları yalnızca boş zaman aktivitesi olarak görmüyoruz; onları çocukların bilişsel potansiyelini ortaya çıkaran birer pedagojik araç olarak kurguluyoruz.
+  <section id="features" class="py-20 lg:py-24 border-t border-[#0F1B26]/10 surface-band">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+      <div class="max-w-2xl mb-12 space-y-3">
+        <div class="section-kicker">
+          <span class="draft-index">03</span>
+          <span data-i18n="why_tag">Neden Cezeri Games</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-medium tracking-[-0.02em] text-[#0F1B26]" data-i18n="why_title">Oyun temelli öğrenmede net bir yaklaşım</h2>
+        <p class="text-sm sm:text-base text-[#45586B] leading-relaxed" data-i18n="why_desc">
+          Mobil oyunları yalnızca boş zaman aktivitesi olarak görmüyoruz; çocukların bilişsel potansiyelini destekleyen birer pedagojik araç olarak kurguluyoruz.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
-        <!-- Pillar 1 -->
-        <div class="glass-card rounded-3xl p-8 space-y-4 border border-cyan-500/15">
-          <div class="w-14 h-14 rounded-2xl bg-cyan-500/20 text-cyan-300 flex items-center justify-center border border-cyan-400/30">
-            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+      <!-- 3 Pillars -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+        <div class="surface-card rounded-2xl p-6 space-y-3">
+          <div class="flex items-center justify-between">
+            <svg class="w-5 h-5 text-[#0E7490]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4"/></svg>
+            <span class="draft-index">01</span>
           </div>
-          <h4 class="text-xl font-bold text-white" data-i18n="pillar_1_title">Çoklu Zeka Kuramı</h4>
-          <p class="text-slate-300 text-sm leading-relaxed" data-i18n="pillar_1_desc">
-            Tek tip zeka algısına karşıyız. Howard Gardner’ın matematiksel-mantıksal, uzamsal, bedensel-kinestetik ve doğacı zeka başta olmak üzere tüm gelişim kanallarını aktif tutuyoruz.
+          <h3 class="text-lg font-medium text-[#0F1B26]" data-i18n="pillar_1_title">Çoklu Zekâ Kuramı</h3>
+          <p class="text-sm text-[#45586B] leading-relaxed" data-i18n="pillar_1_desc">
+            Howard Gardner'ın matematiksel, uzamsal, bedensel-kinestetik ve doğacı zekâ başta olmak üzere 8 gelişim kanalını aktif tutuyoruz.
           </p>
         </div>
 
-        <!-- Pillar 2 -->
-        <div class="glass-card rounded-3xl p-8 space-y-4 border border-cyan-500/15">
-          <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center border border-emerald-400/30">
-            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        <div class="surface-card rounded-2xl p-6 space-y-3">
+          <div class="flex items-center justify-between">
+            <svg class="w-5 h-5 text-[#0E7490]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3l7 4v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7l7-4z"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.5 12l2 2 3.5-3.5"/></svg>
+            <span class="draft-index">02</span>
           </div>
-          <h4 class="text-xl font-bold text-white" data-i18n="pillar_2_title">%100 Güvenli & Reklamsız</h4>
-          <p class="text-slate-300 text-sm leading-relaxed" data-i18n="pillar_2_desc">
-            Oyunlarımızda çocukların dikkatini dağıtacak zararlı üçüncü taraf reklamlar yer almaz. COPPA ve GDPR-K çocuk gizlilik yönergelerine harfiyen uyarız.
+          <h3 class="text-lg font-medium text-[#0F1B26]" data-i18n="pillar_2_title">%100 Güvenli ve Reklamsız</h3>
+          <p class="text-sm text-[#45586B] leading-relaxed" data-i18n="pillar_2_desc">
+            Çocukların dikkatini dağıtacak üçüncü taraf reklamlar yer almaz. COPPA ve GDPR-K çocuk gizlilik yönergelerine tam uyum sağlarız.
           </p>
         </div>
 
-        <!-- Pillar 3 -->
-        <div class="glass-card rounded-3xl p-8 space-y-4 border border-cyan-500/15">
-          <div class="w-14 h-14 rounded-2xl bg-amber-500/20 text-amber-300 flex items-center justify-center border border-amber-400/30">
-            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+        <div class="surface-card rounded-2xl p-6 space-y-3">
+          <div class="flex items-center justify-between">
+            <svg class="w-5 h-5 text-[#0E7490]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16M8 5v4M16 10v4M11 15v4"/></svg>
+            <span class="draft-index">03</span>
           </div>
-          <h4 class="text-xl font-bold text-white" data-i18n="pillar_3_title">Dokunsal & Mekanik Çeşitlilik</h4>
-          <p class="text-slate-300 text-sm leading-relaxed" data-i18n="pillar_3_desc">
-            Yalnızca düğmeye basılan monoton şablonlar yerine; kaldıraçlar, teraziler, dişliler, dilimleme ve yönlendirme gibi 30 farklı fiziksel mekanikle ince motor becerilerini güçlendiriyoruz.
+          <h3 class="text-lg font-medium text-[#0F1B26]" data-i18n="pillar_3_title">Dokunsal Mekanik Çeşitliliği</h3>
+          <p class="text-sm text-[#45586B] leading-relaxed" data-i18n="pillar_3_desc">
+            Tekdüze şablonlar yerine kaldıraçlar, teraziler, dişliler, dilimleme ve yönlendirme gibi 30 farklı fiziksel mekanikle ince motor becerilerini güçlendiriyoruz.
           </p>
-        </div>
-
-      </div>
-      <!-- Interactive Intelligence Radar Banner Feature in #features -->
-      <div class="mt-16 glass-card rounded-3xl p-8 sm:p-10 border-2 border-cyan-400/30 bg-gradient-to-r from-[#071627] to-[#040E1A] flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden">
-        <div class="space-y-4 max-w-xl">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold text-cyan-300 bg-cyan-500/15 border border-cyan-400/30" data-i18n="feat_radar_tag">
-            🎯 MULTIMIND KIDS EN BELİRGİN İNOVASYON
-          </div>
-          <h4 class="text-2xl sm:text-3xl font-black text-white font-['Outfit']" data-i18n="feat_radar_title">
-            Canlı 8 Eksenli Zekâ Radarı ve Veli Gelişim Raporu
-          </h4>
-          <p class="text-slate-300 text-sm leading-relaxed" data-i18n="feat_radar_desc">
-            Çocuğunuz oyun oynarken yaptığı hamleler, karar hızları ve denemeleri anlık olarak Howard Gardner'ın 8 Çoklu Zekâ eksenine işlenir. Uygulama içindeki UserProfile paneliyle çocuğunuzun güçlü ve desteğe ihtiyaç duyan yönlerini canlı olarak takip edin.
-          </p>
-          <div class="pt-2 flex flex-wrap gap-3">
-            <a href="./blog/zeka-gelisim-raporu-intelligence-radar/index.html" class="px-5 py-2.5 rounded-xl bg-cyan-500 text-slate-950 font-bold text-xs hover:bg-cyan-400 transition-colors flex items-center gap-2 shadow-lg shadow-cyan-500/20" data-i18n="feat_radar_btn_explore">
-              <span>Radarın Nasıl Çalıştığını Keşfedin</span> &rarr;
-            </a>
-            <a href="./games/multimind/index.html#intelligences" class="px-5 py-2.5 rounded-xl bg-slate-800/80 text-slate-200 font-semibold text-xs border border-cyan-500/20 hover:bg-slate-700 transition-colors" data-i18n="feat_radar_btn_game">
-              Canlı Demoyu İncele
-            </a>
-          </div>
-        </div>
-
-        <div class="flex-shrink-0 w-full lg:w-96 flex items-center justify-center relative">
-          <div class="w-64 h-64 rounded-full bg-cyan-500/10 border border-cyan-400/25 flex items-center justify-center p-4 relative shadow-[0_0_40px_rgba(34,211,238,0.15)]">
-            <img src="./assets/images/radar/IntelligenceRadar_Atlas.png" alt="Intelligence Radar Atlas" class="w-full h-full object-contain filter drop-shadow hover:scale-105 transition-transform duration-500">
-          </div>
         </div>
       </div>
 
+      <!-- Moment #2: Live 8-Axis Intelligence Radar Panel -->
+      <div class="surface-card rounded-2xl p-6 sm:p-8 lg:p-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-5 space-y-4">
+            <span class="quiet-tag" data-i18n="feat_radar_tag">MultiMind Kids Zekâ Radarı</span>
+            <h3 class="text-2xl sm:text-3xl font-medium tracking-[-0.02em] text-[#0F1B26] leading-tight" data-i18n="feat_radar_title">
+              Canlı 8 eksenli zekâ radarı ve veli gelişim raporu
+            </h3>
+            <p class="text-sm text-[#45586B] leading-relaxed" data-i18n="feat_radar_desc">
+              Çocuğunuz oyun oynarken yaptığı hamleler, karar hızları ve denemeleri anlık olarak Howard Gardner'ın 8 Çoklu Zekâ eksenine işlenir. Uygulama içindeki profil paneliyle güçlü ve desteğe açık yönlerini takip edebilirsiniz.
+            </p>
+            <div class="pt-2 flex flex-wrap gap-3">
+              <a href="./blog/zeka-gelisim-raporu-intelligence-radar/index.html" class="btn-primary h-10 px-4 rounded-lg text-xs font-medium inline-flex items-center gap-1.5" data-i18n="feat_radar_btn_explore">
+                <span>Radarın çalışma mantığı</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6"/></svg>
+              </a>
+              <a href="./games/multimind/index.html#intelligences" class="btn-secondary h-10 px-4 rounded-lg text-xs font-medium inline-flex items-center" data-i18n="feat_radar_btn_game">
+                Canlı demoyu incele
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 flex items-center justify-center">
+            <div id="home-intelligence-radar" class="w-full max-w-[460px]"></div>
+          </div>
+        </div>
+      </div>
 
     </div>
   </section>
 
   <!-- ===================================================================
-       5. BLOG / INSIGHTS PREVIEW
+       6. BLOG / INSIGHTS PREVIEW
        =================================================================== -->
-  <section id="blog" class="py-24 border-t border-cyan-500/15 bg-[#071421]/70">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-        <div>
-          <h2 class="text-xs uppercase tracking-widest font-bold text-cyan-400 mb-2" data-i18n="blog_tag">BİLGİ & İÇERİK MERKEZİ</h2>
-          <h3 class="text-3xl sm:text-4xl font-extrabold text-white" data-i18n="blog_title">Ebeveynler ve Geliştiriciler İçin Yazılar</h3>
+  <section id="blog" class="py-20 lg:py-24 border-t border-[#0F1B26]/10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div class="space-y-3">
+          <div class="section-kicker">
+            <span class="draft-index">04</span>
+            <span data-i18n="blog_tag">Bilgi ve içerik merkezi</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-medium tracking-[-0.02em] text-[#0F1B26]" data-i18n="blog_title">Ebeveynler ve geliştiriciler için yazılar</h2>
         </div>
-        <a href="./blog/index.html" class="btn-glow px-6 py-2.5 rounded-xl text-sm font-bold text-white inline-flex items-center gap-2 self-start md:self-auto">
-          <span data-i18n="btn_all_blog">Tüm Yazıları Gör</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+
+        <a href="./blog/index.html" class="btn-secondary h-10 px-4 rounded-lg text-xs font-medium inline-flex items-center gap-1.5 self-start md:self-auto">
+          <span data-i18n="btn_all_blog">Tüm yazıları gör</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6"/></svg>
         </a>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        
-        <!-- Blog Card 1 -->
-        <article class="glass-card rounded-3xl p-6 flex flex-col justify-between group border border-cyan-500/30">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <article class="surface-card surface-card-interactive rounded-2xl p-6 flex flex-col justify-between">
           <div>
-            <div class="flex items-center gap-2 text-xs font-semibold text-cyan-400 mb-3">
-              <span class="px-2.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/25" data-i18n="blog_1_cat">Pedagoji</span>
-              <span class="text-slate-400" data-i18n="blog_1_time">• 5 dk okuma</span>
+            <div class="flex items-center gap-2 text-xs text-[#64788B] mb-3">
+              <span class="text-[#0E7490] font-medium" data-i18n="blog_1_cat">Pedagoji</span>
+              <span data-i18n="blog_1_time">· 5 dk okuma</span>
             </div>
-            
-            <h4 class="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors mb-3">
-              <a href="./blog/coklu-zeka-kurami/index.html" data-i18n="blog_1_title">Çoklu Zeka Kuramı Nedir ve Oyunlarla Nasıl Desteklenir?</a>
-            </h4>
-            
-            <p class="text-slate-300 text-sm leading-relaxed mb-6" data-i18n="blog_1_desc">
-              Howard Gardner'ın geliştirdiği 8 zeka alanının dijital oyun mekanikleriyle nasıl uyumlu hale getirilebileceğini ve çocuk gelişimine etkilerini inceliyoruz.
+            <h3 class="text-lg font-medium text-[#0F1B26] leading-snug mb-3">
+              <a href="./blog/coklu-zeka-kurami/index.html" class="hover:text-[#0E7490] transition-colors duration-150" data-i18n="blog_1_title">Çoklu Zekâ Kuramı nedir ve oyunlarla nasıl desteklenir?</a>
+            </h3>
+            <p class="text-sm text-[#45586B] leading-relaxed mb-6" data-i18n="blog_1_desc">
+              Howard Gardner'ın geliştirdiği 8 zekâ alanının dijital oyun mekanikleriyle uyumu ve çocuk gelişimine etkileri.
             </p>
           </div>
-
-          <div class="pt-4 border-t border-cyan-500/15 flex items-center justify-between text-xs text-slate-400">
+          <div class="pt-4 border-t border-[#0F1B26]/10 flex items-center justify-between text-xs text-[#64788B]">
             <span data-i18n="blog_1_author">Cezeri Games Araştırma Ekibi</span>
-            <a href="./blog/coklu-zeka-kurami/index.html" class="text-cyan-400 font-bold group-hover:underline" data-i18n="blog_read_more" aria-label="Çoklu Zeka Kuramı ve Oyunlar Makalesini Oku">Devamını Oku &rarr;</a>
+            <a href="./blog/coklu-zeka-kurami/index.html" class="text-[#0E7490] font-medium hover:underline" data-i18n="blog_read_more">Oku &rarr;</a>
           </div>
         </article>
 
-        <!-- Blog Card 2 -->
-        <article class="glass-card rounded-3xl p-6 flex flex-col justify-between group">
+        <article class="surface-card surface-card-interactive rounded-2xl p-6 flex flex-col justify-between">
           <div>
-            <div class="flex items-center gap-2 text-xs font-semibold text-cyan-400 mb-3">
-              <span class="px-2.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/25" data-i18n="blog_2_cat">Çocuk & Ekran</span>
-              <span class="text-slate-400" data-i18n="blog_2_time">• 4 dk okuma</span>
+            <div class="flex items-center gap-2 text-xs text-[#64788B] mb-3">
+              <span class="text-[#0E7490] font-medium" data-i18n="blog_2_cat">Çocuk ve Ekran</span>
+              <span data-i18n="blog_2_time">· 4 dk okuma</span>
             </div>
-            
-            <h4 class="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors mb-3">
-              <a href="./blog/index.html" data-i18n="blog_2_title">Bilinçli Ekran Süresi: Pasif İzleme ile Aktif Etkileşim Arasındaki Fark</a>
-            </h4>
-            
-            <p class="text-slate-300 text-sm leading-relaxed mb-6" data-i18n="blog_2_desc">
-              Çocukların video izlemek yerine problem çözen, karar alan ve dokunsal hamleler yapan aktif oyun süreçlerine katılmasının beyin gelişimine katkısı.
+            <h3 class="text-lg font-medium text-[#0F1B26] leading-snug mb-3">
+              <a href="./blog/bilincli-ekran-suresi/index.html" class="hover:text-[#0E7490] transition-colors duration-150" data-i18n="blog_2_title">Bilinçli ekran süresi: Pasif izleme ile aktif etkileşim arasındaki fark</a>
+            </h3>
+            <p class="text-sm text-[#45586B] leading-relaxed mb-6" data-i18n="blog_2_desc">
+              Çocukların video izlemek yerine problem çözen ve dokunsal hamleler yapan aktif oyun süreçlerine katılmasının katkısı.
             </p>
           </div>
-
-          <div class="pt-4 border-t border-cyan-500/15 flex items-center justify-between text-xs text-slate-400">
+          <div class="pt-4 border-t border-[#0F1B26]/10 flex items-center justify-between text-xs text-[#64788B]">
             <span data-i18n="blog_2_author">Çocuk Gelişimi Notları</span>
-            <a href="./blog/index.html" class="text-cyan-400 font-semibold group-hover:underline" data-i18n="blog_read_more" aria-label="Bilinçli Ekran Süresi Makalesini Oku">Devamını Oku &rarr;</a>
+            <a href="./blog/bilincli-ekran-suresi/index.html" class="text-[#0E7490] font-medium hover:underline" data-i18n="blog_read_more">Oku &rarr;</a>
           </div>
         </article>
 
-        <!-- Blog Card 3 -->
-        <article class="glass-card rounded-3xl p-6 flex flex-col justify-between group">
+        <article class="surface-card surface-card-interactive rounded-2xl p-6 flex flex-col justify-between">
           <div>
-            <div class="flex items-center gap-2 text-xs font-semibold text-amber-400 mb-3">
-              <span class="px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/25" data-i18n="blog_3_cat">Oyun Tasarımı</span>
-              <span class="text-slate-400" data-i18n="blog_3_time">• 6 dk okuma</span>
+            <div class="flex items-center gap-2 text-xs text-[#64788B] mb-3">
+              <span class="text-[#0E7490] font-medium" data-i18n="blog_3_cat">Oyun Tasarımı</span>
+              <span data-i18n="blog_3_time">· 6 dk okuma</span>
             </div>
-            
-            <h4 class="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors mb-3">
-              <a href="./blog/index.html" data-i18n="blog_3_title">İsmail El-Cezeri'nin Mekanik Dünyasından Dijital Oyunlara İlham</a>
-            </h4>
-            
-            <p class="text-slate-300 text-sm leading-relaxed mb-6" data-i18n="blog_3_desc">
-              Mühendisliğin babası sayılan El-Cezeri'nin sibernetik harikalarını günümüz mobil bulmaca ve fizik oyunlarıyla harmanlama vizyonumuz.
+            <h3 class="text-lg font-medium text-[#0F1B26] leading-snug mb-3">
+              <a href="./blog/ismail-el-cezeri-mekanik-oyun-donguleri/index.html" class="hover:text-[#0E7490] transition-colors duration-150" data-i18n="blog_3_title">İsmail el-Cezeri'nin mekanik dünyasından dijital oyunlara ilham</a>
+            </h3>
+            <p class="text-sm text-[#45586B] leading-relaxed mb-6" data-i18n="blog_3_desc">
+              El-Cezeri'nin su saatleri ve otomatlarından günümüz mobil bulmaca ve fizik oyunlarına uzanan tasarım yaklaşımımız.
             </p>
           </div>
-
-          <div class="pt-4 border-t border-cyan-500/15 flex items-center justify-between text-xs text-slate-400">
-            <span data-i18n="blog_3_author">Stüdyo Hikayeleri</span>
-            <a href="./blog/index.html" class="text-cyan-400 font-semibold group-hover:underline" data-i18n="blog_read_more" aria-label="İsmail El-Cezeri ve Dijital Oyunlar Makalesini Oku">Devamını Oku &rarr;</a>
+          <div class="pt-4 border-t border-[#0F1B26]/10 flex items-center justify-between text-xs text-[#64788B]">
+            <span data-i18n="blog_3_author">Stüdyo Hikâyeleri</span>
+            <a href="./blog/ismail-el-cezeri-mekanik-oyun-donguleri/index.html" class="text-[#0E7490] font-medium hover:underline" data-i18n="blog_read_more">Oku &rarr;</a>
           </div>
         </article>
-
       </div>
 
     </div>
   </section>
 
   <!-- ===================================================================
-       6. ABOUT STUDIO (EL-CEZERI & VISION)
+       7. ABOUT STUDIO (EL-CEZERI & COMMITMENTS)
        =================================================================== -->
-  <section id="about" class="py-24 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        <div class="lg:col-span-6 space-y-6">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold badge-tag">
-            <span data-i18n="about_tag">KÖKLERİMİZ VE HİKAYEMİZ</span>
+  <section id="about" class="py-20 lg:py-24 border-t border-[#0F1B26]/10 surface-band">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+
+        <div class="lg:col-span-6 space-y-5">
+          <div class="section-kicker">
+            <span class="draft-index">05</span>
+            <span data-i18n="about_tag">Köklerimiz ve hikâyemiz</span>
           </div>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight" data-i18n="about_title">
-            Mühendislik Dehası <span class="text-gradient">İsmail El-Cezeri</span>'den İlham Alan Oyun Stüdyosu
+          <h2 class="text-3xl sm:text-4xl font-medium tracking-[-0.02em] text-[#0F1B26] leading-tight" data-i18n="about_title">
+            Mühendislik dehası <span class="text-[#0E7490]">İsmail el-Cezeri</span>'den ilham alan oyun stüdyosu
           </h2>
-          <p class="text-slate-300 text-base leading-relaxed" data-i18n="about_desc_1">
-            12. yüzyılda Anadolu'da su saatleri, otomatlar ve robotik sistemler tasarlayarak modern sibernetiğin temelini atan <strong>İsmail el-Cezeri</strong>, merakın ve problem çözmenin evrensel gücünü temsil eder.
+          <p class="text-base text-[#45586B] leading-relaxed" data-i18n="about_desc_1">
+            12. yüzyılda Anadolu'da su saatleri, otomatlar ve mekanik sistemler tasarlayarak sibernetiğin temelini atan <strong>İsmail el-Cezeri</strong>, merakın ve problem çözmenin evrensel gücünü temsil eder.
           </p>
-          <p class="text-slate-400 text-sm leading-relaxed" data-i18n="about_desc_2">
-            <strong>Cezeri Games</strong> olarak misyonumuz; bu kadim mühendislik ve zanaat tutkusunu çağdaş dijital oyun dinamikleriyle buluşturmaktır. Çocukların ekranda sadece zaman geçirmesini değil; mekanizmaları anlamasını, sorgulamasını ve üretken zihinler haline gelmesini amaçlıyoruz.
+          <p class="text-sm text-[#45586B] leading-relaxed" data-i18n="about_desc_2">
+            <strong>Cezeri Games</strong> olarak misyonumuz; bu zanaat ve mühendislik tutkusunu çağdaş dijital oyun dinamikleriyle buluşturmaktır. Çocukların ekranda yalnızca zaman geçirmesini değil; mekanizmaları anlamasını ve sorgulamasını amaçlıyoruz.
           </p>
 
-          <div class="pt-4 flex flex-wrap gap-4 text-xs font-semibold text-slate-300">
-            <span class="px-3.5 py-2 rounded-xl bg-cyan-950/40 border border-cyan-500/20 text-cyan-200" data-i18n="tag_indie">📍 Bağımsız Mobil Oyun Stüdyosu</span>
-            <span class="px-3.5 py-2 rounded-xl bg-cyan-950/40 border border-cyan-500/20 text-cyan-200" data-i18n="tag_engine">🚀 Unity & Modern Engine Mimarisi</span>
-            <span class="px-3.5 py-2 rounded-xl bg-cyan-950/40 border border-cyan-500/20 text-cyan-200" data-i18n="tag_global">🌍 Küresel Yayın Hedefi</span>
+          <div class="pt-2 flex flex-wrap gap-2 text-xs text-[#45586B]">
+            <span class="px-3 py-1.5 rounded-md bg-white border border-[#0F1B26]/10" data-i18n="tag_indie">Bağımsız Mobil Oyun Stüdyosu</span>
+            <span class="px-3 py-1.5 rounded-md bg-white border border-[#0F1B26]/10" data-i18n="tag_engine">Unity & Modern Engine Mimarisi</span>
+            <span class="px-3 py-1.5 rounded-md bg-white border border-[#0F1B26]/10" data-i18n="tag_global">Küresel Yayın Hedefi</span>
           </div>
         </div>
 
         <div class="lg:col-span-6">
-          <div class="glass-card rounded-3xl p-8 border border-cyan-500/20 relative overflow-hidden">
-            <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
-            
-            <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
-              <span class="w-3 h-3 rounded-full bg-cyan-400 animate-pulse"></span>
-              <span data-i18n="commitments_title">Stüdyo Taahhütlerimiz</span>
-            </h3>
+          <div class="surface-card rounded-2xl p-6 sm:p-8">
+            <h3 class="text-lg font-medium text-[#0F1B26] pb-4 mb-5 border-b border-[#0F1B26]/10" data-i18n="commitments_title">Stüdyo taahhütlerimiz</h3>
 
-            <ul class="space-y-4 text-sm text-slate-300">
-              <li class="flex items-start gap-3">
-                <span class="text-cyan-400 font-bold mt-0.5">01.</span>
-                <span><strong data-i18n="commit_1_title">Pedagojik Derinlik:</strong> <span data-i18n="commit_1_desc">Oyun döngülerimiz gelişi güzel değil, bilişsel zeka modellerine göre yapılandırılır.</span></span>
+            <ul class="space-y-4 text-sm text-[#45586B]">
+              <li class="flex items-start gap-4">
+                <span class="draft-index pt-0.5 shrink-0">01</span>
+                <span><strong class="text-[#0F1B26] font-medium" data-i18n="commit_1_title">Pedagojik Derinlik:</strong> <span data-i18n="commit_1_desc">Oyun döngülerimiz bilişsel zekâ modellerine göre yapılandırılır.</span></span>
               </li>
-              <li class="flex items-start gap-3">
-                <span class="text-cyan-400 font-bold mt-0.5">02.</span>
-                <span><strong data-i18n="commit_2_title">Çocuk Önceliği ve Güvenlik:</strong> <span data-i18n="commit_2_desc">Hiçbir kişisel veri izinsiz toplanmaz, üçüncü taraf reklam ağlarıyla paylaşılmaz.</span></span>
+              <li class="flex items-start gap-4">
+                <span class="draft-index pt-0.5 shrink-0">02</span>
+                <span><strong class="text-[#0F1B26] font-medium" data-i18n="commit_2_title">Çocuk Önceliği ve Güvenlik:</strong> <span data-i18n="commit_2_desc">Hiçbir kişisel veri izinsiz toplanmaz, üçüncü taraf reklam ağlarıyla paylaşılmaz.</span></span>
               </li>
-              <li class="flex items-start gap-3">
-                <span class="text-cyan-400 font-bold mt-0.5">03.</span>
-                <span><strong data-i18n="commit_3_title">Kullanıcı Saygısı:</strong> <span data-i18n="commit_3_desc">Agresif 'pay-to-win' mekanizmaları yerine, çocukların başarısını ve özgüvenini ödüllendiren adil oyun mimarisi.</span></span>
+              <li class="flex items-start gap-4">
+                <span class="draft-index pt-0.5 shrink-0">03</span>
+                <span><strong class="text-[#0F1B26] font-medium" data-i18n="commit_3_title">Kullanıcı Saygısı:</strong> <span data-i18n="commit_3_desc">Agresif mekanizmalar yerine çocukların başarısını ve özgüvenini ödüllendiren adil mimari.</span></span>
               </li>
-              <li class="flex items-start gap-3">
-                <span class="text-cyan-400 font-bold mt-0.5">04.</span>
-                <span><strong data-i18n="commit_4_title">Sürekli Gelişim:</strong> <span data-i18n="commit_4_desc">Ebeveyn ve eğitimci geri bildirimleriyle oyunlarımızı düzenli olarak güncelliyoruz.</span></span>
+              <li class="flex items-start gap-4">
+                <span class="draft-index pt-0.5 shrink-0">04</span>
+                <span><strong class="text-[#0F1B26] font-medium" data-i18n="commit_4_title">Sürekli Gelişim:</strong> <span data-i18n="commit_4_desc">Ebeveyn ve eğitimci geri bildirimleriyle oyunlarımızı düzenli olarak güncelliyoruz.</span></span>
               </li>
             </ul>
           </div>
@@ -761,92 +642,89 @@
   </section>
 
   <!-- ===================================================================
-       7. CONTACT & SUPPORT SECTION
+       8. CONTACT & SUPPORT
        =================================================================== -->
-  <section id="contact" class="py-24 border-t border-cyan-500/15 bg-[#071421]/80">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
-      
-      <div class="space-y-3">
-        <h2 class="text-xs uppercase tracking-widest font-bold text-cyan-400" data-i18n="contact_tag">BİZE ULAŞIN</h2>
-        <h3 class="text-3xl sm:text-4xl font-extrabold text-white" data-i18n="contact_title">Sorularınız, İş Birlikleri ve Destek</h3>
-        <p class="text-slate-300 text-base max-w-xl mx-auto" data-i18n="contact_desc">
-          Oyunlarımız hakkında geri bildirim paylaşmak, teknik destek almak veya stüdyomuzla iş birliği yapmak için bize dilediğiniz zaman ulaşabilirsiniz.
-        </p>
-      </div>
+  <section id="contact" class="py-20 lg:py-24 border-t border-[#0F1B26]/10">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
 
-      <div class="glass-card rounded-3xl p-8 sm:p-10 border border-cyan-500/25 max-w-2xl mx-auto">
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
-          <div class="w-16 h-16 rounded-2xl bg-cyan-500/20 border border-cyan-400/30 flex items-center justify-center text-cyan-300 shrink-0">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+      <div class="surface-card rounded-2xl p-6 sm:p-8 lg:p-10">
+        <div class="space-y-3 mb-8">
+          <div class="section-kicker">
+            <span class="draft-index">06</span>
+            <span data-i18n="contact_tag">Bize ulaşın</span>
           </div>
-          <div class="text-center sm:text-left">
-            <div class="text-xs text-cyan-300 uppercase tracking-wider font-bold" data-i18n="contact_box_title">Resmi Destek & İletişim E-Postası</div>
-            <a href="mailto:support@cezerigames.com" class="text-2xl font-extrabold text-white hover:text-cyan-300 transition-colors block mt-1">
+          <h2 class="text-2xl sm:text-3xl font-medium tracking-[-0.02em] text-[#0F1B26]" data-i18n="contact_title">Sorularınız, iş birlikleri ve destek</h2>
+          <p class="text-sm text-[#45586B] leading-relaxed max-w-xl" data-i18n="contact_desc">
+            Oyunlarımız hakkında geri bildirim paylaşmak, teknik destek almak veya iş birliği yapmak için bize dilediğiniz zaman yazabilirsiniz.
+          </p>
+        </div>
+
+        <div class="pt-6 border-t border-[#0F1B26]/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <div class="text-xs text-[#64788B]" data-i18n="contact_box_title">Destek ve iletişim e-postası</div>
+            <a href="mailto:support@cezerigames.com" class="text-lg sm:text-xl font-medium text-[#0F1B26] hover:text-[#0E7490] transition-colors duration-150 block mt-1">
               support@cezerigames.com
             </a>
           </div>
-        </div>
 
-        <div class="mt-8 pt-6 border-t border-cyan-500/15 flex flex-wrap items-center justify-center gap-4">
-          <button class="btn-copy-email px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 transition-colors flex items-center gap-2 border border-cyan-500/20" data-email="support@cezerigames.com">
-            <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
-            <span data-i18n="btn_copy_email">E-Postayı Kopyala</span>
-          </button>
-          
-          <a href="mailto:support@cezerigames.com?subject=Cezeri%20Games%20Destek" class="btn-glow px-6 py-2.5 rounded-xl text-xs font-bold text-white">
-            <span data-i18n="btn_send_email">E-Posta Gönder</span>
-          </a>
+          <div class="flex flex-wrap items-center gap-2.5">
+            <button type="button" class="btn-copy-email btn-secondary h-10 px-4 rounded-lg text-xs font-medium inline-flex items-center gap-2" data-email="support@cezerigames.com">
+              <svg class="w-4 h-4 text-[#64788B]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <span data-i18n="btn_copy_email">Kopyala</span>
+            </button>
+
+            <a href="mailto:support@cezerigames.com?subject=Cezeri%20Games%20Destek" class="btn-primary h-10 px-4 rounded-lg text-xs font-medium inline-flex items-center">
+              <span data-i18n="btn_send_email">E-posta gönder</span>
+            </a>
+          </div>
         </div>
       </div>
 
     </div>
   </section>
+
   </main>
 
   <!-- ===================================================================
-       8. FOOTER
+       9. FOOTER
        =================================================================== -->
-  <footer class="border-t border-cyan-500/15 bg-[#030910] text-slate-400 text-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
-        
-        <div class="md:col-span-2 space-y-4">
-          <div class="flex items-center gap-3">
-            <img src="./assets/images/logo.png" alt="Cezeri Games" width="40" height="40" loading="lazy" decoding="async" class="h-10 w-10 object-contain drop-shadow-[0_0_10px_rgba(34,211,238,0.4)]">
-            <span class="font-extrabold text-lg tracking-wider text-white">CEZERI <span class="text-cyan-400">GAMES</span></span>
+  <footer class="border-t border-[#0F1B26]/10 bg-white text-[#64788B] text-sm">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+        <div class="md:col-span-2 space-y-3">
+          <div class="flex items-center gap-2.5">
+            <img src="./assets/images/logo.png" alt="Cezeri Games" width="32" height="32" loading="lazy" decoding="async" class="h-8 w-8 object-contain">
+            <span class="font-semibold text-base text-[#0F1B26] font-['Bricolage_Grotesque']">Cezeri Games</span>
           </div>
-          <p class="text-xs text-slate-400 max-w-sm leading-relaxed" data-i18n="footer_desc">
-            Cezeri Games, çocuklar için çoklu zeka odaklı eğitici ve eğlenceli oyunlar üreten bağımsız mobil oyun stüdyosudur.
+          <p class="text-xs text-[#45586B] max-w-sm leading-relaxed" data-i18n="footer_desc">
+            Cezeri Games, çocuklar için çoklu zekâ odaklı eğitici mobil oyunlar üreten bağımsız oyun stüdyosudur.
           </p>
-          <div class="text-xs text-slate-300">
+          <div class="text-xs text-[#64788B] font-mono-num">
             &copy; <span class="current-year">2026</span> <span data-i18n="footer_rights">Cezeri Games. Tüm hakları saklıdır.</span>
           </div>
         </div>
 
         <div>
-          <h3 class="text-xs font-bold text-white uppercase tracking-wider mb-4" data-i18n="footer_quick_menu">Hızlı Menü</h3>
+          <h3 class="text-xs font-medium text-[#0F1B26] mb-3" data-i18n="footer_quick_menu">Hızlı menü</h3>
           <ul class="space-y-2 text-xs">
-            <li><a href="./index.html" class="hover:text-cyan-300 transition-colors" data-i18n="nav_games">Ana Sayfa</a></li>
-            <li><a href="#games" class="hover:text-cyan-300 transition-colors" data-i18n="nav_games">Oyunlarımız</a></li>
-            <li><a href="./games/multimind/index.html" class="text-cyan-400 hover:text-cyan-300 font-semibold">MultiMind Kids</a></li>
-            <li><a href="#gallery" class="hover:text-cyan-300 transition-colors" data-i18n="nav_gallery">Oyun Galerisi</a></li>
-            <li><a href="./blog/index.html" class="hover:text-cyan-300 transition-colors" data-i18n="nav_blog">Blog & Rehberler</a></li>
-            <li><a href="#about" class="hover:text-cyan-300 transition-colors" data-i18n="nav_about">Hakkımızda</a></li>
-            <li><a href="#contact" class="hover:text-cyan-300 transition-colors" data-i18n="nav_contact">İletişim</a></li>
+            <li><a href="./index.html" class="hover:text-[#0F1B26] transition-colors duration-150">Ana Sayfa</a></li>
+            <li><a href="#games" class="hover:text-[#0F1B26] transition-colors duration-150" data-i18n="nav_games">Oyunlarımız</a></li>
+            <li><a href="./games/multimind/index.html" class="text-[#0E7490] hover:text-[#0A5C73] font-medium">MultiMind Kids</a></li>
+            <li><a href="#gallery" class="hover:text-[#0F1B26] transition-colors duration-150" data-i18n="nav_gallery">Galeri</a></li>
+            <li><a href="./blog/index.html" class="hover:text-[#0F1B26] transition-colors duration-150" data-i18n="nav_blog">Blog</a></li>
+            <li><a href="#about" class="hover:text-[#0F1B26] transition-colors duration-150" data-i18n="nav_about">Hakkımızda</a></li>
+            <li><a href="#contact" class="hover:text-[#0F1B26] transition-colors duration-150" data-i18n="nav_contact">İletişim</a></li>
           </ul>
         </div>
 
         <div>
-          <h3 class="text-xs font-bold text-white uppercase tracking-wider mb-4" data-i18n="footer_legal_menu">Yasal & Mağazalar</h3>
+          <h3 class="text-xs font-medium text-[#0F1B26] mb-3" data-i18n="footer_legal_menu">Yasal ve mağazalar</h3>
           <ul class="space-y-2 text-xs">
-            <li><a href="https://play.google.com/store/apps/details?id=com.CezeriGames.MultiMindKidsBrainGames" target="_blank" rel="noopener" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1.5 transition-colors">
-              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a1.984 1.984 0 0 1-.61-.955V2.769c.12-.37.33-.706.609-.955zm11.235 11.238l2.25 2.25-10.74 6.202 8.49-8.452zm0-2.104l-8.49-8.452 10.74 6.202-2.25 2.25zm1.488 1.052l3.41-1.971a1.996 1.996 0 0 0 0-3.456l-3.41-1.971-1.848 1.848 1.848 1.85z"/></svg>
-              <span>Google Play: MultiMind</span>
-            </a></li>
-            <li><a href="./privacy-policy/index.html" class="text-slate-300 hover:text-cyan-300 transition-colors" data-i18n="footer_privacy">Gizlilik Politikası (Privacy Policy)</a></li>
-            <li><a href="./terms/index.html" class="text-slate-300 hover:text-cyan-300 transition-colors" data-i18n="footer_terms">Kullanım Şartları (Terms of Service)</a></li>
-            <li><a href="./privacy-policy/index.html#children" class="text-slate-300 hover:text-cyan-300 transition-colors" data-i18n="footer_coppa">Çocuk Güvenliği & COPPA</a></li>
-            <li><a href="mailto:support@cezerigames.com" class="text-slate-300 hover:text-cyan-300 transition-colors" data-i18n="footer_support">Destek Talebi</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.CezeriGames.MultiMindKidsBrainGames" target="_blank" rel="noopener" class="text-[#15803D] hover:underline font-medium">Google Play: MultiMind Kids</a></li>
+            <li><a href="./privacy-policy/index.html" class="hover:text-[#0F1B26] transition-colors duration-150" data-i18n="footer_privacy">Gizlilik Politikası</a></li>
+            <li><a href="./terms/index.html" class="hover:text-[#0F1B26] transition-colors duration-150" data-i18n="footer_terms">Kullanım Şartları</a></li>
+            <li><a href="mailto:support@cezerigames.com" class="hover:text-[#0F1B26] transition-colors duration-150" data-i18n="footer_support">Destek Talebi</a></li>
           </ul>
         </div>
 
@@ -855,7 +733,31 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="./assets/js/i18n.js"></script>
   <script src="./assets/js/main.js"></script>
+  <script src="./assets/js/i18n.js"></script>
+  <script src="./assets/js/radar-chart.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.IntelligenceRadar && document.getElementById('home-intelligence-radar')) {
+        const lang = (typeof getSavedLanguage === 'function' ? getSavedLanguage() : 'TR').toLowerCase();
+        window.homeRadar = new window.IntelligenceRadar('home-intelligence-radar', {
+          size: 640,
+          center: 320,
+          radius: 170,
+          badgeRadius: 242,
+          iconBasePath: './assets/images/radar/',
+          lang: lang,
+          showProfileTabs: true
+        });
+
+        document.querySelectorAll('.lang-item').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const code = btn.getAttribute('data-lang');
+            if (window.homeRadar && code) window.homeRadar.setLanguage(code);
+          });
+        });
+      }
+    });
+  </script>
 </body>
 </html>

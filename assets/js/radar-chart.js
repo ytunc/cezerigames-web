@@ -275,17 +275,17 @@
       if (this.tabsContainer) {
         this.tabsContainer.querySelectorAll('.radar-tab-btn').forEach((btn, idx) => {
           if (idx === profileIdx) {
-            btn.classList.add('radar-tab-active', 'bg-cyan-500/25', 'text-cyan-300', 'border-cyan-400');
-            btn.classList.remove('bg-slate-800/60', 'text-slate-300', 'border-slate-700/50');
+            btn.classList.add('radar-tab-active', 'bg-[#0E7490]', 'text-white', 'border-[#0E7490]');
+            btn.classList.remove('bg-white', 'text-[#45586B]', 'border-[#0F1B26]/10');
           } else {
-            btn.classList.remove('radar-tab-active', 'bg-cyan-500/25', 'text-cyan-300', 'border-cyan-400');
-            btn.classList.add('bg-slate-800/60', 'text-slate-300', 'border-slate-700/50');
+            btn.classList.remove('radar-tab-active', 'bg-[#0E7490]', 'text-white', 'border-[#0E7490]');
+            btn.classList.add('bg-white', 'text-[#45586B]', 'border-[#0F1B26]/10');
           }
         });
       }
 
       if (animate) {
-        this.setScores(profile.scores, 750);
+        this.setScores(profile.scores, 500);
       } else {
         this.animScores = profile.scores.slice();
         this.currentScores = profile.scores.slice();
@@ -304,16 +304,14 @@
       this.container.dispatchEvent(event);
     }
 
-    easeOutBack(x) {
-      const c1 = 1.4;
-      const c3 = c1 + 1;
-      return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2);
+    easeOutCubic(x) {
+      return 1 - Math.pow(1 - x, 3);
     }
 
     animateFrame(now) {
       const elapsed = now - this.animStartTime;
       const progress = Math.min(elapsed / this.animDuration, 1.0);
-      const eased = this.easeOutBack(progress);
+      const eased = this.easeOutCubic(progress);
 
       for (let i = 0; i < 8; i++) {
         const start = this.animStartScores[i];
@@ -352,10 +350,10 @@
         RADAR_PROFILES.forEach((prof, idx) => {
           const btn = document.createElement('button');
           btn.type = 'button';
-          btn.className = `radar-tab-btn px-4 py-2 rounded-2xl text-xs sm:text-sm font-bold border transition-all duration-300 cursor-pointer ${
+          btn.className = `radar-tab-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-medium border transition-colors duration-150 cursor-pointer ${
             idx === this.activeProfileIdx
-              ? 'radar-tab-active bg-cyan-500/25 text-cyan-300 border-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.25)]'
-              : 'bg-slate-800/60 text-slate-300 border-slate-700/50 hover:bg-slate-700/60'
+              ? 'radar-tab-active bg-[#0E7490] text-white border-[#0E7490]'
+              : 'bg-white text-[#45586B] border-[#0F1B26]/10 hover:bg-[#EAF2F7]'
           }`;
           btn.textContent = prof.names[this.currentLang] || prof.names.tr;
           btn.addEventListener('click', () => this.selectProfile(idx, true));
@@ -366,26 +364,11 @@
 
       // SVG Chart Container
       const chartBox = document.createElement('div');
-      chartBox.className = 'relative flex items-center justify-center w-full max-w-[560px] aspect-square mx-auto';
+      chartBox.className = 'relative flex items-center justify-center w-full max-w-[520px] aspect-square mx-auto';
 
       this.svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
       this.svg.setAttribute('viewBox', `0 0 ${this.options.size} ${this.options.size}`);
-      this.svg.setAttribute('class', 'w-full h-full drop-shadow-xl overflow-visible');
-
-      // Defs (Gradients & Filters)
-      const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
-      defs.innerHTML = `
-        <radialGradient id="radarRadialGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.55" />
-          <stop offset="60%" stop-color="#818cf8" stop-opacity="0.35" />
-          <stop offset="100%" stop-color="#ec4899" stop-opacity="0.25" />
-        </radialGradient>
-        <filter id="radarGlow" x="-20%" y="-20%" width="140%" height="140%">
-          <feGaussianBlur stdDeviation="6" result="blur" />
-          <feComposite in="SourceGraphic" in2="blur" operator="over" />
-        </filter>
-      `;
-      this.svg.appendChild(defs);
+      this.svg.setAttribute('class', 'w-full h-full overflow-visible');
 
       // 1. Draw Concentric Octagonal Grid Rings (25%, 50%, 75%, 100%)
       const ringsGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
@@ -399,9 +382,9 @@
         }
         const polygon = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
         polygon.setAttribute('points', pts.join(' '));
-        polygon.setAttribute('fill', ringIdx % 2 === 0 ? 'rgba(14, 165, 233, 0.04)' : 'rgba(255, 255, 255, 0.015)');
-        polygon.setAttribute('stroke', 'rgba(148, 163, 184, 0.28)');
-        polygon.setAttribute('stroke-width', ringIdx === 3 ? '2.0' : '1.2');
+        polygon.setAttribute('fill', ringIdx % 2 === 0 ? 'rgba(14, 116, 144, 0.035)' : '#FFFFFF');
+        polygon.setAttribute('stroke', 'rgba(15, 27, 38, 0.10)');
+        polygon.setAttribute('stroke-width', ringIdx === 3 ? '1.5' : '1');
         polygon.setAttribute('stroke-dasharray', ringIdx === 3 ? 'none' : '4 3');
         ringsGroup.appendChild(polygon);
       });
@@ -417,33 +400,31 @@
         line.setAttribute('y1', this.options.center);
         line.setAttribute('x2', endPt.x.toFixed(1));
         line.setAttribute('y2', endPt.y.toFixed(1));
-        line.setAttribute('stroke', 'rgba(148, 163, 184, 0.35)');
-        line.setAttribute('stroke-width', '1.5');
+        line.setAttribute('stroke', 'rgba(15, 27, 38, 0.10)');
+        line.setAttribute('stroke-width', '1');
         axesGroup.appendChild(line);
       }
       this.svg.appendChild(axesGroup);
 
-      // 3. Dynamic Data Polygon
+      // 3. Dynamic Data Polygon (Single clean turquoise accent fill + crisp stroke)
       this.polygonEl = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
-      this.polygonEl.setAttribute('fill', 'url(#radarRadialGlow)');
-      this.polygonEl.setAttribute('stroke', '#38bdf8');
-      this.polygonEl.setAttribute('stroke-width', '3');
+      this.polygonEl.setAttribute('fill', 'rgba(14, 116, 144, 0.16)');
+      this.polygonEl.setAttribute('stroke', '#0E7490');
+      this.polygonEl.setAttribute('stroke-width', '2.25');
       this.polygonEl.setAttribute('stroke-linejoin', 'round');
-      this.polygonEl.setAttribute('filter', 'url(#radarGlow)');
       this.svg.appendChild(this.polygonEl);
 
-      // 4. Vertex Dots (Glow Circles)
+      // 4. Vertex Dots (Clean semantic colors with white ring)
       this.vertexDotsGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
       this.vertexDotsGroup.setAttribute('class', 'radar-vertex-dots');
       this.vertexDots = [];
       for (let i = 0; i < 8; i++) {
         const intel = RADAR_INTELLIGENCES[i];
         const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-        dot.setAttribute('r', '6');
+        dot.setAttribute('r', '5.5');
         dot.setAttribute('fill', intel.color);
-        dot.setAttribute('stroke', '#ffffff');
-        dot.setAttribute('stroke-width', '2.5');
-        dot.setAttribute('class', 'transition-transform duration-150');
+        dot.setAttribute('stroke', '#FFFFFF');
+        dot.setAttribute('stroke-width', '2');
         this.vertexDotsGroup.appendChild(dot);
         this.vertexDots.push(dot);
       }
@@ -458,34 +439,26 @@
         const intel = RADAR_INTELLIGENCES[i];
         const coord = this.getAxisCoord(i, this.options.badgeRadius);
 
-        // Percentage position inside chartBox
         const pctX = (coord.x / this.options.size) * 100;
         const pctY = (coord.y / this.options.size) * 100;
 
         const badgeWrapper = document.createElement('div');
-        badgeWrapper.className = 'absolute flex flex-col items-center justify-center -translate-x-1/2 -translate-y-1/2 group cursor-pointer transition-transform duration-200 hover:scale-110';
+        badgeWrapper.className = 'absolute flex flex-col items-center justify-center -translate-x-1/2 -translate-y-1/2';
         badgeWrapper.style.left = `${pctX.toFixed(2)}%`;
         badgeWrapper.style.top = `${pctY.toFixed(2)}%`;
 
         badgeWrapper.innerHTML = `
-          <div class="relative w-11 h-11 sm:w-13 sm:h-13 rounded-full flex items-center justify-center p-1.5 shadow-lg border-2 transition-all duration-300"
-               style="background-color: ${intel.color}; border-color: ${intel.color}; box-shadow: 0 4px 14px ${intel.glowColor};">
-            <img src="${this.options.iconBasePath}${intel.icon}" alt="${intel.id}" class="w-full h-full object-contain filter drop-shadow brightness-110">
+          <div class="relative w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center p-1.5 border border-black/10"
+               style="background-color: ${intel.color};">
+            <img src="${this.options.iconBasePath}${intel.icon}" alt="${intel.id}" class="w-full h-full object-contain">
           </div>
-          <span class="badge-title mt-1.5 px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-bold text-white tracking-wide shadow-md whitespace-nowrap"
-                style="background-color: rgba(15, 23, 42, 0.85); border: 1px solid ${intel.color}; color: #f8fafc;">
+          <span class="badge-title mt-1 px-2 py-0.5 rounded-md text-[11px] font-medium whitespace-nowrap bg-white border border-[#0F1B26]/10 text-[#0F1B26]">
             ${intel.names[this.currentLang] || intel.names.tr}
           </span>
-          <span class="badge-score mt-0.5 text-[10px] font-extrabold text-cyan-300 opacity-90">
+          <span class="badge-score mt-0.5 text-[11px] font-mono-num text-[#0E7490]">
             %${Math.round(this.currentScores[i] * 100)}
           </span>
         `;
-
-        badgeWrapper.addEventListener('click', () => {
-          // Highlight axis or pulse
-          badgeWrapper.classList.add('scale-125');
-          setTimeout(() => badgeWrapper.classList.remove('scale-125'), 300);
-        });
 
         this.badgesContainer.appendChild(badgeWrapper);
         this.badgeElements.push(badgeWrapper);

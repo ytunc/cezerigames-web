@@ -11,12 +11,13 @@
   <link rel="stylesheet" href="../../assets/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
   <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap">
   </noscript>
+  <script>(function(){try{var s=localStorage.getItem("cezeri_theme");var h=new Date().getHours();document.documentElement.setAttribute("data-theme",(s==="dark"||s==="light")?s:((h>=19||h<7)?"dark":"light"));}catch(e){}})();</script>
 </head>
-<body class="bg-[#050E17] text-slate-100 antialiased selection:bg-cyan-500 selection:text-white">
+<body class="bg-[#F4F8FB] text-[#0F1B26] antialiased selection:bg-[#E0F4F8] selection:text-[#0E7490]">
 
   <!-- Ambient Glow -->
   <div class="ambient-glow-1 top-10 left-1/4"></div>
@@ -25,33 +26,33 @@
   <header class="fixed top-0 left-0 right-0 z-50 glass-nav">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       <a href="../../index.html" class="flex items-center gap-3 group">
-        <img src="../../assets/images/logo.png" alt="Cezeri Games Logo" class="h-10 w-10 object-contain drop-shadow-[0_0_12px_rgba(34,211,238,0.45)] group-hover:scale-105 transition-transform duration-300">
+        <img src="../../assets/images/logo.png" alt="Cezeri Games Logo" class="h-10 w-10 object-contain   transition-transform duration-300">
         <div class="flex flex-col">
-          <span class="font-black text-lg tracking-wider text-white leading-tight font-['Outfit']">CEZERI <span class="text-gradient">GAMES</span></span>
-          <span class="text-[8px] font-bold tracking-[0.2em] text-cyan-400/90 uppercase">Mobile Game Studio</span>
+          <span class="font-medium text-lg tracking-wider text-[#0F1B26] leading-tight font-['Bricolage_Grotesque']">CEZERI <span class="text-gradient">GAMES</span></span>
+          <span class="text-[8px] font-bold tracking-[0.2em] text-[#0E7490] uppercase">Mobile Game Studio</span>
         </div>
       </a>
 
       <!-- 6-Language Switcher & Back link -->
       <div class="flex items-center gap-3 sm:gap-6">
         <div class="relative">
-          <button id="lang-btn-trigger" class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-100 border border-cyan-500/30 text-xs font-semibold shadow-lg transition-all">
+          <button id="lang-btn-trigger" class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white hover:bg-[#EAF2F7] text-[#0F1B26] border border-[#0F1B26]/10 text-xs font-semibold shadow-lg transition-all">
             <span id="current-lang-flag">🇹🇷</span>
             <span id="current-lang-code">TR</span>
-            <svg class="w-3.5 h-3.5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            <svg class="w-3.5 h-3.5 text-[#0E7490]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
           
-          <div id="lang-dropdown-menu" class="hidden absolute right-0 mt-2 w-48 rounded-2xl bg-[#081827] border border-cyan-500/40 shadow-2xl py-2 z-50 backdrop-blur-2xl">
-            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="tr"><span>🇹🇷</span> <span>Türkçe (TR)</span></button>
-            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="en"><span>🇬🇧</span> <span>English (EN)</span></button>
-            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="de"><span>🇩🇪</span> <span>Deutsch (DE)</span></button>
-            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="fr"><span>🇫🇷</span> <span>Français (FR)</span></button>
-            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="es"><span>🇪🇸</span> <span>Español (ES)</span></button>
-            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="pt"><span>🇵🇹</span> <span>Português (PT)</span></button>
+          <div id="lang-dropdown-menu" class="hidden absolute right-0 mt-2 w-48 rounded-2xl bg-white border border-[#0F1B26]/10 shadow-2xl py-2 z-50 backdrop-blur-2xl">
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-[#E0F4F8] text-left transition-colors text-[#0F1B26]" data-lang="tr"><span>🇹🇷</span> <span>Türkçe (TR)</span></button>
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-[#E0F4F8] text-left transition-colors text-[#0F1B26]" data-lang="en"><span>🇬🇧</span> <span>English (EN)</span></button>
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-[#E0F4F8] text-left transition-colors text-[#0F1B26]" data-lang="de"><span>🇩🇪</span> <span>Deutsch (DE)</span></button>
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-[#E0F4F8] text-left transition-colors text-[#0F1B26]" data-lang="fr"><span>🇫🇷</span> <span>Français (FR)</span></button>
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-[#E0F4F8] text-left transition-colors text-[#0F1B26]" data-lang="es"><span>🇪🇸</span> <span>Español (ES)</span></button>
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-[#E0F4F8] text-left transition-colors text-[#0F1B26]" data-lang="pt"><span>🇵🇹</span> <span>Português (PT)</span></button>
           </div>
         </div>
 
-        <a href="../index.html" class="text-xs font-semibold text-slate-300 hover:text-cyan-300 flex items-center gap-1.5 transition-colors">
+        <a href="../index.html" class="text-xs font-semibold text-[#45586B] hover:text-[#0E7490] flex items-center gap-1.5 transition-colors">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
           <span class="hidden sm:inline" id="nav-back-text">Tüm Yazılar</span>
         </a>
@@ -64,35 +65,35 @@
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Article Header -->
-      <header class="space-y-6 pb-10 border-b border-cyan-500/15 text-center sm:text-left">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold badge-tag border border-emerald-500/30 text-emerald-300 bg-emerald-500/10" id="art-tag">
+      <header class="space-y-6 pb-10 border-b border-[#0F1B26]/10 text-center sm:text-left">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold badge-tag border border-[#15803D]/20 text-[#15803D] bg-emerald-500/10" id="art-tag">
           EKRAN & EBEVEYNLİK
         </div>
         
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight font-['Outfit']" id="art-title">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-medium text-[#0F1B26] leading-tight font-['Bricolage_Grotesque']" id="art-title">
           Bilinçli Ekran Süresi: Pasif Video Tüketimi mi, Aktif Problem Çözme mi?
         </h1>
 
-        <div class="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs text-slate-400">
+        <div class="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs text-[#64788B]">
           <span class="flex items-center gap-1.5">
-            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-300 flex items-center justify-center font-bold">🌱</span>
+            <span class="w-6 h-6 rounded-full bg-[#ECFDF3] text-[#15803D] flex items-center justify-center font-bold">🌱</span>
             <span id="art-author">Çocuk Gelişimi & Ebeveyn Rehberliği</span>
           </span>
           <span>•</span>
-          <span id="art-time">⏱️ 4 Dakika Okuma</span>
+          <span id="art-time">4 Dakika Okuma</span>
           <span>•</span>
           <span>Güncellenme: 2026</span>
         </div>
       </header>
 
       <!-- Article Body -->
-      <div class="prose prose-invert prose-cyan max-w-none pt-10 text-slate-300 space-y-6 text-base sm:text-lg leading-relaxed">
+      <div class="article-prose max-w-none pt-10 text-[#45586B] space-y-6 text-base sm:text-lg leading-relaxed">
         
-        <p class="text-xl text-slate-200 font-medium leading-relaxed" id="art-intro">
+        <p class="text-xl text-[#0F1B26] font-medium leading-relaxed" id="art-intro">
           Dijital çağda ebeveynlerin en büyük kaygılarından biri ekran süresidir. Ancak gelişim psikolojisi bize gösteriyor ki sorun yalnızca ekranın "süresi" değil, o sürenin <strong>"nasıl"</strong> değerlendirildiğidir.
         </p>
 
-        <h2 class="text-2xl font-bold text-white pt-4 font-['Outfit']" id="sec1-h2">Pasif Hipnoz vs. Aktif Bilişsel Etkileşim</h2>
+        <h2 class="text-2xl font-bold text-[#0F1B26] pt-4 font-['Bricolage_Grotesque']" id="sec1-h2">Pasif Hipnoz vs. Aktif Bilişsel Etkileşim</h2>
         <p id="sec1-p1">
           Bir çocuğun saatlerce algoritma güdümlü kısa videolar (Reels, TikTok, YouTube Shorts) izlemesi ile; bir bulmacada neden-sonuç ilişkisi kurup nesneleri parmaklarıyla yerleştirmesi beyinde tamamen zıt nöral yolları uyarır.
         </p>
@@ -102,18 +103,18 @@
             <h4 class="font-bold text-rose-300 text-base flex items-center gap-2">
               <span>⚠️</span> <span id="col1-title">Pasif Video Tüketimi</span>
             </h4>
-            <ul class="text-sm text-slate-300 space-y-1.5" id="col1-list">
+            <ul class="text-sm text-[#45586B] space-y-1.5" id="col1-list">
               <li>• Tek yönlü veri akışı, sıfır karar alma</li>
               <li>• Hızlı dopamin döngüsü ve dikkat dağınıklığı</li>
               <li>• Sabırsızlık ve dürtü kontrolünde azalma</li>
             </ul>
           </div>
 
-          <div class="glass-card rounded-2xl p-5 border border-emerald-500/30 bg-emerald-950/15 space-y-2">
-            <h4 class="font-bold text-emerald-300 text-base flex items-center gap-2">
+          <div class="glass-card rounded-2xl p-5 border border-[#15803D]/20 bg-emerald-950/15 space-y-2">
+            <h4 class="font-bold text-[#15803D] text-base flex items-center gap-2">
               <span>🌟</span> <span id="col2-title">Aktif Problem Çözme</span>
             </h4>
-            <ul class="text-sm text-slate-300 space-y-1.5" id="col2-list">
+            <ul class="text-sm text-[#45586B] space-y-1.5" id="col2-list">
               <li>• Dokunsal etkileşim ve çift el koordinasyonu</li>
               <li>• Hata yapma ve strateji yenileme refleksi</li>
               <li>• Sabır, derin odak ve içsel tatmin hissi</li>
@@ -121,20 +122,20 @@
           </div>
         </div>
 
-        <h2 class="text-2xl font-bold text-white pt-4 font-['Outfit']" id="sec2-h2">Ebeveynler İçin 3 Altın Kural</h2>
-        <ul class="space-y-4 pl-4 list-disc marker:text-emerald-400" id="rules-list">
+        <h2 class="text-2xl font-bold text-[#0F1B26] pt-4 font-['Bricolage_Grotesque']" id="sec2-h2">Ebeveynler İçin 3 Altın Kural</h2>
+        <ul class="space-y-4 pl-4 list-disc marker:text-[#15803D]" id="rules-list">
           <!-- Dynamically injected -->
         </ul>
 
-        <h2 class="text-2xl font-bold text-white pt-4 font-['Outfit']" id="sec3-h2">MultiMind'ın Güvenli ve Pedagojik Alanı</h2>
+        <h2 class="text-2xl font-bold text-[#0F1B26] pt-4 font-['Bricolage_Grotesque']" id="sec3-h2">MultiMind'ın Güvenli ve Pedagojik Alanı</h2>
         <p id="sec3-p">
           MultiMind Kids, çocukları ekrana bağımlı kılacak sonsuz döngüler yerine <strong>10 hamlelik odaklanmış oturum kurgusu</strong>, sıfır üçüncü taraf reklam ve COPPA uyumlu aile güvenliği sunar. Çocuğunuz ekran karşısındayken pasif bir izleyici değil; düşünen, tartan ve üreten bir zihin mimarı olur.
         </p>
 
         <!-- Final CTA Card -->
-        <div class="glass-card rounded-3xl p-8 border border-emerald-500/30 text-center space-y-4 my-12 bg-emerald-950/20">
-          <h3 class="text-xl font-bold text-white font-['Outfit']" id="cta-title">Akıllı Ekran Deneyimini Başlatın</h3>
-          <p class="text-sm text-slate-300 max-w-lg mx-auto" id="cta-desc">
+        <div class="glass-card rounded-3xl p-8 border border-[#15803D]/20 text-center space-y-4 my-12 bg-emerald-950/20">
+          <h3 class="text-xl font-bold text-[#0F1B26] font-['Bricolage_Grotesque']" id="cta-title">Akıllı Ekran Deneyimini Başlatın</h3>
+          <p class="text-sm text-[#45586B] max-w-lg mx-auto" id="cta-desc">
             Çocuğunuzun ekran vaktini bir zihinsel güçlendirme seansına dönüştürün.
           </p>
           <a href="../../games/multimind/index.html" class="btn-glow inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-white text-sm">
@@ -149,20 +150,20 @@
   </article>
 
   <!-- Footer -->
-  <footer class="border-t border-cyan-500/15 bg-[#030910] text-slate-400 text-sm py-12">
+  <footer class="border-t border-[#0F1B26]/10 bg-white text-[#64788B] text-sm py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
       <div class="flex items-center justify-center gap-3">
         <img src="../../assets/images/logo.png" alt="Cezeri Games" class="h-8 w-8 object-contain">
-        <span class="font-extrabold text-base tracking-wider text-white">CEZERI <span class="text-cyan-400">GAMES</span></span>
+        <span class="font-medium text-base tracking-wider text-[#0F1B26]">CEZERI <span class="text-[#0E7490]">GAMES</span></span>
       </div>
-      <p class="text-xs text-slate-500">
+      <p class="text-xs text-[#64788B]">
         &copy; <span class="current-year">2026</span> Cezeri Games. Tüm hakları saklıdır.
       </p>
       <div class="flex justify-center gap-6 text-xs">
-        <a href="../../index.html" class="hover:text-cyan-300">Ana Sayfa</a>
-        <a href="../index.html" class="hover:text-cyan-300">Blog</a>
-        <a href="../../privacy-policy/index.html" class="hover:text-cyan-300">Gizlilik Politikası</a>
-        <a href="mailto:support@cezerigames.com" class="hover:text-cyan-300">Destek</a>
+        <a href="../../index.html" class="hover:text-[#0E7490]">Ana Sayfa</a>
+        <a href="../index.html" class="hover:text-[#0E7490]">Blog</a>
+        <a href="../../privacy-policy/index.html" class="hover:text-[#0E7490]">Gizlilik Politikası</a>
+        <a href="mailto:support@cezerigames.com" class="hover:text-[#0E7490]">Destek</a>
       </div>
     </div>
   </footer>
@@ -178,7 +179,7 @@
         tag: "EKRAN & EBEVEYNLİK",
         title: "Bilinçli Ekran Süresi: Pasif Video Tüketimi mi, Aktif Problem Çözme mi?",
         author: "Çocuk Gelişimi & Ebeveyn Rehberliği",
-        time: "⏱️ 4 Dakika Okuma",
+        time: "4 Dakika Okuma",
         intro: "Dijital çağda ebeveynlerin en büyük kaygılarından biri ekran süresidir. Ancak gelişim psikolojisi bize gösteriyor ki sorun yalnızca ekranın 'süresi' değil, o sürenin <strong>'nasıl'</strong> değerlendirildiğidir.",
         sec1H2: "Pasif Hipnoz vs. Aktif Bilişsel Etkileşim",
         sec1P1: "Bir çocuğun saatlerce algoritma güdümlü kısa videolar (Reels, TikTok, YouTube Shorts) izlemesi ile; bir bulmacada neden-sonuç ilişkisi kurup nesneleri parmaklarıyla yerleştirmesi beyinde tamamen zıt nöral yolları uyarır.",
@@ -206,7 +207,7 @@
         tag: "SCREEN HABITS & PARENTING",
         title: "Conscious Screen Time: Passive Video Consumption vs. Active Problem Solving",
         author: "Child Development & Family Advisory",
-        time: "⏱️ 4 Min Read",
+        time: "4 Min Read",
         intro: "In our digital landscape, screen time tops parents' concerns. Yet developmental psychology reveals that the true impact lies not merely in screen minutes, but in <strong>how</strong> those minutes engage young minds.",
         sec1H2: "Passive Hypnosis vs. Active Cognitive Engagement",
         sec1P1: "Endless algorithmic short-video scrolling activates radically different neural pathways compared to manipulating a physics puzzle with tactile intuition.",
@@ -234,7 +235,7 @@
         tag: "MEDIENKOMPETENZ & ELTERN",
         title: "Bewusste Bildschirmzeit: Passiver Videokonsum vs. Aktives Problemlösen",
         author: "Familienberatung Cezeri Games",
-        time: "⏱️ 4 Min. Lesezeit",
+        time: "4 Min. Lesezeit",
         intro: "Im digitalen Zeitalter ist Bildschirmzeit eine der größten Sorgen von Eltern. Die Kognitionsforschung zeigt: Nicht die Dauer allein entscheidet, sondern <strong>wie</strong> der Bildschirm genutzt wird.",
         sec1H2: "Passive Berieselung vs. Geistige Aktivität",
         sec1P1: "Stundenlanger Konsum von Kurzvideos löst im Gehirn völlig andere Prozesse aus als das aktive Lösen eines interaktiven Denkspiels.",
@@ -262,7 +263,7 @@
         tag: "ÉCRANS & PARENTALITÉ",
         title: "Temps d'Écran Conscient : Vidéos Passives ou Résolution Active ?",
         author: "Pédagogie & Développement de l'Enfant",
-        time: "⏱️ 4 Min de Lecture",
+        time: "4 Min de Lecture",
         intro: "Le temps d'écran préoccupe tous les parents. Pourtant, la psychologie démontre que l'essentiel ne réside pas dans les minutes, mais dans la <strong>nature de l'interaction</strong>.",
         sec1H2: "Consommation Passive vs. Engagement Cognitif",
         sec1P1: "Le défilement continu de courtes vidéos passives active des réseaux neuronaux opposés à ceux sollicités par la manipulation d'un puzzle tactile.",
@@ -290,7 +291,7 @@
         tag: "PANTALLAS Y CRIANZA",
         title: "Tiempo de Pantalla Consciente: ¿Consumo Pasivo o Resolución Activa?",
         author: "Asesoría de Desarrollo Infantil",
-        time: "⏱️ 4 Min de Lectura",
+        time: "4 Min de Lectura",
         intro: "El tiempo frente a dispositivos inquieta a los padres. Sin embargo, la ciencia demuestra que lo crucial no es solo el reloj, sino <strong>la calidad del estímulo</strong>.",
         sec1H2: "Pasividad Hipnótica vs. Estimulación Cognitiva",
         sec1P1: "Ver horas de vídeos cortos automáticos activa circuitos cerebrales totalmente distintos a resolver un enigma táctil con lógica propia.",
@@ -318,7 +319,7 @@
         tag: "TECNOLOGIA & FAMÍLIA",
         title: "Tempo de Ecrã Consciente: Vídeos Passivos vs. Resolução Ativa",
         author: "Gabinete Pedagógico Cezeri Games",
-        time: "⏱️ 4 Min de Leitura",
+        time: "4 Min de Leitura",
         intro: "O tempo de ecrã é um desafio diário para as famílias. No entanto, a neurociência comprova que o impacto real depende de <strong>como a criança interage</strong>.",
         sec1H2: "Passividade vs. Desafio Mental Ativo",
         sec1P1: "Rolar indefinidamente vídeos curtos em redes estimula o cérebro de forma oposta à superação de um desafio tátil e matemático.",

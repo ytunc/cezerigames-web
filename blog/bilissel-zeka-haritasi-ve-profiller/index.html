@@ -11,9 +11,9 @@
   <link rel="stylesheet" href="../../assets/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
   <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap">
   </noscript>
 
   <style>
@@ -33,8 +33,9 @@
       box-shadow: 0 0 20px rgba(34, 211, 238, 0.25);
     }
   </style>
+  <script>(function(){try{var s=localStorage.getItem("cezeri_theme");var h=new Date().getHours();document.documentElement.setAttribute("data-theme",(s==="dark"||s==="light")?s:((h>=19||h<7)?"dark":"light"));}catch(e){}})();</script>
 </head>
-<body class="bg-[#050E17] text-slate-100 antialiased selection:bg-cyan-500 selection:text-white">
+<body class="bg-[#F4F8FB] text-[#0F1B26] antialiased selection:bg-[#E0F4F8] selection:text-[#0E7490]">
 
   <!-- Ambient Glow Backgrounds -->
   <div class="ambient-glow-1 top-10 left-1/4"></div>
@@ -44,33 +45,33 @@
   <header class="fixed top-0 left-0 right-0 z-50 glass-nav">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       <a href="../../index.html" class="flex items-center gap-3 group">
-        <img src="../../assets/images/logo.png" alt="Cezeri Games Logo" class="h-10 w-10 object-contain drop-shadow-[0_0_12px_rgba(34,211,238,0.45)] group-hover:scale-105 transition-transform duration-300">
+        <img src="../../assets/images/logo.png" alt="Cezeri Games Logo" class="h-10 w-10 object-contain   transition-transform duration-300">
         <div class="flex flex-col">
-          <span class="font-black text-lg tracking-wider text-white leading-tight font-['Outfit']">CEZERI <span class="text-gradient">GAMES</span></span>
-          <span class="text-[8px] font-bold tracking-[0.2em] text-cyan-400/90 uppercase">Mobile Game Studio</span>
+          <span class="font-medium text-lg tracking-wider text-[#0F1B26] leading-tight font-['Bricolage_Grotesque']">CEZERI <span class="text-gradient">GAMES</span></span>
+          <span class="text-[8px] font-bold tracking-[0.2em] text-[#0E7490] uppercase">Mobile Game Studio</span>
         </div>
       </a>
 
       <!-- 6 Language Switcher in Nav -->
       <div class="flex items-center gap-3 sm:gap-6">
         <div class="relative">
-          <button id="lang-btn-trigger" class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-100 border border-cyan-500/30 text-xs font-semibold shadow-lg transition-all">
+          <button id="lang-btn-trigger" class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white hover:bg-[#EAF2F7] text-[#0F1B26] border border-[#0F1B26]/10 text-xs font-semibold shadow-lg transition-all">
             <span id="current-lang-flag">🇹🇷</span>
             <span id="current-lang-code">TR</span>
-            <svg class="w-3.5 h-3.5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            <svg class="w-3.5 h-3.5 text-[#0E7490]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
           
-          <div id="lang-dropdown-menu" class="hidden absolute right-0 mt-2 w-48 rounded-2xl bg-[#081827] border border-cyan-500/40 shadow-2xl py-2 z-50 backdrop-blur-2xl">
-            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="tr"><span>🇹🇷</span> <span>Türkçe (TR)</span></button>
-            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="en"><span>🇬🇧</span> <span>English (EN)</span></button>
-            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="de"><span>🇩🇪</span> <span>Deutsch (DE)</span></button>
-            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="fr"><span>🇫🇷</span> <span>Français (FR)</span></button>
-            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="es"><span>🇪🇸</span> <span>Español (ES)</span></button>
-            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="pt"><span>🇵🇹</span> <span>Português (PT)</span></button>
+          <div id="lang-dropdown-menu" class="hidden absolute right-0 mt-2 w-48 rounded-2xl bg-white border border-[#0F1B26]/10 shadow-2xl py-2 z-50 backdrop-blur-2xl">
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-[#E0F4F8] text-left transition-colors text-[#0F1B26]" data-lang="tr"><span>🇹🇷</span> <span>Türkçe (TR)</span></button>
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-[#E0F4F8] text-left transition-colors text-[#0F1B26]" data-lang="en"><span>🇬🇧</span> <span>English (EN)</span></button>
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-[#E0F4F8] text-left transition-colors text-[#0F1B26]" data-lang="de"><span>🇩🇪</span> <span>Deutsch (DE)</span></button>
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-[#E0F4F8] text-left transition-colors text-[#0F1B26]" data-lang="fr"><span>🇫🇷</span> <span>Français (FR)</span></button>
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-[#E0F4F8] text-left transition-colors text-[#0F1B26]" data-lang="es"><span>🇪🇸</span> <span>Español (ES)</span></button>
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-[#E0F4F8] text-left transition-colors text-[#0F1B26]" data-lang="pt"><span>🇵🇹</span> <span>Português (PT)</span></button>
           </div>
         </div>
 
-        <a href="../index.html" class="text-xs font-semibold text-slate-300 hover:text-cyan-300 flex items-center gap-1.5 transition-colors">
+        <a href="../index.html" class="text-xs font-semibold text-[#45586B] hover:text-[#0E7490] flex items-center gap-1.5 transition-colors">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
           <span class="hidden sm:inline" id="nav-back-text">Tüm Yazılar</span>
         </a>
@@ -83,35 +84,35 @@
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
       
       <!-- Article Header -->
-      <header class="space-y-6 pb-10 border-b border-cyan-500/20 text-center sm:text-left">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold badge-tag border border-cyan-500/30" id="art-badge">
+      <header class="space-y-6 pb-10 border-b border-[#0F1B26]/10 text-center sm:text-left">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold badge-tag border border-[#0F1B26]/10" id="art-badge">
           MULTIMIND BİLİŞSEL GELİŞİM & ARTIK ZEKÂ
         </div>
         
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight font-['Outfit']" id="art-title">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-medium text-[#0F1B26] leading-tight font-['Bricolage_Grotesque']" id="art-title">
           Her Çocuk Bir Dehadır: MultiMind ile 8 Boyutlu Bilişsel Zeka Haritası ve 5 Öğrenme Arketipi
         </h1>
 
-        <p class="text-lg text-slate-300 font-medium leading-relaxed" id="art-lead">
+        <p class="text-lg text-[#45586B] font-medium leading-relaxed" id="art-lead">
           Geleneksel tek tip testlerin ötesine geçin. Harvard Çoklu Zeka Kuramı temelli MultiMind analiz motoru ile çocuğunuzun özgün öğrenme profilini ve zihin haritasını keşfedin.
         </p>
 
-        <div class="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs text-slate-400 pt-2">
+        <div class="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs text-[#64788B] pt-2">
           <span class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-cyan-500/20 text-cyan-300 flex items-center justify-center font-bold">🧠</span>
+            <span class="w-6 h-6 rounded-full bg-[#E0F4F8] text-[#0E7490] flex items-center justify-center font-bold">🧠</span>
             <span id="art-author">Cezeri Games Pedagoji & Nörogelişim Ekibi</span>
           </span>
           <span>•</span>
-          <span id="art-time">⏱️ 7 Dakika Okuma</span>
+          <span id="art-time">7 Dakika Okuma</span>
           <span>•</span>
           <span>Güncellenme: 2026</span>
         </div>
       </header>
 
       <!-- Section 1: Demise of Single IQ -->
-      <section class="space-y-6 text-slate-300 text-base sm:text-lg leading-relaxed">
-        <h2 class="text-2xl sm:text-3xl font-bold text-white font-['Outfit'] flex items-center gap-3" id="sec1-head">
-          <span class="text-cyan-400">01.</span> <span id="sec1-title">Tek Boyutlu IQ Ölçütlerinin Sonu</span>
+      <section class="space-y-6 text-[#45586B] text-base sm:text-lg leading-relaxed">
+        <h2 class="text-2xl sm:text-3xl font-bold text-[#0F1B26] font-['Bricolage_Grotesque'] flex items-center gap-3" id="sec1-head">
+          <span class="text-[#0E7490]">01.</span> <span id="sec1-title">Tek Boyutlu IQ Ölçütlerinin Sonu</span>
         </h2>
         <p id="sec1-p1">
           Yıllar boyunca eğitim sistemleri çocukların zihinsel potansiyelini yalnızca standartlaştırılmış tek bir sınavla veya kağıt üzerindeki tek boyutlu bir IQ skoruyla değerlendirmeye çalıştı. Oysa modern nöropedagoji bize çok açık bir gerçeği kanıtlıyor: <strong>Hiçbir çocuk diğerinin kopyası değildir ve zeka tek bir sayıya sığdırılamaz.</strong>
@@ -127,94 +128,94 @@
       </section>
 
       <!-- Section 2: AI Engine -->
-      <section class="space-y-6 text-slate-300 text-base sm:text-lg leading-relaxed">
-        <h2 class="text-2xl sm:text-3xl font-bold text-white font-['Outfit'] flex items-center gap-3" id="sec2-head">
-          <span class="text-cyan-400">02.</span> <span id="sec2-title">MultiMind Bilişsel Analiz Motoru Nasıl Çalışır?</span>
+      <section class="space-y-6 text-[#45586B] text-base sm:text-lg leading-relaxed">
+        <h2 class="text-2xl sm:text-3xl font-bold text-[#0F1B26] font-['Bricolage_Grotesque'] flex items-center gap-3" id="sec2-head">
+          <span class="text-[#0E7490]">02.</span> <span id="sec2-title">MultiMind Bilişsel Analiz Motoru Nasıl Çalışır?</span>
         </h2>
         <p id="sec2-p1">
           MultiMind, oyun sırasında çocuğa sadece "doğru mu yanlış mı" testi yapmaz. Yapay zeka motorumuz oyun mekanikleri üzerinden <strong>milisaniyelik davranışsal verileri</strong> işler:
         </p>
         
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-          <div class="glass-card rounded-2xl p-5 border border-cyan-500/20 space-y-2">
-            <div class="text-cyan-400 text-xl font-bold">⏱️ <span id="metric-1-title">Tepki Süresi ve Odaklanma</span></div>
-            <p class="text-sm text-slate-300" id="metric-1-desc">Çocuk soruya yanıt vermeden önce ne kadar derin düşünüyor ve hamlesini ne kadar planlıyor?</p>
+          <div class="glass-card rounded-2xl p-5 border border-[#0F1B26]/10 space-y-2">
+            <div class="text-[#0E7490] text-xl font-bold"><span id="metric-1-title">Tepki Süresi ve Odaklanma</span></div>
+            <p class="text-sm text-[#45586B]" id="metric-1-desc">Çocuk soruya yanıt vermeden önce ne kadar derin düşünüyor ve hamlesini ne kadar planlıyor?</p>
           </div>
-          <div class="glass-card rounded-2xl p-5 border border-cyan-500/20 space-y-2">
-            <div class="text-amber-400 text-xl font-bold">🛡️ <span id="metric-2-title">Hata Toleransı ve Öz-Denetim</span></div>
-            <p class="text-sm text-slate-300" id="metric-2-desc">Hata yaptığında hemen oyunu bırakıyor mu, yoksa sakinleşip yeni bir strateji mi geliştiriyor?</p>
+          <div class="glass-card rounded-2xl p-5 border border-[#0F1B26]/10 space-y-2">
+            <div class="text-[#B45309] text-xl font-bold">🛡️ <span id="metric-2-title">Hata Toleransı ve Öz-Denetim</span></div>
+            <p class="text-sm text-[#45586B]" id="metric-2-desc">Hata yaptığında hemen oyunu bırakıyor mu, yoksa sakinleşip yeni bir strateji mi geliştiriyor?</p>
           </div>
-          <div class="glass-card rounded-2xl p-5 border border-cyan-500/20 space-y-2">
+          <div class="glass-card rounded-2xl p-5 border border-[#0F1B26]/10 space-y-2">
             <div class="text-indigo-400 text-xl font-bold">🔄 <span id="metric-3-title">Zihinsel 3D Ön-Simülasyon</span></div>
-            <p class="text-sm text-slate-300" id="metric-3-desc">Parçaları ekrana dokunmadan önce zihninde önceden döndürüyor mu, yoksa rastgele mi deniyor?</p>
+            <p class="text-sm text-[#45586B]" id="metric-3-desc">Parçaları ekrana dokunmadan önce zihninde önceden döndürüyor mu, yoksa rastgele mi deniyor?</p>
           </div>
-          <div class="glass-card rounded-2xl p-5 border border-cyan-500/20 space-y-2">
-            <div class="text-emerald-400 text-xl font-bold">👐 <span id="metric-4-title">Çift El ve Motor Senkronizasyon</span></div>
-            <p class="text-sm text-slate-300" id="metric-4-desc">Dokunsal çift el mekaniklerinde sol ve sağ beyin yarıküreleri ne kadar dengeli eşgüdüm kuruyor?</p>
+          <div class="glass-card rounded-2xl p-5 border border-[#0F1B26]/10 space-y-2">
+            <div class="text-[#15803D] text-xl font-bold">👐 <span id="metric-4-title">Çift El ve Motor Senkronizasyon</span></div>
+            <p class="text-sm text-[#45586B]" id="metric-4-desc">Dokunsal çift el mekaniklerinde sol ve sağ beyin yarıküreleri ne kadar dengeli eşgüdüm kuruyor?</p>
           </div>
         </div>
       </section>
 
       <!-- Section 3: 5 Archetypes Showcase -->
       <section class="space-y-6 pt-4">
-        <h2 class="text-2xl sm:text-3xl font-bold text-white font-['Outfit'] flex items-center gap-3" id="sec3-head">
-          <span class="text-cyan-400">03.</span> <span id="sec3-title">MultiMind'ın 5 Bilişsel Arketipi ile Tanışın</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-[#0F1B26] font-['Bricolage_Grotesque'] flex items-center gap-3" id="sec3-head">
+          <span class="text-[#0E7490]">03.</span> <span id="sec3-title">MultiMind'ın 5 Bilişsel Arketipi ile Tanışın</span>
         </h2>
-        <p class="text-slate-300 text-base sm:text-lg" id="sec3-p1">
+        <p class="text-[#45586B] text-base sm:text-lg" id="sec3-p1">
           MultiMind Onboarding ekranımızda yer alan 5 farklı karakter profili; her çocuğun farklı bir zeka kombinasyonuna sahip olduğunu somutlaştırır. Çocuğunuzun düşünme stiline en yakın arketipi seçin:
         </p>
 
         <!-- Profile Tabs -->
         <div class="flex flex-wrap gap-2.5 pt-2" id="profile-tabs-container">
-          <button class="profile-tab-btn px-5 py-3 rounded-2xl border border-cyan-500/25 bg-[#091B2C] text-sm font-bold text-slate-200 transition-all cursor-pointer profile-tab-active" data-idx="0" id="tab-btn-0">Can</button>
-          <button class="profile-tab-btn px-5 py-3 rounded-2xl border border-cyan-500/25 bg-[#091B2C] text-sm font-bold text-slate-200 transition-all cursor-pointer" data-idx="1" id="tab-btn-1">Zeynep</button>
-          <button class="profile-tab-btn px-5 py-3 rounded-2xl border border-cyan-500/25 bg-[#091B2C] text-sm font-bold text-slate-200 transition-all cursor-pointer" data-idx="2" id="tab-btn-2">Ali</button>
-          <button class="profile-tab-btn px-5 py-3 rounded-2xl border border-cyan-500/25 bg-[#091B2C] text-sm font-bold text-slate-200 transition-all cursor-pointer" data-idx="3" id="tab-btn-3">Elif</button>
-          <button class="profile-tab-btn px-5 py-3 rounded-2xl border border-cyan-500/25 bg-[#091B2C] text-sm font-bold text-slate-200 transition-all cursor-pointer" data-idx="4" id="tab-btn-4">Mert</button>
+          <button class="profile-tab-btn px-5 py-3 rounded-2xl border border-[#0F1B26]/10 bg-[#091B2C] text-sm font-bold text-[#0F1B26] transition-all cursor-pointer profile-tab-active" data-idx="0" id="tab-btn-0">Can</button>
+          <button class="profile-tab-btn px-5 py-3 rounded-2xl border border-[#0F1B26]/10 bg-[#091B2C] text-sm font-bold text-[#0F1B26] transition-all cursor-pointer" data-idx="1" id="tab-btn-1">Zeynep</button>
+          <button class="profile-tab-btn px-5 py-3 rounded-2xl border border-[#0F1B26]/10 bg-[#091B2C] text-sm font-bold text-[#0F1B26] transition-all cursor-pointer" data-idx="2" id="tab-btn-2">Ali</button>
+          <button class="profile-tab-btn px-5 py-3 rounded-2xl border border-[#0F1B26]/10 bg-[#091B2C] text-sm font-bold text-[#0F1B26] transition-all cursor-pointer" data-idx="3" id="tab-btn-3">Elif</button>
+          <button class="profile-tab-btn px-5 py-3 rounded-2xl border border-[#0F1B26]/10 bg-[#091B2C] text-sm font-bold text-[#0F1B26] transition-all cursor-pointer" data-idx="4" id="tab-btn-4">Mert</button>
         </div>
 
         <!-- Dynamic Profile Card -->
         
         <!-- 8-Axis Intelligence Radar Diagram Component -->
-        <div class="glass-card rounded-3xl p-4 sm:p-8 border border-cyan-500/30 flex flex-col items-center justify-center shadow-2xl relative overflow-hidden bg-[#071320]/80">
-          <div class="w-full flex items-center justify-between border-b border-cyan-500/20 pb-3 mb-4">
-            <span class="text-xs uppercase tracking-wider font-extrabold text-cyan-400 flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+        <div class="glass-card rounded-3xl p-4 sm:p-8 border border-[#0F1B26]/10 flex flex-col items-center justify-center shadow-2xl relative overflow-hidden bg-[#071320]/80">
+          <div class="w-full flex items-center justify-between border-b border-[#0F1B26]/10 pb-3 mb-4">
+            <span class="text-xs uppercase tracking-wider font-medium text-[#0E7490] flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-cyan-400 "></span>
               <span id="radar-diag-label">CANLI 8 BOYUTLU ZEKÂ RADARI (INTELLIGENCE RADAR)</span>
             </span>
-            <span class="text-xs text-slate-400 font-medium hidden sm:inline" id="radar-diag-hint">Profil seçildiğinde dinamik şekil alır</span>
+            <span class="text-xs text-[#64788B] font-medium hidden sm:inline" id="radar-diag-hint">Profil seçildiğinde dinamik şekil alır</span>
           </div>
           <div id="blog-profile-radar-container" class="w-full max-w-[560px] flex justify-center items-center"></div>
         </div>
 
-        <div class="glass-card rounded-3xl p-6 sm:p-8 border border-cyan-500/30 space-y-6 shadow-2xl relative overflow-hidden" id="profile-display-card">
+        <div class="glass-card rounded-3xl p-6 sm:p-8 border border-[#0F1B26]/10 space-y-6 shadow-2xl relative overflow-hidden" id="profile-display-card">
           <!-- Injected via JavaScript -->
         </div>
       </section>
 
       <!-- Section 4: Comparison Table -->
       <section class="space-y-6 pt-4">
-        <h2 class="text-2xl sm:text-3xl font-bold text-white font-['Outfit'] flex items-center gap-3" id="sec4-head">
-          <span class="text-cyan-400">04.</span> <span id="sec4-title">5 Profilin Karşılaştırmalı Gelişim Matrisi</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-[#0F1B26] font-['Bricolage_Grotesque'] flex items-center gap-3" id="sec4-head">
+          <span class="text-[#0E7490]">04.</span> <span id="sec4-title">5 Profilin Karşılaştırmalı Gelişim Matrisi</span>
         </h2>
-        <div class="overflow-x-auto rounded-2xl border border-cyan-500/20 bg-[#071625]">
-          <table class="w-full text-left text-sm text-slate-300" id="matrix-table">
+        <div class="overflow-x-auto rounded-2xl border border-[#0F1B26]/10 bg-[#071625]">
+          <table class="w-full text-left text-sm text-[#45586B]" id="matrix-table">
             <!-- Injected via JavaScript -->
           </table>
         </div>
       </section>
 
       <!-- Section 5: The Bridging Miracle -->
-      <section class="space-y-6 text-slate-300 text-base sm:text-lg leading-relaxed pt-4">
-        <h2 class="text-2xl sm:text-3xl font-bold text-white font-['Outfit'] flex items-center gap-3" id="sec5-head">
-          <span class="text-cyan-400">05.</span> <span id="sec5-title">"Köprü Kurma" (Bridging) Mucizesi</span>
+      <section class="space-y-6 text-[#45586B] text-base sm:text-lg leading-relaxed pt-4">
+        <h2 class="text-2xl sm:text-3xl font-bold text-[#0F1B26] font-['Bricolage_Grotesque'] flex items-center gap-3" id="sec5-head">
+          <span class="text-[#0E7490]">05.</span> <span id="sec5-title">"Köprü Kurma" (Bridging) Mucizesi</span>
         </h2>
         <p id="sec5-p1">
           Geleneksel eğitim bir alanda zorlanan çocuğa o alanda zorlayıcı tekrarlar yaptırır ve genellikle yetersizlik hissi ve kaygıya sebep olur. MultiMind’ın pedagojik köprüleme kuralı ise tam tersini savunur:
         </p>
         
         <div class="glass-card rounded-2xl p-6 border-l-4 border-cyan-400 my-6 bg-cyan-950/20">
-          <p class="text-base sm:text-lg text-white font-semibold italic" id="sec5-quote">
+          <p class="text-base sm:text-lg text-[#0F1B26] font-semibold italic" id="sec5-quote">
             "Çocuğun gelişime açık alanına asla doğrudan hücum etmeyin; o alana çocuğun en güçlü olduğu zeka kapısından girin!"
           </p>
         </div>
@@ -225,20 +226,20 @@
       </section>
 
       <!-- CTA Box -->
-      <section class="glass-card rounded-3xl p-8 sm:p-12 border border-cyan-500/40 text-center space-y-6 relative overflow-hidden my-12 bg-gradient-to-b from-[#092238] to-[#05111D]">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold text-cyan-300 bg-cyan-500/10 border border-cyan-500/20">
+      <section class="glass-card rounded-3xl p-8 sm:p-12 border border-[#0F1B26]/10 text-center space-y-6 relative overflow-hidden my-12 bg-gradient-to-b from-[#092238] to-[#05111D]">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold text-[#0E7490] bg-[#E0F4F8] border border-[#0F1B26]/10">
           MULTIMIND KIDS: BRAIN GAMES
         </div>
-        <h2 class="text-2xl sm:text-4xl font-extrabold text-white font-['Outfit']" id="cta-title">
+        <h2 class="text-2xl sm:text-4xl font-medium text-[#0F1B26] font-['Bricolage_Grotesque']" id="cta-title">
           Çocuğunuzun Zeka Haritasını Keşfetmeye Hazır Mısınız?
         </h2>
-        <p class="text-slate-300 max-w-xl mx-auto text-sm sm:text-base leading-relaxed" id="cta-desc">
+        <p class="text-[#45586B] max-w-xl mx-auto text-sm sm:text-base leading-relaxed" id="cta-desc">
           Hemen MultiMind Kids Brain Games'i indirin, Onboarding ekranında çocuğunuzun bilişsel radarını çıkarın ve ona özel bir gelişim yolculuğu başlatın.
         </p>
         <div class="pt-2 flex flex-wrap justify-center gap-4">
           <a href="../../games/multimind/index.html" class="btn-glow inline-flex items-center gap-2.5 px-8 py-4 rounded-xl font-bold text-white text-base shadow-lg shadow-cyan-500/30">
             <span id="cta-btn-text">MultiMind'ı Keşfedin</span>
-            <svg class="w-5 h-5 text-cyan-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            <svg class="w-5 h-5 text-[#0E7490]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </a>
         </div>
       </section>
@@ -247,20 +248,20 @@
   </article>
 
   <!-- Footer -->
-  <footer class="border-t border-cyan-500/15 bg-[#030910] text-slate-400 text-sm py-12">
+  <footer class="border-t border-[#0F1B26]/10 bg-white text-[#64788B] text-sm py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
       <div class="flex items-center justify-center gap-3">
         <img src="../../assets/images/logo.png" alt="Cezeri Games" class="h-8 w-8 object-contain">
-        <span class="font-extrabold text-base tracking-wider text-white">CEZERI <span class="text-cyan-400">GAMES</span></span>
+        <span class="font-medium text-base tracking-wider text-[#0F1B26]">CEZERI <span class="text-[#0E7490]">GAMES</span></span>
       </div>
-      <p class="text-xs text-slate-500">
+      <p class="text-xs text-[#64788B]">
         &copy; <span class="current-year">2026</span> Cezeri Games. Tüm hakları saklıdır.
       </p>
       <div class="flex justify-center gap-6 text-xs">
-        <a href="../../index.html" class="hover:text-cyan-300">Ana Sayfa</a>
-        <a href="../index.html" class="hover:text-cyan-300">Blog</a>
-        <a href="../../privacy-policy/index.html" class="hover:text-cyan-300">Gizlilik Politikası</a>
-        <a href="mailto:support@cezerigames.com" class="hover:text-cyan-300">Destek</a>
+        <a href="../../index.html" class="hover:text-[#0E7490]">Ana Sayfa</a>
+        <a href="../index.html" class="hover:text-[#0E7490]">Blog</a>
+        <a href="../../privacy-policy/index.html" class="hover:text-[#0E7490]">Gizlilik Politikası</a>
+        <a href="mailto:support@cezerigames.com" class="hover:text-[#0E7490]">Destek</a>
       </div>
     </div>
   </footer>
@@ -278,7 +279,7 @@
         title: "Her Çocuk Bir Dehadır: MultiMind ile 8 Boyutlu Bilişsel Zeka Haritası ve 5 Öğrenme Arketipi",
         lead: "Geleneksel tek tip testlerin ötesine geçin. Harvard Çoklu Zeka Kuramı temelli MultiMind analiz motoru ile çocuğunuzun özgün öğrenme profilini ve zihin haritasını keşfedin.",
         author: "Cezeri Games Pedagoji & Nörogelişim Ekibi",
-        readTime: "⏱️ 7 Dakika Okuma",
+        readTime: "7 Dakika Okuma",
         sec1Title: "Tek Boyutlu IQ Ölçütlerinin Sonu",
         sec1P1: "Yıllar boyunca eğitim sistemleri çocukların zihinsel potansiyelini yalnızca standartlaştırılmış tek bir sınavla veya kağıt üzerindeki tek boyutlu bir IQ skoruyla değerlendirmeye çalıştı. Oysa modern nöropedagoji bize çok açık bir gerçeği kanıtlıyor: Hiçbir çocuk diğerinin kopyası değildir ve zeka tek bir sayıya sığdırılamaz.",
         sec1P2: "Harvard Üniversitesi’nin öncü psikoloğu Dr. Howard Gardner, Çoklu Zeka Kuramı ile her çocuğun 8 bağımsız bilişsel alandan oluşan eşsiz bir zihin kombinasyonuna sahip olduğunu ortaya koymuştur.",
@@ -386,7 +387,7 @@
         title: "Every Child is a Genius: 8-Dimensional Cognitive Mapping with MultiMind and 5 Archetypes",
         lead: "Transcend standardized single-score testing. Discover your child’s unique mental blueprint and tailored development path powered by Harvard Multiple Intelligences.",
         author: "Cezeri Games Pedagogy & Neurodevelopment Lab",
-        readTime: "⏱️ 7 Min Read",
+        readTime: "7 Min Read",
         sec1Title: "The Demise of One-Dimensional IQ Metrics",
         sec1P1: "For generations, education evaluated children through a single standardized exam or static IQ score. Yet developmental neuroscience confirms: No child is a carbon copy of another, and intellect cannot be reduced to a single digit.",
         sec1P2: "Harvard pioneer Dr. Howard Gardner proved with Multiple Intelligences Theory that each child possesses an autonomous combination of 8 distinct cognitive faculties.",
@@ -494,7 +495,7 @@
         title: "Jedes Kind ist ein Genie: 8-Dimensionale Intelligenzkarte mit MultiMind und 5 Profile",
         lead: "Verlassen Sie eindimensionale Standardtests. Entdecken Sie das individuelle Lernprofil Ihres Kindes mit der Harvard-Theorie der multiplen Intelligenzen.",
         author: "Cezeri Games Pädagogik & Kognitionsforschung",
-        readTime: "⏱️ 7 Min. Lesezeit",
+        readTime: "7 Min. Lesezeit",
         sec1Title: "Das Ende eindimensionaler IQ-Messungen",
         sec1P1: "Seit Generationen wurde kindliche Begabung auf eine einzige Zahl reduziert. Die moderne Hirnforschung beweist: Kein Kind gleicht dem anderen, und menschliche Intelligenz lässt sich nicht in einem starren Wert zusammenfassen.",
         sec1P2: "Der Harvard-Pionier Dr. Howard Gardner belegte mit seiner Theorie der multiplen Intelligenzen, dass jeder Mensch über 8 autonome Begabungsachsen verfügt.",
@@ -602,7 +603,7 @@
         title: "Chaque Enfant est un Génie : Cartographie Cognitive 8D avec MultiMind et 5 Profils",
         lead: "Dépassez les tests standardisés à score unique. Explorez le profil d'apprentissage unique de votre enfant grâce aux intelligences multiples d'Harvard.",
         author: "Laboratoire Pédagogique Cezeri Games",
-        readTime: "⏱️ 7 Min de Lecture",
+        readTime: "7 Min de Lecture",
         sec1Title: "La Fin des Évaluations de QI Unidimensionnelles",
         sec1P1: "Pendant des décennies, l'école a évalué le potentiel des enfants via un chiffre unique. Pourtant, les neurosciences modernes prouvent qu'aucun enfant n'est la copie d'un autre et que l'intelligence ne se réduit pas à un score.",
         sec1P2: "Le Dr Howard Gardner d'Harvard a démontré que chaque enfant possède une combinaison unique parmi 8 dimensions cognitives distinctes.",
@@ -710,7 +711,7 @@
         title: "Cada Niño es un Genio: Mapa de Inteligencia en 8D con MultiMind y 5 Arquetipos",
         lead: "Vaya más allá de los exámenes de cociente único. Descubra el mapa mental y la combinación cognitiva irrepetible de su hijo con Harvard.",
         author: "Equipo de Neuropedagogía Cezeri Games",
-        readTime: "⏱️ 7 Min de Lectura",
+        readTime: "7 Min de Lectura",
         sec1Title: "El Fin de las Mediciones de CI Unidimensionales",
         sec1P1: "Durante décadas la educación midió el potencial infantil con una única nota numérica. Sin embargo, la neurociencia confirma: Ningún niño es réplica de otro y el talento jamás cabe en una sola cifra.",
         sec1P2: "El Dr. Howard Gardner de Harvard demostró que cada ser humano posee 8 ejes cognitivos autónomos que forman un perfil intelectual único.",
@@ -818,7 +819,7 @@
         title: "Toda Criança é um Gênio: Mapeamento em 8D com o MultiMind e 5 Perfis",
         lead: "Vá além de testes padronizados com nota única. Descubra a combinação mental exclusiva do seu filho com a teoria das inteligências múltiplas de Harvard.",
         author: "Laboratório Pedagógico Cezeri Games",
-        readTime: "⏱️ 7 Min de Leitura",
+        readTime: "7 Min de Leitura",
         sec1Title: "O Fim das Avaliações de QI Unidimensionais",
         sec1P1: "Por muito tempo a educação mediu a capacidade infantil através de uma única pontuação. No entanto, a neurociência moderna comprova: nenhuma criança é cópia de outra e a inteligência jamais cabe em um único número.",
         sec1P2: "O Dr. Howard Gardner de Harvard provou que cada ser humano possui 8 eixos cognitivos autônomos que formam uma identidade intelectual singular.",
@@ -1008,7 +1009,7 @@
       radarGrid.innerHTML = data.radarDims.map(d => `
         <div class="radar-dim-card rounded-2xl p-4 text-center">
           <div class="text-2xl mb-1">${d.icon}</div>
-          <div class="font-bold text-xs sm:text-sm text-slate-200">${d.name}</div>
+          <div class="font-bold text-xs sm:text-sm text-[#0F1B26]">${d.name}</div>
         </div>
       `).join("");
 
@@ -1064,35 +1065,35 @@
       const card = document.getElementById("profile-display-card");
 
       const chipsHtml = p.scores.map(s => `
-        <span class="px-3 py-1.5 rounded-xl bg-slate-800/80 border border-cyan-500/20 text-xs font-semibold text-slate-200">
+        <span class="px-3 py-1.5 rounded-xl bg-white border border-[#0F1B26]/10 text-xs font-semibold text-[#0F1B26]">
           ${s.k}: <strong style="color: ${p.accent};">${s.v}</strong>
         </span>
       `).join("");
 
       const tipsHtml = p.bridgeList.map(item => `
-        <li class="flex items-start gap-2 text-sm text-slate-300">
-          <span class="text-cyan-400 font-bold">✦</span>
+        <li class="flex items-start gap-2 text-sm text-[#45586B]">
+          <span class="text-[#0E7490] font-bold">✦</span>
           <span>${item}</span>
         </li>
       `).join("");
 
       card.innerHTML = `
-        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-cyan-500/20 pb-5">
+        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-[#0F1B26]/10 pb-5">
           <div>
             <span class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2 text-slate-900" style="background: ${p.accent};">${p.tag}</span>
-            <h3 class="text-2xl sm:text-3xl font-black text-white font-['Outfit']">${p.label}</h3>
-            <p class="text-base font-semibold text-cyan-300 mt-1">${p.title}</p>
+            <h3 class="text-2xl sm:text-3xl font-medium text-[#0F1B26] font-['Bricolage_Grotesque']">${p.label}</h3>
+            <p class="text-base font-semibold text-[#0E7490] mt-1">${p.title}</p>
           </div>
           <div class="flex flex-wrap gap-2">
             ${chipsHtml}
           </div>
         </div>
 
-        <p class="text-slate-200 text-base leading-relaxed">${p.desc}</p>
-        <p class="text-sm text-slate-400 italic bg-slate-900/60 p-4 rounded-xl border border-cyan-500/10">💡 ${p.growth}</p>
+        <p class="text-[#0F1B26] text-base leading-relaxed">${p.desc}</p>
+        <p class="text-sm text-[#64788B] italic bg-[#F4F8FB] p-4 rounded-xl border border-cyan-500/10">${p.growth}</p>
 
         <div class="glass-card rounded-2xl p-6 border border-emerald-500/25 bg-emerald-950/15 space-y-3">
-          <h4 class="font-bold text-emerald-300 text-base flex items-center gap-2">
+          <h4 class="font-bold text-[#15803D] text-base flex items-center gap-2">
             <span>🌱</span> <span>${p.bridgeTitle}</span>
           </h4>
           <ul class="space-y-2.5">
@@ -1114,8 +1115,8 @@
     // Render Table
     function renderTableData(data) {
       const table = document.getElementById("matrix-table");
-      const headers = `<thead><tr class="border-b border-cyan-500/30 bg-[#0B2136]">` +
-        data.tableHeaders.map(h => `<th class="py-3 px-4 font-bold text-xs uppercase text-cyan-300">${h}</th>`).join("") +
+      const headers = `<thead><tr class="border-b border-[#0F1B26]/10 bg-[#0B2136]">` +
+        data.tableHeaders.map(h => `<th class="py-3 px-4 font-bold text-xs uppercase text-[#0E7490]">${h}</th>`).join("") +
         `</tr></thead>`;
 
       const mechanics = [
@@ -1127,13 +1128,13 @@
       ];
 
       const rows = data.profiles.map((p, i) => `
-        <tr class="border-b border-cyan-500/15 hover:bg-cyan-500/5 transition-colors">
+        <tr class="border-b border-[#0F1B26]/10 hover:bg-cyan-500/5 transition-colors">
           <td class="py-3.5 px-4 font-bold" style="color: ${p.accent};">${p.name}</td>
-          <td class="py-3.5 px-4 text-xs font-semibold text-slate-300">${p.tag}</td>
+          <td class="py-3.5 px-4 text-xs font-semibold text-[#45586B]">${p.tag}</td>
           <td class="py-3.5 px-4 text-xs">${p.scores[0].k} (${p.scores[0].v})</td>
           <td class="py-3.5 px-4 text-xs">${p.scores[p.scores.length - 1].k} (${p.scores[p.scores.length - 1].v})</td>
-          <td class="py-3.5 px-4 text-xs text-cyan-300 font-mono">${mechanics[i]}</td>
-          <td class="py-3.5 px-4 text-xs text-slate-400">${p.bridgeList[0].split(":")[0].replace(/<[^>]*>/g, '')}</td>
+          <td class="py-3.5 px-4 text-xs text-[#0E7490] font-mono">${mechanics[i]}</td>
+          <td class="py-3.5 px-4 text-xs text-[#64788B]">${p.bridgeList[0].split(":")[0].replace(/<[^>]*>/g, '')}</td>
         </tr>
       `).join("");
 

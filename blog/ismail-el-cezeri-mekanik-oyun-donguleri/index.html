@@ -11,12 +11,13 @@
   <link rel="stylesheet" href="../../assets/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
   <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap">
   </noscript>
+  <script>(function(){try{var s=localStorage.getItem("cezeri_theme");var h=new Date().getHours();document.documentElement.setAttribute("data-theme",(s==="dark"||s==="light")?s:((h>=19||h<7)?"dark":"light"));}catch(e){}})();</script>
 </head>
-<body class="bg-[#050E17] text-slate-100 antialiased selection:bg-cyan-500 selection:text-white">
+<body class="bg-[#F4F8FB] text-[#0F1B26] antialiased selection:bg-[#E0F4F8] selection:text-[#0E7490]">
 
   <!-- Ambient Glow -->
   <div class="ambient-glow-1 top-10 left-1/4"></div>
@@ -25,33 +26,33 @@
   <header class="fixed top-0 left-0 right-0 z-50 glass-nav">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       <a href="../../index.html" class="flex items-center gap-3 group">
-        <img src="../../assets/images/logo.png" alt="Cezeri Games Logo" class="h-10 w-10 object-contain drop-shadow-[0_0_12px_rgba(34,211,238,0.45)] group-hover:scale-105 transition-transform duration-300">
+        <img src="../../assets/images/logo.png" alt="Cezeri Games Logo" class="h-10 w-10 object-contain   transition-transform duration-300">
         <div class="flex flex-col">
-          <span class="font-black text-lg tracking-wider text-white leading-tight font-['Outfit']">CEZERI <span class="text-gradient">GAMES</span></span>
-          <span class="text-[8px] font-bold tracking-[0.2em] text-cyan-400/90 uppercase">Mobile Game Studio</span>
+          <span class="font-medium text-lg tracking-wider text-[#0F1B26] leading-tight font-['Bricolage_Grotesque']">CEZERI <span class="text-gradient">GAMES</span></span>
+          <span class="text-[8px] font-bold tracking-[0.2em] text-[#0E7490] uppercase">Mobile Game Studio</span>
         </div>
       </a>
 
       <!-- 6-Language Switcher & Back link -->
       <div class="flex items-center gap-3 sm:gap-6">
         <div class="relative">
-          <button id="lang-btn-trigger" class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-100 border border-cyan-500/30 text-xs font-semibold shadow-lg transition-all">
+          <button id="lang-btn-trigger" class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white hover:bg-[#EAF2F7] text-[#0F1B26] border border-[#0F1B26]/10 text-xs font-semibold shadow-lg transition-all">
             <span id="current-lang-flag">🇹🇷</span>
             <span id="current-lang-code">TR</span>
-            <svg class="w-3.5 h-3.5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            <svg class="w-3.5 h-3.5 text-[#0E7490]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
           
-          <div id="lang-dropdown-menu" class="hidden absolute right-0 mt-2 w-48 rounded-2xl bg-[#081827] border border-cyan-500/40 shadow-2xl py-2 z-50 backdrop-blur-2xl">
-            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="tr"><span>🇹🇷</span> <span>Türkçe (TR)</span></button>
-            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="en"><span>🇬🇧</span> <span>English (EN)</span></button>
-            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="de"><span>🇩🇪</span> <span>Deutsch (DE)</span></button>
-            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="fr"><span>🇫🇷</span> <span>Français (FR)</span></button>
-            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="es"><span>🇪🇸</span> <span>Español (ES)</span></button>
-            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-cyan-500/20 text-left transition-colors text-slate-200" data-lang="pt"><span>🇵🇹</span> <span>Português (PT)</span></button>
+          <div id="lang-dropdown-menu" class="hidden absolute right-0 mt-2 w-48 rounded-2xl bg-white border border-[#0F1B26]/10 shadow-2xl py-2 z-50 backdrop-blur-2xl">
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-[#E0F4F8] text-left transition-colors text-[#0F1B26]" data-lang="tr"><span>🇹🇷</span> <span>Türkçe (TR)</span></button>
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-[#E0F4F8] text-left transition-colors text-[#0F1B26]" data-lang="en"><span>🇬🇧</span> <span>English (EN)</span></button>
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-[#E0F4F8] text-left transition-colors text-[#0F1B26]" data-lang="de"><span>🇩🇪</span> <span>Deutsch (DE)</span></button>
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-[#E0F4F8] text-left transition-colors text-[#0F1B26]" data-lang="fr"><span>🇫🇷</span> <span>Français (FR)</span></button>
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-[#E0F4F8] text-left transition-colors text-[#0F1B26]" data-lang="es"><span>🇪🇸</span> <span>Español (ES)</span></button>
+            <button class="lang-select-opt w-full flex items-center gap-3 px-4 py-2 text-xs hover:bg-[#E0F4F8] text-left transition-colors text-[#0F1B26]" data-lang="pt"><span>🇵🇹</span> <span>Português (PT)</span></button>
           </div>
         </div>
 
-        <a href="../index.html" class="text-xs font-semibold text-slate-300 hover:text-cyan-300 flex items-center gap-1.5 transition-colors">
+        <a href="../index.html" class="text-xs font-semibold text-[#45586B] hover:text-[#0E7490] flex items-center gap-1.5 transition-colors">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
           <span class="hidden sm:inline" id="nav-back-text">Tüm Yazılar</span>
         </a>
@@ -64,64 +65,64 @@
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Article Header -->
-      <header class="space-y-6 pb-10 border-b border-cyan-500/15 text-center sm:text-left">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold badge-tag border border-amber-500/30 text-amber-300 bg-amber-500/10" id="art-tag">
+      <header class="space-y-6 pb-10 border-b border-[#0F1B26]/10 text-center sm:text-left">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold badge-tag border border-[#B45309]/20 text-[#B45309] bg-amber-500/10" id="art-tag">
           TARİH & İNOVASYON
         </div>
         
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight font-['Outfit']" id="art-title">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-medium text-[#0F1B26] leading-tight font-['Bricolage_Grotesque']" id="art-title">
           İsmail El-Cezeri'nin Mekanik Dehasından İlham Alan Oyun Döngüleri
         </h1>
 
-        <div class="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs text-slate-400">
+        <div class="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs text-[#64788B]">
           <span class="flex items-center gap-1.5">
-            <span class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-300 flex items-center justify-center font-bold">⚙️</span>
+            <span class="w-6 h-6 rounded-full bg-[#FEF3C7] text-[#B45309] flex items-center justify-center font-bold">⚙️</span>
             <span id="art-author">Cezeri Games Mühendislik & Kültür Ekibi</span>
           </span>
           <span>•</span>
-          <span id="art-time">⏱️ 6 Dakika Okuma</span>
+          <span id="art-time">6 Dakika Okuma</span>
           <span>•</span>
           <span>Güncellenme: 2026</span>
         </div>
       </header>
 
       <!-- Article Body -->
-      <div class="prose prose-invert prose-cyan max-w-none pt-10 text-slate-300 space-y-6 text-base sm:text-lg leading-relaxed">
+      <div class="article-prose max-w-none pt-10 text-[#45586B] space-y-6 text-base sm:text-lg leading-relaxed">
         
-        <p class="text-xl text-slate-200 font-medium leading-relaxed" id="art-intro">
+        <p class="text-xl text-[#0F1B26] font-medium leading-relaxed" id="art-intro">
           12. yüzyılın sonlarında Artuklu Sarayı'nın başmühendisi olan <strong>Bedîüzzamân Ebû el-‘İzz İsmâ‘îl b. er-Rezzâz el-Cezerî</strong>, Leonardo da Vinci'den üç asır önce robotik ve sibernetiğin temellerini atmıştı.
         </p>
 
-        <h2 class="text-2xl font-bold text-white pt-4 font-['Outfit']" id="sec1-h2">Otomatların Babası ve "Kitâb-ül Hiyel"</h2>
+        <h2 class="text-2xl font-bold text-[#0F1B26] pt-4 font-['Bricolage_Grotesque']" id="sec1-h2">Otomatların Babası ve "Kitâb-ül Hiyel"</h2>
         <p id="sec1-p1">
           El-Cezeri, ünlü <em>Olağanüstü Mekanik Araçların Bilgisi Kitabı (Kitâb-ül Hiyel)</em> eserinde su saatleri, krank milleri, sifon mekanizmaları ve kendi kendine müzik çalan mekanik otomatlar tasarladı. Günümüz robotik dünyasının en kritik parçası olan **dönme hareketini doğrusal harekete çeviren krank milini** ilk kez o kullandı.
         </p>
 
         <div class="glass-card rounded-2xl p-6 border-l-4 border-amber-400 my-8">
-          <h4 class="font-bold text-white text-base mb-1" id="quote-header">El-Cezeri'nin Mühendislik Felsefesi:</h4>
-          <p class="text-sm text-slate-300 italic mb-0" id="quote-text">
+          <h4 class="font-bold text-[#0F1B26] text-base mb-1" id="quote-header">El-Cezeri'nin Mühendislik Felsefesi:</h4>
+          <p class="text-sm text-[#45586B] italic mb-0" id="quote-text">
             "Tatbikata dökülmeyen her ilim, doğru ile yanlış arasında asılı kalır."
           </p>
         </div>
 
-        <h2 class="text-2xl font-bold text-white pt-4 font-['Outfit']" id="sec2-h2">800 Yıllık Dehadan Modern Mobil Oyunlara</h2>
+        <h2 class="text-2xl font-bold text-[#0F1B26] pt-4 font-['Bricolage_Grotesque']" id="sec2-h2">800 Yıllık Dehadan Modern Mobil Oyunlara</h2>
         <p id="sec2-p">
           Cezeri Games olarak stüdyomuzun ismini bu büyük bilginden alırken tek bir hayalimiz vardı: Tarihin en parlak mekanik dehasını, 21. yüzyıl çocuklarının ellerindeki dokunmatik ekranlara taşımak.
         </p>
 
-        <ul class="space-y-4 pl-4 list-disc marker:text-amber-400" id="mech-list">
+        <ul class="space-y-4 pl-4 list-disc marker:text-[#B45309]" id="mech-list">
           <!-- Dynamically injected -->
         </ul>
 
-        <h2 class="text-2xl font-bold text-white pt-4 font-['Outfit']" id="sec3-h2">Çocuklar İçin Neden Fiziksel Sezgi Önemlidir?</h2>
+        <h2 class="text-2xl font-bold text-[#0F1B26] pt-4 font-['Bricolage_Grotesque']" id="sec3-h2">Çocuklar İçin Neden Fiziksel Sezgi Önemlidir?</h2>
         <p id="sec3-p">
           Günümüz çocukları son derece sanal ve soyut bir dijital dünyada büyüyor. MultiMind Kids'te yer alan fiziksel mekanikler; çocukların kaldıraçları tartmasını, suyun akış yönünü hesaplamasını ve dişlilerin birbirini nasıl döndürdüğünü hissetmesini sağlar. Böylece ekran süresi, saf bir sibernetik sezgi atölyesine dönüşür.
         </p>
 
         <!-- Final CTA Card -->
-        <div class="glass-card rounded-3xl p-8 border border-amber-500/30 text-center space-y-4 my-12 bg-amber-950/20">
-          <h3 class="text-xl font-bold text-white font-['Outfit']" id="cta-title">Mekanik Dehayı Keşfedin</h3>
-          <p class="text-sm text-slate-300 max-w-lg mx-auto" id="cta-desc">
+        <div class="glass-card rounded-3xl p-8 border border-[#B45309]/20 text-center space-y-4 my-12 bg-amber-950/20">
+          <h3 class="text-xl font-bold text-[#0F1B26] font-['Bricolage_Grotesque']" id="cta-title">Mekanik Dehayı Keşfedin</h3>
+          <p class="text-sm text-[#45586B] max-w-lg mx-auto" id="cta-desc">
             Çocuğunuzun geleceğin mühendisi gibi düşünmesini sağlayan fiziksel mekanikleri hemen deneyimleyin.
           </p>
           <a href="../../games/multimind/index.html" class="btn-glow inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-white text-sm">
@@ -136,20 +137,20 @@
   </article>
 
   <!-- Footer -->
-  <footer class="border-t border-cyan-500/15 bg-[#030910] text-slate-400 text-sm py-12">
+  <footer class="border-t border-[#0F1B26]/10 bg-white text-[#64788B] text-sm py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
       <div class="flex items-center justify-center gap-3">
         <img src="../../assets/images/logo.png" alt="Cezeri Games" class="h-8 w-8 object-contain">
-        <span class="font-extrabold text-base tracking-wider text-white">CEZERI <span class="text-cyan-400">GAMES</span></span>
+        <span class="font-medium text-base tracking-wider text-[#0F1B26]">CEZERI <span class="text-[#0E7490]">GAMES</span></span>
       </div>
-      <p class="text-xs text-slate-500">
+      <p class="text-xs text-[#64788B]">
         &copy; <span class="current-year">2026</span> Cezeri Games. Tüm hakları saklıdır.
       </p>
       <div class="flex justify-center gap-6 text-xs">
-        <a href="../../index.html" class="hover:text-cyan-300">Ana Sayfa</a>
-        <a href="../index.html" class="hover:text-cyan-300">Blog</a>
-        <a href="../../privacy-policy/index.html" class="hover:text-cyan-300">Gizlilik Politikası</a>
-        <a href="mailto:support@cezerigames.com" class="hover:text-cyan-300">Destek</a>
+        <a href="../../index.html" class="hover:text-[#0E7490]">Ana Sayfa</a>
+        <a href="../index.html" class="hover:text-[#0E7490]">Blog</a>
+        <a href="../../privacy-policy/index.html" class="hover:text-[#0E7490]">Gizlilik Politikası</a>
+        <a href="mailto:support@cezerigames.com" class="hover:text-[#0E7490]">Destek</a>
       </div>
     </div>
   </footer>
@@ -165,7 +166,7 @@
         tag: "TARİH & İNOVASYON",
         title: "İsmail El-Cezeri'nin Mekanik Dehasından İlham Alan Oyun Döngüleri",
         author: "Cezeri Games Mühendislik & Kültür Ekibi",
-        time: "⏱️ 6 Dakika Okuma",
+        time: "6 Dakika Okuma",
         intro: "12. yüzyılın sonlarında Artuklu Sarayı'nın başmühendisi olan <strong>Bedîüzzamân Ebû el-‘İzz İsmâ‘îl b. er-Rezzâz el-Cezerî</strong>, Leonardo da Vinci'den üç asır önce robotik ve sibernetiğin temellerini atmıştı.",
         sec1H2: "Otomatların Babası ve 'Kitâb-ül Hiyel'",
         sec1P1: "El-Cezeri, ünlü <em>Olağanüstü Mekanik Araçların Bilgisi Kitabı (Kitâb-ül Hiyel)</em> eserinde su saatleri, krank milleri, sifon mekanizmaları ve kendi kendine müzik çalan mekanik otomatlar tasarladı. Günümüz içten yanmalı motorlarının kalbi olan dönme hareketini doğrusal harekete çeviren krank milini ilk kez o uyguladı.",
@@ -193,7 +194,7 @@
         tag: "HISTORY & CYBERNETIC INGENUITY",
         title: "Gameplay Loops Inspired by the Mechanical Genius of Ismail al-Jazari",
         author: "Cezeri Games Engineering & Culture Team",
-        time: "⏱️ 6 Min Read",
+        time: "6 Min Read",
         intro: "In the late 12th century, the chief engineer of the Artuqid Palace, <strong>Badi' al-Zaman Abu al-'Izz Ismail ibn al-Razzaz al-Jazari</strong>, laid the foundational stones of robotics and cybernetics three centuries before Leonardo da Vinci.",
         sec1H2: "The Father of Automata and 'The Book of Knowledge'",
         sec1P1: "In his monumental work <em>The Book of Knowledge of Ingenious Mechanical Devices (Kitab fi Ma'rifat al-Hiyal)</em>, al-Jazari documented hydraulic clocks, siphon regulators, and self-operating musical automata. He pioneered the crank-slider mechanism—the bedrock of modern combustion engines.",
@@ -221,7 +222,7 @@
         tag: "GESCHICHTE & INGENIEURKUNST",
         title: "Spielmechaniken inspiriert vom mechanischen Genie Ismail al-Jazaris",
         author: "Ingenieurteam Cezeri Games",
-        time: "⏱️ 6 Min. Lesezeit",
+        time: "6 Min. Lesezeit",
         intro: "Im 12. Jahrhundert legte der oberste Hofingenieur <strong>Ismail al-Jazari</strong> die Grundlagen der Robotik und Kybernetik – 300 Jahre vor Leonardo da Vinci.",
         sec1H2: "Der Urvater der Automaten",
         sec1P1: "In seinem Meisterwerk <em>Buch des Wissens von sinnreichen mechanischen Vorrichtungen</em> entwarf al-Jazari Wasseruhren, Nockenwellen und Siphon-Systeme. Er erfand den Kurbeltrieb, das Herzstück moderner Motoren.",
@@ -249,7 +250,7 @@
         tag: "HISTOIRE & INGÉNIERIE",
         title: "Des Mécanismes d'Ismaïl Al-Jazari aux Boucles de Jeu Modernes",
         author: "Équipe Culture & Ingénierie Cezeri",
-        time: "⏱️ 6 Min de Lecture",
+        time: "6 Min de Lecture",
         intro: "À la fin du XIIe siècle, l'ingénieur en chef <strong>Ismaïl al-Jazari</strong> posait les fondements de la robotique et des automates, trois siècles avant Léonard de Vinci.",
         sec1H2: "Le Maître des Automates",
         sec1P1: "Dans son <em>Livre de la Connaissance des Procédés Mécaniques Ingénieux</em>, il décrivit l'horloge à éléphant, des pompes alternatives et le vilebrequin, élément clé de la mécanique contemporaine.",
@@ -277,7 +278,7 @@
         tag: "HISTORIA E INNOVACIÓN",
         title: "Mecánicas de Juego Inspiradas en el Genio de Ismail Al-Jazari",
         author: "Equipo de Ingeniería Cezeri Games",
-        time: "⏱️ 6 Min de Lectura",
+        time: "6 Min de Lectura",
         intro: "A finales del siglo XII, el ingeniero jefe <strong>Ismail al-Jazari</strong> diseñó los primeros autómatas mecánicos programables tres siglos antes que Leonardo da Vinci.",
         sec1H2: "El Padre de la Cibernética",
         sec1P1: "En su célebre tratado ideó relojes hidráulicos, sistemas de biela-manivela y sifones reguladores. Su visión sentó las bases de los motores modernos.",
@@ -305,7 +306,7 @@
         tag: "HISTÓRIA & ENGENHARIA",
         title: "Mecânicas de Jogo Inspiradas no Génio de Ismail Al-Jazari",
         author: "Equipa de Inovação Cezeri Games",
-        time: "⏱️ 6 Min de Leitura",
+        time: "6 Min de Leitura",
         intro: "No século XII, o ilustre engenheiro <strong>Ismail al-Jazari</strong> lançou as sementes da robótica e da automação 300 anos antes de Leonardo da Vinci.",
         sec1H2: "O Pai dos Autómatos",
         sec1P1: "Na sua obra clássica detalhou relógios de água monumentais, bombas alternativas e o mecanismo de biela-manivela indispensável à indústria moderna.",
