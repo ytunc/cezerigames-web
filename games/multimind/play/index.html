@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>MultiMind Kids — Tarayıcıda Oyna | Cezeri Games</title>
+  <meta name="description" content="MultiMind Kids: Brain Games oyununu kurulum gerektirmeden doğrudan tarayıcınızda yatay ekranda oynayın.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cezerigames.com/games/multimind/play/">
+  <meta property="og:title" content="MultiMind Kids — Tarayıcıda Oyna | Cezeri Games">
+  <meta property="og:description" content="3–8 yaş çocuklar için çoklu zekâ oyunlarını şimdi tarayıcıda ücretsiz deneyimleyin.">
+  <meta property="og:image" content="../../../assets/images/logo.png">
+
+  <link rel="icon" type="image/png" href="../../../assets/images/favicon.png">
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script>(function(){try{var s=localStorage.getItem("cezeri_theme");var h=new Date().getHours();document.documentElement.setAttribute("data-theme",(s==="dark"||s==="light")?s:((h>=19||h<7)?"dark":"light"));}catch(e){}})();</script>
+  <style>
+    .player-stage {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #0b1220;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(15, 27, 38, 0.22);
+    }
+    .player-stage:fullscreen {
+      border-radius: 0;
+      width: 100vw;
+      height: 100vh;
+      aspect-ratio: auto;
+    }
+    #unity-canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: #0f172a;
+      touch-action: none;
+    }
+    #loading-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #0E7490 0%, #0F1B26 100%);
+      color: #ffffff;
+      z-index: 20;
+      transition: opacity 0.35s ease;
+    }
+    #loading-overlay.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .bar-bg {
+      width: 280px;
+      max-width: 75%;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.2);
+      overflow: hidden;
+    }
+    .bar-fill {
+      width: 0%;
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #38bdf8, #34d399);
+      transition: width 0.15s ease;
+    }
+    #rotate-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(11, 18, 32, 0.96);
+      color: #ffffff;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+    }
+    @media (orientation: portrait) and (pointer: coarse) {
+      #rotate-overlay {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body class="bg-[#F4F8FB] text-[#0F1B26] antialiased selection:bg-[#E0F4F8] selection:text-[#0E7490]">
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 site-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <a href="../../../index.html" class="flex items-center gap-2.5">
+          <img src="../../../assets/images/logo.png" alt="Cezeri Games" width="34" height="34" class="h-8 w-8 object-contain">
+          <span class="text-base font-semibold tracking-tight text-[#0F1B26] font-['Bricolage_Grotesque']">Cezeri Games</span>
+        </a>
+        <span class="hidden sm:inline text-[#64788B]/50">/</span>
+        <a href="../index.html" class="hidden sm:inline text-sm font-medium text-[#45586B] hover:text-[#0E7490] transition-colors">
+          &larr; MultiMind Kids
+        </a>
+      </div>
+
+      <div class="flex items-center gap-2.5">
+        <button id="fullscreen-btn" type="button" class="btn-primary h-9 px-3.5 rounded-lg text-xs font-medium inline-flex items-center gap-1.5">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4h4M20 8V4h-4M4 16v4h4M20 16v4h-4"/></svg>
+          <span data-i18n="play_fullscreen">Tam Ekran</span>
+        </button>
+
+        <div class="relative">
+          <button id="lang-trigger" type="button" class="flex items-center gap-1.5 h-9 px-2.5 rounded-lg bg-white hover:bg-[#EAF2F7] text-[#45586B] border border-[#0F1B26]/10 text-xs font-medium transition-colors duration-150">
+            <span class="lang-current-label font-mono-num text-xs font-medium text-[#0F1B26]">TR</span>
+            <svg class="w-3.5 h-3.5 text-[#64788B]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div id="lang-dropdown" class="hidden absolute right-0 mt-2 w-40 rounded-xl bg-white border border-[#0F1B26]/10 shadow-[0_8px_24px_rgba(15,27,38,0.08)] py-1.5 z-50">
+            <button type="button" class="lang-item w-full flex items-center justify-between px-3.5 py-2 text-xs text-[#45586B] hover:bg-[#F4F8FB] text-left" data-lang="TR"><span>Türkçe</span><span class="font-mono-num text-[11px] opacity-70">TR</span></button>
+            <button type="button" class="lang-item w-full flex items-center justify-between px-3.5 py-2 text-xs text-[#45586B] hover:bg-[#F4F8FB] text-left" data-lang="EN"><span>English</span><span class="font-mono-num text-[11px] opacity-70">EN</span></button>
+            <button type="button" class="lang-item w-full flex items-center justify-between px-3.5 py-2 text-xs text-[#45586B] hover:bg-[#F4F8FB] text-left" data-lang="DE"><span>Deutsch</span><span class="font-mono-num text-[11px] opacity-70">DE</span></button>
+            <button type="button" class="lang-item w-full flex items-center justify-between px-3.5 py-2 text-xs text-[#45586B] hover:bg-[#F4F8FB] text-left" data-lang="FR"><span>Français</span><span class="font-mono-num text-[11px] opacity-70">FR</span></button>
+            <button type="button" class="lang-item w-full flex items-center justify-between px-3.5 py-2 text-xs text-[#45586B] hover:bg-[#F4F8FB] text-left" data-lang="ES"><span>Español</span><span class="font-mono-num text-[11px] opacity-70">ES</span></button>
+            <button type="button" class="lang-item w-full flex items-center justify-between px-3.5 py-2 text-xs text-[#45586B] hover:bg-[#F4F8FB] text-left" data-lang="PR"><span>Português</span><span class="font-mono-num text-[11px] opacity-70">PT</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-20 pb-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+    <div class="mb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+      <div>
+        <h1 class="text-xl sm:text-2xl font-semibold tracking-tight text-[#0F1B26] font-['Bricolage_Grotesque']">
+          MultiMind Kids: Brain Games
+        </h1>
+        <p class="text-xs sm:text-sm text-[#45586B]" data-i18n="play_page_subtitle">
+          Yatay ekran için tasarlanmış WebGL sürümü · Kurulum gerektirmez
+        </p>
+      </div>
+      <div class="flex items-center gap-2">
+        <a href="https://play.google.com/store/apps/details?id=com.CezeriGames.MultiMindKidsBrainGames" target="_blank" rel="noopener" class="btn-secondary h-9 px-3.5 rounded-lg text-xs font-medium inline-flex items-center gap-1.5">
+          <span data-i18n="play_store_btn">Google Play</span>
+        </a>
+        <a href="https://apps.apple.com/" target="_blank" rel="noopener" class="btn-secondary h-9 px-3.5 rounded-lg text-xs font-medium inline-flex items-center gap-1.5">
+          <span data-i18n="app_store_btn">App Store</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- 16:9 Landscape WebGL Player Stage -->
+    <div id="game-container" class="player-stage border border-[#0F1B26]/10">
+      <canvas id="unity-canvas" tabindex="-1"></canvas>
+      <div id="loading-overlay">
+        <img src="../../../assets/images/logo.png" alt="MultiMind" class="w-16 h-16 mb-3 object-contain">
+        <div class="text-lg sm:text-xl font-semibold mb-4 font-['Bricolage_Grotesque']">MultiMind Kids Brain Games</div>
+        <div class="bar-bg"><div id="progress-fill" class="bar-fill"></div></div>
+        <div id="progress-text" class="mt-2.5 text-xs font-mono-num opacity-90">0%</div>
+      </div>
+    </div>
+  </main>
+
+  <div id="rotate-overlay">
+    <div class="text-5xl mb-4">📱</div>
+    <div class="text-lg font-semibold max-w-xs leading-relaxed" data-i18n="play_rotate_hint">
+      Lütfen cihazınızı yatay konuma çevirin
+    </div>
+  </div>
+
+  <script src="../../../assets/js/i18n.js"></script>
+  <script src="../../../assets/js/main.js"></script>
+  <script>
+    (function () {
+      var CDN_BASE = "https://cdn.cezerigames.com/WebGLPlayer";
+      var container = document.querySelector("#game-container");
+      var canvas = document.querySelector("#unity-canvas");
+      var overlay = document.querySelector("#loading-overlay");
+      var fill = document.querySelector("#progress-fill");
+      var text = document.querySelector("#progress-text");
+      var fsBtn = document.querySelector("#fullscreen-btn");
+
+      fsBtn.addEventListener("click", function () {
+        if (!document.fullscreenElement) {
+          if (container.requestFullscreen) {
+            container.requestFullscreen().then(function () {
+              if (screen.orientation && screen.orientation.lock) {
+                screen.orientation.lock("landscape").catch(function () {});
+              }
+            }).catch(function () {});
+          }
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen().catch(function () {});
+        }
+      });
+
+      var loaderScript = document.createElement("script");
+      loaderScript.src = CDN_BASE + "/Build/WebGL.loader.js";
+      loaderScript.onload = function () {
+        createUnityInstance(canvas, {
+          arguments: [],
+          dataUrl: CDN_BASE + "/Build/WebGL.data.unityweb",
+          frameworkUrl: CDN_BASE + "/Build/WebGL.framework.js.unityweb",
+          codeUrl: CDN_BASE + "/Build/WebGL.wasm.unityweb",
+          streamingAssetsUrl: CDN_BASE + "/StreamingAssets",
+          companyName: "CezeriGames",
+          productName: "MultiMind Kids Brain Games",
+          productVersion: "1.5.24",
+          devicePixelRatio: Math.min(window.devicePixelRatio || 1, 2)
+        }, function (progress) {
+          var pct = Math.round(progress * 100);
+          fill.style.width = pct + "%";
+          text.textContent = pct + "%";
+        }).then(function () {
+          overlay.classList.add("hidden");
+          setTimeout(function () { overlay.remove(); }, 400);
+        }).catch(function (message) {
+          text.textContent = "Yükleme hatası: " + message;
+          console.error(message);
+        });
+      };
+      loaderScript.onerror = function () {
+        text.textContent = "Oyun dosyaları CDN'den yüklenemedi (" + CDN_BASE + ").";
+      };
+      document.body.appendChild(loaderScript);
+    })();
+  </script>
+</body>
+</html>
